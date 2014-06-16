@@ -1,7 +1,9 @@
 import Foundation
 
 class SRDatetime {
-    //class var defaultISOFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"   // TODO
+    class var ISOFormat: String {
+        return "yyyy-MM-dd'T'HH:mm:ssZZZ"
+    }
     
     var year = 0
     var month = 0
@@ -50,17 +52,25 @@ class SRDatetime {
         self.second = second
     }
     
-    convenience init(year:Int, month:Int, day:Int) {
-        self.init(year:year, month:month, day:day, hour:0, minute:0, second:0)
-    }
-    
     init(date: NSDate) {
         self.date = date
     }
     
-    // TODO
-    // init(isoFormatString: String) {
-    // }
+    convenience init(year:Int, month:Int, day:Int) {
+        self.init(year:year, month:month, day:day, hour:0, minute:0, second:0)
+    }
+    
+    convenience init(ISODatetimeString: String) {
+        var str = ISODatetimeString
+        if !ISODatetimeString.rangeOfString("+") {
+            str = str + "+0000"
+        }
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = SRDatetime.ISOFormat
+        
+        self.init(date: formatter.dateFromString(str))
+    }
     
     convenience init() {
         self.init(date: NSDate())

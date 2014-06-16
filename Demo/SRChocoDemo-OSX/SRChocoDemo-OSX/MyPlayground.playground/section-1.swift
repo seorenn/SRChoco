@@ -1,9 +1,10 @@
-// Playground - noun: a place where people can play
-
-import Cocoa
+import Foundation
 
 class SRDatetime {
-    // class let isoFormat = "" // TODO
+    class var ISOFormat: String {
+    return "yyyy-MM-dd'T'HH:mm:ssZZZ"
+    }
+    
     var year = 0
     var month = 0
     var day = 0
@@ -14,7 +15,13 @@ class SRDatetime {
     var date: NSDate {
     set {
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: newValue)
+        let components = calendar.components(NSCalendarUnit.CalendarUnitYear |
+            NSCalendarUnit.CalendarUnitMonth |
+            NSCalendarUnit.CalendarUnitDay |
+            NSCalendarUnit.CalendarUnitHour |
+            NSCalendarUnit.CalendarUnitMinute |
+            NSCalendarUnit.CalendarUnitSecond,
+            fromDate: newValue)
         self.year = components.year
         self.month = components.month
         self.day = components.day
@@ -45,28 +52,29 @@ class SRDatetime {
         self.second = second
     }
     
-    convenience init(year:Int, month:Int, day:Int) {
-        self.init(year:year, month:month, day:day, hour:0, minute:0, second:0)
-    }
-    
     init(date: NSDate) {
         self.date = date
     }
     
-    // TODO
-    // init(isoFormatString: String) {
-    // }
+    convenience init(year:Int, month:Int, day:Int) {
+        self.init(year:year, month:month, day:day, hour:0, minute:0, second:0)
+    }
+    
+    convenience init(ISODatetimeString: String) {
+        var str = ISODatetimeString
+        if !ISODatetimeString.rangeOfString("+") {
+            str = str + "+0000"
+        }
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = SRDatetime.ISOFormat
+        
+        self.init(date: formatter.dateFromString(str))
+    }
     
     convenience init() {
         self.init(date: NSDate())
     }
 }
 
-var dt1 = SRDatetime()
-dt1.year
-dt1.month
-dt1.day
-dt1.hour
-dt1.minute
-dt1.second
-dt1.date
+SRDatetime(ISODatetimeString: "1979-04-20T11:29:53+9").date
