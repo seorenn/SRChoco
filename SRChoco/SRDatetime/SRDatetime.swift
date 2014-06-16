@@ -43,6 +43,25 @@ class SRDatetime {
         }
     }
     
+    var ISOFormatString: String {
+        set {
+            var str = newValue
+            if !newValue.rangeOfString("+") {
+                str = str + "+0000"
+            }
+            
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = SRDatetime.ISOFormat
+            
+            self.date = formatter.dateFromString(str)
+        }
+        get {
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = SRDatetime.ISOFormat
+            return formatter.stringFromDate(self.date)
+        }
+    }
+    
     init(year:Int, month:Int, day:Int, hour:Int, minute:Int, second:Int) {
         self.year = year
         self.month = month
@@ -56,20 +75,12 @@ class SRDatetime {
         self.date = date
     }
     
-    convenience init(year:Int, month:Int, day:Int) {
-        self.init(year:year, month:month, day:day, hour:0, minute:0, second:0)
+    init(ISODatetimeString: String) {
+        self.ISOFormatString = ISODatetimeString
     }
     
-    convenience init(ISODatetimeString: String) {
-        var str = ISODatetimeString
-        if !ISODatetimeString.rangeOfString("+") {
-            str = str + "+0000"
-        }
-        
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = SRDatetime.ISOFormat
-        
-        self.init(date: formatter.dateFromString(str))
+    convenience init(year:Int, month:Int, day:Int) {
+        self.init(year:year, month:month, day:day, hour:0, minute:0, second:0)
     }
     
     convenience init() {
