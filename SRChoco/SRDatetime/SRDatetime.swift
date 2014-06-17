@@ -1,3 +1,9 @@
+//
+// SRDatetime by Seorenn
+//
+
+#if os(iOS) || os(OSX)
+
 import Foundation
 
 class SRDatetime {
@@ -87,3 +93,11 @@ class SRDatetime {
         self.init(date: NSDate())
     }
 }
+
+// #else
+// NOTE: Not support #warning?
+// #warning SRDatetime supports iOS or OS X Platform only.
+    
+#endif
+
+// End of SRDatetime
