@@ -24,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A00388B195042910079D8D5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		8AAC8D08194ED4F1007BDE4D /* SRChocoDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SRChocoDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8D0C194ED4F1007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 				8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */,
 				8AAC8D0F194ED4F1007BDE4D /* Images.xcassets */,
 				8AAC8D0B194ED4F1007BDE4D /* Supporting Files */,
+				8A00388B195042910079D8D5 /* MyPlayground.playground */,
 			);
 			path = "SRChocoDemo-iOS";
 			sourceTree = "<group>";
@@ -398,6 +400,7 @@
 				8AAC8D21194ED4F1007BDE4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AAC8D22194ED4F1007BDE4D /* Build configuration list for PBXNativeTarget "SRChocoDemo-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +409,7 @@
 				8AAC8D24194ED4F1007BDE4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
