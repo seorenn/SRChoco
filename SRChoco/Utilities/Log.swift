@@ -37,9 +37,9 @@ class Log : DebugPrintable {
     }
     
     var debugDescription: String {
-    get {
-        return "<Log>"
-    }
+        get {
+            return "<Log>"
+        }
     }
     
     init() {
@@ -47,11 +47,3 @@ class Log : DebugPrintable {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     }
 }
-
-Log.debug("test")
-
-func test() {
-    Log.debug("from test")
-}
-
-test()

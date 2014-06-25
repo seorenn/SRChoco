@@ -15,6 +15,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
         // Insert code here to initialize your application
+        
+        // Commented because Xcode 6 Beta2 Compiler Crashing
+        //runDemoNSDateExtensions()
     }
 
     func applicationWillTerminate(aNotification: NSNotification?) {
