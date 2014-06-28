@@ -3,9 +3,10 @@ import Foundation
 class Log : DebugPrintable {
     let dateFormatter = NSDateFormatter()
     
-    let Debug = "DEBUG"
-    let Error = "ERROR"
-    let Info = "INFO"
+    // Currently, Swift not support class var or class static var
+    // class let Debug = "DEBUG"
+    // class let Error = "ERROR"
+    // class let Info = "INFO"
     
     struct staticInstance {
         static var instance: Log?
@@ -35,7 +36,11 @@ class Log : DebugPrintable {
     class func debug(message: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
         Log.sharedObject()?.logToConsole(message, type: "DEBUG", file: file, function: function, line: line)
     }
-    
+
+    class func error(message: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
+        Log.sharedObject()?.logToConsole(message, type: "ERROR", file: file, function: function, line: line)
+    }
+
     var debugDescription: String {
         get {
             return "<Log>"
