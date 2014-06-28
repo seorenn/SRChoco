@@ -15,6 +15,8 @@
 		8AAC8CEA194ED4CF007BDE4D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE8194ED4CF007BDE4D /* MainMenu.xib */; };
 		8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */; };
 		8AAC8D28194ED55D007BDE4D /* SRDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D27194ED55D007BDE4D /* SRDatetime.swift */; };
+		8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
+		8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
 		8AF47824195AC92E00960AE4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRChocoDemo_OSXTests.swift; sourceTree = "<group>"; };
 		8AAC8D27194ED55D007BDE4D /* SRDatetime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDatetime.swift; sourceTree = "<group>"; };
 		8AAC8D29194ED902007BDE4D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
+		8AC2B6EA195ECA1500459F3D /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
 		8AF47823195AC92E00960AE4 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +145,7 @@
 		8AAC8D25194ED55D007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8AC2B6E8195ECA1500459F3D /* SRFileManager */,
 				8A4DE92719515A3D00F65AEB /* Utilities */,
 				8AAC8D26194ED55D007BDE4D /* SRDatetime */,
 			);
@@ -154,6 +159,15 @@
 				8AAC8D27194ED55D007BDE4D /* SRDatetime.swift */,
 			);
 			path = SRDatetime;
+			sourceTree = "<group>";
+		};
+		8AC2B6E8195ECA1500459F3D /* SRFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */,
+				8AC2B6EA195ECA1500459F3D /* SRFile.swift */,
+			);
+			path = SRFileManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +273,8 @@
 				8AAC8D28194ED55D007BDE4D /* SRDatetime.swift in Sources */,
 				8AF47824195AC92E00960AE4 /* Log.swift in Sources */,
 				8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */,
+				8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */,
+				8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */,
 				8A23A2E019515C3C008CB833 /* DemoNSDateExtensions.swift in Sources */,
 				8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */,
 			);
