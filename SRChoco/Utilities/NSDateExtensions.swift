@@ -1,6 +1,7 @@
 import Foundation
 
 extension NSDate {
+    // NOTE: Crashes on Xcode 6 beta 2
     var dateComponents: (year:Int, month:Int, day:Int, hour:Int, minute:Int, second:Int) {
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: self)

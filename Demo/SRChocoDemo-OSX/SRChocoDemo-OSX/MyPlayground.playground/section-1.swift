@@ -1,23 +1,16 @@
-import Foundation
+import Cocoa
 
-var dict = Dictionary<String, String>()
-dict["a"] = "AAAA"
+//let apps = NSWorkspace.sharedWorkspace().runningApplications
+//
+//for obj: AnyObject in apps {
+//    let app = obj as NSRunningApplication
+//
+//    println("\(app.ownsMenuBar) - \(app)")
+//}
 
-let fm = NSFileManager.defaultManager()
-var error: NSError?
-let contents = fm.contentsOfDirectoryAtPath("/Users/hirenn", error: &error)
+//let flag: UInt32 = kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements
 
-for content: AnyObject in contents {
-    let name: String = content as String
-    let fullPath = "/Users/hirenn" + "/" + name
-    
-    var isDirectory = ObjCBool(0)
-    let exists = fm.fileExistsAtPath(fullPath, isDirectory: &isDirectory)
-    assert(exists)
+// crashes
+//let list = CGWindowListCopyWindowInfo(CGWindowListOption(kCGWindowListOptionOnScreenOnly), CGWindowID(0))
+//let windowInfo = list.takeRetainedValue().__conversion()
 
-    if isDirectory.getLogicValue() {
-        println("\(name) is directory")
-    } else {
-        println("\(name) is file")
-    }
-}
