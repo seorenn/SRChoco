@@ -18,6 +18,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Commented because Xcode 6 Beta2 Compiler Crashing
         //runDemoNSDateExtensions()
+        
+        let wm = SRWindowManager()
+        println("##### Processes:")
+        println(wm.windowProcesses())
     }
 
     func applicationWillTerminate(aNotification: NSNotification?) {
