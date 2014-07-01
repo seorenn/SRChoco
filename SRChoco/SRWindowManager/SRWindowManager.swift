@@ -12,23 +12,22 @@ class SRWindowManager {
 //        return apps as NSRunningApplication[]!
 //    }
 
-    // NOTE: Crashes on Xcode 6 beta 2
-    func windowProcesses() -> AnyObject[]! {
+    func windowProcesses() -> Array<NSRunningApplication?> {
+        var apps = Array<NSRunningApplication?>()
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
-        let list = CGWindowListCopyWindowInfo(CGWindowListOption(kCGWindowListOptionOnScreenOnly), CGWindowID(0))
+        let list = CGWindowListCopyWindowInfo(CGWindowListOption(kCGWindowListExcludeDesktopElements | kCGWindowListOptionOnScreenOnly), CGWindowID(0))
         let windowInfos = list.takeRetainedValue().__conversion() as Array
-        //for info: Dictionary! in windowInfos {
-        for info: AnyObject in windowInfos {
-            let infoDict = info as Dictionary<String, AnyObject>
-            let pidPtr = info[kCGWindowOwnerPID]
-            let pid = pidPtr as Int
-
-            println("test: pid = \(pid)\n\(infoDict)")
-            
-            //let app = NSRunningApplication(processIdentifier: pid)
+        for info in windowInfos as Array<Dictionary<String, AnyObject>> {
+            let pidPtr: AnyObject? = info[kCGWindowOwnerPID]
+            let pidInt = pidPtr as Int
+            let pid = CInt(pidInt)
+            let app: NSRunningApplication? = NSRunningApplication(processIdentifier: pid)
+            if app {
+                apps.append(app)
+            }
         }
-        return windowInfos
+        return apps
     }
 }
