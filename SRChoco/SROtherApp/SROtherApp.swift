@@ -18,6 +18,19 @@ func launchApp(appScheme: String) {
 // MARK: SROtherApp for OSX
 import Cocoa
 
+func getAppPath(bundleIdentifier: String) -> String {
+    return NSWorkspace.sharedWorkspace().absolutePathForAppBundleWithIdentifier(bundleIdentifier)
+}
+    
+func launchApp(appPath: String, arguments: String[]) -> NSTask! {
+    let task = NSTask()
+    task.launchPath = appPath
+    task.arguments = arguments
+
+    task.launch()
+    return task
+}
+    
 func launchApp(appPath: String) {
     NSWorkspace.sharedWorkspace().launchApplication(appPath)
 }
