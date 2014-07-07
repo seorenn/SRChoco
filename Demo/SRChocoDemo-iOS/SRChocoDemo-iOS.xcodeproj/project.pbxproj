@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A4DE92C19515A4500F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92B19515A4500F65AEB /* NSDateExtensions.swift */; };
+		8A6B4656196A883600E791B5 /* SRDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464B196A883600E791B5 /* SRDatetime.swift */; };
+		8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464D196A883600E791B5 /* SRDirectory.swift */; };
+		8A6B4658196A883600E791B5 /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464E196A883600E791B5 /* SRFile.swift */; };
+		8A6B4659196A883600E791B5 /* SROtherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4650196A883600E791B5 /* SROtherApp.swift */; };
+		8A6B465A196A883600E791B5 /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4652196A883600E791B5 /* SRWindowManager.swift */; };
+		8A6B465B196A883600E791B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4654196A883600E791B5 /* Log.swift */; };
+		8A6B465C196A883600E791B5 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4655196A883600E791B5 /* NSDateExtensions.swift */; };
 		8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */; };
 		8AAC8D10194ED4F1007BDE4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0F194ED4F1007BDE4D /* Images.xcassets */; };
 		8AAC8D1C194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D1B194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift */; };
-		8AAC8D2D194ED940007BDE4D /* SRDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D2C194ED940007BDE4D /* SRDatetime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,7 +31,13 @@
 
 /* Begin PBXFileReference section */
 		8A00388B195042910079D8D5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		8A4DE92B19515A4500F65AEB /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
+		8A6B464B196A883600E791B5 /* SRDatetime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDatetime.swift; sourceTree = "<group>"; };
+		8A6B464D196A883600E791B5 /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
+		8A6B464E196A883600E791B5 /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
+		8A6B4650196A883600E791B5 /* SROtherApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SROtherApp.swift; sourceTree = "<group>"; };
+		8A6B4652196A883600E791B5 /* SRWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWindowManager.swift; sourceTree = "<group>"; };
+		8A6B4654196A883600E791B5 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		8A6B4655196A883600E791B5 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		8AAC8D08194ED4F1007BDE4D /* SRChocoDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SRChocoDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8D0C194ED4F1007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,7 +45,6 @@
 		8AAC8D15194ED4F1007BDE4D /* SRChocoDemo-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRChocoDemo-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8D1A194ED4F1007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAC8D1B194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRChocoDemo_iOSTests.swift; sourceTree = "<group>"; };
-		8AAC8D2C194ED940007BDE4D /* SRDatetime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDatetime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +65,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8A4DE92A19515A4500F65AEB /* Utilities */ = {
+		8A6B464A196A883600E791B5 /* SRDatetime */ = {
 			isa = PBXGroup;
 			children = (
-				8A4DE92B19515A4500F65AEB /* NSDateExtensions.swift */,
+				8A6B464B196A883600E791B5 /* SRDatetime.swift */,
+			);
+			path = SRDatetime;
+			sourceTree = "<group>";
+		};
+		8A6B464C196A883600E791B5 /* SRFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				8A6B464D196A883600E791B5 /* SRDirectory.swift */,
+				8A6B464E196A883600E791B5 /* SRFile.swift */,
+			);
+			path = SRFileManager;
+			sourceTree = "<group>";
+		};
+		8A6B464F196A883600E791B5 /* SROtherApp */ = {
+			isa = PBXGroup;
+			children = (
+				8A6B4650196A883600E791B5 /* SROtherApp.swift */,
+			);
+			path = SROtherApp;
+			sourceTree = "<group>";
+		};
+		8A6B4651196A883600E791B5 /* SRWindowManager */ = {
+			isa = PBXGroup;
+			children = (
+				8A6B4652196A883600E791B5 /* SRWindowManager.swift */,
+			);
+			path = SRWindowManager;
+			sourceTree = "<group>";
+		};
+		8A6B4653196A883600E791B5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8A6B4654196A883600E791B5 /* Log.swift */,
+				8A6B4655196A883600E791B5 /* NSDateExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -121,19 +165,14 @@
 		8AAC8D2A194ED940007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
-				8A4DE92A19515A4500F65AEB /* Utilities */,
-				8AAC8D2B194ED940007BDE4D /* SRDatetime */,
+				8A6B464A196A883600E791B5 /* SRDatetime */,
+				8A6B464C196A883600E791B5 /* SRFileManager */,
+				8A6B464F196A883600E791B5 /* SROtherApp */,
+				8A6B4651196A883600E791B5 /* SRWindowManager */,
+				8A6B4653196A883600E791B5 /* Utilities */,
 			);
 			name = SRChoco;
 			path = ../../../SRChoco;
-			sourceTree = "<group>";
-		};
-		8AAC8D2B194ED940007BDE4D /* SRDatetime */ = {
-			isa = PBXGroup;
-			children = (
-				8AAC8D2C194ED940007BDE4D /* SRDatetime.swift */,
-			);
-			path = SRDatetime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,9 +272,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A6B465C196A883600E791B5 /* NSDateExtensions.swift in Sources */,
+				8A6B465A196A883600E791B5 /* SRWindowManager.swift in Sources */,
+				8A6B465B196A883600E791B5 /* Log.swift in Sources */,
+				8A6B4658196A883600E791B5 /* SRFile.swift in Sources */,
+				8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */,
 				8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */,
-				8AAC8D2D194ED940007BDE4D /* SRDatetime.swift in Sources */,
-				8A4DE92C19515A4500F65AEB /* NSDateExtensions.swift in Sources */,
+				8A6B4656196A883600E791B5 /* SRDatetime.swift in Sources */,
+				8A6B4659196A883600E791B5 /* SROtherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
