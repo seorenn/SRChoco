@@ -3,14 +3,14 @@ import Cocoa
 #endif
     
 class SRWindowManager {
-//    // NOTE: Crashes on Xcode 6 beta 2
-//    func processes() -> NSRunningApplication[]! {
-//        #if os(iOS)
-//            assert(false, "iOS(UIKit) does not support this feature")
-//        #endif
-//        let apps = NSWorkspace.sharedWorkspace().runningApplications
-//        return apps as NSRunningApplication[]!
-//    }
+    // NOTE: Crashes on Xcode 6 beta 2
+    func processes() -> [NSRunningApplication!] {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        let apps = NSWorkspace.sharedWorkspace().runningApplications
+        return apps as [NSRunningApplication!]
+    }
 
     func windowProcesses() -> Array<NSRunningApplication?> {
         var apps = Array<NSRunningApplication?>()

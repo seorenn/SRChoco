@@ -38,7 +38,8 @@ class SRDirectory: DebugPrintable {
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         let home = NSProcessInfo.processInfo().environment
-        return home["HOME"] as String
+        let homePath: AnyObject? = home["HOME"]
+        return homePath as String
     }
     
     init() {
@@ -65,7 +66,7 @@ class SRDirectory: DebugPrintable {
             let name: String = content as String
             let fullPath = self.path! + "/" + name
             
-            var isDirectory = ObjCBool(0)
+            var isDirectory: ObjCBool = false
             let exists = fm.fileExistsAtPath(fullPath, isDirectory: &isDirectory)
             assert(exists)
             

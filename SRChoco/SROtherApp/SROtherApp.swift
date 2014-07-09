@@ -22,7 +22,7 @@ func getAppPath(bundleIdentifier: String) -> String {
     return NSWorkspace.sharedWorkspace().absolutePathForAppBundleWithIdentifier(bundleIdentifier)
 }
     
-func launchApp(appPath: String, arguments: String[]) -> NSTask! {
+func launchApp(appPath: String, arguments: [String]) -> NSTask! {
     let task = NSTask()
     task.launchPath = appPath
     task.arguments = arguments
