@@ -19,6 +19,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Commented because Xcode 6 Beta2 Compiler Crashing
         //runDemoNSDateExtensions()
         
+        let demoFM = DemoSRFileManager()
+        demoFM.test()
+        
         let wm = SRWindowManager()
         wm.detectWindowChanging({ (app:NSRunningApplication!) -> Void in
             if app {

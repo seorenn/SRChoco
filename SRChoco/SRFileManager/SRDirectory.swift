@@ -6,6 +6,7 @@ class SRDirectory: DebugPrintable {
     var hidden = false
     var directories = Dictionary<String, SRDirectory>()
     var files = Dictionary<String, SRFile>()
+    var loaded = false
     
     class func pathForUserDomain(directory: NSSearchPathDirectory) -> String {
         let paths = NSSearchPathForDirectoriesInDomains(directory, NSSearchPathDomainMask.UserDomainMask, true)
@@ -78,9 +79,24 @@ class SRDirectory: DebugPrintable {
                 self.files[name] = file
             }
         }
+        
+        loaded = true
+    }
+    
+    func load(block: (() -> ())) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+            self.load()
+            dispatch_async(dispatch_get_main_queue()) {
+                block()
+            }
+        }
     }
     
     var debugDescription: String {
-        return "<SRDirectory \(self.path) containing \(self.directories.count) directories and \(self.files.count) files>"
+        if !loaded {
+            return "<SRDirectory [\(path)] (not loaded)"
+        } else {
+            return "<SRDirectory [\(path)] containing \(self.directories.count) directories and \(self.files.count) files>"
+        }
     }
 }

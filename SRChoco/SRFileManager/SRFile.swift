@@ -18,6 +18,6 @@ class SRFile: DebugPrintable {
     
     var debugDescription: String {
         // TODO
-        return "<SRFile>"
+        return "<SRFile: [\(path)]>"
     }
 }

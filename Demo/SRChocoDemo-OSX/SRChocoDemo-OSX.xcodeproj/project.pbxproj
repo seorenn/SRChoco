@@ -11,6 +11,8 @@
 		8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8A6B465F196A884400E791B5 /* SROtherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B465E196A884400E791B5 /* SROtherApp.swift */; };
 		8A8FEE171961435800C73F8C /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FEE161961435800C73F8C /* SRWindowManager.swift */; };
+		8A914C89197114FB002CE4A5 /* DemoSRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914C88197114FB002CE4A5 /* DemoSRWindowManager.swift */; };
+		8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */; };
 		8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE2194ED4CF007BDE4D /* main.swift */; };
 		8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE4194ED4CF007BDE4D /* AppDelegate.swift */; };
 		8AAC8CE7194ED4CF007BDE4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE6194ED4CF007BDE4D /* Images.xcassets */; };
@@ -37,6 +39,8 @@
 		8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		8A6B465E196A884400E791B5 /* SROtherApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SROtherApp.swift; sourceTree = "<group>"; };
 		8A8FEE161961435800C73F8C /* SRWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWindowManager.swift; sourceTree = "<group>"; };
+		8A914C88197114FB002CE4A5 /* DemoSRWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSRWindowManager.swift; sourceTree = "<group>"; };
+		8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSRFileManager.swift; sourceTree = "<group>"; };
 		8AAC8CDD194ED4CF007BDE4D /* SRChocoDemo-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SRChocoDemo-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8CE1194ED4CF007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAC8CE2194ED4CF007BDE4D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				8A23A2DF19515C3C008CB833 /* DemoNSDateExtensions.swift */,
+				8A914C88197114FB002CE4A5 /* DemoSRWindowManager.swift */,
+				8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */,
 			);
 			name = Demo;
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 				8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */,
 				8AAC8D28194ED55D007BDE4D /* SRDatetime.swift in Sources */,
 				8AF47824195AC92E00960AE4 /* Log.swift in Sources */,
+				8A914C89197114FB002CE4A5 /* DemoSRWindowManager.swift in Sources */,
 				8A8FEE171961435800C73F8C /* SRWindowManager.swift in Sources */,
 				8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */,
 				8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */,
@@ -301,6 +308,7 @@
 				8A23A2E019515C3C008CB833 /* DemoNSDateExtensions.swift in Sources */,
 				8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */,
 				8A6B465F196A884400E791B5 /* SROtherApp.swift in Sources */,
+				8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
