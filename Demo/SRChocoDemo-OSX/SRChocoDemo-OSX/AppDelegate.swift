@@ -20,8 +20,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //runDemoNSDateExtensions()
         
         let wm = SRWindowManager()
-        println("##### Processes:")
-        println(wm.windowProcesses())
+        wm.detectWindowChanging({ (app:NSRunningApplication!) -> Void in
+            if app {
+                println(app)
+            }
+        })
     }
 
     func applicationWillTerminate(aNotification: NSNotification?) {

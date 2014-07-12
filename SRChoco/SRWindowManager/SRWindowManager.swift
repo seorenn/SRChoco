@@ -1,4 +1,3 @@
-#if os(OSX)
 import Cocoa
     
 class SRWindowManager {
@@ -14,6 +13,11 @@ class SRWindowManager {
             StaticInstance.instance = SRWindowManager()
         }
         return StaticInstance.instance!
+    }
+    
+    deinit {
+        let nc = NSWorkspace.sharedWorkspace().notificationCenter
+        nc.removeObserver(self)
     }
     
     func processes() -> [NSRunningApplication!] {
@@ -37,13 +41,15 @@ class SRWindowManager {
         return apps
     }
     
-    func startCaptureWindowChanging() {
+    func detectWindowChanging(block:((NSRunningApplication!) -> Void)!) {
         if capturing {
             return
         }
     
-        let notificationCenter = NSWorkspace.sharedWorkspace().notificationCenter;
-        // TODO
+        let nc = NSWorkspace.sharedWorkspace().notificationCenter
+        nc.addObserverForName(NSWorkspaceDidActivateApplicationNotification, object:nil, queue:NSOperationQueue.mainQueue(), usingBlock: {(notification:NSNotification!) -> Void in
+            let app = notification?.userInfo[NSWorkspaceApplicationKey] as NSRunningApplication!
+            block(app)
+        })
     }
 }
-#endif
