@@ -19,6 +19,7 @@
 		8AAC8CEA194ED4CF007BDE4D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE8194ED4CF007BDE4D /* MainMenu.xib */; };
 		8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */; };
 		8AAC8D28194ED55D007BDE4D /* SRDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D27194ED55D007BDE4D /* SRDatetime.swift */; };
+		8AADB7F11971679700200861 /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AADB7F01971679700200861 /* SRInputSourceManager.swift */; };
 		8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
 		8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
 		8AF47824195AC92E00960AE4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
@@ -52,6 +53,7 @@
 		8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRChocoDemo_OSXTests.swift; sourceTree = "<group>"; };
 		8AAC8D27194ED55D007BDE4D /* SRDatetime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDatetime.swift; sourceTree = "<group>"; };
 		8AAC8D29194ED902007BDE4D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		8AADB7F01971679700200861 /* SRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRInputSourceManager.swift; sourceTree = "<group>"; };
 		8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
 		8AC2B6EA195ECA1500459F3D /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
 		8AF47823195AC92E00960AE4 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		8AAC8D25194ED55D007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8AADB7EF1971679700200861 /* SRInputSourceManager */,
 				8A6B465D196A884400E791B5 /* SROtherApp */,
 				8A8FEE151961435800C73F8C /* SRWindowManager */,
 				8AC2B6E8195ECA1500459F3D /* SRFileManager */,
@@ -187,6 +190,14 @@
 				8AAC8D27194ED55D007BDE4D /* SRDatetime.swift */,
 			);
 			path = SRDatetime;
+			sourceTree = "<group>";
+		};
+		8AADB7EF1971679700200861 /* SRInputSourceManager */ = {
+			isa = PBXGroup;
+			children = (
+				8AADB7F01971679700200861 /* SRInputSourceManager.swift */,
+			);
+			path = SRInputSourceManager;
 			sourceTree = "<group>";
 		};
 		8AC2B6E8195ECA1500459F3D /* SRFileManager */ = {
@@ -301,6 +312,7 @@
 				8AAC8D28194ED55D007BDE4D /* SRDatetime.swift in Sources */,
 				8AF47824195AC92E00960AE4 /* Log.swift in Sources */,
 				8A914C89197114FB002CE4A5 /* DemoSRWindowManager.swift in Sources */,
+				8AADB7F11971679700200861 /* SRInputSourceManager.swift in Sources */,
 				8A8FEE171961435800C73F8C /* SRWindowManager.swift in Sources */,
 				8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */,
 				8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */,
