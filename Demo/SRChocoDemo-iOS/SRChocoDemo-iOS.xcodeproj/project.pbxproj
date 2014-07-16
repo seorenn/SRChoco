@@ -14,6 +14,7 @@
 		8A6B465A196A883600E791B5 /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4652196A883600E791B5 /* SRWindowManager.swift */; };
 		8A6B465B196A883600E791B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4654196A883600E791B5 /* Log.swift */; };
 		8A6B465C196A883600E791B5 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4655196A883600E791B5 /* NSDateExtensions.swift */; };
+		8A7AC8D71976657F006028F4 /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D61976657F006028F4 /* SRDispatch.swift */; };
 		8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */; };
 		8AAC8D10194ED4F1007BDE4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0F194ED4F1007BDE4D /* Images.xcassets */; };
 		8AAC8D1C194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D1B194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift */; };
@@ -38,6 +39,7 @@
 		8A6B4652196A883600E791B5 /* SRWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWindowManager.swift; sourceTree = "<group>"; };
 		8A6B4654196A883600E791B5 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		8A6B4655196A883600E791B5 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
+		8A7AC8D61976657F006028F4 /* SRDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatch.swift; sourceTree = "<group>"; };
 		8AAC8D08194ED4F1007BDE4D /* SRChocoDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SRChocoDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8D0C194ED4F1007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		8A7AC8D51976657F006028F4 /* SRGCD */ = {
+			isa = PBXGroup;
+			children = (
+				8A7AC8D61976657F006028F4 /* SRDispatch.swift */,
+			);
+			path = SRGCD;
+			sourceTree = "<group>";
+		};
 		8AAC8CFF194ED4F1007BDE4D = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 		8AAC8D2A194ED940007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8A7AC8D51976657F006028F4 /* SRGCD */,
 				8A6B464A196A883600E791B5 /* SRDatetime */,
 				8A6B464C196A883600E791B5 /* SRFileManager */,
 				8A6B464F196A883600E791B5 /* SROtherApp */,
@@ -276,6 +287,7 @@
 				8A6B465A196A883600E791B5 /* SRWindowManager.swift in Sources */,
 				8A6B465B196A883600E791B5 /* Log.swift in Sources */,
 				8A6B4658196A883600E791B5 /* SRFile.swift in Sources */,
+				8A7AC8D71976657F006028F4 /* SRDispatch.swift in Sources */,
 				8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */,
 				8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */,
 				8A6B4656196A883600E791B5 /* SRDatetime.swift in Sources */,
