@@ -84,9 +84,9 @@ class SRDirectory: DebugPrintable {
     }
     
     func load(block: (() -> ())) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+        SRDispatch.backgroundTask() {
             self.load()
-            dispatch_async(dispatch_get_main_queue()) {
+            SRDispatch.mainTask() {
                 block()
             }
         }
