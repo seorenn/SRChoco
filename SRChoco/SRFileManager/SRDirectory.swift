@@ -63,6 +63,9 @@ class SRDirectory: DebugPrintable {
         var error: NSError?
         let contents = fm.contentsOfDirectoryAtPath(self.path, error: &error)
         
+        self.files.removeAll(keepCapacity: false)
+        self.directories.removeAll(keepCapacity: false)
+        
         for content: AnyObject in contents {
             let name: String = content as String
             let fullPath = self.path! + "/" + name
@@ -76,6 +79,7 @@ class SRDirectory: DebugPrintable {
                 self.directories[name] = dir
             } else {
                 let file = SRFile(fullPath)
+                file.parentDirectory = self
                 self.files[name] = file
             }
         }
@@ -90,6 +94,12 @@ class SRDirectory: DebugPrintable {
                 block()
             }
         }
+    }
+    
+    func createFile(path: String, data: NSData?) -> SRFile? {
+        // TODO
+        
+        return nil
     }
     
     var debugDescription: String {

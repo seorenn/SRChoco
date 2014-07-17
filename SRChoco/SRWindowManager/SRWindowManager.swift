@@ -1,3 +1,11 @@
+//
+// SRWindowManager.swift
+// @Seorenn
+//
+// This module work under OS X only
+//
+
+#if os(OSX)
 
 import Cocoa
     
@@ -54,3 +62,5 @@ class SRWindowManager {
         })
     }
 }
+    
+#endif  //#if os(OSX)

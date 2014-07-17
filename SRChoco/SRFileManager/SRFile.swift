@@ -2,10 +2,16 @@ import Foundation
 
 class SRFile: DebugPrintable {
     var path: String?
+    var parentDirectory: SRDirectory?
     var data: NSData? {
-        assert(path)
-        let fm = NSFileManager.defaultManager()
-        return fm.contentsAtPath(self.path)
+        get {
+            assert(path)
+            let fm = NSFileManager.defaultManager()
+            return fm.contentsAtPath(self.path)
+        }
+        set {
+            // TODO
+        }
     }
     var exists: Bool {
         assert(path)
@@ -19,6 +25,30 @@ class SRFile: DebugPrintable {
     
     init(_ path: String) {
         self.path = path
+    }
+    
+    func delete() -> Bool {
+        // TODO
+        
+        return false
+    }
+    
+    func moveToTrash() -> Bool {
+        #if os(iOS)
+            return false
+        #endif
+        
+        // TODO
+        
+        return false
+    }
+    
+    func moveTo(directory: SRDirectory) -> Bool {
+        assert(directory.path)
+        
+        // TODO
+        
+        return false
     }
     
     var debugDescription: String {
