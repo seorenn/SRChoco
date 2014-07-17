@@ -10,3 +10,5 @@ println("first = \(first)")
 
 
 //let IDPtr = TISGetInputSourceProperty(first, kTISPropertyInputSourceID)
+
+import Swift

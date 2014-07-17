@@ -3,9 +3,14 @@ import Foundation
 class SRFile: DebugPrintable {
     var path: String?
     var data: NSData? {
-        assert(self.path)
+        assert(path)
         let fm = NSFileManager.defaultManager()
         return fm.contentsAtPath(self.path)
+    }
+    var exists: Bool {
+        assert(path)
+        let fm = NSFileManager.defaultManager()
+        return fm.fileExistsAtPath(path)
     }
     
     init() {
@@ -17,7 +22,10 @@ class SRFile: DebugPrintable {
     }
     
     var debugDescription: String {
-        // TODO
         return "<SRFile: [\(path)]>"
     }
+}
+
+@infix func == (left: SRFile, right: SRFile) -> Bool {
+    return left.path == right.path
 }
