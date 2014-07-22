@@ -1,24 +1,8 @@
 
 import Cocoa
-import Carbon
-
-struct SRInputSource {
-    var inputSourceID: String?
-    var TISObject: TISInputSourceRef?
-    var name: String?
-    var iconURL: NSURL?
-    var enabled = false
-    
-    init(_ TISInputSourceObject: TISInputSourceRef) {
-        let enabledPtr = TISGetInputSourceProperty(TISInputSourceObject, kTISPropertyInputSourceIsEnabled)
-        self.enabled = enabledPtr.getLogicValue()
-        
-        let IDPtr = TISGetInputSourceProperty(TISInputSourceObject, kTISPropertyInputSourceID)
-    }
-}
 
 class SRInputSourceManager {
-    var inputSources: [TISInputSourceRef]?
+    let tis = SRTISBridge()
     
     struct StaticInstance {
         static var dispatchToken: dispatch_once_t = 0
@@ -33,13 +17,5 @@ class SRInputSourceManager {
     }
 
     init() {
-        self.inputSources = self.getInputSourceList()
-    }
-    
-    func getInputSourceList() -> [TISInputSourceRef] {
-        let iss = TISCreateInputSourceList(nil, Boolean(0))
-        let nsList = iss.takeRetainedValue() as NSArray
-        let list = nsList as [TISInputSourceRef]
-        return list
     }
 }

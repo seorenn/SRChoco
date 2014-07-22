@@ -19,6 +19,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Commented because Xcode 6 Beta 1, 2, 3 Compiler Crashing
         runTestNSDateExtensions()
         
+        runTestSRInputSourceManager()
+        
         let demoFM = DemoSRFileManager()
         demoFM.test()
         
