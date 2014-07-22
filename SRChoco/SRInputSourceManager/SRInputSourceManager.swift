@@ -1,5 +1,9 @@
 
+#if os(OSX)
 import Cocoa
+#else
+import Foundation
+#endif
 
 class SRInputSourceManager {
     let tis = SRTISBridge()

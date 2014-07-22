@@ -6,6 +6,8 @@
 //  Copyright (c) 2014년 Seorenn. All rights reserved.
 //
 
+//#if TARGET_OS_MAC
+
 #import "SRTISBridge.h"
 #import <Carbon/Carbon.h>
 
@@ -14,6 +16,7 @@
 - (id)initWithInputSource:(TISInputSourceRef)inputSource {
     self = [super init];
     if (self) {
+#if TARGET_OS_MAC
         CFBooleanRef enabledref = TISGetInputSourceProperty(inputSource, kTISPropertyInputSourceIsEnabled);
         BOOL enabled = CFBooleanGetValue(enabledref);
         
@@ -41,6 +44,7 @@
         _name = (__bridge NSString *)TISGetInputSourceProperty(inputSource, kTISPropertyLocalizedName);
         _iconURL = (__bridge NSURL *)urlRef;
         _inputSourceID = (__bridge NSString *)imid;
+#endif
     }
     
     return self;
@@ -66,19 +70,29 @@
 }
 
 - (void)makeInputSources {
+#if TARGET_OS_MAC
     NSArray *tisList = (__bridge NSArray *)TISCreateInputSourceList(NULL, false);
     inputSources = tisList;
+#endif
 }
 
 - (NSInteger)count {
+#if TARGET_OS_MAC
     return inputSources.count;
+#else
+    return 0;
+#endif
 }
 
 - (SRTISInfo *)infoAtIndex:(NSInteger)index {
+#if TARGET_OS_MAC
     TISInputSourceRef inputSource = (__bridge TISInputSourceRef)[inputSources objectAtIndex:index];
-    
     return [[SRTISInfo alloc] initWithInputSource:inputSource];
+#else
+    return nil;
+#endif
 }
 
-
 @end
+
+//#endif  // TARGET_OS_MAC

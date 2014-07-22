@@ -6,6 +6,8 @@
 //  Copyright (c) 2014년 Seorenn. All rights reserved.
 //
 
+//#if TARGET_OS_MAC
+
 #import <Foundation/Foundation.h>
 
 @interface SRTISInfo : NSObject
@@ -23,3 +25,5 @@
 - (SRTISInfo *)infoAtIndex:(NSInteger)index;
 
 @end
+
+//#endif  // TARGET_OS_MAC
