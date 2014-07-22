@@ -10,14 +10,14 @@ import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
                             
-    @IBOutlet var window: NSWindow
+    @IBOutlet var window: NSWindow?
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
         // Insert code here to initialize your application
         
-        // Commented because Xcode 6 Beta2 Compiler Crashing
-        //runDemoNSDateExtensions()
+        // Commented because Xcode 6 Beta 1, 2, 3 Compiler Crashing
+        runTestNSDateExtensions()
         
         let demoFM = DemoSRFileManager()
         demoFM.test()

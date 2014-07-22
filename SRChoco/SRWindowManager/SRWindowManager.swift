@@ -38,7 +38,7 @@ class SRWindowManager {
         var apps = Array<NSRunningApplication?>()
         let list = CGWindowListCopyWindowInfo(CGWindowListOption(kCGWindowListExcludeDesktopElements | kCGWindowListOptionOnScreenOnly), CGWindowID(0))
         let windowInfos = list.takeRetainedValue().__conversion() as Array
-        for info in windowInfos as Array<Dictionary<String, AnyObject>> {
+        for info in windowInfos as Array<Dictionary<NSString, AnyObject>> {
             let pidPtr: AnyObject? = info[kCGWindowOwnerPID]
             let pidInt = pidPtr as Int
             let pid = CInt(pidInt)
