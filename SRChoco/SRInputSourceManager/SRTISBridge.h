@@ -21,8 +21,11 @@
 @interface SRTISBridge : NSObject
 
 @property (nonatomic, readonly) NSInteger count;
+@property (nonatomic, readonly) SRTISInfo *currentInputSource;
 
+- (void)refresh;
 - (SRTISInfo *)infoAtIndex:(NSInteger)index;
+- (void)switchTISAtIndex:(NSInteger)index;
 
 @end
 

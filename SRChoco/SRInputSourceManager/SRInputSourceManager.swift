@@ -5,8 +5,35 @@ import Cocoa
 import Foundation
 #endif
 
+class SRInputSource {
+    var selectable: Bool?
+    var name: String?
+    var inputSourceID: String?
+    var iconURL: NSURL?
+    var index: Int?
+    
+    init(_ TISInfo: SRTISInfo?, _ TISIndex: Int) {
+        selectable = TISInfo?.selectable
+        name = TISInfo?.name
+        inputSourceID = TISInfo?.inputSourceID
+        iconURL = TISInfo?.iconURL
+        index = TISIndex
+    }
+}
+
 class SRInputSourceManager {
-    let tis = SRTISBridge()
+    private let tis = SRTISBridge()
+    var inputSources: [SRInputSource] = []
+    
+    var currentInputSourceIndex: Int? {
+        let isinfo = self.tis.currentInputSource
+        for inputSource: SRInputSource in self.inputSources {
+            if isinfo.name == inputSource.name {
+                return inputSource.index
+            }
+        }
+        return nil
+    }
     
     struct StaticInstance {
         static var dispatchToken: dispatch_once_t = 0
@@ -21,5 +48,19 @@ class SRInputSourceManager {
     }
 
     init() {
+        self.refresh()
+    }
+    
+    func refresh() {
+        let count = tis.count
+        
+        for i in 0..<tis.count {
+            let obj = SRInputSource(tis.infoAtIndex(i), i)
+            inputSources.append(obj)
+        }
+    }
+    
+    func switchInputSource(inputSource: SRInputSource) {
+        self.tis.switchTISAtIndex(inputSource.index!)
     }
 }

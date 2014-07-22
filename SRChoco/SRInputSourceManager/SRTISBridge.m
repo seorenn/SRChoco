@@ -69,6 +69,11 @@
     return self;
 }
 
+- (void)refresh {
+    inputSources = nil;
+    [self makeInputSources];
+}
+
 - (void)makeInputSources {
 #if TARGET_OS_MAC
     NSArray *tisList = (__bridge NSArray *)TISCreateInputSourceList(NULL, false);
@@ -84,14 +89,30 @@
 #endif
 }
 
+- (SRTISInfo *)currentInputSource {
+    TISInputSourceRef current = TISCopyCurrentKeyboardInputSource();
+    return [[SRTISInfo alloc] initWithInputSource:current];
+}
+
 - (SRTISInfo *)infoAtIndex:(NSInteger)index {
 #if TARGET_OS_MAC
     TISInputSourceRef inputSource = (__bridge TISInputSourceRef)[inputSources objectAtIndex:index];
+    NSAssert(inputSource, @"Out of index or no data");
     return [[SRTISInfo alloc] initWithInputSource:inputSource];
 #else
     return nil;
 #endif
 }
+
+- (void)switchTISAtIndex:(NSInteger)index {
+#if TARGET_OS_MAC
+    TISInputSourceRef inputSource = (__bridge TISInputSourceRef)[inputSources objectAtIndex:index];
+    if (inputSource) {
+        TISSelectInputSource(inputSource);
+    }
+#endif
+}
+
 
 @end
 
