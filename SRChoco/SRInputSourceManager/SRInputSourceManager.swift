@@ -5,14 +5,14 @@ import Cocoa
 import Foundation
 #endif
 
-class SRInputSource {
+public class SRInputSource {
     var selectable: Bool?
     var name: String?
     var inputSourceID: String?
     var iconURL: NSURL?
     var index: Int?
     
-    init(_ TISInfo: SRTISInfo?, _ TISIndex: Int) {
+    private init(_ TISInfo: SRTISInfo?, _ TISIndex: Int) {
         selectable = TISInfo?.selectable
         name = TISInfo?.name
         inputSourceID = TISInfo?.inputSourceID
@@ -21,7 +21,7 @@ class SRInputSource {
     }
 }
 
-class SRInputSourceManager {
+public class SRInputSourceManager {
     private let tis = SRTISBridge()
     var inputSources: [SRInputSource] = []
     
