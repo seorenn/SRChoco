@@ -16,6 +16,14 @@ import Cocoa
 
 //let IDPtr = TISGetInputSourceProperty(first, kTISPropertyInputSourceID)
 
-import Swift
 
-let tis = SRTISBridge()
+let src = "this is test string for test"
+let pat = "(test)"
+
+var error: NSError?
+let re = NSRegularExpression(pattern: pat, options: .CaseInsensitive, error: &error)
+
+let matches = re.matchesInString(src, options: nil, range: NSMakeRange(0, countElements(src)))
+matches.count
+
+let conv = re.stringByReplacingMatchesInString(src, options: nil, range: NSMakeRange(0, countElements(src)), withTemplate: "->$1<-")

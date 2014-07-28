@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B7A11985F06A004F3168 /* SRRegexp.swift */; };
 		8A6B4656196A883600E791B5 /* SRDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464B196A883600E791B5 /* SRDatetime.swift */; };
 		8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464D196A883600E791B5 /* SRDirectory.swift */; };
 		8A6B4658196A883600E791B5 /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464E196A883600E791B5 /* SRFile.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		8A00388B195042910079D8D5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		8A26B7A11985F06A004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
 		8A6B464B196A883600E791B5 /* SRDatetime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDatetime.swift; sourceTree = "<group>"; };
 		8A6B464D196A883600E791B5 /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
 		8A6B464E196A883600E791B5 /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A26B7A01985F06A004F3168 /* SRRegexp */ = {
+			isa = PBXGroup;
+			children = (
+				8A26B7A11985F06A004F3168 /* SRRegexp.swift */,
+			);
+			path = SRRegexp;
+			sourceTree = "<group>";
+		};
 		8A6B464A196A883600E791B5 /* SRDatetime */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +185,7 @@
 		8AAC8D2A194ED940007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8A26B7A01985F06A004F3168 /* SRRegexp */,
 				8A7AC8D51976657F006028F4 /* SRGCD */,
 				8A6B464A196A883600E791B5 /* SRDatetime */,
 				8A6B464C196A883600E791B5 /* SRFileManager */,
@@ -290,6 +301,7 @@
 				8A7AC8D71976657F006028F4 /* SRDispatch.swift in Sources */,
 				8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */,
 				8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */,
+				8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */,
 				8A6B4656196A883600E791B5 /* SRDatetime.swift in Sources */,
 				8A6B4659196A883600E791B5 /* SROtherApp.swift in Sources */,
 			);
