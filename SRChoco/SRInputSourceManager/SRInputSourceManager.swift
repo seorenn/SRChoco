@@ -26,13 +26,17 @@ public class SRInputSourceManager {
     var inputSources: [SRInputSource] = []
     
     var currentInputSourceIndex: Int? {
-        let isinfo = self.tis.currentInputSource
-        for inputSource: SRInputSource in self.inputSources {
-            if isinfo.name == inputSource.name {
-                return inputSource.index
+        #if os(OSX)
+            let isinfo = self.tis.currentInputSource
+            for inputSource: SRInputSource in self.inputSources {
+                if isinfo.name == inputSource.name {
+                    return inputSource.index
+                }
             }
-        }
-        return nil
+            return nil
+        #else
+            return nil
+        #endif
     }
     
     struct StaticInstance {
@@ -52,15 +56,21 @@ public class SRInputSourceManager {
     }
     
     func refresh() {
-        let count = tis.count
+        #if os(OSX)
+            tis.refresh()
+            let count = tis.count
+            inputSources = []
         
-        for i in 0..<tis.count {
-            let obj = SRInputSource(tis.infoAtIndex(i), i)
-            inputSources.append(obj)
-        }
+            for i in 0..<tis.count {
+                let obj = SRInputSource(tis.infoAtIndex(i), i)
+                inputSources.append(obj)
+            }
+        #endif
     }
     
     func switchInputSource(inputSource: SRInputSource) {
-        self.tis.switchTISAtIndex(inputSource.index!)
+        #if os(OSX)
+            self.tis.switchTISAtIndex(inputSource.index!)
+        #endif
     }
 }
