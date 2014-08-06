@@ -30,27 +30,6 @@ let conv = re.stringByReplacingMatchesInString(src, options: nil, range: NSMakeR
 
 let now = NSDate()
 
-let calendar = NSCalendar.currentCalendar()
-let components = NSDateComponents()
-components.year = 2014
-components.month = 8
-components.day = 10
-components.hour = 12
-components.minute = 12
-components.second = 53
-
-let future = calendar.dateFromComponents(components)
-let result = now.compare(future)
-if result == NSComparisonResult.OrderedAscending {
-    println("ASC")
-} else if result == NSComparisonResult.OrderedDescending {
-    println("DEC")
-} else {
-    println("==")
-}
-
-func > (left: NSDate, right: NSDate) -> Bool {
-    return left.compare(right) == NSComparisonResult.OrderedDescending
-}
-future > now
-
+let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+let range = calendar.rangeOfUnit(NSCalendarUnit.WeekCalendarUnit, inUnit: NSCalendarUnit.MonthCalendarUnit, forDate: now)
+range.length

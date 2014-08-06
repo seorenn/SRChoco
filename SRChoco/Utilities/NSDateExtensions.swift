@@ -16,6 +16,28 @@ extension NSDate {
         return (year: components.year, month: components.month, day: components.day, hour: components.hour, minute: components.minute, second: components.second)
     }
     
+    // 1 based position index (based self's week)
+    var weekday: Int {
+        let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        let components = calendar.components(NSCalendarUnit.WeekdayCalendarUnit, fromDate: self)
+        return components.weekday
+    }
+    
+    // total count of weeks (based self's month)
+    var countOfWeeks: Int {
+        let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        let range = calendar.rangeOfUnit(NSCalendarUnit.WeekCalendarUnit, inUnit: NSCalendarUnit.MonthCalendarUnit, forDate: self)
+        return range.length
+    }
+    
+    // 1 based position index (based self's month)
+    var weekOfMonth: Int {
+        let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        let components = calendar.components(NSCalendarUnit.WeekOfMonthCalendarUnit, fromDate: self)
+        return components.weekOfMonth
+    }
+    
+    // localized day name: eg. "Monday", "월요일", ...
     var dayName: String {
         let f = NSDateFormatter()
         f.formatterBehavior = NSDateFormatterBehavior.Behavior10_4
