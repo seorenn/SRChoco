@@ -9,7 +9,9 @@
 //#if TARGET_OS_MAC
 
 #import "SRTISBridge.h"
+#if TARGET_OS_MAC
 #import <Carbon/Carbon.h>
+#endif
 
 @implementation SRTISInfo
 
