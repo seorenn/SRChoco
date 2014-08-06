@@ -27,3 +27,9 @@ let matches = re.matchesInString(src, options: nil, range: NSMakeRange(0, countE
 matches.count
 
 let conv = re.stringByReplacingMatchesInString(src, options: nil, range: NSMakeRange(0, countElements(src)), withTemplate: "->$1<-")
+
+let now = NSDate()
+let f = NSDateFormatter()
+f.formatterBehavior = NSDateFormatterBehavior.Behavior10_4
+f.dateFormat = "EEEE"
+println(f.stringFromDate(now))
