@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A23A2E019515C3C008CB833 /* DemoNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A23A2DF19515C3C008CB833 /* DemoNSDateExtensions.swift */; };
 		8A26B79F1985F062004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B79E1985F062004F3168 /* SRRegexp.swift */; };
 		8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
-		8A682E4B1992289200432E13 /* NSDateExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* NSDateExtensionsTest.swift */; };
+		8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */; };
 		8A6B465F196A884400E791B5 /* SROtherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B465E196A884400E791B5 /* SROtherApp.swift */; };
 		8A7AC8D419766575006028F4 /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D319766575006028F4 /* SRDispatch.swift */; };
 		8A8FEE171961435800C73F8C /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FEE161961435800C73F8C /* SRWindowManager.swift */; };
@@ -41,10 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8A23A2DF19515C3C008CB833 /* DemoNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoNSDateExtensions.swift; path = ../../Common/DemoNSDateExtensions.swift; sourceTree = "<group>"; };
 		8A26B79E1985F062004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
 		8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
-		8A682E4A1992289200432E13 /* NSDateExtensionsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensionsTest.swift; sourceTree = "<group>"; };
+		8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
 		8A6B465E196A884400E791B5 /* SROtherApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SROtherApp.swift; sourceTree = "<group>"; };
 		8A7AC8D319766575006028F4 /* SRDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatch.swift; sourceTree = "<group>"; };
 		8A8FEE161961435800C73F8C /* SRWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWindowManager.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 		8A23A2DE19515C2F008CB833 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				8A23A2DF19515C3C008CB833 /* DemoNSDateExtensions.swift */,
 				8A914C88197114FB002CE4A5 /* DemoSRWindowManager.swift */,
 				8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */,
 				8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */,
@@ -186,9 +183,9 @@
 		8AAC8CF2194ED4CF007BDE4D /* SRChocoDemo-OSXTests */ = {
 			isa = PBXGroup;
 			children = (
-				8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */,
 				8AAC8CF3194ED4CF007BDE4D /* Supporting Files */,
-				8A682E4A1992289200432E13 /* NSDateExtensionsTest.swift */,
+				8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */,
+				8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */,
 			);
 			path = "SRChocoDemo-OSXTests";
 			sourceTree = "<group>";
@@ -354,7 +351,6 @@
 				8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */,
 				8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */,
 				8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */,
-				8A23A2E019515C3C008CB833 /* DemoNSDateExtensions.swift in Sources */,
 				8A7AC8D419766575006028F4 /* SRDispatch.swift in Sources */,
 				8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */,
 				8A6B465F196A884400E791B5 /* SROtherApp.swift in Sources */,
@@ -367,7 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A682E4B1992289200432E13 /* NSDateExtensionsTest.swift in Sources */,
+				8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */,
 				8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

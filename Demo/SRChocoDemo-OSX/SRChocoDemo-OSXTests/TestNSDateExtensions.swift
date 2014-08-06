@@ -10,7 +10,7 @@ import Cocoa
 import XCTest
 import SRChocoDemo_OSX
 
-class NSDateExtensionsTest: XCTestCase {
+class TestNSDateExtensions: XCTestCase {
 
     override func setUp() {
         super.setUp()
