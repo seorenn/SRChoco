@@ -1,5 +1,7 @@
 import Foundation
 
+private let DefaultISOFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
+
 // MARK: - NSDate Extensions
 
 extension NSDate {
@@ -37,7 +39,7 @@ extension NSDate {
         return components.weekOfMonth
     }
     
-    // localized day name: eg. "Monday", "월요일", ...
+    // localized name of day of week: eg. "Monday", "월요일", ...
     var dayName: String {
         let f = NSDateFormatter()
         f.formatterBehavior = NSDateFormatterBehavior.Behavior10_4
