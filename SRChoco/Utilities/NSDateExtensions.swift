@@ -1,9 +1,18 @@
 import Foundation
 
+// MARK: - NSDate Extensions
+
 extension NSDate {
-    var dateComponents: (year:Int, month:Int, day:Int, hour:Int, minute:Int, second:Int) {
+    var dateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) {
         let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
         let components = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: self)
+        return (year: components.year, month: components.month, day: components.day, hour: components.hour, minute: components.minute, second: components.second)
+    }
+    
+    var UTCDateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) {
+        let utccal = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        utccal.timeZone = NSTimeZone(name: "UTC")
+        let components = utccal.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: self)
         return (year: components.year, month: components.month, day: components.day, hour: components.hour, minute: components.minute, second: components.second)
     }
     
@@ -30,4 +39,31 @@ extension NSDate {
             return 0
         }
     }
+}
+
+// MARK: - NSDate Comparison Operators
+// NOTE: Future is bigger! :-)
+
+func == (left: NSDate, right: NSDate) -> Bool {
+    return left.compare(right) == NSComparisonResult.OrderedSame
+}
+
+func > (left: NSDate, right: NSDate) -> Bool {
+    return left.compare(right) == NSComparisonResult.OrderedDescending
+}
+
+func >= (left: NSDate, right: NSDate) -> Bool {
+    let result = left.compare(right)
+    return (result == NSComparisonResult.OrderedDescending || result == NSComparisonResult.OrderedSame)
+    
+}
+
+func < (left: NSDate, right: NSDate) -> Bool {
+    return left.compare(right) == NSComparisonResult.OrderedAscending
+}
+
+func <= (left: NSDate, right: NSDate) -> Bool {
+    let result = left.compare(right)
+    return (result == NSComparisonResult.OrderedAscending || result == NSComparisonResult.OrderedSame)
+    
 }
