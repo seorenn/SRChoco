@@ -50,7 +50,7 @@ class SRDatetime {
     var ISOFormatString: String {
         set {
             var str = newValue
-            if !newValue.rangeOfString("+") {
+            if newValue.rangeOfString("+") == nil {
                 str = str + "+0000"
             }
             

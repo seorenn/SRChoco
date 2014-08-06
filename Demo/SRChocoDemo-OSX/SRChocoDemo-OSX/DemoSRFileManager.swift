@@ -36,7 +36,7 @@ class DemoSRFileManager {
             println("\(name) \(dir)")
         }
         
-        if desktop {
+        if desktop != nil {
             println("Desktop Lazy Loading --------------")
             desktop?.load() {
                 println(desktop)

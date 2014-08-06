@@ -58,7 +58,7 @@ class SRDirectory: DebugPrintable {
     }
     
     func load() {
-        assert(self.path)
+        assert(self.path != nil)
         let fm = NSFileManager.defaultManager()
         var error: NSError?
         let contents = fm.contentsOfDirectoryAtPath(self.path, error: &error)
@@ -74,7 +74,7 @@ class SRDirectory: DebugPrintable {
             let exists = fm.fileExistsAtPath(fullPath, isDirectory: &isDirectory)
             assert(exists)
             
-            if isDirectory.getLogicValue() {
+            if isDirectory.boolValue {
                 let dir = SRDirectory(fullPath)
                 self.directories[name] = dir
             } else {

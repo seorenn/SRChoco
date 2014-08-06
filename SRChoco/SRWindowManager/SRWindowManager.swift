@@ -43,7 +43,7 @@ class SRWindowManager {
             let pidInt = pidPtr as Int
             let pid = CInt(pidInt)
             let app: NSRunningApplication? = NSRunningApplication(processIdentifier: pid)
-            if app {
+            if app != nil {
                 apps.append(app)
             }
         }

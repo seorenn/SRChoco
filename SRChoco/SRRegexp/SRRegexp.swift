@@ -31,7 +31,7 @@ struct SRRegexp {
     
     func test(string: String) -> Bool {
         let matches = self.find(string)
-        return (matches && matches?.count > 0)
+        return (matches != nil && matches?.count > 0)
     }
     
     func replace(string: String, template: String) -> String {
