@@ -4,7 +4,7 @@ private let DefaultISOFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
 
 // MARK: - NSDate Extensions
 
-extension NSDate {
+public extension NSDate {
     var dateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) {
         let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
         let components = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: self)
@@ -85,25 +85,25 @@ extension NSDate {
 // MARK: - NSDate Comparison Operators
 // NOTE: Future is bigger! :-)
 
-func == (left: NSDate, right: NSDate) -> Bool {
+public func == (left: NSDate, right: NSDate) -> Bool {
     return left.compare(right) == NSComparisonResult.OrderedSame
 }
 
-func > (left: NSDate, right: NSDate) -> Bool {
+public func > (left: NSDate, right: NSDate) -> Bool {
     return left.compare(right) == NSComparisonResult.OrderedDescending
 }
 
-func >= (left: NSDate, right: NSDate) -> Bool {
+public func >= (left: NSDate, right: NSDate) -> Bool {
     let result = left.compare(right)
     return (result == NSComparisonResult.OrderedDescending || result == NSComparisonResult.OrderedSame)
     
 }
 
-func < (left: NSDate, right: NSDate) -> Bool {
+public func < (left: NSDate, right: NSDate) -> Bool {
     return left.compare(right) == NSComparisonResult.OrderedAscending
 }
 
-func <= (left: NSDate, right: NSDate) -> Bool {
+public func <= (left: NSDate, right: NSDate) -> Bool {
     let result = left.compare(right)
     return (result == NSComparisonResult.OrderedAscending || result == NSComparisonResult.OrderedSame)
     
