@@ -61,6 +61,23 @@ extension NSDate {
             return 0
         }
     }
+    
+    class func generateWithYear(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) -> NSDate {
+        let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        let components = NSDateComponents()
+        components.year = year
+        components.month = month
+        components.day = day
+        components.hour = hour
+        components.minute = minute
+        components.second = second
+        
+        return calendar.dateFromComponents(components)
+    }
+    
+    class func generateWithYear(year: Int, month: Int, day: Int) -> NSDate {
+        return NSDate.generateWithYear(year, month: month, day: day, hour: 0, minute: 0, second: 0)
+    }
 }
 
 // MARK: - NSDate Comparison Operators
