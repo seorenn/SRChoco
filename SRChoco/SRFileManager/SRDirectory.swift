@@ -1,6 +1,6 @@
 import Foundation
 
-class SRDirectory: DebugPrintable {
+class SRDirectory: DebugPrintable, Equatable {
     var path: String?
     var name: String?
     var hidden = false
@@ -110,3 +110,12 @@ class SRDirectory: DebugPrintable {
         }
     }
 }
+
+func == (left: SRDirectory, right: SRDirectory) -> Bool {
+    if left.path != nil && right.path != nil && left.path == right.path {
+        return true
+    }
+    return false
+}
+
+// End of SRDirectory.swift
