@@ -1,11 +1,11 @@
 import Foundation
 
-struct SRRegexp {
+public struct SRRegexp {
     private let re: NSRegularExpression
     
     // MARK: Initializers
     
-    init(_ pattern: String, ignoreCase: Bool) {
+    public init(_ pattern: String, ignoreCase: Bool) {
         var error: NSError?
         var options = NSRegularExpressionOptions(0)
         if ignoreCase { options = .CaseInsensitive }
@@ -13,13 +13,13 @@ struct SRRegexp {
         self.re = NSRegularExpression(pattern: pattern, options: options, error: &error)
     }
     
-    init(pattern: String) {
+    public init(_ pattern: String) {
         self.init(pattern, ignoreCase: true)
     }
     
     // MARK: Functions
     
-    func find(string: String) -> [NSTextCheckingResult]? {
+    public func find(string: String) -> [NSTextCheckingResult]? {
         let matches = self.re.matchesInString(string, options: nil, range: NSMakeRange(0, countElements(string)))
         
         if matches {
@@ -29,12 +29,12 @@ struct SRRegexp {
         }
     }
     
-    func test(string: String) -> Bool {
+    public func test(string: String) -> Bool {
         let matches = self.find(string)
         return (matches != nil && matches?.count > 0)
     }
     
-    func replace(string: String, template: String) -> String {
+    public func replace(string: String, template: String) -> String {
         return re.stringByReplacingMatchesInString(string, options: nil, range: NSMakeRange(0, countElements(string)), withTemplate: template)
     }
 }
