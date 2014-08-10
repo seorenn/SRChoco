@@ -25,6 +25,8 @@
 		8AADB7F11971679700200861 /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AADB7F01971679700200861 /* SRInputSourceManager.swift */; };
 		8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
 		8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
+		8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
+		8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */; };
 		8ACF2771197E59C200B48971 /* SRTISBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF2770197E59C200B48971 /* SRTISBridge.m */; };
 		8ACF2774197E607100B48971 /* DemoSRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */; };
 		8AF47824195AC92E00960AE4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
@@ -64,6 +66,8 @@
 		8AADB7F01971679700200861 /* SRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRInputSourceManager.swift; sourceTree = "<group>"; };
 		8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
 		8AC2B6EA195ECA1500459F3D /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
+		8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStringExtensions.swift; sourceTree = "<group>"; };
 		8ACF276F197E59C200B48971 /* SRTISBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTISBridge.h; sourceTree = "<group>"; };
 		8ACF2770197E59C200B48971 /* SRTISBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTISBridge.m; sourceTree = "<group>"; };
 		8ACF2772197E5FC600B48971 /* SRChocoDemo-OSX-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-OSX-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		8A4DE92719515A3D00F65AEB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */,
 				8AF47823195AC92E00960AE4 /* Log.swift */,
 				8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */,
 			);
@@ -189,6 +194,7 @@
 				8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */,
 				8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */,
 				8A682E4E1993764800432E13 /* TestSRRegexp.swift */,
+				8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */,
 			);
 			path = "SRChocoDemo-OSXTests";
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 				8A6B465F196A884400E791B5 /* SROtherApp.swift in Sources */,
 				8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */,
 				8ACF2774197E607100B48971 /* DemoSRInputSourceManager.swift in Sources */,
+				8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */,
 				8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */,
 				8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */,
 				8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */,
