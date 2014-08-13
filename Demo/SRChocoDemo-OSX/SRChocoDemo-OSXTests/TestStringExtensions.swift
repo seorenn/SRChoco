@@ -30,16 +30,17 @@ class TestStringExtensions: XCTestCase {
         XCTAssert(strC == "hi")
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testTrim() {
+        let strA = "   A string   "
+        XCTAssertEqual(strA.trimmedString(), "A string")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testContain() {
+        let str = "This is test string by test contain"
+        XCTAssertTrue(str.containString("test"))
+        XCTAssertFalse(str.containString("TEST"))
+        
+        XCTAssertTrue(str.containStrings(["is", "test", "string", "aaa"]))
+        XCTAssertFalse(str.containStrings(["aaa", "bbb"]))
     }
-
 }
