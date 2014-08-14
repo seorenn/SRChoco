@@ -1,6 +1,6 @@
 import Foundation
 
-public extension String {
+extension String {
     // substring with range
     subscript(range: Range<Int>) -> String {
         let start = advance(startIndex, range.startIndex, endIndex)
