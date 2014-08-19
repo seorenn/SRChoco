@@ -56,8 +56,9 @@ class SRWindowManager {
         }
     
         let nc = NSWorkspace.sharedWorkspace().notificationCenter
-        nc.addObserverForName(NSWorkspaceDidActivateApplicationNotification, object:nil, queue:NSOperationQueue.mainQueue(), usingBlock: {(notification:NSNotification!) -> Void in
-            let app = notification?.userInfo[NSWorkspaceApplicationKey] as NSRunningApplication!
+        nc.addObserverForName(NSWorkspaceDidActivateApplicationNotification, object:nil, queue:NSOperationQueue.mainQueue(), usingBlock: {(notification: NSNotification!) -> Void in
+            //let key: NSObject = NSWorkspaceApplicationKey as NSObject
+            let app = notification!.userInfo![NSWorkspaceApplicationKey] as NSRunningApplication!
             block(app)
         })
     }

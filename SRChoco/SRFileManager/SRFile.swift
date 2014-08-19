@@ -7,7 +7,7 @@ class SRFile: DebugPrintable, Equatable {
         get {
             assert(path != nil)
             let fm = NSFileManager.defaultManager()
-            return fm.contentsAtPath(self.path)
+            return fm.contentsAtPath(self.path!)
         }
         set {
             // TODO
@@ -16,7 +16,7 @@ class SRFile: DebugPrintable, Equatable {
     var exists: Bool {
         assert(path != nil)
         let fm = NSFileManager.defaultManager()
-        return fm.fileExistsAtPath(path)
+        return fm.fileExistsAtPath(path!)
     }
     
     init() {

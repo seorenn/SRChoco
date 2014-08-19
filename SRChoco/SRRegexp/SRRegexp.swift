@@ -22,7 +22,7 @@ public struct SRRegexp {
     public func find(string: String) -> [NSTextCheckingResult]? {
         let matches = self.re.matchesInString(string, options: nil, range: NSMakeRange(0, countElements(string)))
         
-        if matches {
+        if matches.count > 0 {
             return matches as? [NSTextCheckingResult]
         } else {
             return nil

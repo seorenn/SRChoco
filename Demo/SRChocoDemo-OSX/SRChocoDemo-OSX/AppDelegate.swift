@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let wm = SRWindowManager()
         wm.detectWindowChanging({ (app:NSRunningApplication!) -> Void in
-            if app {
+            if (app != nil) {
                 println(app)
             }
         })

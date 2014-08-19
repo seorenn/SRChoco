@@ -66,7 +66,7 @@ class SRDirectory: DebugPrintable, Equatable {
         self.files.removeAll(keepCapacity: false)
         self.directories.removeAll(keepCapacity: false)
         
-        for content: AnyObject in contents {
+        for content: AnyObject in contents! {
             let name: String = content as String
             let fullPath = self.path! + "/" + name
             
