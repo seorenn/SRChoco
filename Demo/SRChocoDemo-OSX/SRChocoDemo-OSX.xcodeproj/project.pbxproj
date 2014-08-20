@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8A26B79F1985F062004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B79E1985F062004F3168 /* SRRegexp.swift */; };
+		8A2D06A219A47971001D42AB /* SRTISBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF2770197E59C200B48971 /* SRTISBridge.m */; };
+		8A2D06A319A47975001D42AB /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AADB7F01971679700200861 /* SRInputSourceManager.swift */; };
+		8A2D06A419A47979001D42AB /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D319766575006028F4 /* SRDispatch.swift */; };
+		8A2D06A519A4797C001D42AB /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B79E1985F062004F3168 /* SRRegexp.swift */; };
+		8A2D06A619A4798B001D42AB /* SROtherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B465E196A884400E791B5 /* SROtherApp.swift */; };
+		8A2D06A719A4798E001D42AB /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FEE161961435800C73F8C /* SRWindowManager.swift */; };
+		8A2D06A819A47991001D42AB /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
+		8A2D06A919A47995001D42AB /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
+		8A2D06AA19A47998001D42AB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */; };
+		8A2D06AB19A479A0001D42AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
+		8A2D06AC19A479A4001D42AB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
+		8A2D06AD19A479A7001D42AB /* SRDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D27194ED55D007BDE4D /* SRDatetime.swift */; };
 		8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */; };
 		8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4E1993764800432E13 /* TestSRRegexp.swift */; };
@@ -378,11 +390,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A2D06AC19A479A4001D42AB /* NSDateExtensions.swift in Sources */,
+				8A2D06A419A47979001D42AB /* SRDispatch.swift in Sources */,
+				8A2D06A719A4798E001D42AB /* SRWindowManager.swift in Sources */,
+				8A2D06AD19A479A7001D42AB /* SRDatetime.swift in Sources */,
+				8A2D06AB19A479A0001D42AB /* Log.swift in Sources */,
+				8A2D06A319A47975001D42AB /* SRInputSourceManager.swift in Sources */,
 				8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */,
 				8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */,
 				8ADF2C8D199B72F9001A1D8F /* StringExtensions.swift in Sources */,
+				8A2D06A819A47991001D42AB /* SRDirectory.swift in Sources */,
 				8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */,
+				8A2D06AA19A47998001D42AB /* UIViewExtensions.swift in Sources */,
+				8A2D06A919A47995001D42AB /* SRFile.swift in Sources */,
+				8A2D06A519A4797C001D42AB /* SRRegexp.swift in Sources */,
+				8A2D06A219A47971001D42AB /* SRTISBridge.m in Sources */,
 				8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */,
+				8A2D06A619A4798B001D42AB /* SROtherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +469,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.10;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -481,7 +505,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.10;
 			};
 			name = Release;
 		};
@@ -497,7 +521,9 @@
 				);
 				INFOPLIST_FILE = "SRChocoDemo-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.10;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SRChocoDemo-OSX/SRChocoDemo-OSX-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -512,7 +538,9 @@
 				GCC_PREPROCESSOR_DEFINITIONS = BUILDCONFIG_TEST;
 				INFOPLIST_FILE = "SRChocoDemo-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.10;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SRChocoDemo-OSX/SRChocoDemo-OSX-Bridging-Header.h";
 			};
 			name = Release;

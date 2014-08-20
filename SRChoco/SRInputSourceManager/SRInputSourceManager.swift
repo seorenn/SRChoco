@@ -1,11 +1,9 @@
 
 #if os(OSX)
-import Cocoa
-#else
-import Foundation
-#endif
 
-public class SRInputSource {
+import Cocoa
+
+class SRInputSource {
     var selectable: Bool?
     var name: String?
     var inputSourceID: String?
@@ -21,22 +19,18 @@ public class SRInputSource {
     }
 }
 
-public class SRInputSourceManager {
+class SRInputSourceManager {
     private let tis = SRTISBridge()
     var inputSources: [SRInputSource] = []
     
     var currentInputSourceIndex: Int? {
-        #if os(OSX)
-            let isinfo = self.tis.currentInputSource
-            for inputSource: SRInputSource in self.inputSources {
-                if isinfo.name == inputSource.name {
-                    return inputSource.index
-                }
+        let isinfo = self.tis.currentInputSource
+        for inputSource: SRInputSource in self.inputSources {
+            if isinfo.name == inputSource.name {
+                return inputSource.index
             }
-            return nil
-        #else
-            return nil
-        #endif
+        }
+        return nil
     }
     
     struct StaticInstance {
@@ -56,21 +50,19 @@ public class SRInputSourceManager {
     }
     
     func refresh() {
-        #if os(OSX)
-            tis.refresh()
-            let count = tis.count
-            inputSources = []
-        
-            for i in 0..<tis.count {
-                let obj = SRInputSource(tis.infoAtIndex(i), i)
-                inputSources.append(obj)
-            }
-        #endif
+        tis.refresh()
+        let count = tis.count
+        inputSources = []
+    
+        for i in 0..<tis.count {
+            let obj = SRInputSource(tis.infoAtIndex(i), i)
+            inputSources.append(obj)
+        }
     }
     
     func switchInputSource(inputSource: SRInputSource) {
-        #if os(OSX)
-            self.tis.switchTISAtIndex(inputSource.index!)
-        #endif
+        self.tis.switchTISAtIndex(inputSource.index!)
     }
 }
+
+#endif
