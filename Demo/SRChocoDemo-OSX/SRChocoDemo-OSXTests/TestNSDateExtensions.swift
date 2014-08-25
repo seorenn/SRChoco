@@ -50,4 +50,14 @@ class TestNSDateExtensions: XCTestCase {
         XCTAssert(prevYearDate < now)
     }
 
+    func testDateCreation() {
+        let dt = NSDate.generate(1949, month: 7, day: 21, hour: 12, minute: 25, second: 59)
+        (year, month, day, hour, minute, secod) = dt.components
+        XCTAssertEqual(year, 1949)
+        XCTAssertEqual(month, 7)
+        XCTAssertEqual(day, 21)
+        XCTAssertEqual(hour, 12)
+        XCTAssertEqual(minute, 25)
+        XCTAssertEqual(second, 59)
+    }
 }
