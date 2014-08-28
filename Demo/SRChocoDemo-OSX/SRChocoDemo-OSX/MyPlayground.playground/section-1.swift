@@ -2,18 +2,28 @@ import Cocoa
 
 import Carbon
 let iss = TISCreateInputSourceList(nil, Boolean(0))
-let cflist: CFArray = iss.takeUnretainedValue()
+let cflist: CFArrayRef = iss.takeUnretainedValue()
+let listCount = CFArrayGetCount(cflist)
 
-let first: TISInputSource = unsafeBitCast(CFArrayGetValueAtIndex(cflist, 0), TISInputSource.self)
+let firstTISVoidPtr = CFArrayGetValueAtIndex(cflist, 0)
+let firstTISCast: TISInputSourceRef = unsafeBitCast(firstTISVoidPtr, TISInputSourceRef.self)
+let firstTIS: TISInputSourceRef = UnsafePointer<TISInputSourceRef>(firstTISVoidPtr).memory
 
-//let first = CFArrayGetValueAtIndex(cflist, 0)
-//let firstTIS = UnsafePointer<TISInputSource>(first)
-//let IDPtr = TISGetInputSourceProperty(TISInputSourceRef(first), kTISPropertyInputSourceID)
+firstTISCast === firstTIS
 
-//let nsList = iss.takeUnretainedValue().__conversion()
-//let first: AnyObject! = nsList.objectAtIndex(0)
-//println("first = \(first)")
-//let tis: TISInputSource = first as TISInputSource
+//let categoryVoidPtr = TISGetInputSourceProperty(firstTIS, kTISPropertyInputSourceCategory)
+let categoryVoidPtr = TISGetInputSourceProperty(firstTISCast, kTISPropertyInputSourceCategory)
+let categoryCF: CFStringRef = unsafeBitCast(categoryVoidPtr, CFStringRef.self)
+let category: NSString = categoryCF
 
-let IDPtr = TISGetInputSourceProperty(first, kTISPropertyInputSourceID)
-//let IDStr = NSString(bytes: IDPtr, length: IDPtr., encoding: ?)
+//let nameVoidPtr = TISGetInputSourceProperty(firstTIS, kTISPropertyLocalizedName)
+let nameVoidPtr = TISGetInputSourceProperty(firstTISCast, kTISPropertyLocalizedName)
+let nameCF: CFStringRef = unsafeBitCast(nameVoidPtr, CFStringRef.self)
+
+//let IDVoidPtr = TISGetInputSourceProperty(firstTIS, kTISPropertyInputSourceID)
+let IDVoidPtr = TISGetInputSourceProperty(firstTISCast, kTISPropertyInputSourceID)
+let IDCF: CFStringRef = unsafeBitCast(IDVoidPtr, CFStringRef.self)
+
+//let bundleIDVoidPtr = TISGetInputSourceProperty(firstTIS, kTISPropertyBundleID)
+let bundleIDVoidPtr = TISGetInputSourceProperty(firstTISCast, kTISPropertyBundleID)
+let bundleIDCF: CFStringRef = unsafeBitCast(bundleIDVoidPtr, CFStringRef.self)
