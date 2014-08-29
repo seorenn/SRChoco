@@ -10,6 +10,9 @@ import Cocoa
 
 func runTestSRInputSourceManager() {
     let ism = SRInputSourceManager.sharedManager()
+    
+    println("TIS Current = \(ism.currentInputSource.name)")
+    println("TIS Current Index = \(ism.currentInputSourceIndex)")
     println("TIS Count = \(ism.inputSources.count)")
     
     for inputSource: SRInputSource in ism.inputSources {

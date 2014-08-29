@@ -2,32 +2,49 @@
 #if os(OSX)
 
 import Cocoa
-
-class SRInputSource {
+import Carbon
+    
+class SRInputSource: Equatable {
     var selectable: Bool?
     var name: String?
     var inputSourceID: String?
     var iconURL: NSURL?
-    var index: Int?
+    var tis: TISInputSourceRef?
     
-    private init(_ TISInfo: SRTISInfo?, _ TISIndex: Int) {
-        selectable = TISInfo?.selectable
-        name = TISInfo?.name
-        inputSourceID = TISInfo?.inputSourceID
-        iconURL = TISInfo?.iconURL
-        index = TISIndex
+    private init(_ tis: TISInputSourceRef) {
+        self.tis = tis
+        
+        // TODO: self.selectable
+        self.name = String.stringWithCFStringVoidPointer(TISGetInputSourceProperty(tis, kTISPropertyLocalizedName))
+        self.inputSourceID = String.stringWithCFStringVoidPointer(TISGetInputSourceProperty(tis, kTISPropertyInputSourceID))
+        // TODO: self.iconURL
+    }
+    
+    func activate() {
+        if self.tis != nil {
+            TISSelectInputSource(self.tis)
+        }
     }
 }
 
+func == (left: SRInputSource, right: SRInputSource) -> Bool {
+    return left.inputSourceID == right.inputSourceID
+}
+
 class SRInputSourceManager {
-    private let tis = SRTISBridge()
     var inputSources: [SRInputSource] = []
     
+    var currentInputSource: SRInputSource {
+        let currentPtr = TISCopyCurrentKeyboardInputSource()
+        let current: TISInputSourceRef = currentPtr.takeUnretainedValue()
+        return SRInputSource(current)
+    }
+    
     var currentInputSourceIndex: Int? {
-        let isinfo = self.tis.currentInputSource
-        for inputSource: SRInputSource in self.inputSources {
-            if isinfo.name == inputSource.name {
-                return inputSource.index
+        let current = self.currentInputSource
+        for (index, inputSource) in enumerate(self.inputSources) {
+            if current == inputSource {
+                return index
             }
         }
         return nil
@@ -50,18 +67,29 @@ class SRInputSourceManager {
     }
     
     func refresh() {
-        tis.refresh()
-        let count = tis.count
+        let iss = TISCreateInputSourceList(nil, Boolean(0))
+        let issArray: CFArrayRef = iss.takeUnretainedValue()
+        let issCount = CFArrayGetCount(issArray)
+        
         inputSources = []
     
-        for i in 0..<tis.count {
-            let obj = SRInputSource(tis.infoAtIndex(i), i)
+        //for i in 0..<tis.count {
+        for i in 0..<issCount {
+            let tisVoidPtr = CFArrayGetValueAtIndex(issArray, i)
+            let tis: TISInputSourceRef = unsafeBitCast(tisVoidPtr, TISInputSourceRef.self)
+            
+            let obj = SRInputSource(tis)
             inputSources.append(obj)
         }
     }
     
     func switchInputSource(inputSource: SRInputSource) {
-        self.tis.switchTISAtIndex(inputSource.index!)
+        inputSource.activate()
+    }
+
+    func switchInputSource(index: Int) {
+        let inputSource = self.inputSources[index]
+        self.switchInputSource(inputSource)
     }
 }
 

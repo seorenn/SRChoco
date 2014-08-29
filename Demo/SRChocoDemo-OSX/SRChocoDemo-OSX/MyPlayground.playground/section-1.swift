@@ -1,6 +1,9 @@
 import Cocoa
 
 import Carbon
+
+let currentIS: TISInputSourceRef = TISCopyCurrentKeyboardInputSource().takeUnretainedValue()
+
 let iss = TISCreateInputSourceList(nil, Boolean(0))
 let cflist: CFArrayRef = iss.takeUnretainedValue()
 let listCount = CFArrayGetCount(cflist)

@@ -64,7 +64,7 @@ public extension NSDate {
         }
     }
     
-    class func generate(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) -> NSDate? {
+    public class func generate(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) -> NSDate? {
         let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
         let components = NSDateComponents()
         components.year = year
@@ -77,7 +77,7 @@ public extension NSDate {
         return calendar.dateFromComponents(components)
     }
     
-    class func generate(year: Int, month: Int, day: Int) -> NSDate? {
+    public class func generate(year: Int, month: Int, day: Int) -> NSDate? {
         return NSDate.generate(year, month: month, day: day, hour: 0, minute: 0, second: 0)
     }
 }

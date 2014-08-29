@@ -27,4 +27,11 @@ extension String {
         }
         return false
     }
+
+    static func stringWithCFStringVoidPointer(voidPtr: UnsafePointer<Void>) -> String? {
+        let cfstr: CFStringRef = unsafeBitCast(voidPtr, CFStringRef.self)
+        let nsstr: NSString = cfstr
+        return nsstr as String
+    }
+
 }

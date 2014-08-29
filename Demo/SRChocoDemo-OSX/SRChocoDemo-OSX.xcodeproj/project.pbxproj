@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8A26B79F1985F062004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B79E1985F062004F3168 /* SRRegexp.swift */; };
-		8A2D06A219A47971001D42AB /* SRTISBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF2770197E59C200B48971 /* SRTISBridge.m */; };
 		8A2D06A319A47975001D42AB /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AADB7F01971679700200861 /* SRInputSourceManager.swift */; };
 		8A2D06A419A47979001D42AB /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D319766575006028F4 /* SRDispatch.swift */; };
 		8A2D06A519A4797C001D42AB /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B79E1985F062004F3168 /* SRRegexp.swift */; };
@@ -18,7 +17,6 @@
 		8A2D06A919A47995001D42AB /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
 		8A2D06AA19A47998001D42AB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */; };
 		8A2D06AB19A479A0001D42AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
-		8A2D06AC19A479A4001D42AB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8A2D06AD19A479A7001D42AB /* SRDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D27194ED55D007BDE4D /* SRDatetime.swift */; };
 		8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */; };
@@ -39,7 +37,7 @@
 		8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
 		8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
 		8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */; };
-		8ACF2771197E59C200B48971 /* SRTISBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF2770197E59C200B48971 /* SRTISBridge.m */; };
+		8ACA188E19B076CF006B5048 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8ACF2774197E607100B48971 /* DemoSRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */; };
 		8AD8912119A1B99600BD48AC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */; };
 		8ADF2C8D199B72F9001A1D8F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
@@ -82,8 +80,6 @@
 		8AC2B6EA195ECA1500459F3D /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
 		8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStringExtensions.swift; sourceTree = "<group>"; };
-		8ACF276F197E59C200B48971 /* SRTISBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTISBridge.h; sourceTree = "<group>"; };
-		8ACF2770197E59C200B48971 /* SRTISBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTISBridge.m; sourceTree = "<group>"; };
 		8ACF2772197E5FC600B48971 /* SRChocoDemo-OSX-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-OSX-Bridging-Header.h"; sourceTree = "<group>"; };
 		8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSRInputSourceManager.swift; sourceTree = "<group>"; };
 		8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -251,8 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				8AADB7F01971679700200861 /* SRInputSourceManager.swift */,
-				8ACF276F197E59C200B48971 /* SRTISBridge.h */,
-				8ACF2770197E59C200B48971 /* SRTISBridge.m */,
 			);
 			path = SRInputSourceManager;
 			sourceTree = "<group>";
@@ -366,7 +360,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */,
-				8ACF2771197E59C200B48971 /* SRTISBridge.m in Sources */,
 				8AAC8D28194ED55D007BDE4D /* SRDatetime.swift in Sources */,
 				8AF47824195AC92E00960AE4 /* Log.swift in Sources */,
 				8A914C89197114FB002CE4A5 /* DemoSRWindowManager.swift in Sources */,
@@ -390,10 +383,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A2D06AC19A479A4001D42AB /* NSDateExtensions.swift in Sources */,
 				8A2D06A419A47979001D42AB /* SRDispatch.swift in Sources */,
 				8A2D06A719A4798E001D42AB /* SRWindowManager.swift in Sources */,
 				8A2D06AD19A479A7001D42AB /* SRDatetime.swift in Sources */,
+				8ACA188E19B076CF006B5048 /* NSDateExtensions.swift in Sources */,
 				8A2D06AB19A479A0001D42AB /* Log.swift in Sources */,
 				8A2D06A319A47975001D42AB /* SRInputSourceManager.swift in Sources */,
 				8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */,
@@ -404,7 +397,6 @@
 				8A2D06AA19A47998001D42AB /* UIViewExtensions.swift in Sources */,
 				8A2D06A919A47995001D42AB /* SRFile.swift in Sources */,
 				8A2D06A519A4797C001D42AB /* SRRegexp.swift in Sources */,
-				8A2D06A219A47971001D42AB /* SRTISBridge.m in Sources */,
 				8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */,
 				8A2D06A619A4798B001D42AB /* SROtherApp.swift in Sources */,
 			);
