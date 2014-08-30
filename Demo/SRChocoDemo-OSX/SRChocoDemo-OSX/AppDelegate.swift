@@ -16,9 +16,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
         // Insert code here to initialize your application
         
-        // Commented because Xcode 6 Beta 1, 2, 3 Compiler Crashing
-        runTestNSDateExtensions()
-        
         runTestSRInputSourceManager()
         
         let demoFM = DemoSRFileManager()
@@ -26,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let wm = SRWindowManager()
         wm.detectWindowChanging({ (app:NSRunningApplication!) -> Void in
-            if app {
+            if (app != nil) {
                 println(app)
             }
         })

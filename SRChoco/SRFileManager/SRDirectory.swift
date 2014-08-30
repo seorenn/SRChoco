@@ -1,6 +1,6 @@
 import Foundation
 
-class SRDirectory: DebugPrintable {
+class SRDirectory: DebugPrintable, Equatable {
     var path: String?
     var name: String?
     var hidden = false
@@ -58,7 +58,7 @@ class SRDirectory: DebugPrintable {
     }
     
     func load() {
-        assert(self.path)
+        assert(self.path != nil)
         let fm = NSFileManager.defaultManager()
         var error: NSError?
         let contents = fm.contentsOfDirectoryAtPath(self.path, error: &error)
@@ -66,7 +66,7 @@ class SRDirectory: DebugPrintable {
         self.files.removeAll(keepCapacity: false)
         self.directories.removeAll(keepCapacity: false)
         
-        for content: AnyObject in contents {
+        for content: AnyObject in contents! {
             let name: String = content as String
             let fullPath = self.path! + "/" + name
             
@@ -74,7 +74,7 @@ class SRDirectory: DebugPrintable {
             let exists = fm.fileExistsAtPath(fullPath, isDirectory: &isDirectory)
             assert(exists)
             
-            if isDirectory.getLogicValue() {
+            if isDirectory.boolValue {
                 let dir = SRDirectory(fullPath)
                 self.directories[name] = dir
             } else {
@@ -110,3 +110,12 @@ class SRDirectory: DebugPrintable {
         }
     }
 }
+
+func == (left: SRDirectory, right: SRDirectory) -> Bool {
+    if left.path != nil && right.path != nil && left.path == right.path {
+        return true
+    }
+    return false
+}
+
+// End of SRDirectory.swift

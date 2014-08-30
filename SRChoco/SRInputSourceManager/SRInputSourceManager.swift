@@ -1,9 +1,7 @@
 
 #if os(OSX)
+
 import Cocoa
-#else
-import Foundation
-#endif
 
 class SRInputSource {
     var selectable: Bool?
@@ -12,7 +10,7 @@ class SRInputSource {
     var iconURL: NSURL?
     var index: Int?
     
-    init(_ TISInfo: SRTISInfo?, _ TISIndex: Int) {
+    private init(_ TISInfo: SRTISInfo?, _ TISIndex: Int) {
         selectable = TISInfo?.selectable
         name = TISInfo?.name
         inputSourceID = TISInfo?.inputSourceID
@@ -52,8 +50,10 @@ class SRInputSourceManager {
     }
     
     func refresh() {
+        tis.refresh()
         let count = tis.count
-        
+        inputSources = []
+    
         for i in 0..<tis.count {
             let obj = SRInputSource(tis.infoAtIndex(i), i)
             inputSources.append(obj)
@@ -64,3 +64,5 @@ class SRInputSourceManager {
         self.tis.switchTISAtIndex(inputSource.index!)
     }
 }
+
+#endif

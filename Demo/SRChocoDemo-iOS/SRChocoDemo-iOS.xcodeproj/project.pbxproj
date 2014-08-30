@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B7A11985F06A004F3168 /* SRRegexp.swift */; };
 		8A6B4656196A883600E791B5 /* SRDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464B196A883600E791B5 /* SRDatetime.swift */; };
 		8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464D196A883600E791B5 /* SRDirectory.swift */; };
 		8A6B4658196A883600E791B5 /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464E196A883600E791B5 /* SRFile.swift */; };
@@ -18,6 +19,8 @@
 		8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */; };
 		8AAC8D10194ED4F1007BDE4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0F194ED4F1007BDE4D /* Images.xcassets */; };
 		8AAC8D1C194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D1B194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift */; };
+		8AD8911E19A1B98C00BD48AC /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8911C19A1B98C00BD48AC /* StringExtensions.swift */; };
+		8AD8911F19A1B98C00BD48AC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8911D19A1B98C00BD48AC /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		8A00388B195042910079D8D5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		8A26B7A11985F06A004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
 		8A6B464B196A883600E791B5 /* SRDatetime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDatetime.swift; sourceTree = "<group>"; };
 		8A6B464D196A883600E791B5 /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
 		8A6B464E196A883600E791B5 /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		8AAC8D15194ED4F1007BDE4D /* SRChocoDemo-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRChocoDemo-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8D1A194ED4F1007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAC8D1B194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRChocoDemo_iOSTests.swift; sourceTree = "<group>"; };
+		8AD8911C19A1B98C00BD48AC /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		8AD8911D19A1B98C00BD48AC /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A26B7A01985F06A004F3168 /* SRRegexp */ = {
+			isa = PBXGroup;
+			children = (
+				8A26B7A11985F06A004F3168 /* SRRegexp.swift */,
+			);
+			path = SRRegexp;
+			sourceTree = "<group>";
+		};
 		8A6B464A196A883600E791B5 /* SRDatetime */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +117,8 @@
 		8A6B4653196A883600E791B5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8AD8911C19A1B98C00BD48AC /* StringExtensions.swift */,
+				8AD8911D19A1B98C00BD48AC /* UIViewExtensions.swift */,
 				8A6B4654196A883600E791B5 /* Log.swift */,
 				8A6B4655196A883600E791B5 /* NSDateExtensions.swift */,
 			);
@@ -175,6 +191,7 @@
 		8AAC8D2A194ED940007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8A26B7A01985F06A004F3168 /* SRRegexp */,
 				8A7AC8D51976657F006028F4 /* SRGCD */,
 				8A6B464A196A883600E791B5 /* SRDatetime */,
 				8A6B464C196A883600E791B5 /* SRFileManager */,
@@ -289,8 +306,11 @@
 				8A6B4658196A883600E791B5 /* SRFile.swift in Sources */,
 				8A7AC8D71976657F006028F4 /* SRDispatch.swift in Sources */,
 				8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */,
+				8AD8911E19A1B98C00BD48AC /* StringExtensions.swift in Sources */,
 				8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */,
+				8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */,
 				8A6B4656196A883600E791B5 /* SRDatetime.swift in Sources */,
+				8AD8911F19A1B98C00BD48AC /* UIViewExtensions.swift in Sources */,
 				8A6B4659196A883600E791B5 /* SROtherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -384,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

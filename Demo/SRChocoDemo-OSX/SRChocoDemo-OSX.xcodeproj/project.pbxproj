@@ -7,8 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A23A2E019515C3C008CB833 /* DemoNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A23A2DF19515C3C008CB833 /* DemoNSDateExtensions.swift */; };
+		8A26B79F1985F062004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B79E1985F062004F3168 /* SRRegexp.swift */; };
+		8A2D06A219A47971001D42AB /* SRTISBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF2770197E59C200B48971 /* SRTISBridge.m */; };
+		8A2D06A319A47975001D42AB /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AADB7F01971679700200861 /* SRInputSourceManager.swift */; };
+		8A2D06A419A47979001D42AB /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D319766575006028F4 /* SRDispatch.swift */; };
+		8A2D06A519A4797C001D42AB /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B79E1985F062004F3168 /* SRRegexp.swift */; };
+		8A2D06A619A4798B001D42AB /* SROtherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B465E196A884400E791B5 /* SROtherApp.swift */; };
+		8A2D06A719A4798E001D42AB /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FEE161961435800C73F8C /* SRWindowManager.swift */; };
+		8A2D06A819A47991001D42AB /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
+		8A2D06A919A47995001D42AB /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
+		8A2D06AA19A47998001D42AB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */; };
+		8A2D06AB19A479A0001D42AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
+		8A2D06AC19A479A4001D42AB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
+		8A2D06AD19A479A7001D42AB /* SRDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D27194ED55D007BDE4D /* SRDatetime.swift */; };
 		8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
+		8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */; };
+		8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4E1993764800432E13 /* TestSRRegexp.swift */; };
 		8A6B465F196A884400E791B5 /* SROtherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B465E196A884400E791B5 /* SROtherApp.swift */; };
 		8A7AC8D419766575006028F4 /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D319766575006028F4 /* SRDispatch.swift */; };
 		8A8FEE171961435800C73F8C /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FEE161961435800C73F8C /* SRWindowManager.swift */; };
@@ -23,8 +37,12 @@
 		8AADB7F11971679700200861 /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AADB7F01971679700200861 /* SRInputSourceManager.swift */; };
 		8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
 		8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
+		8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
+		8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */; };
 		8ACF2771197E59C200B48971 /* SRTISBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF2770197E59C200B48971 /* SRTISBridge.m */; };
 		8ACF2774197E607100B48971 /* DemoSRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */; };
+		8AD8912119A1B99600BD48AC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */; };
+		8ADF2C8D199B72F9001A1D8F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
 		8AF47824195AC92E00960AE4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8A23A2DF19515C3C008CB833 /* DemoNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoNSDateExtensions.swift; path = ../../Common/DemoNSDateExtensions.swift; sourceTree = "<group>"; };
+		8A26B79E1985F062004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
 		8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
+		8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
+		8A682E4E1993764800432E13 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
 		8A6B465E196A884400E791B5 /* SROtherApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SROtherApp.swift; sourceTree = "<group>"; };
 		8A7AC8D319766575006028F4 /* SRDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatch.swift; sourceTree = "<group>"; };
 		8A8FEE161961435800C73F8C /* SRWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWindowManager.swift; sourceTree = "<group>"; };
@@ -60,10 +80,13 @@
 		8AADB7F01971679700200861 /* SRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRInputSourceManager.swift; sourceTree = "<group>"; };
 		8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
 		8AC2B6EA195ECA1500459F3D /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
+		8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStringExtensions.swift; sourceTree = "<group>"; };
 		8ACF276F197E59C200B48971 /* SRTISBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTISBridge.h; sourceTree = "<group>"; };
 		8ACF2770197E59C200B48971 /* SRTISBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTISBridge.m; sourceTree = "<group>"; };
 		8ACF2772197E5FC600B48971 /* SRChocoDemo-OSX-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-OSX-Bridging-Header.h"; sourceTree = "<group>"; };
 		8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSRInputSourceManager.swift; sourceTree = "<group>"; };
+		8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		8AF47823195AC92E00960AE4 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +111,6 @@
 		8A23A2DE19515C2F008CB833 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				8A23A2DF19515C3C008CB833 /* DemoNSDateExtensions.swift */,
 				8A914C88197114FB002CE4A5 /* DemoSRWindowManager.swift */,
 				8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */,
 				8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */,
@@ -96,9 +118,19 @@
 			name = Demo;
 			sourceTree = "<group>";
 		};
+		8A26B79D1985F062004F3168 /* SRRegexp */ = {
+			isa = PBXGroup;
+			children = (
+				8A26B79E1985F062004F3168 /* SRRegexp.swift */,
+			);
+			path = SRRegexp;
+			sourceTree = "<group>";
+		};
 		8A4DE92719515A3D00F65AEB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */,
+				8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */,
 				8AF47823195AC92E00960AE4 /* Log.swift */,
 				8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */,
 			);
@@ -174,8 +206,11 @@
 		8AAC8CF2194ED4CF007BDE4D /* SRChocoDemo-OSXTests */ = {
 			isa = PBXGroup;
 			children = (
-				8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */,
 				8AAC8CF3194ED4CF007BDE4D /* Supporting Files */,
+				8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */,
+				8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */,
+				8A682E4E1993764800432E13 /* TestSRRegexp.swift */,
+				8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */,
 			);
 			path = "SRChocoDemo-OSXTests";
 			sourceTree = "<group>";
@@ -191,6 +226,7 @@
 		8AAC8D25194ED55D007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8A26B79D1985F062004F3168 /* SRRegexp */,
 				8A7AC8D219766575006028F4 /* SRGCD */,
 				8AADB7EF1971679700200861 /* SRInputSourceManager */,
 				8A6B465D196A884400E791B5 /* SROtherApp */,
@@ -336,15 +372,17 @@
 				8A914C89197114FB002CE4A5 /* DemoSRWindowManager.swift in Sources */,
 				8AADB7F11971679700200861 /* SRInputSourceManager.swift in Sources */,
 				8A8FEE171961435800C73F8C /* SRWindowManager.swift in Sources */,
+				8A26B79F1985F062004F3168 /* SRRegexp.swift in Sources */,
 				8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */,
 				8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */,
 				8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */,
-				8A23A2E019515C3C008CB833 /* DemoNSDateExtensions.swift in Sources */,
 				8A7AC8D419766575006028F4 /* SRDispatch.swift in Sources */,
 				8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */,
 				8A6B465F196A884400E791B5 /* SROtherApp.swift in Sources */,
 				8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */,
 				8ACF2774197E607100B48971 /* DemoSRInputSourceManager.swift in Sources */,
+				8AD8912119A1B99600BD48AC /* UIViewExtensions.swift in Sources */,
+				8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +390,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A2D06AC19A479A4001D42AB /* NSDateExtensions.swift in Sources */,
+				8A2D06A419A47979001D42AB /* SRDispatch.swift in Sources */,
+				8A2D06A719A4798E001D42AB /* SRWindowManager.swift in Sources */,
+				8A2D06AD19A479A7001D42AB /* SRDatetime.swift in Sources */,
+				8A2D06AB19A479A0001D42AB /* Log.swift in Sources */,
+				8A2D06A319A47975001D42AB /* SRInputSourceManager.swift in Sources */,
+				8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */,
+				8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */,
+				8ADF2C8D199B72F9001A1D8F /* StringExtensions.swift in Sources */,
+				8A2D06A819A47991001D42AB /* SRDirectory.swift in Sources */,
+				8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */,
+				8A2D06AA19A47998001D42AB /* UIViewExtensions.swift in Sources */,
+				8A2D06A919A47995001D42AB /* SRFile.swift in Sources */,
+				8A2D06A519A4797C001D42AB /* SRRegexp.swift in Sources */,
+				8A2D06A219A47971001D42AB /* SRTISBridge.m in Sources */,
 				8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */,
+				8A2D06A619A4798B001D42AB /* SROtherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +469,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.10;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -451,7 +505,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.10;
 			};
 			name = Release;
 		};
@@ -461,10 +515,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = BUILDCONFIG_TEST;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=0",
+					BUILDCONFIG_TEST,
+				);
 				INFOPLIST_FILE = "SRChocoDemo-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.10;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SRChocoDemo-OSX/SRChocoDemo-OSX-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -479,7 +538,9 @@
 				GCC_PREPROCESSOR_DEFINITIONS = BUILDCONFIG_TEST;
 				INFOPLIST_FILE = "SRChocoDemo-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.10;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SRChocoDemo-OSX/SRChocoDemo-OSX-Bridging-Header.h";
 			};
 			name = Release;

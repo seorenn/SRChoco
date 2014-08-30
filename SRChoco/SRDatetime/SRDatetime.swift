@@ -16,7 +16,7 @@ class SRDatetime {
     var minute = 0
     var second = 0
     
-    var date: NSDate {
+    var date: NSDate? {
         set {
             let calendar = NSCalendar.currentCalendar()
             let components = calendar.components(NSCalendarUnit.CalendarUnitYear |
@@ -25,7 +25,7 @@ class SRDatetime {
                                                  NSCalendarUnit.CalendarUnitHour |
                                                  NSCalendarUnit.CalendarUnitMinute |
                                                  NSCalendarUnit.CalendarUnitSecond,
-                                                 fromDate: newValue)
+                                                 fromDate: newValue!)
             self.year = components.year
             self.month = components.month
             self.day = components.day
@@ -50,7 +50,7 @@ class SRDatetime {
     var ISOFormatString: String {
         set {
             var str = newValue
-            if !newValue.rangeOfString("+") {
+            if newValue.rangeOfString("+") == nil {
                 str = str + "+0000"
             }
             
@@ -62,7 +62,7 @@ class SRDatetime {
         get {
             let formatter = NSDateFormatter()
             formatter.dateFormat = SRDatetime.ISOFormat
-            return formatter.stringFromDate(self.date)
+            return formatter.stringFromDate(self.date!)
         }
     }
     

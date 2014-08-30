@@ -1,22 +1,22 @@
 import Foundation
 
-class SRFile: DebugPrintable {
+class SRFile: DebugPrintable, Equatable {
     var path: String?
     var parentDirectory: SRDirectory?
     var data: NSData? {
         get {
-            assert(path)
+            assert(path != nil)
             let fm = NSFileManager.defaultManager()
-            return fm.contentsAtPath(self.path)
+            return fm.contentsAtPath(self.path!)
         }
         set {
             // TODO
         }
     }
     var exists: Bool {
-        assert(path)
+        assert(path != nil)
         let fm = NSFileManager.defaultManager()
-        return fm.fileExistsAtPath(path)
+        return fm.fileExistsAtPath(path!)
     }
     
     init() {
@@ -44,7 +44,7 @@ class SRFile: DebugPrintable {
     }
     
     func moveTo(directory: SRDirectory) -> Bool {
-        assert(directory.path)
+        assert(directory.path != nil)
         
         // TODO
         
@@ -56,6 +56,6 @@ class SRFile: DebugPrintable {
     }
 }
 
-@infix func == (left: SRFile, right: SRFile) -> Bool {
+func == (left: SRFile, right: SRFile) -> Bool {
     return left.path == right.path
 }
