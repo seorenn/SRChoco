@@ -30,3 +30,4 @@ let IDCF: CFStringRef = unsafeBitCast(IDVoidPtr, CFStringRef.self)
 //let bundleIDVoidPtr = TISGetInputSourceProperty(firstTIS, kTISPropertyBundleID)
 let bundleIDVoidPtr = TISGetInputSourceProperty(firstTISCast, kTISPropertyBundleID)
 let bundleIDCF: CFStringRef = unsafeBitCast(bundleIDVoidPtr, CFStringRef.self)
+

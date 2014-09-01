@@ -1,6 +1,19 @@
 import Foundation
 
 extension String {
+    var length: Int {
+        return countElements(self)
+    }
+
+    subscript(index: Int) -> Character {
+        let elements = Array(self)
+        if index >= 0 { return elements[index] }
+        else {
+            let revIndex = (self.length + index) - 1
+            return elements[revIndex]
+        }
+    }
+
     // substring with range
     subscript(range: Range<Int>) -> String {
         let start = advance(startIndex, range.startIndex, endIndex)
@@ -33,5 +46,4 @@ extension String {
         let nsstr: NSString = cfstr
         return nsstr as String
     }
-
 }
