@@ -28,7 +28,7 @@ class TestSRRegexp: XCTestCase {
         
         let regexp2 = SRRegexp("^[a-zA-Z]+$")
         XCTAssert(regexp2.find("ABCDEFGaaa")?.count > 0)
-        XCTAssert(regexp2.find("1Abccd")?.count == 0)
+        XCTAssert(regexp2.find("1Abccd") == nil)
     }
     
     func testTest() {

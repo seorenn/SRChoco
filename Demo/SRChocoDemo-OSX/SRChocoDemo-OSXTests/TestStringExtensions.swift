@@ -21,6 +21,13 @@ class TestStringExtensions: XCTestCase {
         super.tearDown()
     }
     
+    func testSubscript() {
+        let str = "123 ABC abc-"
+        XCTAssert(str[0] == Character("1"))
+        XCTAssert(str[4] == Character("A"))
+        XCTAssert(str[-1] == Character("-"))
+        XCTAssert(str[-2] == Character("c"))
+    }
     func testSubstring() {
         let strA = "This is test string..."
         let strB = strA[1...3]

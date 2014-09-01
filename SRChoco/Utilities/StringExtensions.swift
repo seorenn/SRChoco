@@ -9,7 +9,7 @@ extension String {
         let elements = Array(self)
         if index >= 0 { return elements[index] }
         else {
-            let revIndex = (self.length + index) - 1
+            let revIndex = self.length + index
             return elements[revIndex]
         }
     }

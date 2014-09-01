@@ -4,7 +4,7 @@ private let DefaultISOFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
 
 // MARK: - NSDate Extensions
 
-public extension NSDate {
+extension NSDate: Comparable, Equatable {
     var dateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) {
         let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
         let components = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: self)
