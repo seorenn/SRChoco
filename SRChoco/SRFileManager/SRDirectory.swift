@@ -61,7 +61,7 @@ class SRDirectory: DebugPrintable, Equatable {
         assert(self.path != nil)
         let fm = NSFileManager.defaultManager()
         var error: NSError?
-        let contents = fm.contentsOfDirectoryAtPath(self.path, error: &error)
+        let contents = fm.contentsOfDirectoryAtPath(self.path!, error: &error)
         
         self.files.removeAll(keepCapacity: false)
         self.directories.removeAll(keepCapacity: false)
