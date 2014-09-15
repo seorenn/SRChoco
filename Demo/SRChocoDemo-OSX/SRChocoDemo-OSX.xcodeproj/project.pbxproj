@@ -33,6 +33,8 @@
 		8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */; };
 		8AAC8D28194ED55D007BDE4D /* SRDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D27194ED55D007BDE4D /* SRDatetime.swift */; };
 		8AADB7F11971679700200861 /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AADB7F01971679700200861 /* SRInputSourceManager.swift */; };
+		8AB156B719C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */; };
+		8AB156B819C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */; };
 		8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
 		8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
 		8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
@@ -76,6 +78,7 @@
 		8AAC8D27194ED55D007BDE4D /* SRDatetime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDatetime.swift; sourceTree = "<group>"; };
 		8AAC8D29194ED902007BDE4D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		8AADB7F01971679700200861 /* SRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRInputSourceManager.swift; sourceTree = "<group>"; };
+		8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStatusItemPopupController.swift; sourceTree = "<group>"; };
 		8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
 		8AC2B6EA195ECA1500459F3D /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
 		8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 		8AAC8D25194ED55D007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8AB156B519C6DFD800A2A568 /* SRStatusItemPopupController */,
 				8A26B79D1985F062004F3168 /* SRRegexp */,
 				8A7AC8D219766575006028F4 /* SRGCD */,
 				8AADB7EF1971679700200861 /* SRInputSourceManager */,
@@ -249,6 +253,14 @@
 				8AADB7F01971679700200861 /* SRInputSourceManager.swift */,
 			);
 			path = SRInputSourceManager;
+			sourceTree = "<group>";
+		};
+		8AB156B519C6DFD800A2A568 /* SRStatusItemPopupController */ = {
+			isa = PBXGroup;
+			children = (
+				8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */,
+			);
+			path = SRStatusItemPopupController;
 			sourceTree = "<group>";
 		};
 		8AC2B6E8195ECA1500459F3D /* SRFileManager */ = {
@@ -359,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AB156B719C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */,
 				8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */,
 				8AAC8D28194ED55D007BDE4D /* SRDatetime.swift in Sources */,
 				8AF47824195AC92E00960AE4 /* Log.swift in Sources */,
@@ -391,6 +404,7 @@
 				8A2D06A319A47975001D42AB /* SRInputSourceManager.swift in Sources */,
 				8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */,
 				8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */,
+				8AB156B819C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */,
 				8ADF2C8D199B72F9001A1D8F /* StringExtensions.swift in Sources */,
 				8A2D06A819A47991001D42AB /* SRDirectory.swift in Sources */,
 				8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */,
