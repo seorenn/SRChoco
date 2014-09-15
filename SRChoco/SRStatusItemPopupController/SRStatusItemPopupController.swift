@@ -107,6 +107,7 @@ class SRStatusItemPopupController: NSObject {
     
     func showPopover(animated: Bool) {
         self.statusItemView!.active = true
+        self.statusItemView!.needsDisplay = true
         
         if self.popover == nil {
             self.popover = NSPopover()
@@ -122,7 +123,6 @@ class SRStatusItemPopupController: NSObject {
             
             let mask: NSEventMask = NSEventMask.LeftMouseDownMask | NSEventMask.RightMouseDownMask  // FIXME: Bypassing Link Error
             self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(mask, handler: { (event: NSEvent!) -> Void in
-                self.statusItemView!.needsDisplay = true
                 self.hidePopover()
             })
 
@@ -135,6 +135,7 @@ class SRStatusItemPopupController: NSObject {
     
     func hidePopover() {
         self.statusItemView!.active = false
+        self.statusItemView!.needsDisplay = true
         
         if self.popover != nil && self.popover!.shown {
             self.popover!.close()
