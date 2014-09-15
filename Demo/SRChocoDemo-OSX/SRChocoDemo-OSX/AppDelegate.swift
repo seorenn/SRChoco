@@ -12,9 +12,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                             
     @IBOutlet var window: NSWindow?
 
+    var statusItemPopupController: SRStatusItemPopupController?
 
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
-        // Insert code here to initialize your application
+        let popup = StatusPopupViewController(nibName: "StatusPopupViewController", bundle: nil)
+        let image = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericFolderIcon)))
+        let alternateImage = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericApplicationIcon)))
+        self.statusItemPopupController = SRStatusItemPopupController(viewController: popup, image: image, alternateImage: alternateImage)
         
         runTestSRInputSourceManager()
         

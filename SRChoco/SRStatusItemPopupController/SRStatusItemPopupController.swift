@@ -122,6 +122,7 @@ class SRStatusItemPopupController: NSObject {
             
             let mask: NSEventMask = NSEventMask.LeftMouseDownMask | NSEventMask.RightMouseDownMask  // FIXME: Bypassing Link Error
             self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(mask, handler: { (event: NSEvent!) -> Void in
+                self.statusItemView!.needsDisplay = true
                 self.hidePopover()
             })
 
