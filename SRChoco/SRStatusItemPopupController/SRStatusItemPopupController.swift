@@ -8,7 +8,7 @@ class SRStatusItemPopupView: NSView {
     var active = false
     var image: NSImage?
     var alternateImage: NSImage?
-    var imageView: NSImageView?
+    var imageView: NSImageView
     var drawHandler: SRStatusItemPopupControllerDrawHandler?
     var mouseDownHandler: (() -> ())?
     
@@ -21,13 +21,13 @@ class SRStatusItemPopupView: NSView {
     }
     
     override init(frame frameRect: NSRect) {
-        super.init(frame: frameRect)
         self.imageView = NSImageView(frame: frameRect)
-        self.addSubview(self.imageView!)
+        super.init(frame: frameRect)
+        self.addSubview(self.imageView)
     }
     
-    required init(coder: NSCoder) {
-        super.init(coder: coder)
+    convenience required init(coder: NSCoder) {
+        self.init(frame: NSMakeRect(0, 0, 0, 0))
     }
     
     override func mouseDown(theEvent: NSEvent!) {
@@ -55,7 +55,7 @@ class SRStatusItemPopupView: NSView {
         
         NSRectFill(dirtyRect)
         if let image = self.currentImage {
-            self.imageView!.image = image
+            self.imageView.image = image
         }
     }
 }
@@ -63,63 +63,59 @@ class SRStatusItemPopupView: NSView {
 class SRStatusItemPopupController: NSObject {
     private let minWidth: CGFloat = 22.0
     
-    private var statusItem: NSStatusItem?
-    private var statusItemView: SRStatusItemPopupView?
-    private var viewController: NSViewController?
-    private var dummyMenu: NSMenu?
-    private var popover: NSPopover?
+    private var statusItem: NSStatusItem
+    private var statusItemView: SRStatusItemPopupView
+    private var viewController: NSViewController
+    private var dummyMenu: NSMenu
+    private var popover: NSPopover
     private var popoverTransiencyMonitor: AnyObject?
     
     var drawHandler: SRStatusItemPopupControllerDrawHandler? {
         set {
-            self.statusItemView!.drawHandler = newValue
+            self.statusItemView.drawHandler = newValue
         }
         get {
-            return self.statusItemView!.drawHandler
+            return self.statusItemView.drawHandler
         }
     }
     
     init(viewController: NSViewController, image: NSImage?, alternateImage: NSImage?) {
-        super.init()
         self.viewController = viewController
         
         let height = NSStatusBar.systemStatusBar().thickness
         self.statusItemView = SRStatusItemPopupView(frame: NSMakeRect(0, 0, self.minWidth, height))
-        self.statusItemView?.image = image
-        self.statusItemView?.alternateImage = alternateImage
-        self.statusItemView?.mouseDownHandler = {
-            if let popover = self.popover {
-                if popover.shown {
-                    self.hidePopover()
-                } else {
-                    self.showPopover()
-                }
+        self.statusItemView.image = image
+        self.statusItemView.alternateImage = alternateImage
+        
+        self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)    // FIXME: -1.0 = NSVariableStatusItemLength (bypassing undefined symbol link error)
+        self.statusItem.view = self.statusItemView
+        
+        self.dummyMenu = NSMenu()
+        
+        self.popover = NSPopover()
+        self.popover.contentViewController = self.viewController
+        
+        super.init()
+        
+        self.statusItemView.mouseDownHandler = {
+            if self.popover.shown {
+                self.hidePopover()
             } else {
                 self.showPopover()
             }
         }
-        
-        self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)    // FIXME: -1.0 = NSVariableStatusItemLength (bypassing undefined symbol link error)
-        self.statusItem!.view = self.statusItemView
-        
-        self.dummyMenu = NSMenu()
     }
     
     func showPopover(animated: Bool) {
-        self.statusItemView!.active = true
-        self.statusItemView!.needsDisplay = true
+        self.statusItemView.active = true
+        self.statusItemView.needsDisplay = true
         
-        if self.popover == nil {
-            self.popover = NSPopover()
-            self.popover!.contentViewController = self.viewController
-        }
-        
-        if self.popover!.shown == false {
-            self.popover!.animates = animated
-            self.statusItem!.popUpStatusItemMenu(self.dummyMenu)
+        if self.popover.shown == false {
+            self.popover.animates = animated
+            self.statusItem.popUpStatusItemMenu(self.dummyMenu)
             
-            let edge = NSRectEdge(CGRectEdge.MinYEdge.toRaw())  // FIXME: MinYEdge is CGRectEdge in currently; Yeah Build Error! :-(
-            self.popover!.showRelativeToRect(self.statusItemView!.frame, ofView: self.statusItemView!, preferredEdge: edge)
+            let edge = NSRectEdge(CGRectEdge.MinYEdge.rawValue)  // FIXME: MinYEdge is CGRectEdge in currently; Yeah Build Error! :-(
+            self.popover.showRelativeToRect(self.statusItemView.frame, ofView: self.statusItemView, preferredEdge: edge)
             
             let mask: NSEventMask = NSEventMask.LeftMouseDownMask | NSEventMask.RightMouseDownMask  // FIXME: Bypassing Link Error
             self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(mask, handler: { (event: NSEvent!) -> Void in
@@ -134,11 +130,11 @@ class SRStatusItemPopupController: NSObject {
     }
     
     func hidePopover() {
-        self.statusItemView!.active = false
-        self.statusItemView!.needsDisplay = true
+        self.statusItemView.active = false
+        self.statusItemView.needsDisplay = true
         
-        if self.popover != nil && self.popover!.shown {
-            self.popover!.close()
+        if self.popover.shown {
+            self.popover.close()
             
             if self.popoverTransiencyMonitor != nil {
                 NSEvent.removeMonitor(self.popoverTransiencyMonitor)
