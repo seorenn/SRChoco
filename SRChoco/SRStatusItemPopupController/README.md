@@ -9,7 +9,8 @@ NOTE: This module supports OSX platform only.
 
 In your AppDelegate:
 
-```class AppDelegate: NSObject, NSApplicationDelegate {
+<pre>
+class AppDelegate: NSObject, NSApplicationDelegate {
     // ...
     var statusItemPopupController: SRStatusItemPopupController?
 
@@ -18,6 +19,11 @@ In your AppDelegate:
         let viewController = MyViewController(nibName: "MyViewController", bundle: nil)
         let image = NSImage(name: "Icon")
         let alternateImage = NSImage(name: "Icon-Open")
-        self.statusItemPopupController = SRStatusItemPopupController(viewController: viewController, image: image, alternateImage: alternateImage)
+        self.statusItemPopupController = SRStatusItemPopupController(viewController: viewController, 
+                                                                     image: image, 
+                                                                     alternateImage: alternateImage)
         // ...
-    }```
+    }
+</pre>
+
+
