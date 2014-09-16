@@ -25,20 +25,28 @@ extension String {
         return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
     
-    func containString(string: String) -> Bool {
-        if let range = self.rangeOfString(string) {
+    func containString(string: String, ignoreCase: Bool = false) -> Bool {
+        let options = ignoreCase ? NSStringCompareOptions.CaseInsensitiveSearch : NSStringCompareOptions.allZeros
+        if let range = self.rangeOfString(string, options: options) {
             return true
         }
         return false
     }
     
-    func containStrings(strings: Array<String>) -> Bool {
+    func containStrings(strings: Array<String>, ORMode: Bool = false, ignoreCase: Bool = false) -> Bool {
         for string: String in strings {
-            if self.containString(string) {
+            if ORMode && self.containString(string, ignoreCase: ignoreCase) {
                 return true
+            } else if ORMode == false && self.containString(string, ignoreCase: ignoreCase) == false {
+                return false
             }
         }
-        return false
+        
+        if ORMode {
+            return false
+        } else {
+            return true
+        }
     }
 
     static func stringWithCFStringVoidPointer(voidPtr: UnsafePointer<Void>) -> String? {

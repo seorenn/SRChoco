@@ -24,24 +24,26 @@ class TestNSDateExtensions: XCTestCase {
     func testDateComponents() {
         let now = NSDate()
         let dc = now.dateComponents
+        XCTAssert(dc != nil)
         
-        let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-        let components = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: now)
-        
-        XCTAssert(dc.year == components.year)
-        XCTAssert(dc.month == components.month)
-        XCTAssert(dc.day == components.day)
-        XCTAssert(dc.hour == components.hour)
-        XCTAssert(dc.minute == components.minute)
-        XCTAssert(dc.second == components.second)
+        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+            let components = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: now)
+            
+            XCTAssert(dc!.year == components.year)
+            XCTAssert(dc!.month == components.month)
+            XCTAssert(dc!.day == components.day)
+            XCTAssert(dc!.hour == components.hour)
+            XCTAssert(dc!.minute == components.minute)
+            XCTAssert(dc!.second == components.second)
+        }
     }
     
     func testDateComparison() {
         let now = NSDate()
-        let dc = now.dateComponents
+        let dc = now.dateComponents!
         
-        let nextYearDate = NSDate.generate(dc.year+1, month: dc.month, day: dc.day, hour: dc.hour, minute: dc.minute, second: dc.second)
-        let prevYearDate = NSDate.generate(dc.year-1, month: dc.month, day: dc.day, hour: dc.hour, minute: dc.minute, second: dc.second)
+        let nextYearDate = NSDate.generate(dc.year+1, month: dc.month, day: dc.day, hour: dc.hour, minute: dc.minute, second: dc.second)!
+        let prevYearDate = NSDate.generate(dc.year-1, month: dc.month, day: dc.day, hour: dc.hour, minute: dc.minute, second: dc.second)!
         
         XCTAssert(now < nextYearDate)
         XCTAssert(nextYearDate > now)
@@ -53,11 +55,11 @@ class TestNSDateExtensions: XCTestCase {
     func testDateCreation() {
         let dt = NSDate.generate(1949, month: 7, day: 21, hour: 12, minute: 25, second: 59)!
         let dc = dt.dateComponents
-        XCTAssertEqual(dc.year, 1949)
-        XCTAssertEqual(dc.month, 7)
-        XCTAssertEqual(dc.day, 21)
-        XCTAssertEqual(dc.hour, 12)
-        XCTAssertEqual(dc.minute, 25)
-        XCTAssertEqual(dc.second, 59)
+        XCTAssertEqual(dc!.year, 1949)
+        XCTAssertEqual(dc!.month, 7)
+        XCTAssertEqual(dc!.day, 21)
+        XCTAssertEqual(dc!.hour, 12)
+        XCTAssertEqual(dc!.minute, 25)
+        XCTAssertEqual(dc!.second, 59)
     }
 }
