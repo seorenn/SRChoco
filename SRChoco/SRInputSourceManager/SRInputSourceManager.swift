@@ -73,7 +73,6 @@ class SRInputSourceManager {
         
         inputSources = []
     
-        //for i in 0..<tis.count {
         for i in 0..<issCount {
             let tisVoidPtr = CFArrayGetValueAtIndex(issArray, i)
             let tis: TISInputSourceRef = unsafeBitCast(tisVoidPtr, TISInputSourceRef.self)

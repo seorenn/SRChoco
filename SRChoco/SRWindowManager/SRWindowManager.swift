@@ -37,7 +37,7 @@ class SRWindowManager {
     func windowProcesses() -> Array<NSRunningApplication?> {
         var apps = Array<NSRunningApplication?>()
         let list = CGWindowListCopyWindowInfo(CGWindowListOption(kCGWindowListExcludeDesktopElements | kCGWindowListOptionOnScreenOnly), CGWindowID(0))
-        let windowInfos = list.takeRetainedValue().__conversion() as Array
+        let windowInfos = list.takeRetainedValue() as Array
         for info in windowInfos as Array<Dictionary<NSString, AnyObject>> {
             let pidPtr: AnyObject? = info[kCGWindowOwnerPID]
             let pidInt = pidPtr as Int
@@ -57,7 +57,6 @@ class SRWindowManager {
     
         let nc = NSWorkspace.sharedWorkspace().notificationCenter
         nc.addObserverForName(NSWorkspaceDidActivateApplicationNotification, object:nil, queue:NSOperationQueue.mainQueue(), usingBlock: {(notification: NSNotification!) -> Void in
-            //let key: NSObject = NSWorkspaceApplicationKey as NSObject
             let app = notification!.userInfo![NSWorkspaceApplicationKey] as NSRunningApplication!
             block(app)
         })

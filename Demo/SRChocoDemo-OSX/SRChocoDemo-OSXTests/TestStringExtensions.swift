@@ -45,8 +45,15 @@ class TestStringExtensions: XCTestCase {
         let str = "This is test string by test contain"
         XCTAssertTrue(str.containString("test"))
         XCTAssertFalse(str.containString("TEST"))
+        XCTAssertTrue(str.containString("TEST", ignoreCase: true))
         
-        XCTAssertTrue(str.containStrings(["is", "test", "string", "aaa"]))
+        XCTAssertTrue(str.containStrings(["is", "test", "string"]))
+        XCTAssertTrue(str.containStrings(["is", "test", "string"], ORMode: false, ignoreCase: false))
+        XCTAssertTrue(str.containStrings(["IS", "TEST", "String"], ORMode: false, ignoreCase: true))
+        
+        XCTAssertTrue(str.containStrings(["is", "testxx", "nonstring", "aaa"], ORMode: true))
+        XCTAssertTrue(str.containStrings(["IS", "XX", "non", "aaa"], ORMode: true, ignoreCase: true))
+        
         XCTAssertFalse(str.containStrings(["aaa", "bbb"]))
     }
 }

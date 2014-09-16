@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B7A11985F06A004F3168 /* SRRegexp.swift */; };
-		8A6B4656196A883600E791B5 /* SRDatetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464B196A883600E791B5 /* SRDatetime.swift */; };
 		8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464D196A883600E791B5 /* SRDirectory.swift */; };
 		8A6B4658196A883600E791B5 /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464E196A883600E791B5 /* SRFile.swift */; };
 		8A6B4659196A883600E791B5 /* SROtherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4650196A883600E791B5 /* SROtherApp.swift */; };
@@ -19,8 +18,10 @@
 		8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */; };
 		8AAC8D10194ED4F1007BDE4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0F194ED4F1007BDE4D /* Images.xcassets */; };
 		8AAC8D1C194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D1B194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift */; };
+		8AD4D14419C8189B0035D1EC /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4D14319C8189B0035D1EC /* ViewExtensions.swift */; };
+		8AD4D14919C8192F0035D1EC /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4D14719C8192F0035D1EC /* SRInputSourceManager.swift */; };
+		8AD4D14C19C819390035D1EC /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4D14B19C819390035D1EC /* SRStatusItemPopupController.swift */; };
 		8AD8911E19A1B98C00BD48AC /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8911C19A1B98C00BD48AC /* StringExtensions.swift */; };
-		8AD8911F19A1B98C00BD48AC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8911D19A1B98C00BD48AC /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		8A00388B195042910079D8D5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		8A26B7A11985F06A004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
-		8A6B464B196A883600E791B5 /* SRDatetime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDatetime.swift; sourceTree = "<group>"; };
 		8A6B464D196A883600E791B5 /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
 		8A6B464E196A883600E791B5 /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
 		8A6B4650196A883600E791B5 /* SROtherApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SROtherApp.swift; sourceTree = "<group>"; };
@@ -51,8 +51,10 @@
 		8AAC8D15194ED4F1007BDE4D /* SRChocoDemo-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRChocoDemo-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8D1A194ED4F1007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAC8D1B194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRChocoDemo_iOSTests.swift; sourceTree = "<group>"; };
+		8AD4D14319C8189B0035D1EC /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		8AD4D14719C8192F0035D1EC /* SRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRInputSourceManager.swift; sourceTree = "<group>"; };
+		8AD4D14B19C819390035D1EC /* SRStatusItemPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStatusItemPopupController.swift; sourceTree = "<group>"; };
 		8AD8911C19A1B98C00BD48AC /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		8AD8911D19A1B98C00BD48AC /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,14 +81,6 @@
 				8A26B7A11985F06A004F3168 /* SRRegexp.swift */,
 			);
 			path = SRRegexp;
-			sourceTree = "<group>";
-		};
-		8A6B464A196A883600E791B5 /* SRDatetime */ = {
-			isa = PBXGroup;
-			children = (
-				8A6B464B196A883600E791B5 /* SRDatetime.swift */,
-			);
-			path = SRDatetime;
 			sourceTree = "<group>";
 		};
 		8A6B464C196A883600E791B5 /* SRFileManager */ = {
@@ -117,8 +111,8 @@
 		8A6B4653196A883600E791B5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8AD4D14319C8189B0035D1EC /* ViewExtensions.swift */,
 				8AD8911C19A1B98C00BD48AC /* StringExtensions.swift */,
-				8AD8911D19A1B98C00BD48AC /* UIViewExtensions.swift */,
 				8A6B4654196A883600E791B5 /* Log.swift */,
 				8A6B4655196A883600E791B5 /* NSDateExtensions.swift */,
 			);
@@ -191,9 +185,10 @@
 		8AAC8D2A194ED940007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8AD4D14A19C819390035D1EC /* SRStatusItemPopupController */,
+				8AD4D14519C8192F0035D1EC /* SRInputSourceManager */,
 				8A26B7A01985F06A004F3168 /* SRRegexp */,
 				8A7AC8D51976657F006028F4 /* SRGCD */,
-				8A6B464A196A883600E791B5 /* SRDatetime */,
 				8A6B464C196A883600E791B5 /* SRFileManager */,
 				8A6B464F196A883600E791B5 /* SROtherApp */,
 				8A6B4651196A883600E791B5 /* SRWindowManager */,
@@ -201,6 +196,22 @@
 			);
 			name = SRChoco;
 			path = ../../../SRChoco;
+			sourceTree = "<group>";
+		};
+		8AD4D14519C8192F0035D1EC /* SRInputSourceManager */ = {
+			isa = PBXGroup;
+			children = (
+				8AD4D14719C8192F0035D1EC /* SRInputSourceManager.swift */,
+			);
+			path = SRInputSourceManager;
+			sourceTree = "<group>";
+		};
+		8AD4D14A19C819390035D1EC /* SRStatusItemPopupController */ = {
+			isa = PBXGroup;
+			children = (
+				8AD4D14B19C819390035D1EC /* SRStatusItemPopupController.swift */,
+			);
+			path = SRStatusItemPopupController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,13 +315,14 @@
 				8A6B465A196A883600E791B5 /* SRWindowManager.swift in Sources */,
 				8A6B465B196A883600E791B5 /* Log.swift in Sources */,
 				8A6B4658196A883600E791B5 /* SRFile.swift in Sources */,
+				8AD4D14919C8192F0035D1EC /* SRInputSourceManager.swift in Sources */,
 				8A7AC8D71976657F006028F4 /* SRDispatch.swift in Sources */,
 				8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */,
 				8AD8911E19A1B98C00BD48AC /* StringExtensions.swift in Sources */,
+				8AD4D14419C8189B0035D1EC /* ViewExtensions.swift in Sources */,
+				8AD4D14C19C819390035D1EC /* SRStatusItemPopupController.swift in Sources */,
 				8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */,
 				8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */,
-				8A6B4656196A883600E791B5 /* SRDatetime.swift in Sources */,
-				8AD8911F19A1B98C00BD48AC /* UIViewExtensions.swift in Sources */,
 				8A6B4659196A883600E791B5 /* SROtherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

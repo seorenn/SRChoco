@@ -1,8 +1,8 @@
 import Foundation
 
-class SRDirectory: DebugPrintable, Equatable {
-    var path: String?
-    var name: String?
+class SRDirectory: NSObject, DebugPrintable, Equatable {
+    var path: String
+    var name: String
     var hidden = false
     var directories = Dictionary<String, SRDirectory>()
     var files = Dictionary<String, SRFile>()
@@ -43,22 +43,20 @@ class SRDirectory: DebugPrintable, Equatable {
         return homePath as String
     }
     
-    init() {
-        
-    }
-    
-    convenience init(_ path: String) {
-        self.init()
+    init(_ path: String) {
         self.path = path
+        // TODO: self.name
+        self.name = "Unimplemented Property"
+        super.init()
     }
     
-    convenience init(create: String) {
-        self.init()
+    convenience init?(create path: String) {
+        self.init(path)
         // TODO
+        return nil
     }
     
     func load() {
-        assert(self.path != nil)
         let fm = NSFileManager.defaultManager()
         var error: NSError?
         let contents = fm.contentsOfDirectoryAtPath(self.path, error: &error)
@@ -68,7 +66,7 @@ class SRDirectory: DebugPrintable, Equatable {
         
         for content: AnyObject in contents! {
             let name: String = content as String
-            let fullPath = self.path! + "/" + name
+            let fullPath = self.path + "/" + name
             
             var isDirectory: ObjCBool = false
             let exists = fm.fileExistsAtPath(fullPath, isDirectory: &isDirectory)
@@ -102,7 +100,7 @@ class SRDirectory: DebugPrintable, Equatable {
         return nil
     }
     
-    var debugDescription: String {
+    override var debugDescription: String {
         if !loaded {
             return "<SRDirectory [\(path)] (not loaded)"
         } else {
@@ -112,7 +110,7 @@ class SRDirectory: DebugPrintable, Equatable {
 }
 
 func == (left: SRDirectory, right: SRDirectory) -> Bool {
-    if left.path != nil && right.path != nil && left.path == right.path {
+    if left.path == right.path {
         return true
     }
     return false
