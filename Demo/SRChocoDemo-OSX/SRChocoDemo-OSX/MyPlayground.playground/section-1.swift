@@ -1,30 +1,33 @@
 import Cocoa
 
+import Carbon
 
+let currentIS: TISInputSourceRef = TISCopyCurrentKeyboardInputSource().takeUnretainedValue()
 
-//import Carbon
-//let iss = TISCreateInputSourceList(nil, Boolean(0))
-//let cflist:CFArray = iss.takeUnretainedValue()
-//let first = CFArrayGetValueAtIndex(cflist, 0)
-//let firstTIS = UnsafePointer<TISInputSource>(first)
-//let IDPtr = TISGetInputSourceProperty(TISInputSourceRef(first), kTISPropertyInputSourceID)
+let iss = TISCreateInputSourceList(nil, Boolean(0))
+let cflist: CFArrayRef = iss.takeUnretainedValue()
+let listCount = CFArrayGetCount(cflist)
 
-//let nsList = iss.takeUnretainedValue().__conversion()
-//let first: AnyObject! = nsList.objectAtIndex(0)
-//println("first = \(first)")
-//let tis: TISInputSource = first as TISInputSource
+let firstTISVoidPtr = CFArrayGetValueAtIndex(cflist, 0)
+let firstTISCast: TISInputSourceRef = unsafeBitCast(firstTISVoidPtr, TISInputSourceRef.self)
+let firstTIS: TISInputSourceRef = UnsafePointer<TISInputSourceRef>(firstTISVoidPtr).memory
 
-//let IDPtr = TISGetInputSourceProperty(first, kTISPropertyInputSourceID)
+firstTISCast === firstTIS
 
+//let categoryVoidPtr = TISGetInputSourceProperty(firstTIS, kTISPropertyInputSourceCategory)
+let categoryVoidPtr = TISGetInputSourceProperty(firstTISCast, kTISPropertyInputSourceCategory)
+let categoryCF: CFStringRef = unsafeBitCast(categoryVoidPtr, CFStringRef.self)
+let category: NSString = categoryCF
 
-let src = "this is test string for test"
-let pat = "(test)"
+//let nameVoidPtr = TISGetInputSourceProperty(firstTIS, kTISPropertyLocalizedName)
+let nameVoidPtr = TISGetInputSourceProperty(firstTISCast, kTISPropertyLocalizedName)
+let nameCF: CFStringRef = unsafeBitCast(nameVoidPtr, CFStringRef.self)
 
-var error: NSError?
-let re = NSRegularExpression(pattern: pat, options: .CaseInsensitive, error: &error)
+//let IDVoidPtr = TISGetInputSourceProperty(firstTIS, kTISPropertyInputSourceID)
+let IDVoidPtr = TISGetInputSourceProperty(firstTISCast, kTISPropertyInputSourceID)
+let IDCF: CFStringRef = unsafeBitCast(IDVoidPtr, CFStringRef.self)
 
-let matches = re.matchesInString(src, options: nil, range: NSMakeRange(0, countElements(src)))
-matches.count
-
-let conv = re.stringByReplacingMatchesInString(src, options: nil, range: NSMakeRange(0, countElements(src)), withTemplate: "->$1<-")
+//let bundleIDVoidPtr = TISGetInputSourceProperty(firstTIS, kTISPropertyBundleID)
+let bundleIDVoidPtr = TISGetInputSourceProperty(firstTISCast, kTISPropertyBundleID)
+let bundleIDCF: CFStringRef = unsafeBitCast(bundleIDVoidPtr, CFStringRef.self)
 
