@@ -1,30 +1,25 @@
 import Foundation
 
-class SRFile: DebugPrintable, Equatable {
-    var path: String?
+class SRFile: NSObject, DebugPrintable, Equatable {
+    var path: String
     var parentDirectory: SRDirectory?
     var data: NSData? {
         get {
-            assert(path != nil)
             let fm = NSFileManager.defaultManager()
-            return fm.contentsAtPath(self.path!)
+            return fm.contentsAtPath(self.path)
         }
         set {
             // TODO
         }
     }
     var exists: Bool {
-        assert(path != nil)
         let fm = NSFileManager.defaultManager()
-        return fm.fileExistsAtPath(path!)
-    }
-    
-    init() {
-        
+        return fm.fileExistsAtPath(self.path)
     }
     
     init(_ path: String) {
         self.path = path
+        super.init()
     }
     
     func delete() -> Bool {
@@ -44,14 +39,12 @@ class SRFile: DebugPrintable, Equatable {
     }
     
     func moveTo(directory: SRDirectory) -> Bool {
-        assert(directory.path != nil)
-        
         // TODO
         
         return false
     }
     
-    var debugDescription: String {
+    override var debugDescription: String {
         return "<SRFile: [\(path)]>"
     }
 }
