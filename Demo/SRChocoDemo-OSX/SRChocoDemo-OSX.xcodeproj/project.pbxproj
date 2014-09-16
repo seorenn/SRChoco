@@ -15,7 +15,7 @@
 		8A2D06A719A4798E001D42AB /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FEE161961435800C73F8C /* SRWindowManager.swift */; };
 		8A2D06A819A47991001D42AB /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
 		8A2D06A919A47995001D42AB /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
-		8A2D06AA19A47998001D42AB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */; };
+		8A2D06AA19A47998001D42AB /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* ViewExtensions.swift */; };
 		8A2D06AB19A479A0001D42AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
 		8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */; };
@@ -43,7 +43,7 @@
 		8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */; };
 		8ACA188E19B076CF006B5048 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8ACF2774197E607100B48971 /* DemoSRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */; };
-		8AD8912119A1B99600BD48AC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */; };
+		8AD8912119A1B99600BD48AC /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* ViewExtensions.swift */; };
 		8ADF2C8D199B72F9001A1D8F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
 		8AF47824195AC92E00960AE4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
 /* End PBXBuildFile section */
@@ -88,7 +88,7 @@
 		8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStringExtensions.swift; sourceTree = "<group>"; };
 		8ACF2772197E5FC600B48971 /* SRChocoDemo-OSX-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-OSX-Bridging-Header.h"; sourceTree = "<group>"; };
 		8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSRInputSourceManager.swift; sourceTree = "<group>"; };
-		8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		8AD8912019A1B99600BD48AC /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		8AF47823195AC92E00960AE4 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +133,7 @@
 		8A4DE92719515A3D00F65AEB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				8AD8912019A1B99600BD48AC /* UIViewExtensions.swift */,
+				8AD8912019A1B99600BD48AC /* ViewExtensions.swift */,
 				8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */,
 				8AF47823195AC92E00960AE4 /* Log.swift */,
 				8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */,
@@ -385,7 +385,7 @@
 				8A6B465F196A884400E791B5 /* SROtherApp.swift in Sources */,
 				8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */,
 				8ACF2774197E607100B48971 /* DemoSRInputSourceManager.swift in Sources */,
-				8AD8912119A1B99600BD48AC /* UIViewExtensions.swift in Sources */,
+				8AD8912119A1B99600BD48AC /* ViewExtensions.swift in Sources */,
 				8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,7 +406,7 @@
 				8ADF2C8D199B72F9001A1D8F /* StringExtensions.swift in Sources */,
 				8A2D06A819A47991001D42AB /* SRDirectory.swift in Sources */,
 				8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */,
-				8A2D06AA19A47998001D42AB /* UIViewExtensions.swift in Sources */,
+				8A2D06AA19A47998001D42AB /* ViewExtensions.swift in Sources */,
 				8A2D06A919A47995001D42AB /* SRFile.swift in Sources */,
 				8A2D06A519A4797C001D42AB /* SRRegexp.swift in Sources */,
 				8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */,

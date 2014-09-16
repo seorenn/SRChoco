@@ -1,10 +1,18 @@
-#if os(iOS)
-import UIKit
+#if os(OSX)
+    import Cocoa
+    typealias ViewType = NSView
+    typealias RectType = NSRect
+    typealias PointType = NSPoint
+    typealias SizeType = NSSize
+#else
+    import UIKit
+    typealias ViewType = UIView
+    typealias RectType = CGRect
+    typealias PointType = CGPoint
+    typealias SizeType = CGSize
 #endif
 
-#if os(iOS)
-
-extension UIView {
+extension ViewType {
     var x: CGFloat {
         set {
             var frame = self.frame
@@ -66,11 +74,15 @@ extension UIView {
         }
     }
     
-    var centerPoint: CGPoint {
-        return CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2)
+    var centerPoint: PointType {
+        #if os(OSX)
+            return NSMakePoint(self.frame.size.width / 2, self.frame.size.height / 2)
+        #else
+            return CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2)
+        #endif
     }
     
-    func moveToBottomOfView(view: UIView, margin: CGFloat = 0) {
+    func moveToBelow(view: ViewType, margin: CGFloat = 0) {
         let viewFrame = view.frame
         var myFrame = self.frame
         
@@ -78,5 +90,3 @@ extension UIView {
         self.frame = myFrame
     }
 }
-
-#endif

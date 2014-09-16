@@ -5,11 +5,14 @@ class SRFile: NSObject, DebugPrintable, Equatable {
     var parentDirectory: SRDirectory?
     var data: NSData? {
         get {
+            if !self.exists { return nil }
             let fm = NSFileManager.defaultManager()
             return fm.contentsAtPath(self.path)
         }
         set {
-            // TODO
+            if self.exists {
+                // TODO
+            }
         }
     }
     var exists: Bool {
@@ -23,29 +26,32 @@ class SRFile: NSObject, DebugPrintable, Equatable {
     }
     
     func delete() -> Bool {
-        // TODO
+        if !self.exists { return false }
         
+        // TODO
         return false
     }
     
     func moveToTrash() -> Bool {
         #if os(iOS)
             return false
+        #else
+            if !self.exists { return false }
+            
+            // TODO
+            return false
         #endif
-        
-        // TODO
-        
-        return false
     }
     
     func moveTo(directory: SRDirectory) -> Bool {
+        if !self.exists { return false }
         // TODO
-        
         return false
     }
     
     override var debugDescription: String {
-        return "<SRFile: [\(path)]>"
+        let existance = self.exists ? "" : " (Not Exists)"
+        return "<SRFile: [\(path)]\(existance)>"
     }
 }
 

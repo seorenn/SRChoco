@@ -4,13 +4,17 @@
 import UIKit
     
 func canLaunchApp(appScheme: String) -> Bool {
-    let appURL = NSURL.URLWithString(appScheme)
-    return UIApplication.sharedApplication().canOpenURL(appURL)
+    if let appURL = NSURL(string: appScheme) {
+        return UIApplication.sharedApplication().canOpenURL(appURL)
+    } else {
+        return false
+    }
 }
 
 func launchApp(appScheme: String) {
-    let appURL = NSURL.URLWithString(appScheme)
-    UIApplication.sharedApplication().openURL(appURL)
+    if let appURL = NSURL(string: appScheme) {
+        UIApplication.sharedApplication().openURL(appURL)
+    }
 }
 
 #elseif os(OSX)
