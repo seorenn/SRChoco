@@ -23,7 +23,6 @@
 		8A6B465F196A884400E791B5 /* SROtherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B465E196A884400E791B5 /* SROtherApp.swift */; };
 		8A7AC8D419766575006028F4 /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D319766575006028F4 /* SRDispatch.swift */; };
 		8A8FEE171961435800C73F8C /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FEE161961435800C73F8C /* SRWindowManager.swift */; };
-		8A914C89197114FB002CE4A5 /* DemoSRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914C88197114FB002CE4A5 /* DemoSRWindowManager.swift */; };
 		8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */; };
 		8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE2194ED4CF007BDE4D /* main.swift */; };
 		8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE4194ED4CF007BDE4D /* AppDelegate.swift */; };
@@ -37,12 +36,14 @@
 		8AB156BC19C6ECDC00A2A568 /* StatusPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B919C6ECDC00A2A568 /* StatusPopupViewController.swift */; };
 		8AB156BD19C6ECDC00A2A568 /* StatusPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */; };
 		8AB156BE19C6ECDC00A2A568 /* StatusPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */; };
+		8ABA3A0A19C93008009B75A5 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0919C93008009B75A5 /* MainWindowController.swift */; };
+		8ABA3A0C19C93076009B75A5 /* InputSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0B19C93076009B75A5 /* InputSourceController.swift */; };
+		8ABA3A0E19C94015009B75A5 /* WindowLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0D19C94015009B75A5 /* WindowLogController.swift */; };
 		8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
 		8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
 		8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
 		8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */; };
 		8ACA188E19B076CF006B5048 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
-		8ACF2774197E607100B48971 /* DemoSRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */; };
 		8AD8912119A1B99600BD48AC /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* ViewExtensions.swift */; };
 		8ADF2C8D199B72F9001A1D8F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
 		8AF47824195AC92E00960AE4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
@@ -66,7 +67,6 @@
 		8A6B465E196A884400E791B5 /* SROtherApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SROtherApp.swift; sourceTree = "<group>"; };
 		8A7AC8D319766575006028F4 /* SRDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatch.swift; sourceTree = "<group>"; };
 		8A8FEE161961435800C73F8C /* SRWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWindowManager.swift; sourceTree = "<group>"; };
-		8A914C88197114FB002CE4A5 /* DemoSRWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSRWindowManager.swift; sourceTree = "<group>"; };
 		8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSRFileManager.swift; sourceTree = "<group>"; };
 		8AAC8CDD194ED4CF007BDE4D /* SRChocoDemo-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SRChocoDemo-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8CE1194ED4CF007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,12 +82,14 @@
 		8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStatusItemPopupController.swift; sourceTree = "<group>"; };
 		8AB156B919C6ECDC00A2A568 /* StatusPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPopupViewController.swift; sourceTree = "<group>"; };
 		8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusPopupViewController.xib; sourceTree = "<group>"; };
+		8ABA3A0919C93008009B75A5 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		8ABA3A0B19C93076009B75A5 /* InputSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSourceController.swift; sourceTree = "<group>"; };
+		8ABA3A0D19C94015009B75A5 /* WindowLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowLogController.swift; sourceTree = "<group>"; };
 		8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
 		8AC2B6EA195ECA1500459F3D /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
 		8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStringExtensions.swift; sourceTree = "<group>"; };
 		8ACF2772197E5FC600B48971 /* SRChocoDemo-OSX-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-OSX-Bridging-Header.h"; sourceTree = "<group>"; };
-		8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSRInputSourceManager.swift; sourceTree = "<group>"; };
 		8AD8912019A1B99600BD48AC /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		8AF47823195AC92E00960AE4 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,9 +115,10 @@
 		8A23A2DE19515C2F008CB833 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				8A914C88197114FB002CE4A5 /* DemoSRWindowManager.swift */,
+				8ABA3A0919C93008009B75A5 /* MainWindowController.swift */,
+				8ABA3A0B19C93076009B75A5 /* InputSourceController.swift */,
+				8ABA3A0D19C94015009B75A5 /* WindowLogController.swift */,
 				8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */,
-				8ACF2773197E607100B48971 /* DemoSRInputSourceManager.swift */,
 				8AB156B919C6ECDC00A2A568 /* StatusPopupViewController.swift */,
 				8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */,
 			);
@@ -372,10 +375,12 @@
 				8AB156B719C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */,
 				8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */,
 				8AF47824195AC92E00960AE4 /* Log.swift in Sources */,
-				8A914C89197114FB002CE4A5 /* DemoSRWindowManager.swift in Sources */,
+				8ABA3A0C19C93076009B75A5 /* InputSourceController.swift in Sources */,
 				8AADB7F11971679700200861 /* SRInputSourceManager.swift in Sources */,
 				8A8FEE171961435800C73F8C /* SRWindowManager.swift in Sources */,
+				8ABA3A0A19C93008009B75A5 /* MainWindowController.swift in Sources */,
 				8A26B79F1985F062004F3168 /* SRRegexp.swift in Sources */,
+				8ABA3A0E19C94015009B75A5 /* WindowLogController.swift in Sources */,
 				8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */,
 				8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */,
 				8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */,
@@ -384,7 +389,6 @@
 				8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */,
 				8A6B465F196A884400E791B5 /* SROtherApp.swift in Sources */,
 				8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */,
-				8ACF2774197E607100B48971 /* DemoSRInputSourceManager.swift in Sources */,
 				8AD8912119A1B99600BD48AC /* ViewExtensions.swift in Sources */,
 				8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */,
 			);
