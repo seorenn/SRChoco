@@ -717,7 +717,7 @@
                                         </subviews>
                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </clipView>
-                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.012345679012345678" horizontal="YES" id="spk-Rb-2Hx">
+                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="spk-Rb-2Hx">
                                         <rect key="frame" x="1" y="119" width="223" height="15"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
@@ -846,7 +846,7 @@
         <customObject id="Qqo-Xb-0s7" customClass="MainWindowController" customModule="SRChocoDemo_OSX" customModuleProvider="target"/>
         <customObject id="EuS-HM-1hU" customClass="InputSourceController" customModule="SRChocoDemo_OSX" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="FXc-DX-BRY" id="041-29-bMI"/>
+                <outlet property="tableView" destination="FXc-DX-BRY" id="BSN-vq-vi3"/>
             </connections>
         </customObject>
         <customObject id="vYk-cr-oEh" customClass="WindowLogController" customModule="SRChocoDemo_OSX" customModuleProvider="target">

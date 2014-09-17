@@ -20,17 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let alternateImage = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericApplicationIcon)))
         self.statusItemPopupController = SRStatusItemPopupController(viewController: popup, image: image, alternateImage: alternateImage)
         
-        //runTestSRInputSourceManager()
-        
         let demoFM = DemoSRFileManager()
         demoFM.test()
-        
-//        let wm = SRWindowManager()
-//        wm.detectWindowChanging({ (app:NSRunningApplication!) -> Void in
-//            if (app != nil) {
-//                println(app)
-//            }
-//        })
     }
 
     func applicationWillTerminate(aNotification: NSNotification?) {

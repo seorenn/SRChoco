@@ -9,6 +9,7 @@
 import Cocoa
 
 class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
+
     @IBOutlet weak var tableView: NSTableView!
     
     let ism: SRInputSourceManager
@@ -18,11 +19,22 @@ class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSourc
         super.init()
     }
     
+    override func awakeFromNib() {
+        let currentISIndex = self.ism.currentInputSourceIndex!
+        self.tableView.selectRowIndexes(NSIndexSet(index: currentISIndex), byExtendingSelection: false)
+    }
+    
     func numberOfRowsInTableView(tableView: NSTableView!) -> Int {
         return self.ism.inputSources.count
     }
     
     func tableView(tableView: NSTableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
         return self.ism.inputSources[row].name
+    }
+    
+    func tableViewSelectionDidChange(notification: NSNotification!) {
+        let index = self.tableView.selectedRow
+        let selectedIS = self.ism.inputSources[index]
+        selectedIS.activate()
     }
 }
