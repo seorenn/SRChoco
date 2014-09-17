@@ -68,7 +68,7 @@ class SRStatusItemPopupController: NSObject {
     private var viewController: NSViewController
     private var dummyMenu: NSMenu
     private var popover: NSPopover
-    private var popoverTransiencyMonitor: AnyObject?
+    private var popoverTouchHandler: AnyObject?
     
     var drawHandler: SRStatusItemPopupControllerDrawHandler? {
         set {
@@ -117,8 +117,8 @@ class SRStatusItemPopupController: NSObject {
             let edge = NSRectEdge(CGRectEdge.MinYEdge.rawValue)  // FIXME: MinYEdge is CGRectEdge in currently; Yeah Build Error! :-(
             self.popover.showRelativeToRect(self.statusItemView.frame, ofView: self.statusItemView, preferredEdge: edge)
             
-            let mask: NSEventMask = NSEventMask.LeftMouseDownMask | NSEventMask.RightMouseDownMask  // FIXME: Bypassing Link Error
-            self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(mask, handler: { (event: NSEvent!) -> Void in
+            let mask: NSEventMask = .LeftMouseDownMask | .RightMouseDownMask  // FIXME: Bypassing Link Error
+            self.popoverTouchHandler = NSEvent.addGlobalMonitorForEventsMatchingMask(mask, handler: { (event: NSEvent!) -> Void in
                 self.hidePopover()
             })
 
@@ -136,9 +136,9 @@ class SRStatusItemPopupController: NSObject {
         if self.popover.shown {
             self.popover.close()
             
-            if self.popoverTransiencyMonitor != nil {
-                NSEvent.removeMonitor(self.popoverTransiencyMonitor)
-                self.popoverTransiencyMonitor = nil
+            if self.popoverTouchHandler != nil {
+                NSEvent.removeMonitor(self.popoverTouchHandler)
+                self.popoverTouchHandler = nil
             }
         }
     }

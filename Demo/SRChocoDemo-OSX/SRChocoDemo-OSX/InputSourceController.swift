@@ -1,0 +1,28 @@
+//
+//  InputSourceController.swift
+//  SRChocoDemo-OSX
+//
+//  Created by Heeseung Seo on 2014. 9. 17..
+//  Copyright (c) 2014년 Seorenn. All rights reserved.
+//
+
+import Cocoa
+
+class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
+    @IBOutlet weak var tableView: NSTableView!
+    
+    let ism: SRInputSourceManager
+    
+    override init() {
+        self.ism = SRInputSourceManager.sharedManager()
+        super.init()
+    }
+    
+    func numberOfRowsInTableView(tableView: NSTableView!) -> Int {
+        return self.ism.inputSources.count
+    }
+    
+    func tableView(tableView: NSTableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
+        return self.ism.inputSources[row].name
+    }
+}
