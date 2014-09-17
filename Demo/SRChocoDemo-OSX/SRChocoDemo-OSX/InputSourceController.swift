@@ -17,6 +17,13 @@ class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSourc
     override init() {
         self.ism = SRInputSourceManager.sharedManager()
         super.init()
+        
+        // TODO: This is test code
+        println("Input Sources =====")
+        for ism in self.ism.inputSources {
+            println(ism)
+        }
+        println("End of Input Sources =====")
     }
     
     override func awakeFromNib() {
