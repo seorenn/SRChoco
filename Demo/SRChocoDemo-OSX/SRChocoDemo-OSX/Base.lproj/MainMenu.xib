@@ -689,7 +689,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" id="FXc-DX-BRY">
-                                                <rect key="frame" x="0.0" y="0.0" width="238" height="117"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="444" height="22"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -793,7 +793,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="OJP-gl-fxR">
-                                                <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="223" height="428"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <size key="minSize" width="137" height="428"/>
@@ -843,7 +843,6 @@
             </view>
             <point key="canvasLocation" x="156.5" y="124"/>
         </window>
-        <customObject id="Qqo-Xb-0s7" customClass="MainWindowController" customModule="SRChocoDemo_OSX" customModuleProvider="target"/>
         <customObject id="EuS-HM-1hU" customClass="InputSourceController" customModule="SRChocoDemo_OSX" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="FXc-DX-BRY" id="BSN-vq-vi3"/>
