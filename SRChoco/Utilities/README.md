@@ -27,7 +27,7 @@ if date == generatedDate {
 
 <pre>
 // Join String Array
-let inputArray = [ "This is test" ]
+let inputArray = [ "This", "is", "test" ]
 let outputString = inputArray.stringByJoining(" ")   // "This is test"
 </pre>
 
