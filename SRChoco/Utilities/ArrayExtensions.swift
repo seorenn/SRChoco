@@ -1,5 +1,5 @@
 extension Array {
-    func join(seperator: String) -> String {
+    func stringByJoining(seperator: String) -> String {
         var result = ""
         for (idx, item) in enumerate(self) {
             result += "\(item)"

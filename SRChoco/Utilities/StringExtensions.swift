@@ -49,7 +49,7 @@ extension String {
         }
     }
     
-    func split(splitter: String? = nil) -> [String] {
+    func arrayBySpliting(splitter: String? = nil) -> [String] {
         if let s = splitter {
             return self.componentsSeparatedByString(s)
         } else {

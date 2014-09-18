@@ -22,28 +22,43 @@ class TestSRRegexp: XCTestCase {
     }
 
     func testFind() {
-        let regexp = SRRegexp(".*test.*")
-        XCTAssert(regexp.find("This is test string")?.count > 0)
-        XCTAssert(regexp.find("this is TEST STRING")?.count > 0)
+        if let regexp = SRRegexp(".*test.*") {
+            XCTAssert(regexp.find("This is test string")?.count > 0)
+            XCTAssert(regexp.find("this is TEST STRING")?.count > 0)
+        } else {
+            XCTAssert(false)
+        }
         
-        let regexp2 = SRRegexp("^[a-zA-Z]+$")
-        XCTAssert(regexp2.find("ABCDEFGaaa")?.count > 0)
-        XCTAssert(regexp2.find("1Abccd") == nil)
+        if let regexp2 = SRRegexp("^[a-zA-Z]+$") {
+            XCTAssert(regexp2.find("ABCDEFGaaa")?.count > 0)
+            XCTAssert(regexp2.find("1Abccd") == nil)
+        } else {
+            XCTAssert(false)
+        }
     }
     
     func testTest() {
-        let regexp = SRRegexp(".*test.*")
-        XCTAssert(regexp.test("This is test string"))
-        XCTAssert(regexp.test("this is TEST STRING"))
+        if let regexp = SRRegexp(".*test.*") {
+            XCTAssert(regexp.test("This is test string"))
+            XCTAssert(regexp.test("this is TEST STRING"))
+        } else {
+            XCTAssert(false)
+        }
         
-        let regexp2 = SRRegexp("^[a-zA-Z]+$")
-        XCTAssert(regexp2.test("ABCDEFGaaa"))
-        XCTAssert(regexp2.test("1Abccd") == false)
+        if let regexp2 = SRRegexp("^[a-zA-Z]+$") {
+            XCTAssert(regexp2.test("ABCDEFGaaa"))
+            XCTAssert(regexp2.test("1Abccd") == false)
+        } else {
+            XCTAssert(false)
+        }
     }
 
     func testReplace() {
-        let regexp = SRRegexp(".*(TEST).*")
-        let res = regexp.replace("this is TEST string", template: "EXTRACTED: $1")
-        XCTAssert(res == "EXTRACTED: TEST")
+        if let regexp = SRRegexp(".*(TEST).*") {
+            let res = regexp.replace("this is TEST string", template: "EXTRACTED: $1")
+            XCTAssert(res == "EXTRACTED: TEST")
+        } else {
+            XCTAssert(false)
+        }
     }
 }

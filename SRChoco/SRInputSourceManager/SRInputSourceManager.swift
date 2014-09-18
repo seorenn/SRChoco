@@ -61,8 +61,7 @@ class SRInputSource: NSObject, Printable, Equatable {
                          "                Selectable: \(self.selectable)",
                          "                Icon URL: \(self.iconURL)",
                          "                Keyboard Inputable: \(self.keyboardInputable)" ]
-        
-        return messages.join("\n") as String
+        return messages.stringByJoining("\n")
     }
 }
 
