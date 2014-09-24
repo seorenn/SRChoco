@@ -5,17 +5,13 @@ struct SRRegexp {
     
     // MARK: Initializers
     
-    init?(_ pattern: String, ignoreCase: Bool) {
+    init?(_ pattern: String, ignoreCase: Bool = true) {
         var error: NSError?
         var options = NSRegularExpressionOptions(0)
         if ignoreCase { options = .CaseInsensitive }
         
         self.re = NSRegularExpression(pattern: pattern, options: options, error: &error)
         if self.re == nil { return nil }
-    }
-    
-    init(_ pattern: String) {
-        self.init(pattern, ignoreCase: true)
     }
     
     // MARK: Functions

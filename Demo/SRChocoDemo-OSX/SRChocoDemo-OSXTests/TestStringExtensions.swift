@@ -56,4 +56,18 @@ class TestStringExtensions: XCTestCase {
         
         XCTAssertFalse(str.containStrings(["aaa", "bbb"]))
     }
+    
+    func testSplit() {
+        let str = "This is test"
+        let array = str.arrayBySpliting()
+        XCTAssertTrue(array.count == 3)
+        XCTAssertTrue(array[0] == "This")
+        XCTAssertTrue(array[1] == "is")
+        XCTAssertTrue(array[2] == "test")
+    }
 }
+
+
+
+
+

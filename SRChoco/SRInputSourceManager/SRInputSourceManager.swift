@@ -4,26 +4,64 @@
 import Cocoa
 import Carbon
     
-class SRInputSource: Equatable {
-    var selectable: Bool?
+extension Bool {
+    static func boolFromCFBooleanVoidPointer(voidPtr: UnsafePointer<Void>) -> Bool? {
+        let cfbool: CFBooleanRef = unsafeBitCast(voidPtr, CFBooleanRef.self)
+        let boolValue: Bool = cfbool
+        return boolValue
+    }
+}
+    
+extension NSURL {
+    class func urlFromCFURLVoidPointer(voidPtr: UnsafePointer<Void>) -> NSURL? {
+        let cfurl: CFURLRef = unsafeBitCast(voidPtr, CFURLRef.self)
+        let url: NSURL = cfurl
+        return url
+    }
+}
+    
+class SRInputSource: NSObject, Printable, Equatable {
     var name: String?
     var inputSourceID: String?
+    var type: String?
+    var selectable: Bool?
     var iconURL: NSURL?
     var tis: TISInputSourceRef?
     
     private init(_ tis: TISInputSourceRef) {
         self.tis = tis
         
-        // TODO: self.selectable
         self.name = String.stringWithCFStringVoidPointer(TISGetInputSourceProperty(tis, kTISPropertyLocalizedName))
         self.inputSourceID = String.stringWithCFStringVoidPointer(TISGetInputSourceProperty(tis, kTISPropertyInputSourceID))
-        // TODO: self.iconURL
+        self.type = String.stringWithCFStringVoidPointer(TISGetInputSourceProperty(tis, kTISPropertyInputSourceType))
+        self.selectable = Bool.boolFromCFBooleanVoidPointer(TISGetInputSourceProperty(tis, kTISPropertyInputSourceIsSelectCapable))
+        self.iconURL = NSURL.urlFromCFURLVoidPointer(TISGetInputSourceProperty(tis, kTISPropertyIconImageURL))
+        
+        super.init()
     }
     
     func activate() {
         if self.tis != nil {
             TISSelectInputSource(self.tis)
         }
+    }
+    
+    var keyboardInputable: Bool {
+        if let type = self.type {
+            return (type == kTISTypeKeyboardLayout || type == kTISTypeKeyboardInputMode || type == kTISTypeKeyboardInputMethodModeEnabled)
+        } else {
+            return false
+        }
+    }
+    
+    override var description: String {
+        let messages = [ "<SRInputSource> Name:\(self.name)",
+                         "                Input Source ID: \(self.inputSourceID)",
+                         "                Type: \(self.type)",
+                         "                Selectable: \(self.selectable)",
+                         "                Icon URL: \(self.iconURL)",
+                         "                Keyboard Inputable: \(self.keyboardInputable)" ]
+        return messages.stringByJoining("\n")
     }
 }
 
@@ -78,7 +116,9 @@ class SRInputSourceManager {
             let tis: TISInputSourceRef = unsafeBitCast(tisVoidPtr, TISInputSourceRef.self)
             
             let obj = SRInputSource(tis)
-            inputSources.append(obj)
+            if obj.keyboardInputable {
+                inputSources.append(obj)
+            }
         }
     }
     

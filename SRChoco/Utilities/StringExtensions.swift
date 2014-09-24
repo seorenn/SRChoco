@@ -48,6 +48,14 @@ extension String {
             return true
         }
     }
+    
+    func arrayBySpliting(splitter: String? = nil) -> [String] {
+        if let s = splitter {
+            return self.componentsSeparatedByString(s)
+        } else {
+            return self.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        }
+    }
 
     static func stringWithCFStringVoidPointer(voidPtr: UnsafePointer<Void>) -> String? {
         let cfstr: CFStringRef = unsafeBitCast(voidPtr, CFStringRef.self)
