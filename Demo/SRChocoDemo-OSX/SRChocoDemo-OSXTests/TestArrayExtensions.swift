@@ -38,5 +38,19 @@ class TestArrayExtensions: XCTestCase {
         let result = array.stringByJoining(" ")
         XCTAssert(result == "This is test")
     }
+    
+    func testContainString() {
+        let array = [ "한글", "English", "test" ]
+        XCTAssert(array.containString("한글") == true)
+        XCTAssert(array.containString("영문") == false)
+        XCTAssert(array.containString("한글", ignoreCase: true) == true)
+        XCTAssert(array.containString("영문", ignoreCase: true) == false)
+        XCTAssert(array.containString("english") == false)
+        XCTAssert(array.containString("English") == true)
+        XCTAssert(array.containString("test") == true)
+        XCTAssert(array.containString("What?") == false)
+        XCTAssert(array.containString("english", ignoreCase: true) == true)
+        XCTAssert(array.containString("TEST", ignoreCase: true) == true)
+    }
 
 }
