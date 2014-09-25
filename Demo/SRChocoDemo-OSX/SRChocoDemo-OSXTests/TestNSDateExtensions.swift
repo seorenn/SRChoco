@@ -42,8 +42,8 @@ class TestNSDateExtensions: XCTestCase {
         let now = NSDate()
         let dc = now.dateComponents!
         
-        let nextYearDate = NSDate.generate(dc.year+1, month: dc.month, day: dc.day, hour: dc.hour, minute: dc.minute, second: dc.second)!
-        let prevYearDate = NSDate.generate(dc.year-1, month: dc.month, day: dc.day, hour: dc.hour, minute: dc.minute, second: dc.second)!
+        let nextYearDate = NSDate.generate(year: dc.year+1, month: dc.month, day: dc.day, hour: dc.hour, minute: dc.minute, second: dc.second)!
+        let prevYearDate = NSDate.generate(year: dc.year-1, month: dc.month, day: dc.day, hour: dc.hour, minute: dc.minute, second: dc.second)!
         
         XCTAssert(now < nextYearDate)
         XCTAssert(nextYearDate > now)
@@ -53,7 +53,7 @@ class TestNSDateExtensions: XCTestCase {
     }
 
     func testDateCreation() {
-        let dt = NSDate.generate(1949, month: 7, day: 21, hour: 12, minute: 25, second: 59)!
+        let dt = NSDate.generate(year: 1949, month: 7, day: 21, hour: 12, minute: 25, second: 59)!
         let dc = dt.dateComponents
         XCTAssertEqual(dc!.year, 1949)
         XCTAssertEqual(dc!.month, 7)

@@ -86,7 +86,7 @@ extension NSDate: Comparable, Equatable {
         }
     }
     
-    public class func generate(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) -> NSDate? {
+    public class func generate(#year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) -> NSDate? {
         if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
             let components = NSDateComponents()
             components.year = year
@@ -102,8 +102,8 @@ extension NSDate: Comparable, Equatable {
         }
     }
     
-    public class func generate(year: Int, month: Int, day: Int) -> NSDate? {
-        return NSDate.generate(year, month: month, day: day, hour: 0, minute: 0, second: 0)
+    public class func generate(#year: Int, month: Int, day: Int) -> NSDate? {
+        return NSDate.generate(year: year, month: month, day: day, hour: 0, minute: 0, second: 0)
     }
 }
 
