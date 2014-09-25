@@ -34,6 +34,10 @@ class TestStringExtensions: XCTestCase {
         XCTAssert(strB == "his")
         let strC = strA[1..<3]
         XCTAssert(strC == "hi")
+        let strD = strA[NSMakeRange(0, 3)]
+        XCTAssert(strD == "Thi")
+        let strE = strA[NSMakeRange(5, 4)]
+        XCTAssert(strE == "is t")
     }
 
     func testTrim() {
