@@ -1,3 +1,5 @@
+import Foundation
+
 extension Array {
     func stringByJoining(seperator: String) -> String {
         var result = ""
@@ -8,5 +10,20 @@ extension Array {
             }
         }
         return result
+    }
+    
+    func containString(string: String, ignoreCase: Bool = false) -> Bool {
+        let options = ignoreCase ? NSStringCompareOptions.CaseInsensitiveSearch : NSStringCompareOptions.allZeros
+
+        for item in self {
+            let s: String = item as String
+            if ignoreCase {
+                if s.lowercaseString == string.lowercaseString { return true }
+            } else {
+                if s == string { return true }
+            }
+        }
+        
+        return false
     }
 }
