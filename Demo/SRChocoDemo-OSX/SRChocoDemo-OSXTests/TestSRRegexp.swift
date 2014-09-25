@@ -22,10 +22,10 @@ class TestSRRegexp: XCTestCase {
     }
 
     func testFind() {
-        if let regexp = SRRegexp("(test)") {
+        if let regexp = SRRegexp("^.*(test).*$") {
             XCTAssert(regexp.find("This is test string")?.count > 0)
             XCTAssert(regexp.find("this is TEST STRING")?.count > 0)
-            XCTAssert(regexp.find("this is test string")?.string(0) == "test")
+            XCTAssert(regexp.find("this is test string")?.string(1) == "test")
         } else {
             XCTAssert(false)
         }
