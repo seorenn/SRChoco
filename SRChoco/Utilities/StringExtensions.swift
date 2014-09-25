@@ -21,6 +21,14 @@ extension String {
         return self[start..<end]
     }
     
+    // substring with NSRange
+    subscript(range: NSRange) -> String {
+        assert(range.location >= 0 && range.length > 0)
+        let startIndex = range.location
+        let endIndex = range.location + range.length - 1
+        return self[startIndex...endIndex]
+    }
+    
     func trimmedString() -> String {
         return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
