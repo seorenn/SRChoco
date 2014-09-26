@@ -2,17 +2,33 @@ import Foundation
 
 private let DefaultISOFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
 
-// MARK: - NSDateDelta
+// MARK: - SRTimeDelta
 
-public struct NSDateDelta {
-    var second: Int
-    var minute: Int
-    var hour: Int
-    var day: Int
+public struct SRTimeDelta: Printable {
+    var second: Int = 0
+    var minute: Int = 0
+    var hour: Int = 0
+    var day: Int = 0
     
     var interval: NSTimeInterval {
-        let seconds = self.second + (self.minute * 60) + (self.hour * 3600) + (self.day * 86400)
-        return NSTimeInterval(seconds)
+        get {
+            let seconds = self.second + (self.minute * 60) + (self.hour * 3600) + (self.day * 86400)
+            return NSTimeInterval(seconds)
+        }
+        set {
+            var iv = Int(newValue)
+            
+            self.day = iv / 86400
+            iv = iv % 86400
+            
+            self.hour = iv / 3600
+            iv = iv % 3600
+            
+            self.minute = iv / 60
+            iv = iv % 60
+            
+            self.second = iv
+        }
     }
     
     init(second: Int = 0, minute: Int = 0, hour: Int = 0, day: Int = 0) {
@@ -23,42 +39,35 @@ public struct NSDateDelta {
     }
     
     init(interval: NSTimeInterval) {
-        var iv = Int(interval)
-        
-        self.day = iv / 86400
-        iv = iv % 86400
-        
-        self.hour = iv / 3600
-        iv = iv % 3600
-        
-        self.minute = iv / 60
-        iv = iv % 60
-        
-        self.second = iv
+        self.interval = interval
+    }
+    
+    public var description: String {
+        return "<SRTimeDelta [\(self.interval)] second:\(self.second) minute:\(self.minute) hour:\(self.hour) day:\(self.day)>"
     }
 }
 
 // MARK: - NSDate Extensions
 
 extension NSDate: Comparable, Equatable {
-    var dateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int)? {
+    var dateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int)? {
         if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
-            let components = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: self)
-            return (year: components.year, month: components.month, day: components.day, hour: components.hour, minute: components.minute, second: components.second)
+            let components = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond | NSCalendarUnit.CalendarUnitNanosecond, fromDate: self)
+            return (year: components.year, month: components.month, day: components.day, hour: components.hour, minute: components.minute, second: components.second, nanosecond: components.nanosecond)
         } else {
             return nil
         }
     }
     
-    var UTCDateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int)? {
+    var UTCDateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int)? {
         if let utccal = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
             if let tz = NSTimeZone(name: "UTC") {
                 utccal.timeZone = tz
             } else {
                 return nil
             }
-            let components = utccal.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: self)
-            return (year: components.year, month: components.month, day: components.day, hour: components.hour, minute: components.minute, second: components.second)
+            let components = utccal.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond | NSCalendarUnit.CalendarUnitNanosecond, fromDate: self)
+            return (year: components.year, month: components.month, day: components.day, hour: components.hour, minute: components.minute, second: components.second, nanosecond: components.nanosecond)
         } else {
             return nil
         }
@@ -103,6 +112,13 @@ extension NSDate: Comparable, Equatable {
         if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
             let components = calendar.components(NSCalendarUnit.CalendarUnitSecond, fromDate: self)
             return components.second
+        }
+        return 0
+    }
+    var nanosecond: Int {
+        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+            let components = calendar.components(NSCalendarUnit.CalendarUnitNanosecond, fromDate: self)
+            return components.nanosecond
         }
         return 0
     }
@@ -165,7 +181,7 @@ extension NSDate: Comparable, Equatable {
         }
     }
     
-    public class func generate(#year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) -> NSDate? {
+    public class func generate(#year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int = 0) -> NSDate? {
         if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
             let components = NSDateComponents()
             components.year = year
@@ -174,6 +190,7 @@ extension NSDate: Comparable, Equatable {
             components.hour = hour
             components.minute = minute
             components.second = second
+            components.nanosecond = nanosecond
             
             return calendar.dateFromComponents(components)
         } else {
@@ -182,7 +199,7 @@ extension NSDate: Comparable, Equatable {
     }
     
     public class func generate(#year: Int, month: Int, day: Int) -> NSDate? {
-        return NSDate.generate(year: year, month: month, day: day, hour: 0, minute: 0, second: 0)
+        return NSDate.generate(year: year, month: month, day: day, hour: 0, minute: 0, second: 0, nanosecond: 0)
     }
 }
 
@@ -211,12 +228,17 @@ public func <= (left: NSDate, right: NSDate) -> Bool {
     return (result == NSComparisonResult.OrderedAscending || result == NSComparisonResult.OrderedSame)
 }
 
-// MARK: - NSDate Compution with NSDateDelta
+// MARK: - NSDate Compution with SRTimeDelta
 
-public func + (left: NSDate, right: NSDateDelta) -> NSDate {
+public func + (left: NSDate, right: SRTimeDelta) -> NSDate {
     return left.dateByAddingTimeInterval(right.interval)
 }
 
-public func - (left: NSDate, right: NSDateDelta) -> NSDate {
+public func - (left: NSDate, right: SRTimeDelta) -> NSDate {
     return left.dateByAddingTimeInterval(-right.interval)
+}
+
+public func - (left: NSDate, right: NSDate) -> SRTimeDelta {
+    let secs = left.timeIntervalSinceDate(right)
+    return SRTimeDelta(interval: secs)
 }
