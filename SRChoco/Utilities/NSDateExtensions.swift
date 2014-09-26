@@ -5,30 +5,14 @@ private let DefaultISOFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
 // MARK: - SRTimeDelta
 
 public struct SRTimeDelta: Printable {
-    var second: Int = 0
-    var minute: Int = 0
-    var hour: Int = 0
-    var day: Int = 0
+    let second: Int
+    let minute: Int
+    let hour: Int
+    let day: Int
     
     var interval: NSTimeInterval {
-        get {
-            let seconds = self.second + (self.minute * 60) + (self.hour * 3600) + (self.day * 86400)
-            return NSTimeInterval(seconds)
-        }
-        set {
-            var iv = Int(newValue)
-            
-            self.day = iv / 86400
-            iv = iv % 86400
-            
-            self.hour = iv / 3600
-            iv = iv % 3600
-            
-            self.minute = iv / 60
-            iv = iv % 60
-            
-            self.second = iv
-        }
+        let seconds = self.second + (self.minute * 60) + (self.hour * 3600) + (self.day * 86400)
+        return NSTimeInterval(seconds)
     }
     
     init(second: Int = 0, minute: Int = 0, hour: Int = 0, day: Int = 0) {
@@ -39,7 +23,18 @@ public struct SRTimeDelta: Printable {
     }
     
     init(interval: NSTimeInterval) {
-        self.interval = interval
+        var iv = Int(interval)
+        
+        self.day = iv / 86400
+        iv = iv % 86400
+        
+        self.hour = iv / 3600
+        iv = iv % 3600
+        
+        self.minute = iv / 60
+        iv = iv % 60
+        
+        self.second = iv
     }
     
     public var description: String {
