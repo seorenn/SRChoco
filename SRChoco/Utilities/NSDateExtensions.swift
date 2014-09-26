@@ -2,6 +2,42 @@ import Foundation
 
 private let DefaultISOFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
 
+// MARK: - NSDateDelta
+
+public struct NSDateDelta {
+    var second: Int
+    var minute: Int
+    var hour: Int
+    var day: Int
+    
+    var interval: NSTimeInterval {
+        let seconds = self.second + (self.minute * 60) + (self.hour * 3600) + (self.day * 86400)
+        return NSTimeInterval(seconds)
+    }
+    
+    init(second: Int = 0, minute: Int = 0, hour: Int = 0, day: Int = 0) {
+        self.second = second
+        self.minute = minute
+        self.hour = hour
+        self.day = day
+    }
+    
+    init(interval: NSTimeInterval) {
+        var iv = Int(interval)
+        
+        self.day = iv / 86400
+        iv = iv % 86400
+        
+        self.hour = iv / 3600
+        iv = iv % 3600
+        
+        self.minute = iv / 60
+        iv = iv % 60
+        
+        self.second = iv
+    }
+}
+
 // MARK: - NSDate Extensions
 
 extension NSDate: Comparable, Equatable {
@@ -26,6 +62,49 @@ extension NSDate: Comparable, Equatable {
         } else {
             return nil
         }
+    }
+    
+    var year: Int {
+        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+            let components = calendar.components(NSCalendarUnit.CalendarUnitYear, fromDate: self)
+            return components.year
+        }
+        return 0
+    }
+    var month: Int {
+        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+            let components = calendar.components(NSCalendarUnit.CalendarUnitMonth, fromDate: self)
+            return components.month
+        }
+        return 0
+    }
+    var day: Int {
+        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+            let components = calendar.components(NSCalendarUnit.CalendarUnitDay, fromDate: self)
+            return components.day
+        }
+        return 0
+    }
+    var hour: Int {
+        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+            let components = calendar.components(NSCalendarUnit.CalendarUnitHour, fromDate: self)
+            return components.hour
+        }
+        return 0
+    }
+    var minute: Int {
+        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+            let components = calendar.components(NSCalendarUnit.CalendarUnitMinute, fromDate: self)
+            return components.minute
+        }
+        return 0
+    }
+    var second: Int {
+        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+            let components = calendar.components(NSCalendarUnit.CalendarUnitSecond, fromDate: self)
+            return components.second
+        }
+        return 0
     }
     
     // 1 based position index (based self's week)
@@ -121,7 +200,6 @@ public func > (left: NSDate, right: NSDate) -> Bool {
 public func >= (left: NSDate, right: NSDate) -> Bool {
     let result = left.compare(right)
     return (result == NSComparisonResult.OrderedDescending || result == NSComparisonResult.OrderedSame)
-    
 }
 
 public func < (left: NSDate, right: NSDate) -> Bool {
@@ -131,5 +209,14 @@ public func < (left: NSDate, right: NSDate) -> Bool {
 public func <= (left: NSDate, right: NSDate) -> Bool {
     let result = left.compare(right)
     return (result == NSComparisonResult.OrderedAscending || result == NSComparisonResult.OrderedSame)
-    
+}
+
+// MARK: - NSDate Compution with NSDateDelta
+
+public func + (left: NSDate, right: NSDateDelta) -> NSDate {
+    return left.dateByAddingTimeInterval(right.interval)
+}
+
+public func - (left: NSDate, right: NSDateDelta) -> NSDate {
+    return left.dateByAddingTimeInterval(-right.interval)
 }

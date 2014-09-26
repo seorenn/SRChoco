@@ -35,6 +35,13 @@ class TestNSDateExtensions: XCTestCase {
             XCTAssert(dc!.hour == components.hour)
             XCTAssert(dc!.minute == components.minute)
             XCTAssert(dc!.second == components.second)
+            
+            XCTAssert(dc!.year == now.year)
+            XCTAssert(dc!.month == now.month)
+            XCTAssert(dc!.day == now.day)
+            XCTAssert(dc!.hour == now.hour)
+            XCTAssert(dc!.minute == now.minute)
+            XCTAssert(dc!.second == now.second)
         }
     }
     
@@ -61,5 +68,26 @@ class TestNSDateExtensions: XCTestCase {
         XCTAssertEqual(dc!.hour, 12)
         XCTAssertEqual(dc!.minute, 25)
         XCTAssertEqual(dc!.second, 59)
+    }
+    
+    func testDateDelta() {
+        let dt = NSDate.generate(year: 1979, month: 4, day: 20, hour: 12, minute: 22, second: 55)
+        let delta = NSDateDelta(second: 5)
+        let res = dt! + delta
+        XCTAssert(dt!.year == res.year)
+        XCTAssert(dt!.month == res.month)
+        XCTAssert(dt!.day == res.day)
+        XCTAssert(dt!.hour == res.hour)
+        XCTAssert(res.minute == dt!.minute + 1)
+        XCTAssert(res.second == 0)
+
+        let delta2 = NSDateDelta(second: 0, minute: 50)
+        let res2 = dt! + delta2
+        XCTAssert(dt!.year == res2.year)
+        XCTAssert(dt!.month == res2.month)
+        XCTAssert(dt!.day == res2.day)
+        XCTAssert(res2.hour == dt!.hour + 1)
+        XCTAssert(res2.minute == 12)
+        XCTAssert(res2.second == 55)
     }
 }
