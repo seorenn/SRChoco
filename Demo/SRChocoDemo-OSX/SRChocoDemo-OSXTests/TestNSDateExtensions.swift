@@ -72,7 +72,7 @@ class TestNSDateExtensions: XCTestCase {
     
     func testDateDelta() {
         let dt = NSDate.generate(year: 1979, month: 4, day: 20, hour: 12, minute: 22, second: 55)
-        let delta = NSDateDelta(second: 5)
+        let delta = SRTimeDelta(second: 5)
         let res = dt! + delta
         XCTAssert(dt!.year == res.year)
         XCTAssert(dt!.month == res.month)
@@ -81,7 +81,7 @@ class TestNSDateExtensions: XCTestCase {
         XCTAssert(res.minute == dt!.minute + 1)
         XCTAssert(res.second == 0)
 
-        let delta2 = NSDateDelta(second: 0, minute: 50)
+        let delta2 = SRTimeDelta(second: 0, minute: 50)
         let res2 = dt! + delta2
         XCTAssert(dt!.year == res2.year)
         XCTAssert(dt!.month == res2.month)
@@ -89,5 +89,15 @@ class TestNSDateExtensions: XCTestCase {
         XCTAssert(res2.hour == dt!.hour + 1)
         XCTAssert(res2.minute == 12)
         XCTAssert(res2.second == 55)
+    }
+    
+    func testDiffBetweenDates() {
+        let now = NSDate()
+        let fut = NSDate.generate(year: now.year, month: now.month, day: now.day, hour: now.hour+1, minute: now.minute, second: now.second, nanosecond: now.nanosecond)
+        let dif = fut! - now
+        println("diff = \(dif.description)")
+        XCTAssert(Int(dif.interval) == 60*60)
+        XCTAssert(dif.second == 0)
+        XCTAssert(dif.hour == 1)
     }
 }
