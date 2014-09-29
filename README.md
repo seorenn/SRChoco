@@ -62,7 +62,7 @@ Simple Classes to manage Text Input Source
 
 TODO: Need more documentation
 
-# SROtherApp
+# SRExternalApp
 
 Helper Module for External Application
 
