@@ -1,3 +1,11 @@
+//
+// SRStatusItemPopupController.swift
+// SRChoco
+//
+// Created by Seorenn.
+// Copyright (c) 2014 Seorenn. All rights reserved.
+//
+
 #if os(OSX)
 
 import AppKit

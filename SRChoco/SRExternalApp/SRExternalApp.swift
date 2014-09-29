@@ -1,6 +1,16 @@
+//
+// SRExternalApp.swift
+// SRChoco
+//
+// Created by Seorenn.
+// Copyright (c) 2014 Seorenn. All rights reserved.
+//
+
+
 #if os(iOS)
 
 // MARK: SROtherApp for iOS
+
 import UIKit
     
 func canLaunchApp(appScheme: String) -> Bool {
@@ -20,6 +30,7 @@ func launchApp(appScheme: String) {
 #elseif os(OSX)
 
 // MARK: SROtherApp for OSX
+
 import Cocoa
 
 func getAppPath(bundleIdentifier: String) -> String {
