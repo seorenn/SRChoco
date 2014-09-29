@@ -1,3 +1,11 @@
+//
+// NSDateExtensions.swift
+// SRChoco
+//
+// Created by Seorenn.
+// Copyright (c) 2014 Seorenn. All rights reserved.
+//
+
 import Foundation
 
 private let DefaultISOFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
