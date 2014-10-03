@@ -7,9 +7,6 @@ Seorenn's Cocoa(AppKit) and Cocoa Touch(UIKit) Libraries.
 
 Simple File System(?) Classes
 
-* seorenn/SRChoco/SRChoco/SRFileManager/SRFile.swift
-* seorenn/SRChoco/SRChoco/SRFileManager/SRDirectory.swift
-
 ## SRDirectory
 
 Get Files and Directories on my HOME directory:
