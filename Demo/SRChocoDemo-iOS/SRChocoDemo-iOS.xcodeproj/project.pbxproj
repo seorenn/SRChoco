@@ -10,7 +10,6 @@
 		8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B7A11985F06A004F3168 /* SRRegexp.swift */; };
 		8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464D196A883600E791B5 /* SRDirectory.swift */; };
 		8A6B4658196A883600E791B5 /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464E196A883600E791B5 /* SRFile.swift */; };
-		8A6B4659196A883600E791B5 /* SROtherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4650196A883600E791B5 /* SROtherApp.swift */; };
 		8A6B465A196A883600E791B5 /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4652196A883600E791B5 /* SRWindowManager.swift */; };
 		8A6B465B196A883600E791B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4654196A883600E791B5 /* Log.swift */; };
 		8A6B465C196A883600E791B5 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4655196A883600E791B5 /* NSDateExtensions.swift */; };
@@ -22,6 +21,7 @@
 		8AD4D14919C8192F0035D1EC /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4D14719C8192F0035D1EC /* SRInputSourceManager.swift */; };
 		8AD4D14C19C819390035D1EC /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4D14B19C819390035D1EC /* SRStatusItemPopupController.swift */; };
 		8AD8911E19A1B98C00BD48AC /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8911C19A1B98C00BD48AC /* StringExtensions.swift */; };
+		8AE2EF3419D8FFE50037C005 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE2EF3319D8FFE50037C005 /* SRExternalApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		8A26B7A11985F06A004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
 		8A6B464D196A883600E791B5 /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
 		8A6B464E196A883600E791B5 /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
-		8A6B4650196A883600E791B5 /* SROtherApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SROtherApp.swift; sourceTree = "<group>"; };
 		8A6B4652196A883600E791B5 /* SRWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWindowManager.swift; sourceTree = "<group>"; };
 		8A6B4654196A883600E791B5 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		8A6B4655196A883600E791B5 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		8AD4D14719C8192F0035D1EC /* SRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRInputSourceManager.swift; sourceTree = "<group>"; };
 		8AD4D14B19C819390035D1EC /* SRStatusItemPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStatusItemPopupController.swift; sourceTree = "<group>"; };
 		8AD8911C19A1B98C00BD48AC /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		8AE2EF3319D8FFE50037C005 /* SRExternalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRExternalApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,14 +90,6 @@
 				8A6B464E196A883600E791B5 /* SRFile.swift */,
 			);
 			path = SRFileManager;
-			sourceTree = "<group>";
-		};
-		8A6B464F196A883600E791B5 /* SROtherApp */ = {
-			isa = PBXGroup;
-			children = (
-				8A6B4650196A883600E791B5 /* SROtherApp.swift */,
-			);
-			path = SROtherApp;
 			sourceTree = "<group>";
 		};
 		8A6B4651196A883600E791B5 /* SRWindowManager */ = {
@@ -185,12 +177,12 @@
 		8AAC8D2A194ED940007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8AE2EF3219D8FFE50037C005 /* SRExternalApp */,
 				8AD4D14A19C819390035D1EC /* SRStatusItemPopupController */,
 				8AD4D14519C8192F0035D1EC /* SRInputSourceManager */,
 				8A26B7A01985F06A004F3168 /* SRRegexp */,
 				8A7AC8D51976657F006028F4 /* SRGCD */,
 				8A6B464C196A883600E791B5 /* SRFileManager */,
-				8A6B464F196A883600E791B5 /* SROtherApp */,
 				8A6B4651196A883600E791B5 /* SRWindowManager */,
 				8A6B4653196A883600E791B5 /* Utilities */,
 			);
@@ -212,6 +204,14 @@
 				8AD4D14B19C819390035D1EC /* SRStatusItemPopupController.swift */,
 			);
 			path = SRStatusItemPopupController;
+			sourceTree = "<group>";
+		};
+		8AE2EF3219D8FFE50037C005 /* SRExternalApp */ = {
+			isa = PBXGroup;
+			children = (
+				8AE2EF3319D8FFE50037C005 /* SRExternalApp.swift */,
+			);
+			path = SRExternalApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A6B465C196A883600E791B5 /* NSDateExtensions.swift in Sources */,
+				8AE2EF3419D8FFE50037C005 /* SRExternalApp.swift in Sources */,
 				8A6B465A196A883600E791B5 /* SRWindowManager.swift in Sources */,
 				8A6B465B196A883600E791B5 /* Log.swift in Sources */,
 				8A6B4658196A883600E791B5 /* SRFile.swift in Sources */,
@@ -323,7 +324,6 @@
 				8AD4D14C19C819390035D1EC /* SRStatusItemPopupController.swift in Sources */,
 				8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */,
 				8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */,
-				8A6B4659196A883600E791B5 /* SROtherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

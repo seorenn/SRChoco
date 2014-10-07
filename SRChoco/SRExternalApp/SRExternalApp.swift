@@ -33,7 +33,7 @@ func launchApp(appScheme: String) {
 
 import Cocoa
 
-func getAppPath(bundleIdentifier: String) -> String {
+func getAppPath(bundleIdentifier: String) -> String? {
     return NSWorkspace.sharedWorkspace().absolutePathForAppBundleWithIdentifier(bundleIdentifier)
 }
     
@@ -51,8 +51,9 @@ func launchApp(appPath: String) {
 }
 
 func activateApp(pid: pid_t) {
-    let app = NSRunningApplication(processIdentifier: pid)
-    activateApp(app)
+    if let app = NSRunningApplication(processIdentifier: pid) {
+        activateApp(app)
+    }
 }
     
 func activateApp(bundleIdentifier: String) {
