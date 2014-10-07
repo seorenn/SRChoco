@@ -11,13 +11,13 @@
 import Cocoa
     
 class SRWindowManager {
-    var capturing = false
-    
+    // singleton instance type
     struct StaticInstance {
         static var dispatchToken: dispatch_once_t = 0
         static var instance:SRWindowManager?
     }
     
+    // singleton factory
     class func sharedManager() -> SRWindowManager {
         dispatch_once(&StaticInstance.dispatchToken) {
             StaticInstance.instance = SRWindowManager()
@@ -52,10 +52,6 @@ class SRWindowManager {
     }
     
     func detectWindowChanging(block:((NSRunningApplication!) -> Void)!) {
-        if capturing {
-            return
-        }
-    
         let nc = NSWorkspace.sharedWorkspace().notificationCenter
         nc.addObserverForName(NSWorkspaceDidActivateApplicationNotification, object:nil, queue:NSOperationQueue.mainQueue(), usingBlock: {(notification: NSNotification!) -> Void in
             let app = notification!.userInfo![NSWorkspaceApplicationKey] as NSRunningApplication!

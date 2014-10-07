@@ -25,7 +25,7 @@ class WindowLogController: NSObject {
     
     func updateAppLog(app: NSRunningApplication!) {
         let message = "-> \(app.localizedName)"
-        let text = message + "\n" + self.textView.string
+        let text = message + "\n" + self.textView.string!
         
         self.textView.string = text
     }
