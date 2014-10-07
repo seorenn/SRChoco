@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let popup = StatusPopupViewController(nibName: "StatusPopupViewController", bundle: nil)
         let image = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericFolderIcon)))
         let alternateImage = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericApplicationIcon)))
-        self.statusItemPopupController = SRStatusItemPopupController(viewController: popup, image: image, alternateImage: alternateImage)
+        self.statusItemPopupController = SRStatusItemPopupController(viewController: popup!, image: image, alternateImage: alternateImage)
         
         let demoFM = DemoSRFileManager()
         demoFM.test()

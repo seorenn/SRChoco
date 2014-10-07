@@ -38,14 +38,14 @@ class SRStatusItemPopupView: NSView {
         self.init(frame: NSMakeRect(0, 0, 0, 0))
     }
     
-    override func mouseDown(theEvent: NSEvent!) {
+    override func mouseDown(theEvent: NSEvent) {
         self.needsDisplay = true
         if let handler = self.mouseDownHandler {
             handler()
         }
     }
     
-    override func rightMouseDown(theEvent: NSEvent!) {
+    override func rightMouseDown(theEvent: NSEvent) {
         self.mouseDown(theEvent)
     }
     
@@ -145,7 +145,7 @@ class SRStatusItemPopupController: NSObject {
             self.popover.close()
             
             if self.popoverTouchHandler != nil {
-                NSEvent.removeMonitor(self.popoverTouchHandler)
+                NSEvent.removeMonitor(self.popoverTouchHandler!)
                 self.popoverTouchHandler = nil
             }
         }

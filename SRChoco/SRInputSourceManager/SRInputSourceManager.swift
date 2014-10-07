@@ -14,7 +14,7 @@ import Carbon
 extension Bool {
     static func boolFromCFBooleanVoidPointer(voidPtr: UnsafePointer<Void>) -> Bool? {
         let cfbool: CFBooleanRef = unsafeBitCast(voidPtr, CFBooleanRef.self)
-        let boolValue: Bool = cfbool
+        let boolValue: Bool? = Bool(cfbool)
         return boolValue
     }
 }
