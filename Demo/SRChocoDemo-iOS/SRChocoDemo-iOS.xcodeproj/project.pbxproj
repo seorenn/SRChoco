@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0AAFEE19E505B100B7A93D /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFED19E505B100B7A93D /* SRUUID.swift */; };
+		8A0AAFEF19E505B100B7A93D /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFED19E505B100B7A93D /* SRUUID.swift */; };
 		8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B7A11985F06A004F3168 /* SRRegexp.swift */; };
 		8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464D196A883600E791B5 /* SRDirectory.swift */; };
 		8A6B4658196A883600E791B5 /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464E196A883600E791B5 /* SRFile.swift */; };
@@ -36,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		8A00388B195042910079D8D5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		8A0AAFED19E505B100B7A93D /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUUID.swift; sourceTree = "<group>"; };
 		8A26B7A11985F06A004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
 		8A6B464D196A883600E791B5 /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
 		8A6B464E196A883600E791B5 /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
@@ -75,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A0AAFEC19E505B100B7A93D /* SRUUID */ = {
+			isa = PBXGroup;
+			children = (
+				8A0AAFED19E505B100B7A93D /* SRUUID.swift */,
+			);
+			path = SRUUID;
+			sourceTree = "<group>";
+		};
 		8A26B7A01985F06A004F3168 /* SRRegexp */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +188,7 @@
 		8AAC8D2A194ED940007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8A0AAFEC19E505B100B7A93D /* SRUUID */,
 				8AE2EF3219D8FFE50037C005 /* SRExternalApp */,
 				8AD4D14A19C819390035D1EC /* SRStatusItemPopupController */,
 				8AD4D14519C8192F0035D1EC /* SRInputSourceManager */,
@@ -312,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A6B465C196A883600E791B5 /* NSDateExtensions.swift in Sources */,
+				8A0AAFEE19E505B100B7A93D /* SRUUID.swift in Sources */,
 				8AE2EF3419D8FFE50037C005 /* SRExternalApp.swift in Sources */,
 				8A6B465A196A883600E791B5 /* SRWindowManager.swift in Sources */,
 				8A6B465B196A883600E791B5 /* Log.swift in Sources */,
@@ -332,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AAC8D1C194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift in Sources */,
+				8A0AAFEF19E505B100B7A93D /* SRUUID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

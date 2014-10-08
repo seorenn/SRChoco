@@ -1,5 +1,10 @@
 import Cocoa
 
+let theUUID: CFUUIDRef = CFUUIDCreate(nil)
+let uuidString: String = CFUUIDCreateString(nil, theUUID)
+
+
+/*
 import Carbon
 
 let currentIS: TISInputSourceRef = TISCopyCurrentKeyboardInputSource().takeUnretainedValue()
@@ -31,3 +36,4 @@ let IDCF: CFStringRef = unsafeBitCast(IDVoidPtr, CFStringRef.self)
 let bundleIDVoidPtr = TISGetInputSourceProperty(firstTISCast, kTISPropertyBundleID)
 let bundleIDCF: CFStringRef = unsafeBitCast(bundleIDVoidPtr, CFStringRef.self)
 
+*/
