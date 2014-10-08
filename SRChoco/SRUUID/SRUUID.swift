@@ -29,11 +29,13 @@ class SRUUID {
     var removeHyphen: Bool = true
     
     // MARK: - Initializers
+    
     init() {
         
     }
     
     // MARK: - Methods
+    
     func uuid() -> String {
         let uuid: CFUUIDRef = CFUUIDCreate(nil)
         let uuidString: String = CFUUIDCreateString(nil, uuid)
@@ -41,6 +43,7 @@ class SRUUID {
     }
     
     // MARK: - Private Methods
+    
     private func transform(var input: String) -> String {
         if self.convertToLowercase {
             input = input.lowercaseString

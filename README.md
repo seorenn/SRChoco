@@ -94,8 +94,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let viewController = MyViewController(nibName: "MyViewController", bundle: nil)
         let image = NSImage(name: "Icon")
         let alternateImage = NSImage(name: "Icon-Open")
-        self.statusItemPopupController = SRStatusItemPopupController(viewController: viewController, 
-                                                                     image: image, 
+        self.statusItemPopupController = SRStatusItemPopupController(viewController: viewController,
+                                                                     image: image,
                                                                      alternateImage: alternateImage)
         // ...
     }
@@ -104,6 +104,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 # SRWindowManager
 
 Simple Classes for Managing The Application Windows.
+
+TODO: Need more documentation
+
+# SRUUID
+
+Simple Class to generate the UUID.
 
 TODO: Need more documentation
 
@@ -183,4 +189,3 @@ view.size           // CGSize of NSSize
 view.conterPoint    // CGPoint or NSPoint
 view.moveToBelow(view: anotherView, margin: 5.0)
 </pre>
-
