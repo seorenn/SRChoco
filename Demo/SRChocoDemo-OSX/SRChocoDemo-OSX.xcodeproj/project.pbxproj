@@ -30,6 +30,7 @@
 		8AAC8CE7194ED4CF007BDE4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE6194ED4CF007BDE4D /* Images.xcassets */; };
 		8AAC8CEA194ED4CF007BDE4D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE8194ED4CF007BDE4D /* MainMenu.xib */; };
 		8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */; };
+		8AAD786A19F74E7C00B4551F /* TestSRFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD786919F74E7C00B4551F /* TestSRFileManager.swift */; };
 		8AADB7F11971679700200861 /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AADB7F01971679700200861 /* SRInputSourceManager.swift */; };
 		8AB156B719C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */; };
 		8AB156B819C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */; };
@@ -84,6 +85,7 @@
 		8AAC8CF4194ED4CF007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRChocoDemo_OSXTests.swift; sourceTree = "<group>"; };
 		8AAC8D29194ED902007BDE4D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		8AAD786919F74E7C00B4551F /* TestSRFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRFileManager.swift; sourceTree = "<group>"; };
 		8AADB7F01971679700200861 /* SRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRInputSourceManager.swift; sourceTree = "<group>"; };
 		8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStatusItemPopupController.swift; sourceTree = "<group>"; };
 		8AB156B919C6ECDC00A2A568 /* StatusPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPopupViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */,
 				8ABA3A1219CACEC0009B75A5 /* TestArrayExtensions.swift */,
 				8A0AAFF319E5085E00B7A93D /* TestUUID.swift */,
+				8AAD786919F74E7C00B4551F /* TestSRFileManager.swift */,
 			);
 			path = "SRChocoDemo-OSXTests";
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				8AB156BC19C6ECDC00A2A568 /* StatusPopupViewController.swift in Sources */,
 				8A2D06A319A47975001D42AB /* SRInputSourceManager.swift in Sources */,
 				8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */,
+				8AAD786A19F74E7C00B4551F /* TestSRFileManager.swift in Sources */,
 				8AE2EF3119D8F8720037C005 /* SRExternalApp.swift in Sources */,
 				8A0AAFF419E5085E00B7A93D /* TestUUID.swift in Sources */,
 				8ABA3A1119CACE62009B75A5 /* ArrayExtensions.swift in Sources */,

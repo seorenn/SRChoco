@@ -16,39 +16,83 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
     var files = Dictionary<String, SRFile>()
     var loaded = false
     
-    class func pathForUserDomain(directory: NSSearchPathDirectory) -> String {
+    class func pathForUserDomain(directory: NSSearchPathDirectory) -> String? {
         let paths = NSSearchPathForDirectoriesInDomains(directory, NSSearchPathDomainMask.UserDomainMask, true)
-        let path: String = paths[0] as String
-        return path
+        if paths == nil { return nil }
+        return paths.last as? String
     }
     
-    class func pathURLForUserDomain(directory: NSSearchPathDirectory) -> NSURL {
+    class func pathURLForUserDomain(directory: NSSearchPathDirectory) -> NSURL? {
         let fm = NSFileManager.defaultManager()
         let paths = fm.URLsForDirectory(directory, inDomains: NSSearchPathDomainMask.UserDomainMask)
-        return paths[0] as NSURL
+        return paths.last as? NSURL
     }
     
-    class func pathForDownload() -> String {
+    class var pathForDownloads: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         return SRDirectory.pathForUserDomain(.DownloadsDirectory)
     }
     
-    class func pathForMovie() -> String {
+    class var pathForMovies: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         return SRDirectory.pathForUserDomain(.MoviesDirectory)
     }
     
-    class func pathForHome() -> String {
+    class var pathForHome: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         let home = NSProcessInfo.processInfo().environment
         let homePath: AnyObject? = home["HOME"]
-        return homePath as String
+        return homePath as? String
+    }
+    
+    class var pathForApplicationSupports: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        return SRDirectory.pathForUserDomain(.ApplicationSupportDirectory)
+    }
+    
+    class var pathForCaches: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        return SRDirectory.pathForUserDomain(.CachesDirectory)
+    }
+    
+    class var pathForDocuments: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        return SRDirectory.pathForUserDomain(.DocumentDirectory)
+    }
+    
+    class var pathForMainBundle: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        return NSBundle.mainBundle().resourcePath
+    }
+    
+    class var pathForTemporary: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        if let path = NSTemporaryDirectory() {
+            return path
+        } else {
+            return nil
+        }
+    }
+    
+    var exists: Bool {
+        // TODO
+        return false
     }
     
     init(_ path: String) {
@@ -100,6 +144,17 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
                 block()
             }
         }
+    }
+    
+    class func mkdir(path: String, intermediateDirectories: Bool) -> Bool {
+        let fm = NSFileManager.defaultManager()
+        var error: NSError?
+        return fm.createDirectoryAtPath(path, withIntermediateDirectories: intermediateDirectories, attributes: nil, error: &error)
+    }
+    
+    func create() -> Bool {
+        // TODO
+        return false
     }
     
     func createFile(path: String, data: NSData?) -> SRFile? {

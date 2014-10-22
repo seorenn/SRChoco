@@ -10,7 +10,7 @@ import Cocoa
 
 class DemoSRFileManager {
     func home() -> SRDirectory {
-        let fm = SRDirectory(SRDirectory.pathForHome())
+        let fm = SRDirectory(SRDirectory.pathForHome!)
         return fm
     }
     
