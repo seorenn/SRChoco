@@ -40,11 +40,11 @@ class TestArrayExtensions: XCTestCase {
     }
     
     func testContainString() {
-        let array = [ "한글", "English", "test" ]
-        XCTAssert(array.containString("한글") == true)
-        XCTAssert(array.containString("영문") == false)
-        XCTAssert(array.containString("한글", ignoreCase: true) == true)
-        XCTAssert(array.containString("영문", ignoreCase: true) == false)
+        let array = [ "AAA", "English", "test" ]
+        XCTAssert(array.containString("AAA") == true)
+        XCTAssert(array.containString("aaa") == false)
+        XCTAssert(array.containString("aaa", ignoreCase: true) == true)
+        XCTAssert(array.containString("abc", ignoreCase: true) == false)
         XCTAssert(array.containString("english") == false)
         XCTAssert(array.containString("English") == true)
         XCTAssert(array.containString("test") == true)

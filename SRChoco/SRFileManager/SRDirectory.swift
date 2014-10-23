@@ -91,7 +91,11 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
     }
     
     var exists: Bool {
-        // TODO
+        let fm = NSFileManager.defaultManager()
+        var isDir = ObjCBool(false)
+        fm.fileExistsAtPath(self.path, isDirectory: &isDir)
+        
+        if isDir.boolValue { return true }
         return false
     }
     
