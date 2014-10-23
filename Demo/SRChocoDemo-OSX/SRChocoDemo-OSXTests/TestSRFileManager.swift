@@ -43,5 +43,13 @@ class TestSRFileManager: XCTestCase {
             XCTAssert(false)
         }
     }
+    
+    func testSRDirectoryMisc() {
+        let dir = SRDirectory("/not/exists/path")
+        XCTAssert(dir.exists == false)
+        
+        let downloadsDir = SRDirectory(SRDirectory.pathForDownloads!)
+        XCTAssert(downloadsDir.exists == true)
+    }
 
 }
