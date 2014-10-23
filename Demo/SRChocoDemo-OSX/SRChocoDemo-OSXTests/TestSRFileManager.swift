@@ -50,6 +50,21 @@ class TestSRFileManager: XCTestCase {
         
         let downloadsDir = SRDirectory(SRDirectory.pathForDownloads!)
         XCTAssert(downloadsDir.exists == true)
+        
+        XCTAssert(downloadsDir.name == "Downloads")
+        
+        XCTAssert(SRDirectory("/test/directory/").name == "directory")
+        XCTAssert(SRDirectory("/test/directory/").path == "/test/directory")
+        XCTAssert(SRDirectory("/test/directory").name == "directory")
+        XCTAssert(SRDirectory("/test/directory").path == "/test/directory")
     }
 
+    func testSRFileMisc() {
+        XCTAssert(SRFile("/invalid/file/path/") == nil)
+        let f = SRFile("/not/exists/path/file")!
+        XCTAssert(f.path == "/not/exists/path/file")
+        XCTAssert(f.name == "file")
+        XCTAssert(f.parentDirectory != nil)
+        XCTAssert(f.parentDirectory!.path == "/not/exists/path")
+    }
 }

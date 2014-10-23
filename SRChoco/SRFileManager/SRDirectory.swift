@@ -9,12 +9,26 @@
 import Foundation
 
 class SRDirectory: NSObject, DebugPrintable, Equatable {
+    
+    // MARK: - Properties
+    
     var path: String
     var name: String
     var hidden = false
     var directories = Dictionary<String, SRDirectory>()
     var files = Dictionary<String, SRFile>()
     var loaded = false
+    
+    var exists: Bool {
+        let fm = NSFileManager.defaultManager()
+        var isDir = ObjCBool(false)
+        let res = fm.fileExistsAtPath(self.path, isDirectory: &isDir)
+        
+        if res && isDir.boolValue { return true }
+        return false
+    }
+    
+    // MARK: - Predefined
     
     class func pathForUserDomain(directory: NSSearchPathDirectory) -> String? {
         let paths = NSSearchPathForDirectoriesInDomains(directory, NSSearchPathDomainMask.UserDomainMask, true)
@@ -90,28 +104,21 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    var exists: Bool {
-        let fm = NSFileManager.defaultManager()
-        var isDir = ObjCBool(false)
-        let res = fm.fileExistsAtPath(self.path, isDirectory: &isDir)
-        
-        if res && isDir.boolValue { return true }
-        return false
-    }
+    // MARK: - Initializers
     
     init(_ path: String) {
         self.path = path
-        // TODO: self.name
-        self.name = "Unimplemented Property"
+        self.name = self.path.lastPathComponent.stringByDeletingPathExtension
         super.init()
+        
+        if self.path[self.path.length - 1] == Character("/") {
+            let last = self.path.length - 2
+            self.path = self.path[0...last]
+        }
     }
     
-    convenience init?(create path: String) {
-        self.init(path)
-        // TODO
-        return nil
-    }
-    
+    // MARK: - Methods
+
     func load() {
         let fm = NSFileManager.defaultManager()
         var error: NSError?
@@ -132,9 +139,10 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
                 let dir = SRDirectory(fullPath)
                 self.directories[name] = dir
             } else {
-                let file = SRFile(fullPath)
-                file.parentDirectory = self
-                self.files[name] = file
+                if let file = SRFile(fullPath) {
+                    file.parentDirectory = self
+                    self.files[name] = file
+                }
             }
         }
         
@@ -156,15 +164,37 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return fm.createDirectoryAtPath(path, withIntermediateDirectories: intermediateDirectories, attributes: nil, error: &error)
     }
     
-    func create() -> Bool {
+    func create(intermediateDirectories: Bool) -> Bool {
+        if self.exists { return true }
+
+        let fm = NSFileManager.defaultManager()
+        var error: NSError?
+        return fm.createDirectoryAtPath(self.path, withIntermediateDirectories: intermediateDirectories, attributes: nil, error: &error)
+    }
+    
+    func rename(name: String) -> Bool {
         // TODO
         return false
     }
     
-    func createFile(path: String, data: NSData?) -> SRFile? {
+    func move(directory: SRDirectory) -> Bool {
         // TODO
-        
+        return false
+    }
+    
+    func createFile(path: String, data: NSData?, overwrite: Bool = false) -> SRFile? {
+        // TODO
         return nil
+    }
+    
+    func remove(removeContents: Bool = false) -> Bool {
+        // TODO
+        return false
+    }
+    
+    func removeContents() -> Bool {
+        // TODO
+        return false
     }
     
     override var debugDescription: String {
@@ -177,9 +207,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
 }
 
 func == (left: SRDirectory, right: SRDirectory) -> Bool {
-    if left.path == right.path {
-        return true
-    }
+    if left.path == right.path { return true }
     return false
 }
 

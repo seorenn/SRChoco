@@ -9,8 +9,13 @@
 import Foundation
 
 class SRFile: NSObject, DebugPrintable, Equatable {
+    
+    // MARK: - Properties
+    
     var path: String
+    var name: String
     var parentDirectory: SRDirectory?
+    
     var data: NSData? {
         get {
             if !self.exists { return nil }
@@ -18,19 +23,52 @@ class SRFile: NSObject, DebugPrintable, Equatable {
             return fm.contentsAtPath(self.path)
         }
         set {
-            if self.exists {
-                // TODO
+            if self.exists && newValue != nil {
+                newValue!.writeToFile(self.path, atomically: true)
             }
         }
     }
+    
     var exists: Bool {
         let fm = NSFileManager.defaultManager()
         return fm.fileExistsAtPath(self.path)
     }
     
-    init(_ path: String) {
+    // MARK: - Initializers
+    
+    init?(_ path: String) {
         self.path = path
+        self.name = self.path.lastPathComponent
+        self.parentDirectory = SRDirectory(self.path.stringByDeletingLastPathComponent)
         super.init()
+        
+        if path[path.length-1] == Character("/") {
+            return nil
+        }
+    }
+    
+    init?(directory: SRDirectory, name: String) {
+        self.path = directory.path.stringByAppendingPathComponent(name)
+        self.name = name
+        self.parentDirectory = directory
+        super.init()
+        
+        if name.containString("/") { return nil }
+    }
+    
+    // MARK: - Methods
+    
+    func create(data: NSData?) -> Bool {
+        if self.exists { return true }
+        
+        let fm = NSFileManager.defaultManager()
+        if fm.createFileAtPath(self.path, contents: nil, attributes: nil) == false { return false }
+        
+        if data != nil {
+            self.data = data
+        }
+        
+        return true
     }
     
     func delete() -> Bool {
@@ -62,6 +100,8 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         return "<SRFile: [\(path)]\(existance)>"
     }
 }
+
+// MARK: - Operator Overloads
 
 func == (left: SRFile, right: SRFile) -> Bool {
     return left.path == right.path
