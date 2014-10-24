@@ -90,9 +90,8 @@ class SRFile: NSObject, DebugPrintable, Equatable {
             
             let fm = NSFileManager.defaultManager()
             var error: NSError?
-            var trashedItem: NSURL?
             if let fileURL = NSURL(fileURLWithPath: self.path) {
-                return fm.trashItemAtURL(fileURL, resultingItemURL: &trashedItem, error: &error)
+                return fm.trashItemAtURL(fileURL, resultingItemURL: nil, error: &error)
             }
             
             return false

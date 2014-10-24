@@ -58,6 +58,28 @@ class TestSRFileManager: XCTestCase {
         XCTAssert(SRDirectory("/test/directory").name == "directory")
         XCTAssert(SRDirectory("/test/directory").path == "/test/directory")
     }
+    
+    func testSRDirectoryCreateAndRemove() {
+        let path = SRDirectory.pathForDocuments!.stringByAppendingPathComponent("SRDirectoryTest")
+        let dir = SRDirectory(creatingPath: path, withIntermediateDirectories: false)
+        XCTAssert(dir != nil)
+        XCTAssert(dir!.exists == true)
+        
+        XCTAssert(dir!.trash(removingAllSubContents: false) == true)
+        XCTAssert(dir!.exists == false)
+    }
+    
+    func testSRDirectoryCreateAndRemoveWithIntermediation() {
+        let path = SRDirectory.pathForDocuments!.stringByAppendingPathComponent("SRDirectoryTest/Another/Deep/Directory")
+        let dir = SRDirectory(creatingPath: path, withIntermediateDirectories: true)
+        XCTAssert(dir != nil)
+        XCTAssert(dir!.exists == true)
+
+        let removingPath = SRDirectory.pathForDocuments!.stringByAppendingPathComponent("SRDirectoryTest")
+        let remDir = SRDirectory(removingPath)
+        XCTAssert(remDir.trash(removingAllSubContents: true) == true)
+        XCTAssert(remDir.exists == false)
+    }
 
     func testSRFileMisc() {
         XCTAssert(SRFile("/invalid/file/path/") == nil)

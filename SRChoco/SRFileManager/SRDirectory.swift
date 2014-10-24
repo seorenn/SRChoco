@@ -117,6 +117,19 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         }
     }
     
+    init?(creatingPath: String, withIntermediateDirectories: Bool) {
+        self.path = creatingPath
+        self.name = self.path.lastPathComponent.stringByDeletingPathExtension
+        super.init()
+        
+        if self.path[self.path.length - 1] == Character("/") {
+            let last = self.path.length - 2
+            self.path = self.path[0...last]
+        }
+        
+        if self.create(withIntermediateDirectories) == false { return nil }
+    }
+    
     // MARK: - Methods
 
     func load() {
@@ -158,10 +171,10 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    class func mkdir(path: String, intermediateDirectories: Bool) -> Bool {
+    class func mkdir(path: String, withIntermediateDirectories: Bool) -> Bool {
         let fm = NSFileManager.defaultManager()
         var error: NSError?
-        return fm.createDirectoryAtPath(path, withIntermediateDirectories: intermediateDirectories, attributes: nil, error: &error)
+        return fm.createDirectoryAtPath(path, withIntermediateDirectories: withIntermediateDirectories, attributes: nil, error: &error)
     }
     
     func create(intermediateDirectories: Bool) -> Bool {
@@ -187,12 +200,22 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return nil
     }
     
-    func remove(removeContents: Bool = false) -> Bool {
-        // TODO
-        return false
+    func trash(removingAllSubContents: Bool = false) -> Bool {
+        let url = NSURL(fileURLWithPath: self.path, isDirectory: true)
+        if url == nil { return false }
+        
+        let fm = NSFileManager.defaultManager()
+        
+        if removingAllSubContents == false {
+            if self.loaded == false { self.load() }
+            if self.files.count > 0 || self.directories.count > 0 { return false }
+        }
+
+        var error: NSError?
+        return fm.trashItemAtURL(url!, resultingItemURL: nil, error: &error)
     }
     
-    func removeContents() -> Bool {
+    func removeAllSubContents() -> Bool {
         // TODO
         return false
     }
