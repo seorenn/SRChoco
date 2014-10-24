@@ -10,6 +10,10 @@ import Foundation
 
 class SRFile: NSObject, DebugPrintable, Equatable {
     
+    // MARK: - Configurations
+    
+    private let delayForFileWriting: NSTimeInterval = 0.5
+    
     // MARK: - Properties
     
     var path: String
@@ -23,7 +27,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
             return fm.contentsAtPath(self.path)
         }
         set {
-            if self.exists && newValue != nil {
+            if newValue != nil {
                 newValue!.writeToFile(self.path, atomically: true)
             }
         }
@@ -78,13 +82,19 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         return false
     }
     
-    func moveToTrash() -> Bool {
+    func trash() -> Bool {
         #if os(iOS)
             return false
         #else
             if !self.exists { return false }
             
-            // TODO
+            let fm = NSFileManager.defaultManager()
+            var error: NSError?
+            var trashedItem: NSURL?
+            if let fileURL = NSURL(fileURLWithPath: self.path) {
+                return fm.trashItemAtURL(fileURL, resultingItemURL: &trashedItem, error: &error)
+            }
+            
             return false
         #endif
     }
@@ -93,6 +103,37 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         if !self.exists { return false }
         // TODO
         return false
+    }
+
+    // Write to file with completion block (use this if you want to write a large file content)
+    func write(data: NSData, completion: (succeed: Bool) -> Void) {
+        SRDispatch.backgroundTask() {
+            let res = data.writeToFile(self.path, atomically: true)
+            
+            // Waiting finish atomically working
+            NSThread.sleepForTimeInterval(self.delayForFileWriting)
+
+            // Call completion closure on main thread
+            SRDispatch.mainTask() {
+                completion(succeed: res)
+            }
+        }
+    }
+    
+    func read(completion: (data: NSData?) -> Void) {
+        SRDispatch.backgroundTask() {
+            if self.exists {
+                let fm = NSFileManager.defaultManager()
+                let readed = fm.contentsAtPath(self.path)
+                SRDispatch.mainTask() {
+                    completion(data: readed)
+                }
+            } else {
+                SRDispatch.mainTask() {
+                    completion(data: nil)
+                }
+            }
+        }
     }
     
     override var debugDescription: String {

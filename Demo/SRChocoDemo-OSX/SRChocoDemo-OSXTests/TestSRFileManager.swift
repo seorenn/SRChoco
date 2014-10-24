@@ -67,4 +67,62 @@ class TestSRFileManager: XCTestCase {
         XCTAssert(f.parentDirectory != nil)
         XCTAssert(f.parentDirectory!.path == "/not/exists/path")
     }
+    
+    func testSRFileOperations() {
+        let d = NSDate()
+        let dateString = NSString(format: "%02d%02d%02dT%02d%02d%02d", d.year, d.month, d.day, d.hour, d.minute, d.second)
+        let filename = "SRFileTest-\(dateString).txt"
+        let path = SRDirectory.pathForDocuments?.stringByAppendingPathComponent(filename)
+        println("Test uses this file path: \(path)")
+        if let f = SRFile(path!) {
+            XCTAssert(f.exists == false)
+            XCTAssert(f.data == nil)
+
+            let content = "Hello World!\n(This is test text document wrote by SRFile)\n"
+            let data = content.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+            f.data = data
+            XCTAssert(f.exists == true)
+        
+            let readedData = f.data
+            XCTAssert(readedData != nil)
+            let readedContent = NSString(data: readedData!, encoding: NSUTF8StringEncoding)
+        
+            XCTAssert(readedContent == content)
+            
+            XCTAssert(f.trash() == true)
+            XCTAssert(f.exists == false)
+        } else {
+            XCTAssert(false)
+        }
+    }
+    
+    func testSRFileLazyOperations() {
+        let d = NSDate()
+        let dateString = NSString(format: "%02d%02d%02dT%02d%02d%02d", d.year, d.month, d.day, d.hour, d.minute, d.second)
+        let filename = "SRFileTest-Lazy-\(dateString).txt"
+        let path = SRDirectory.pathForDocuments?.stringByAppendingPathComponent(filename)
+        println("Test uses this file path: \(path)")
+        if let f = SRFile(path!) {
+            XCTAssert(f.exists == false)
+            XCTAssert(f.data == nil)
+            
+            let content = "Hello Lazy World!\n(This is test text document wrote by SRFile)\n"
+            let wdata = content.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+            f.write(wdata, completion: { (succeed) -> Void in
+                XCTAssert(succeed == true)
+                XCTAssert(f.exists == true)
+                
+                f.read({ (data) -> Void in
+                    XCTAssert(data != nil)
+                    let readedContent = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    XCTAssert(readedContent == content)
+                    
+                    XCTAssert(f.trash() == true)
+                    XCTAssert(f.exists == false)
+                })
+            })
+        } else {
+            XCTAssert(false)
+        }
+    }
 }
