@@ -195,8 +195,19 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return false
     }
     
-    func createFile(path: String, data: NSData?, overwrite: Bool = false) -> SRFile? {
-        // TODO
+    func createFile(name: String, data: NSData?, overwrite: Bool = false) -> SRFile? {
+        if self.exists == false { return nil }
+        if let file = SRFile(directory: self, name: name) {
+            if file.exists == false {
+                file.create(nil)
+                file.data = data
+            } else {
+                if data != nil && overwrite {
+                    file.data = data
+                }
+            }
+            return file
+        }
         return nil
     }
     
@@ -215,9 +226,32 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return fm.trashItemAtURL(url!, resultingItemURL: nil, error: &error)
     }
     
-    func removeAllSubContents() -> Bool {
-        // TODO
-        return false
+    func removeAllSubContents(stopWhenError: Bool, completion: (succeed: Bool) -> Void) {
+        SRDispatch.backgroundTask() {
+            if self.loaded == false { self.load() }
+        
+            for (name: String, dir: SRDirectory) in self.directories {
+                let res = dir.trash(removingAllSubContents: true)
+                if stopWhenError && res == false {
+                    SRDispatch.mainTask() {
+                        completion(succeed: false)
+                    }
+                    return
+                }
+            }
+            for (name: String, file: SRFile) in self.files {
+                let res = file.trash()
+                if stopWhenError && res == false {
+                    SRDispatch.mainTask() {
+                        completion(succeed: false)
+                    }
+                }
+            }
+            
+            SRDispatch.mainTask() {
+                completion(succeed: true)
+            }
+        }
     }
     
     override var debugDescription: String {
