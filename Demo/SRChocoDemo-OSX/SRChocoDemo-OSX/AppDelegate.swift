@@ -22,6 +22,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let demoFM = DemoSRFileManager()
         demoFM.test()
+        
+        println("Path for HOME: \(SRDirectory.pathForHome)")
+        println("Path for Movies: \(SRDirectory.pathForMovies)")
+        println("Path for Downloads: \(SRDirectory.pathForDownloads)")
+        println("Path for Application Supports: \(SRDirectory.pathForApplicationSupports)")
+        println("Path for Caches: \(SRDirectory.pathForCaches)")
+        println("Path for Documents: \(SRDirectory.pathForDocuments)")
+        println("Path for MainBundle: \(SRDirectory.pathForMainBundle)")
+        println("Path for Temporary: \(SRDirectory.pathForTemporary)")
+
     }
 
     func applicationWillTerminate(aNotification: NSNotification?) {
