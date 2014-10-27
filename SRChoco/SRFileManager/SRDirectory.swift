@@ -117,6 +117,11 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         }
     }
     
+    convenience init(parentDirectory: SRDirectory, name: String) {
+        let path = parentDirectory.path.stringByAppendingPathComponent(name)
+        self.init(path)
+    }
+    
     init?(creatingPath: String, withIntermediateDirectories: Bool) {
         self.path = creatingPath
         self.name = self.path.lastPathComponent.stringByDeletingPathExtension
@@ -127,7 +132,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
             self.path = self.path[0...last]
         }
         
-        if self.create(withIntermediateDirectories) == false { return nil }
+        if self.create(intermediateDirectories: withIntermediateDirectories) == false { return nil }
     }
     
     // MARK: - Methods
@@ -177,7 +182,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return fm.createDirectoryAtPath(path, withIntermediateDirectories: withIntermediateDirectories, attributes: nil, error: &error)
     }
     
-    func create(intermediateDirectories: Bool) -> Bool {
+    func create(intermediateDirectories: Bool = false) -> Bool {
         if self.exists { return true }
 
         let fm = NSFileManager.defaultManager()

@@ -80,6 +80,25 @@ class TestSRFileManager: XCTestCase {
         XCTAssert(remDir.trash(removingAllSubContents: true) == true)
         XCTAssert(remDir.exists == false)
     }
+    
+    func testSRDirectoryRemoveSubContents() {
+        let path = SRDirectory(SRDirectory.pathForDocuments!.stringByAppendingPathComponent("SRDirectoryTest2"))
+        path.create()
+        let content1 = SRDirectory(parentDirectory: path, name: "content-dir")
+        content1.create()
+        let content2 = SRFile(directory: path, name: "content-file")!
+        content2.create(nil)
+        let content3 = SRFile(directory: content1, name: "content-sub-file")!
+        content3.create(nil)
+        
+        path.trashAllSubContents(true, completion: { (succeed) -> Void in
+            XCTAssert(succeed)
+            XCTAssert(content1.exists == false)
+            XCTAssert(content2.exists == false)
+            XCTAssert(content3.exists == false)
+            XCTAssert(path.exists == true)
+        })
+    }
 
     func testSRFileMisc() {
         XCTAssert(SRFile("/invalid/file/path/") == nil)
