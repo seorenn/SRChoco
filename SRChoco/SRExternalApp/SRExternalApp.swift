@@ -9,7 +9,7 @@
 
 #if os(iOS)
 
-// MARK: SROtherApp for iOS
+// MARK: SRExternalApp for iOS
 
 import UIKit
     
@@ -29,7 +29,7 @@ func launchApp(appScheme: String) {
 
 #elseif os(OSX)
 
-// MARK: SROtherApp for OSX
+// MARK: SRExternalApp for OSX
 
 import Cocoa
 
