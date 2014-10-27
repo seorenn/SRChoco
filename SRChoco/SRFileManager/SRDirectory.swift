@@ -228,28 +228,36 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
     
     func trashAllSubContents(stopWhenError: Bool, completion: (succeed: Bool) -> Void) {
         SRDispatch.backgroundTask() {
+            var result = true
             if self.loaded == false { self.load() }
         
             for (name: String, dir: SRDirectory) in self.directories {
                 let res = dir.trash(removingAllSubContents: true)
-                if stopWhenError && res == false {
-                    SRDispatch.mainTask() {
-                        completion(succeed: false)
+                if res == false {
+                    result = false
+                    if stopWhenError {
+                        SRDispatch.mainTask() {
+                            completion(succeed: false)
+                        }
+                        return
                     }
-                    return
                 }
             }
             for (name: String, file: SRFile) in self.files {
                 let res = file.trash()
-                if stopWhenError && res == false {
-                    SRDispatch.mainTask() {
-                        completion(succeed: false)
+                if res == false {
+                    result = false
+                    if stopWhenError {
+                        SRDispatch.mainTask() {
+                            completion(succeed: false)
+                        }
+                        return
                     }
                 }
             }
             
             SRDispatch.mainTask() {
-                completion(succeed: true)
+                completion(succeed: result)
             }
         }
     }
