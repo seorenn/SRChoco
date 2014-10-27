@@ -99,6 +99,40 @@ class TestSRFileManager: XCTestCase {
             XCTAssert(path.exists == true)
         })
     }
+    
+    func testSRDirectoryRename() {
+        let path = SRDirectory(SRDirectory.pathForDocuments!.stringByAppendingPathComponent("SRDirectoryTest-Previous"))
+        path.create()
+        
+        path.rename("SRDirectoryTest-New")
+        XCTAssert(path.path.lastPathComponent == "SRDirectoryTest-New")
+        XCTAssert(path.exists == true)
+        
+        path.trash()
+    }
+    
+    func testSRDirectoryMove() {
+        let oldContainer = SRDirectory(SRDirectory.pathForDocuments!.stringByAppendingPathComponent("SRDirectoryContainer1"))
+        oldContainer.create()
+        
+        let content = SRDirectory(parentDirectory: oldContainer, name: "content-dir")
+        content.create()
+        
+        let newContainer = SRDirectory(SRDirectory.pathForDocuments!.stringByAppendingPathComponent("SRDirectoryContainer2"))
+        newContainer.create()
+        
+        XCTAssert(content.move(newContainer) == true)
+        XCTAssert(content.path.stringByDeletingLastPathComponent.lastPathComponent == "SRDirectoryContainer2")
+        
+        oldContainer.load()
+        XCTAssert(oldContainer.directories.count == 0)
+        
+        newContainer.load()
+        XCTAssert(newContainer.directories.count == 1)
+        
+        oldContainer.trash()
+        newContainer.trash()
+    }
 
     func testSRFileMisc() {
         XCTAssert(SRFile("/invalid/file/path/") == nil)

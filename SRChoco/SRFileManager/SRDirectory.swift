@@ -18,11 +18,11 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
     var directories = Dictionary<String, SRDirectory>()
     var files = Dictionary<String, SRFile>()
     var loaded = false
+    var fm = NSFileManager.defaultManager()
     
     var exists: Bool {
-        let fm = NSFileManager.defaultManager()
         var isDir = ObjCBool(false)
-        let res = fm.fileExistsAtPath(self.path, isDirectory: &isDir)
+        let res = self.fm.fileExistsAtPath(self.path, isDirectory: &isDir)
         
         if res && isDir.boolValue { return true }
         return false
@@ -138,7 +138,6 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
     // MARK: - Methods
 
     func load() {
-        let fm = NSFileManager.defaultManager()
         var error: NSError?
         let contents = fm.contentsOfDirectoryAtPath(self.path, error: &error)
         
@@ -150,7 +149,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
             let fullPath = self.path + "/" + name
             
             var isDirectory: ObjCBool = false
-            let exists = fm.fileExistsAtPath(fullPath, isDirectory: &isDirectory)
+            let exists = self.fm.fileExistsAtPath(fullPath, isDirectory: &isDirectory)
             assert(exists)
             
             if isDirectory.boolValue {
@@ -176,28 +175,59 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    class func mkdir(path: String, withIntermediateDirectories: Bool) -> Bool {
+    class func mkdir(path: String, withIntermediateDirectories: Bool = false) -> Bool {
         let fm = NSFileManager.defaultManager()
         var error: NSError?
         return fm.createDirectoryAtPath(path, withIntermediateDirectories: withIntermediateDirectories, attributes: nil, error: &error)
     }
     
+    class func mv(fromPath: String, toPath: String, withIntermediateDirectories: Bool = false) -> Bool {
+        let fm = NSFileManager.defaultManager()
+        var error: NSError?
+        
+        return fm.moveItemAtPath(fromPath, toPath: toPath, error: &error)
+    }
+    
     func create(intermediateDirectories: Bool = false) -> Bool {
         if self.exists { return true }
 
-        let fm = NSFileManager.defaultManager()
         var error: NSError?
-        return fm.createDirectoryAtPath(self.path, withIntermediateDirectories: intermediateDirectories, attributes: nil, error: &error)
+        return self.fm.createDirectoryAtPath(self.path, withIntermediateDirectories: intermediateDirectories, attributes: nil, error: &error)
+    }
+
+    private func resetPath(path: String) {
+        self.path = path
+        // NOTE: Implement more codes if needed
     }
     
     func rename(name: String) -> Bool {
-        // TODO
-        return false
+        if name.containString("/") || self.exists == false { return false }
+        
+        let parentPath = self.path.stringByDeletingLastPathComponent
+        let newPath = parentPath.stringByAppendingPathComponent(name)
+        
+        var error: NSError?
+        let res = self.fm.moveItemAtPath(self.path, toPath: newPath, error: &error)
+        if res == false { return false }
+    
+        self.resetPath(newPath)
+        return true
     }
     
-    func move(directory: SRDirectory) -> Bool {
-        // TODO
-        return false
+    func move(parentPath: String) -> Bool {
+        let myName = self.path.lastPathComponent
+        let newPath = parentPath.stringByAppendingPathComponent(myName)
+        
+        var error: NSError?
+        let res = self.fm.moveItemAtPath(self.path, toPath: newPath, error: &error)
+        if res == false { return false }
+        
+        self.resetPath(newPath)
+        return true
+    }
+    
+    func move(parentDirectory: SRDirectory) -> Bool {
+        return self.move(parentDirectory.path)
     }
     
     func createFile(name: String, data: NSData?, overwrite: Bool = false) -> SRFile? {
@@ -220,15 +250,13 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         let url = NSURL(fileURLWithPath: self.path, isDirectory: true)
         if url == nil { return false }
         
-        let fm = NSFileManager.defaultManager()
-        
         if removingAllSubContents == false {
             if self.loaded == false { self.load() }
             if self.files.count > 0 || self.directories.count > 0 { return false }
         }
 
         var error: NSError?
-        return fm.trashItemAtURL(url!, resultingItemURL: nil, error: &error)
+        return self.fm.trashItemAtURL(url!, resultingItemURL: nil, error: &error)
     }
     
     func trashAllSubContents(stopWhenError: Bool, completion: (succeed: Bool) -> Void) {
