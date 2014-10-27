@@ -13,6 +13,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
     // MARK: - Configurations
     
     private let delayForFileWriting: NSTimeInterval = 0.5
+    private let fm = NSFileManager.defaultManager()
     
     // MARK: - Properties
     
@@ -23,8 +24,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
     var data: NSData? {
         get {
             if !self.exists { return nil }
-            let fm = NSFileManager.defaultManager()
-            return fm.contentsAtPath(self.path)
+            return self.fm.contentsAtPath(self.path)
         }
         set {
             if newValue != nil {
@@ -34,8 +34,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
     }
     
     var exists: Bool {
-        let fm = NSFileManager.defaultManager()
-        return fm.fileExistsAtPath(self.path)
+        return self.fm.fileExistsAtPath(self.path)
     }
     
     // MARK: - Initializers
@@ -65,8 +64,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
     func create(data: NSData?) -> Bool {
         if self.exists { return true }
         
-        let fm = NSFileManager.defaultManager()
-        if fm.createFileAtPath(self.path, contents: nil, attributes: nil) == false { return false }
+        if self.fm.createFileAtPath(self.path, contents: nil, attributes: nil) == false { return false }
         
         if data != nil {
             self.data = data
@@ -88,20 +86,55 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         #else
             if !self.exists { return false }
             
-            let fm = NSFileManager.defaultManager()
             var error: NSError?
             if let fileURL = NSURL(fileURLWithPath: self.path) {
-                return fm.trashItemAtURL(fileURL, resultingItemURL: nil, error: &error)
+                return self.fm.trashItemAtURL(fileURL, resultingItemURL: nil, error: &error)
             }
             
             return false
         #endif
     }
     
-    func moveTo(directory: SRDirectory) -> Bool {
-        if !self.exists { return false }
-        // TODO
+    private func resetPath(path: String) {
+        self.path = path
+        self.name = self.path.lastPathComponent
+        self.parentDirectory = SRDirectory(self.path.stringByDeletingLastPathComponent)
+    }
+    
+    func rename(name: String) -> Bool {
+        if name.containString("/") || self.exists == false { return false }
+        
+        if let directory = self.parentDirectory {
+            let newPath = directory.path.stringByAppendingPathComponent(name)
+            
+            var error: NSError?
+            let res = self.fm.moveItemAtPath(self.path, toPath: newPath, error: &error)
+            if res == false { return false }
+            
+            self.resetPath(newPath)
+            return true
+        }
+
         return false
+    }
+    
+    func moveTo(directoryPath: String) -> Bool {
+        if let directory = self.parentDirectory {
+            let newPath = directoryPath.stringByAppendingPathComponent(self.name)
+            
+            var error: NSError?
+            let res = self.fm.moveItemAtPath(self.path, toPath: newPath, error: &error)
+            if res == false { return false }
+            
+            self.resetPath(newPath)
+            return true
+        }
+        
+        return false
+    }
+    
+    func moveTo(directory: SRDirectory) -> Bool {
+        return self.moveTo(directory.path)
     }
 
     // Write to file with completion block (use this if you want to write a large file content)
@@ -122,8 +155,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
     func read(completion: (data: NSData?) -> Void) {
         SRDispatch.backgroundTask() {
             if self.exists {
-                let fm = NSFileManager.defaultManager()
-                let readed = fm.contentsAtPath(self.path)
+                let readed = self.fm.contentsAtPath(self.path)
                 SRDispatch.mainTask() {
                     completion(data: readed)
                 }

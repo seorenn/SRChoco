@@ -18,7 +18,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
     var directories = Dictionary<String, SRDirectory>()
     var files = Dictionary<String, SRFile>()
     var loaded = false
-    var fm = NSFileManager.defaultManager()
+    private let fm = NSFileManager.defaultManager()
     
     var exists: Bool {
         var isDir = ObjCBool(false)
