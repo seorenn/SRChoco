@@ -73,13 +73,6 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         return true
     }
     
-    func delete() -> Bool {
-        if !self.exists { return false }
-        
-        // TODO
-        return false
-    }
-    
     func trash() -> Bool {
         #if os(iOS)
             return false
