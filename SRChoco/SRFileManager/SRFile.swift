@@ -37,6 +37,14 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         return self.fm.fileExistsAtPath(self.path)
     }
     
+    var extensionName: String {
+        return self.name.pathExtension
+    }
+    
+    var nameWithoutExtension: String {
+        return self.name.stringByDeletingPathExtension
+    }
+    
     // MARK: - Initializers
     
     init?(_ path: String) {
