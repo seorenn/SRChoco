@@ -259,6 +259,15 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return self.fm.trashItemAtURL(url!, resultingItemURL: nil, error: &error)
     }
     
+    func trash(removingAllSubContents: Bool, completion: (succeed: Bool) -> (Void)) {
+        SRDispatch.backgroundTask() {
+            let res = self.trash(removingAllSubContents: removingAllSubContents)
+            SRDispatch.mainTask() {
+                completion(succeed: res)
+            }
+        }
+    }
+    
     func trashAllSubContents(stopWhenError: Bool, completion: (succeed: Bool) -> Void) {
         SRDispatch.backgroundTask() {
             var result = true
