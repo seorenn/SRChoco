@@ -13,15 +13,50 @@ import Carbon
 import Foundation
 #endif
 
+typealias SRHotkeyHandler = (hotkey: SRHotkey) -> ()
+
 class SRHotkey: NSObject, Printable {
-    override init() {
-        // TODO
+    var command = false
+    var control = false
+    var option = false
+    var shift = false
+    var keycode: UInt32 = 0
+    var handler: SRHotkeyHandler?
+    
+    init(keycode: UInt32, command: Bool, control: Bool, option: Bool, shift: Bool, handler: SRHotkeyHandler) {
+        self.keycode = keycode
+        self.command = command
+        self.control = control
+        self.option = option
+        self.shift = shift
+        self.handler = handler
         super.init()
     }
     
     override var description: String {
-        // TODO
-        return "SRHotkey"
+        var modifiers: [String] = []
+        
+        if self.command { modifiers.append("Command") }
+        if self.control { modifiers.append("Control") }
+        if self.option { modifiers.append("Option") }
+        if self.shift { modifiers.append("Shift") }
+        
+        var modifiersString = ""
+        if modifiers.count > 0 {
+            modifiersString = modifiers.stringByJoining("+")
+        }
+        
+        return "<SRHotkey \(modifiersString) [\(self.keycode)]"
+    }
+    
+    var modifiers: UInt32 {
+        var value: UInt32 = 0
+        if self.command { value += cmdKey }
+        if self.control { value += controlKey }
+        if self.option { value += optionKey }
+        if self.shift { value += shiftKey }
+        
+        return value
     }
 }
 
