@@ -9,6 +9,8 @@
 #import "SRHotKeyManager.h"
 #import <Carbon/Carbon.h>
 
+#define BOOLSTR(bv) ((bv) ? @"true":@"false")
+
 #pragma mark - SRHotKey Class
 
 @interface SRHotKey ()
@@ -33,12 +35,16 @@
 - (UInt32)modifiers {
     UInt32 result = 0;
     
-    if (self.command) result += shiftKey;
-    if (self.control) result += cmdKey;
+    if (self.command) result += cmdKey;
+    if (self.control) result += controlKey;
     if (self.option) result += optionKey;
     if (self.shift) result += shiftKey;
     
     return result;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<SRHotKey Command[%@] Control[%@] Option[%@] Shift[%@] Code[%d]>", BOOLSTR(self.command), BOOLSTR(self.control), BOOLSTR(self.option), BOOLSTR(self.shift), self.keyCode];
 }
 
 @end
@@ -50,6 +56,7 @@
 @end
 
 OSStatus SRGlobalHotKeyManagerHandler(EventHandlerCallRef nextHandler, EventRef theEvent, void *userData) {
+    NSLog(@"SRGlobalHotKeyManagerHandler trigger!");
     SRGlobalHotKeyManager *manager = [SRGlobalHotKeyManager sharedManager];
     if (manager.hotKey && manager.hotKey.handler) {
         manager.hotKey.handler(manager.hotKey);
