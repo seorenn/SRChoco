@@ -11,6 +11,13 @@
 @class SRHotKey;
 typedef void (^SRHotKeyHandler)(SRHotKey *hotKey);
 
+/* The Key Code (from HITookbox/Events.h)
+ ANSI Characters = kVK_ANSI_?
+ eg. 'A' is kVK_ANSI_A
+ 
+ Another Key Codes = kVK_?????
+ eg. RETURN in kVK_Return
+ */
 @interface SRHotKey: NSObject
 @property (nonatomic, assign) BOOL command;
 @property (nonatomic, assign) BOOL control;
