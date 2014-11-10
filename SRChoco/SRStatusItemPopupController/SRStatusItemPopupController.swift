@@ -6,6 +6,14 @@
 // Copyright (c) 2014 Seorenn. All rights reserved.
 //
 
+/* NOTE: SRStatusItemPopupController cannot working well without these extensions:
+extension NSWindow {
+    func canBecomeKeyWindow() -> Bool {
+        return true
+    }
+}
+*/
+
 #if os(OSX)
 
 import AppKit
