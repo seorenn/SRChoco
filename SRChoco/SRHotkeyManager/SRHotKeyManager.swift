@@ -1,5 +1,5 @@
 //
-// SRHotkeyManager.swift
+// SRHotKeyManager.swift
 // SRChoco
 //
 // Created by Seorenn.
@@ -13,17 +13,17 @@ import Carbon
 import Foundation
 #endif
 
-typealias SRHotkeyHandler = (hotkey: SRHotkey) -> ()
+typealias SRHotKeyHandler = (hotKey: SRHotKey) -> ()
 
-class SRHotkey: NSObject, Printable {
+class SRHotKey: NSObject, Printable {
     var command = false
     var control = false
     var option = false
     var shift = false
     var keycode: UInt32 = 0
-    var handler: SRHotkeyHandler?
+    var handler: SRHotKeyHandler?
     
-    init(keycode: UInt32, command: Bool, control: Bool, option: Bool, shift: Bool, handler: SRHotkeyHandler) {
+    init(keycode: UInt32, command: Bool, control: Bool, option: Bool, shift: Bool, handler: SRHotKeyHandler) {
         self.keycode = keycode
         self.command = command
         self.control = control
@@ -46,7 +46,7 @@ class SRHotkey: NSObject, Printable {
             modifiersString = modifiers.stringByJoining("+")
         }
         
-        return "<SRHotkey \(modifiersString) [\(self.keycode)]"
+        return "<SRHotKey \(modifiersString) [\(self.keycode)]"
     }
     
     var modifiers: UInt32 {
@@ -60,19 +60,23 @@ class SRHotkey: NSObject, Printable {
     }
 }
 
-class SRHotkeyManager: NSObject, Printable {
-    private let signature = "srhm"
+private func SRHotKeyHandleFunction(nextHandler: EventHandlerCallRef, theEvent: EventRef, userData: UnsafeMutablePointer<Void>) -> OSStatus {
+    return noErr
+}
+
+class SRGlobalHotKeyManager: NSObject, Printable {
+    private let signature = "srgh"
     
     // MARK: - Singleton Factory
 
     struct StaticInstance {
         static var dispatchToken: dispatch_once_t = 0
-        static var instance: SRHotkeyManager?
+        static var instance: SRGlobalHotKeyManager?
     }
     
-    class func sharedManager() -> SRHotkeyManager {
+    class func sharedManager() -> SRGlobalHotKeyManager {
         dispatch_once(&StaticInstance.dispatchToken) {
-            StaticInstance.instance = SRHotkeyManager()
+            StaticInstance.instance = SRGlobalHotKeyManager()
         }
         return StaticInstance.instance!
     }
@@ -85,9 +89,17 @@ class SRHotkeyManager: NSObject, Printable {
     
     override var description: String {
         // TODO
-        return "SRHotkeyManager"
+        return "SRHotKeyManager"
     }
 
     // MARK: - Public Methods
-
+    func registerHotKey(hotKey: SRHotKey) {
+        var hotKeyRef: EventHotKeyRef
+        var hotKeyId: EventHotKeyID
+        var eventType: EventTypeSpec = EventTypeSpec(eventClass: OSType(kEventClassKeyboard), eventKind: OSType(kEventHotKeyPressed))
+        
+        let handlerClosure: (EventHandlerCallRef, EventRef, UnsafeMutablePointer<Void>) -> OSStatus = SRHotKeyHandleFunction
+        
+        InstallApplicationEventHandler(handlerClosure, 1, &eventType, nil, nil)
+    }
 }
