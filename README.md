@@ -113,6 +113,28 @@ Simple Class to generate the UUID.
 
 TODO: Need more documentation
 
+# SRHotKeyManager
+
+The Module for Hot Key Management.
+
+## SRHotKey
+
+<pre>
+let hotKey = SRHotKey(keyCode: UInt32(kVK_Space), command: true, control: true, option: true, shift: false)
+</pre>
+
+## SRGlobalHotKeyManager
+
+<pre>
+SRGlobalHotKeyManager.sharedManager().registerWithHotKey(hotKey) {
+    println("Global Hot Key Pressed")
+}
+</pre>
+
+## SRHotKeyManager
+
+TODO: No Implementations in currently. ;-)
+
 # Utilities
 
 Some utility classes and extensions for more conveniences...
