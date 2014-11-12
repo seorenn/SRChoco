@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class SRHotKey;
-typedef void (^SRHotKeyHandler)(SRHotKey *hotKey);
+typedef void (^SRGlobalHotKeyHandler)();
 
 /* The Key Code (from HITookbox/Events.h)
  ANSI Characters = kVK_ANSI_?
@@ -24,13 +24,12 @@ typedef void (^SRHotKeyHandler)(SRHotKey *hotKey);
 @property (nonatomic, assign) BOOL option;
 @property (nonatomic, assign) BOOL shift;
 @property (nonatomic, assign) UInt32 keyCode;
-@property (nonatomic, strong) SRHotKeyHandler handler;
-- (id)initWithKeyCode:(UInt32)keyCode command:(BOOL)command control:(BOOL)control option:(BOOL)option shift:(BOOL)shift handler:(SRHotKeyHandler)handler;
+- (id)initWithKeyCode:(UInt32)keyCode command:(BOOL)command control:(BOOL)control option:(BOOL)option shift:(BOOL)shift;
 @end
 
 @interface SRGlobalHotKeyManager: NSObject
 + (SRGlobalHotKeyManager *)sharedManager;
-- (void)registerWithHotKey:(SRHotKey *)hotKey;
+- (void)registerWithHotKey:(SRHotKey *)hotKey handler:(SRGlobalHotKeyHandler)handler;
 @end
 
 @interface SRHotKeyManager : NSObject
