@@ -19,7 +19,7 @@
 
 @implementation SRHotKey
 
-- (id)initWithKeyCode:(UInt32)keyCode command:(BOOL)command control:(BOOL)control option:(BOOL)option shift:(BOOL)shift handler:(SRHotKeyHandler)handler {
+- (id)initWithKeyCode:(UInt32)keyCode command:(BOOL)command control:(BOOL)control option:(BOOL)option shift:(BOOL)shift {
     self = [super init];
     if (self) {
         self.keyCode = keyCode;
@@ -27,7 +27,6 @@
         self.control = control;
         self.option = option;
         self.shift = shift;
-        self.handler = handler;
     }
     return self;
 }
@@ -53,13 +52,13 @@
 
 @interface SRGlobalHotKeyManager ()
 @property (nonatomic, strong) SRHotKey *hotKey;
+@property (nonatomic, strong) SRGlobalHotKeyHandler handler;
 @end
 
 OSStatus SRGlobalHotKeyManagerHandler(EventHandlerCallRef nextHandler, EventRef theEvent, void *userData) {
-    NSLog(@"SRGlobalHotKeyManagerHandler trigger!");
     SRGlobalHotKeyManager *manager = [SRGlobalHotKeyManager sharedManager];
-    if (manager.hotKey && manager.hotKey.handler) {
-        manager.hotKey.handler(manager.hotKey);
+    if (manager.handler) {
+        manager.handler();
     }
 
     return noErr;
@@ -90,8 +89,9 @@ EventHotKeyRef g_hotKeyRef;
     return self;
 }
 
-- (void)registerWithHotKey:(SRHotKey *)hotKey {
+- (void)registerWithHotKey:(SRHotKey *)hotKey handler:(SRGlobalHotKeyHandler)handler {
     self.hotKey = hotKey;
+    self.handler = handler;
     
     EventHotKeyID hotKeyID;
     hotKeyID.signature = 'srgh';
@@ -103,6 +103,7 @@ EventHotKeyRef g_hotKeyRef;
 - (void)unregisterHotKey {
     UnregisterEventHotKey(g_hotKeyRef);
     self.hotKey = nil;
+    self.handler = nil;
 }
 
 @end

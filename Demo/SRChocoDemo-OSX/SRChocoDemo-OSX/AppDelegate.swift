@@ -32,10 +32,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         println("Path for MainBundle: \(SRDirectory.pathForMainBundle)")
         println("Path for Temporary: \(SRDirectory.pathForTemporary)")
 
-        let key = SRHotKey(keyCode: 49, command: true, control: true, option: true, shift: false, handler: { (hotKey: SRHotKey!) -> (Void) in
-            println("Global HotKey Event: \(hotKey)")
-        })
-        SRGlobalHotKeyManager.sharedManager().registerWithHotKey(key)
+        let key = SRHotKey(keyCode: 49, command: true, control: true, option: true, shift: false)
+        SRGlobalHotKeyManager.sharedManager().registerWithHotKey(key) {
+            println("Global HotKey Event")
+        }
     }
 
     func applicationWillTerminate(aNotification: NSNotification?) {
