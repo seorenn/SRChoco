@@ -36,6 +36,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         SRGlobalHotKeyManager.sharedManager().registerWithHotKey(key) {
             println("Global HotKey Event")
         }
+        
+        SRDispatch.runAfter(1.0) {
+            println("runAfter 1.0")
+        }
+        SRDispatch.backgroundRunAfter(2.0) {
+            println("backgroundRunAfter 2.0")
+        }
+        SRDispatch.asyncRunAfter(3.0) {
+            println("asyncRunAfter 3.0")
+        }
     }
 
     func applicationWillTerminate(aNotification: NSNotification?) {

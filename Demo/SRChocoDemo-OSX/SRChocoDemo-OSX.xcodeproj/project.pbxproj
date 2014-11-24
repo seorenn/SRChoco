@@ -71,9 +71,9 @@
 		8A0AAFE919E505A600B7A93D /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUUID.swift; sourceTree = "<group>"; };
 		8A0AAFF319E5085E00B7A93D /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUUID.swift; sourceTree = "<group>"; };
 		8A26B79E1985F062004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
-		8A41832D1A1094F50030231D /* SRChocoDemo-OSXTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SRChocoDemo-OSXTests-Bridging-Header.h"; path = "../../../SRChoco/SRHotkeyManager/SRChocoDemo-OSXTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8A41832E1A1094F60030231D /* SRHotKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHotKeyManager.h; sourceTree = "<group>"; };
 		8A41832F1A1094F60030231D /* SRHotKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHotKeyManager.m; sourceTree = "<group>"; };
+		8A41833C1A1349230030231D /* SRChocoDemo-OSXTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-OSXTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
 		8A682E4E1993764800432E13 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
@@ -237,7 +237,6 @@
 		8AAC8CF2194ED4CF007BDE4D /* SRChocoDemo-OSXTests */ = {
 			isa = PBXGroup;
 			children = (
-				8A41832D1A1094F50030231D /* SRChocoDemo-OSXTests-Bridging-Header.h */,
 				8AAC8CF3194ED4CF007BDE4D /* Supporting Files */,
 				8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */,
 				8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */,
@@ -246,6 +245,7 @@
 				8ABA3A1219CACEC0009B75A5 /* TestArrayExtensions.swift */,
 				8A0AAFF319E5085E00B7A93D /* TestUUID.swift */,
 				8AAD786919F74E7C00B4551F /* TestSRFileManager.swift */,
+				8A41833C1A1349230030231D /* SRChocoDemo-OSXTests-Bridging-Header.h */,
 			);
 			path = "SRChocoDemo-OSXTests";
 			sourceTree = "<group>";
@@ -617,7 +617,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "../../SRChoco/SRHotkeyManager/SRChocoDemo-OSXTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SRChocoDemo-OSXTests/SRChocoDemo-OSXTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -637,7 +637,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "../../SRChoco/SRHotkeyManager/SRChocoDemo-OSXTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SRChocoDemo-OSXTests/SRChocoDemo-OSXTests-Bridging-Header.h";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
