@@ -23,10 +23,13 @@ class WindowLogController: NSObject {
 
     }
     
+    func log(message: String) {
+        let text = message + "\n" + self.textView.string!
+        self.textView.string = text
+    }
+    
     func updateAppLog(app: NSRunningApplication!) {
         let message = "-> \(app.localizedName)"
-        let text = message + "\n" + self.textView.string!
-        
-        self.textView.string = text
+        self.log(message)
     }
 }
