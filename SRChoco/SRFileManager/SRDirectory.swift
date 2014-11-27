@@ -56,6 +56,13 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return SRDirectory.pathForUserDomain(.MoviesDirectory)
     }
     
+    class var pathForDesktop: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        return SRDirectory.pathForUserDomain(.DesktopDirectory)
+    }
+    
     class var pathForHome: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
