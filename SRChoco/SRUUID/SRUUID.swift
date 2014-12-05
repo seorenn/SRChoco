@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SRUUID {
+public class SRUUID {
     // MARK: - Singleton Factory
     
     struct StaticInstance {
@@ -16,7 +16,7 @@ class SRUUID {
         static var instance: SRUUID?
     }
     
-    class func defaultUUID() -> SRUUID {
+    public class func defaultUUID() -> SRUUID {
         dispatch_once(&StaticInstance.dispatchToken) {
             StaticInstance.instance = SRUUID()
         }
@@ -30,13 +30,13 @@ class SRUUID {
     
     // MARK: - Initializers
     
-    init() {
+    public init() {
         
     }
     
     // MARK: - Methods
     
-    func uuid() -> String {
+    public func uuid() -> String {
         let uuid: CFUUIDRef = CFUUIDCreate(nil)
         let uuidString: String = CFUUIDCreateString(nil, uuid)
         return self.transform(uuidString)

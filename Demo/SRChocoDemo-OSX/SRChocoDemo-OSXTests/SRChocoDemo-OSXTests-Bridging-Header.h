@@ -9,5 +9,6 @@
 #ifndef SRChocoDemo_OSX_SRChocoDemo_OSXTests_Bridging_Header_h
 #define SRChocoDemo_OSX_SRChocoDemo_OSXTests_Bridging_Header_h
 
+#import "SRHotKeyManager.h"
 
 #endif

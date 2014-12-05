@@ -8,25 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		8A0AAFEA19E505A600B7A93D /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFE919E505A600B7A93D /* SRUUID.swift */; };
-		8A0AAFEB19E505A600B7A93D /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFE919E505A600B7A93D /* SRUUID.swift */; };
 		8A0AAFF419E5085E00B7A93D /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFF319E5085E00B7A93D /* TestUUID.swift */; };
 		8A26B79F1985F062004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B79E1985F062004F3168 /* SRRegexp.swift */; };
-		8A2D06A319A47975001D42AB /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AADB7F01971679700200861 /* SRInputSourceManager.swift */; };
-		8A2D06A419A47979001D42AB /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D319766575006028F4 /* SRDispatch.swift */; };
-		8A2D06A519A4797C001D42AB /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B79E1985F062004F3168 /* SRRegexp.swift */; };
-		8A2D06A719A4798E001D42AB /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FEE161961435800C73F8C /* SRWindowManager.swift */; };
-		8A2D06A819A47991001D42AB /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
-		8A2D06A919A47995001D42AB /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
-		8A2D06AA19A47998001D42AB /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* ViewExtensions.swift */; };
-		8A2D06AB19A479A0001D42AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
+		8A35B61C1A318208001CD048 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0F19C9812B009B75A5 /* ArrayExtensions.swift */; };
+		8A35B61D1A31820B001CD048 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* ViewExtensions.swift */; };
+		8A35B61E1A31820E001CD048 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
+		8A35B6201A31851C001CD048 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8A4183301A1094F60030231D /* SRHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A41832F1A1094F60030231D /* SRHotKeyManager.m */; };
-		8A4183311A1094F60030231D /* SRHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A41832F1A1094F60030231D /* SRHotKeyManager.m */; };
 		8A419FC61A2C62520090054F /* SRHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FC51A2C62520090054F /* SRHTTP.swift */; };
-		8A419FC71A2C62520090054F /* SRHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FC51A2C62520090054F /* SRHTTP.swift */; };
 		8A419FC91A2C62B40090054F /* SRHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FC81A2C62B40090054F /* SRHTTPRequest.swift */; };
-		8A419FCA1A2C62B40090054F /* SRHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FC81A2C62B40090054F /* SRHTTPRequest.swift */; };
 		8A419FCC1A2C62D30090054F /* SRHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FCB1A2C62D30090054F /* SRHTTPResponse.swift */; };
-		8A419FCD1A2C62D30090054F /* SRHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FCB1A2C62D30090054F /* SRHTTPResponse.swift */; };
 		8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */; };
 		8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4E1993764800432E13 /* TestSRRegexp.swift */; };
@@ -41,26 +32,20 @@
 		8AAD786A19F74E7C00B4551F /* TestSRFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD786919F74E7C00B4551F /* TestSRFileManager.swift */; };
 		8AADB7F11971679700200861 /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AADB7F01971679700200861 /* SRInputSourceManager.swift */; };
 		8AB156B719C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */; };
-		8AB156B819C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */; };
 		8AB156BB19C6ECDC00A2A568 /* StatusPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B919C6ECDC00A2A568 /* StatusPopupViewController.swift */; };
-		8AB156BC19C6ECDC00A2A568 /* StatusPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B919C6ECDC00A2A568 /* StatusPopupViewController.swift */; };
 		8AB156BD19C6ECDC00A2A568 /* StatusPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */; };
 		8AB156BE19C6ECDC00A2A568 /* StatusPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */; };
 		8ABA3A0C19C93076009B75A5 /* InputSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0B19C93076009B75A5 /* InputSourceController.swift */; };
 		8ABA3A0E19C94015009B75A5 /* WindowLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0D19C94015009B75A5 /* WindowLogController.swift */; };
 		8ABA3A1019C9812B009B75A5 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0F19C9812B009B75A5 /* ArrayExtensions.swift */; };
-		8ABA3A1119CACE62009B75A5 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0F19C9812B009B75A5 /* ArrayExtensions.swift */; };
 		8ABA3A1319CACEC0009B75A5 /* TestArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A1219CACEC0009B75A5 /* TestArrayExtensions.swift */; };
 		8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
 		8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
 		8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
 		8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */; };
-		8ACA188E19B076CF006B5048 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8AD045421A2EFA4500C66F65 /* TestSRHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD045411A2EFA4500C66F65 /* TestSRHTTP.swift */; };
 		8AD8912119A1B99600BD48AC /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* ViewExtensions.swift */; };
-		8ADF2C8D199B72F9001A1D8F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
 		8AE2EF3019D8F8720037C005 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE2EF2F19D8F8720037C005 /* SRExternalApp.swift */; };
-		8AE2EF3119D8F8720037C005 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE2EF2F19D8F8720037C005 /* SRExternalApp.swift */; };
 		8AF47824195AC92E00960AE4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
 /* End PBXBuildFile section */
 
@@ -464,33 +449,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A2D06A419A47979001D42AB /* SRDispatch.swift in Sources */,
-				8A2D06A719A4798E001D42AB /* SRWindowManager.swift in Sources */,
-				8ACA188E19B076CF006B5048 /* NSDateExtensions.swift in Sources */,
-				8A0AAFEB19E505A600B7A93D /* SRUUID.swift in Sources */,
-				8A2D06AB19A479A0001D42AB /* Log.swift in Sources */,
-				8AB156BC19C6ECDC00A2A568 /* StatusPopupViewController.swift in Sources */,
-				8A2D06A319A47975001D42AB /* SRInputSourceManager.swift in Sources */,
 				8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */,
 				8AAD786A19F74E7C00B4551F /* TestSRFileManager.swift in Sources */,
 				8AD045421A2EFA4500C66F65 /* TestSRHTTP.swift in Sources */,
-				8AE2EF3119D8F8720037C005 /* SRExternalApp.swift in Sources */,
 				8A0AAFF419E5085E00B7A93D /* TestUUID.swift in Sources */,
-				8ABA3A1119CACE62009B75A5 /* ArrayExtensions.swift in Sources */,
 				8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */,
-				8AB156B819C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */,
-				8ADF2C8D199B72F9001A1D8F /* StringExtensions.swift in Sources */,
-				8A2D06A819A47991001D42AB /* SRDirectory.swift in Sources */,
-				8A4183311A1094F60030231D /* SRHotKeyManager.m in Sources */,
 				8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */,
-				8A419FCA1A2C62B40090054F /* SRHTTPRequest.swift in Sources */,
-				8A2D06AA19A47998001D42AB /* ViewExtensions.swift in Sources */,
-				8A2D06A919A47995001D42AB /* SRFile.swift in Sources */,
-				8A419FC71A2C62520090054F /* SRHTTP.swift in Sources */,
-				8A2D06A519A4797C001D42AB /* SRRegexp.swift in Sources */,
+				8A35B61E1A31820E001CD048 /* StringExtensions.swift in Sources */,
 				8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */,
+				8A35B6201A31851C001CD048 /* NSDateExtensions.swift in Sources */,
+				8A35B61C1A318208001CD048 /* ArrayExtensions.swift in Sources */,
+				8A35B61D1A31820B001CD048 /* ViewExtensions.swift in Sources */,
 				8ABA3A1319CACEC0009B75A5 /* TestArrayExtensions.swift in Sources */,
-				8A419FCD1A2C62D30090054F /* SRHTTPResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
