@@ -92,13 +92,25 @@ class TestSRFileManager: XCTestCase {
         let content3 = SRFile(directory: content1, name: "content-sub-file")!
         content3.create(nil)
         
+        var waitingForClosure = true
+        path.load()
+        XCTAssert(path.files.count == 1)
+        XCTAssert(path.directories.count == 1)
+        
         path.trashAllSubContents(true, completion: { (succeed) -> Void in
             XCTAssert(succeed)
             XCTAssert(content1.exists == false)
             XCTAssert(content2.exists == false)
             XCTAssert(content3.exists == false)
             XCTAssert(path.exists == true)
+            waitingForClosure = false
         })
+
+        while waitingForClosure {
+            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate(timeIntervalSinceNow: 0.1))
+        }
+        
+        path.trash(removingAllSubContents: true)
     }
     
     func testSRDirectoryRename() {
@@ -130,9 +142,15 @@ class TestSRFileManager: XCTestCase {
         
         newContainer.load()
         XCTAssert(newContainer.directories.count == 1)
-        
+
         oldContainer.trash()
-        newContainer.trash()
+        newContainer.trash(removingAllSubContents: true)
+
+        // waiting file deletion
+        NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate(timeIntervalSinceNow: 1))
+
+        XCTAssert(oldContainer.exists == false)
+        XCTAssert(newContainer.exists == false)
     }
 
     func testSRFileMisc() {
@@ -150,6 +168,7 @@ class TestSRFileManager: XCTestCase {
         let filename = "SRFileTest-\(dateString).txt"
         let path = SRDirectory.pathForDocuments?.stringByAppendingPathComponent(filename)
         println("Test uses this file path: \(path)")
+        var waitingForClosure = true
         if let f = SRFile(path!) {
             XCTAssert(f.exists == false)
             XCTAssert(f.data == nil)
@@ -167,8 +186,14 @@ class TestSRFileManager: XCTestCase {
             
             XCTAssert(f.trash() == true)
             XCTAssert(f.exists == false)
+            waitingForClosure = false
         } else {
             XCTAssert(false)
+            waitingForClosure = false
+        }
+        
+        while waitingForClosure {
+            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate(timeIntervalSinceNow: 0.1))
         }
     }
     
@@ -178,6 +203,9 @@ class TestSRFileManager: XCTestCase {
         let filename = "SRFileTest-Lazy-\(dateString).txt"
         let path = SRDirectory.pathForDocuments?.stringByAppendingPathComponent(filename)
         println("Test uses this file path: \(path)")
+        
+        var waitingForClosure = true
+
         if let f = SRFile(path!) {
             XCTAssert(f.exists == false)
             XCTAssert(f.data == nil)
@@ -195,10 +223,16 @@ class TestSRFileManager: XCTestCase {
                     
                     XCTAssert(f.trash() == true)
                     XCTAssert(f.exists == false)
+                    waitingForClosure = false
                 })
             })
         } else {
             XCTAssert(false)
+            waitingForClosure = false
+        }
+        
+        while waitingForClosure {
+            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate(timeIntervalSinceNow: 0.1))
         }
     }
 }
