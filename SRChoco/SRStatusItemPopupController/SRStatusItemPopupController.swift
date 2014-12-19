@@ -49,6 +49,8 @@ class SRStatusItemPopupView: NSView {
         self.init(frame: NSMakeRect(0, 0, 0, 0))
     }
     
+    override var acceptsFirstResponder: Bool { return true }
+    
     override func mouseDown(theEvent: NSEvent) {
         self.needsDisplay = true
         if let handler = self.mouseDownHandler {
