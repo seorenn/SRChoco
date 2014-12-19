@@ -19,6 +19,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let image = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericFolderIcon)))
         let alternateImage = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericApplicationIcon)))
         self.statusItemPopupController = SRStatusItemPopupController(viewController: popup!, image: image, alternateImage: alternateImage)
+        self.statusItemPopupController!.popoverWillShowHandler = {
+            () -> () in
+            println("Popover will show!")
+        }
         
         let demoFM = DemoSRFileManager()
         demoFM.test()

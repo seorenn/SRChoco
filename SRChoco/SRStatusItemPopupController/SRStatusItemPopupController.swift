@@ -95,6 +95,8 @@ class SRStatusItemPopupController: NSObject {
         }
     }
     
+    var popoverWillShowHandler: (() -> ())?
+
     init(viewController: NSViewController, image: NSImage?, alternateImage: NSImage?) {
         self.viewController = viewController
         
@@ -127,7 +129,12 @@ class SRStatusItemPopupController: NSObject {
         self.statusItemView.needsDisplay = true
         
         if self.popover.shown == false {
+            if self.popoverWillShowHandler != nil {
+                self.popoverWillShowHandler!()
+            }
+            
             self.popover.animates = animated
+            self.popover.contentSize = self.viewController.view.frame.size
             self.statusItem.popUpStatusItemMenu(self.dummyMenu)
             
             let edge = NSRectEdge(CGRectEdge.MinYEdge.rawValue)  // FIXME: MinYEdge is CGRectEdge in currently; Yeah Build Error! :-(
