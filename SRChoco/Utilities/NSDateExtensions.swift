@@ -237,11 +237,12 @@ public func + (left: NSDate, right: SRTimeDelta) -> NSDate {
     return left.dateByAddingTimeInterval(right.interval)
 }
 
-public func - (left: NSDate, right: SRTimeDelta) -> NSDate {
-    return left.dateByAddingTimeInterval(-right.interval)
-}
-
 public func - (left: NSDate, right: NSDate) -> SRTimeDelta {
     let secs = left.timeIntervalSinceDate(right)
     return SRTimeDelta(interval: secs)
 }
+
+public func - (left: NSDate, right: SRTimeDelta) -> NSDate {
+    return left.dateByAddingTimeInterval(-right.interval)
+}
+

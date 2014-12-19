@@ -94,8 +94,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let viewController = MyViewController(nibName: "MyViewController", bundle: nil)
         let image = NSImage(name: "Icon")
         let alternateImage = NSImage(name: "Icon-Open")
-        self.statusItemPopupController = SRStatusItemPopupController(viewController: viewController, 
-                                                                     image: image, 
+        self.statusItemPopupController = SRStatusItemPopupController(viewController: viewController,
+                                                                     image: image,
                                                                      alternateImage: alternateImage)
         // ...
     }
@@ -106,6 +106,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 Simple Classes for Managing The Application Windows.
 
 TODO: Need more documentation
+
+# SRUUID
+
+Simple Class to generate the UUID.
+
+TODO: Need more documentation
+
+# SRHotKeyManager
+
+The Module for Hot Key Management.
+
+## SRHotKey
+
+<pre>
+let hotKey = SRHotKey(keyCode: UInt32(kVK_Space), command: true, control: true, option: true, shift: false)
+</pre>
+
+## SRGlobalHotKeyManager
+
+<pre>
+SRGlobalHotKeyManager.sharedManager().registerWithHotKey(hotKey) {
+    println("Global Hot Key Pressed")
+}
+</pre>
+
+## SRHotKeyManager
+
+TODO: No Implementations in currently. ;-)
 
 # Utilities
 
@@ -183,4 +211,3 @@ view.size           // CGSize of NSSize
 view.conterPoint    // CGPoint or NSPoint
 view.moveToBelow(view: anotherView, margin: 5.0)
 </pre>
-

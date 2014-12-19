@@ -14,7 +14,7 @@ import Carbon
 extension Bool {
     static func boolFromCFBooleanVoidPointer(voidPtr: UnsafePointer<Void>) -> Bool? {
         let cfbool: CFBooleanRef = unsafeBitCast(voidPtr, CFBooleanRef.self)
-        let boolValue: Bool = cfbool
+        let boolValue: Bool? = Bool(cfbool)
         return boolValue
     }
 }
@@ -28,12 +28,12 @@ extension NSURL {
 }
     
 class SRInputSource: NSObject, Printable, Equatable {
-    var name: String?
-    var inputSourceID: String?
-    var type: String?
-    var selectable: Bool?
-    var iconURL: NSURL?
-    var tis: TISInputSourceRef?
+    let name: String?
+    let inputSourceID: String?
+    let type: String?
+    let selectable: Bool?
+    let iconURL: NSURL?
+    let tis: TISInputSourceRef?
     
     private init(_ tis: TISInputSourceRef) {
         self.tis = tis
@@ -95,11 +95,13 @@ class SRInputSourceManager {
         return nil
     }
     
+    // singleton instance type
     struct StaticInstance {
         static var dispatchToken: dispatch_once_t = 0
         static var instance:SRInputSourceManager?
     }
     
+    // singleton factory
     class func sharedManager() -> SRInputSourceManager {
         dispatch_once(&StaticInstance.dispatchToken) {
             StaticInstance.instance = SRInputSourceManager()
@@ -111,6 +113,7 @@ class SRInputSourceManager {
         self.refresh()
     }
     
+    // generate input source informations
     func refresh() {
         let iss = TISCreateInputSourceList(nil, Boolean(0))
         let issArray: CFArrayRef = iss.takeUnretainedValue()

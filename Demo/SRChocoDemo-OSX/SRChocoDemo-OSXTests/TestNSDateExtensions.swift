@@ -8,6 +8,7 @@
 
 import Cocoa
 import XCTest
+import SRChocoDemo_OSX
 
 class TestNSDateExtensions: XCTestCase {
 
@@ -94,7 +95,12 @@ class TestNSDateExtensions: XCTestCase {
     func testDiffBetweenDates() {
         let now = NSDate()
         let fut = NSDate.generate(year: now.year, month: now.month, day: now.day, hour: now.hour+1, minute: now.minute, second: now.second, nanosecond: now.nanosecond)
-        let dif = fut! - now
+        // TODO: Test Code cannot recognize my '-' operator overloads from NSDate Extension.
+        // Test with next Xcode and change testing method using overloads
+        // let dif = fut! - now
+        let secs = fut!.timeIntervalSinceDate(now)
+        let dif = SRTimeDelta(interval: secs)
+
         println("diff = \(dif.description)")
         XCTAssert(Int(dif.interval) == 60*60)
         XCTAssert(dif.second == 0)

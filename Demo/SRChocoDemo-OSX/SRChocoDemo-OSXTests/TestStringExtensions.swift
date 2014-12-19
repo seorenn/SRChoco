@@ -8,6 +8,7 @@
 
 import Cocoa
 import XCTest
+import SRChocoDemo_OSX
 
 class TestStringExtensions: XCTestCase {
 
@@ -32,6 +33,7 @@ class TestStringExtensions: XCTestCase {
         let strA = "This is test string..."
         let strB = strA[1...3]
         XCTAssert(strB == "his")
+        XCTAssert(strA[2...5] == "is i")
         let strC = strA[1..<3]
         XCTAssert(strC == "hi")
         let strD = strA[NSMakeRange(0, 3)]
