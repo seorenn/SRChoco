@@ -50,6 +50,8 @@ class SRStatusItemPopupView: NSView {
     }
     
     override var acceptsFirstResponder: Bool { return true }
+
+    override func acceptsFirstMouse(theEvent: NSEvent) -> Bool { return true }
     
     override func mouseDown(theEvent: NSEvent) {
         self.needsDisplay = true
@@ -111,6 +113,7 @@ class SRStatusItemPopupController: NSObject {
     var popoverWillShowHandler: (() -> ())?
 
     init(viewController: NSViewController, image: NSImage?, alternateImage: NSImage?) {
+        //NSApp.setActivationPolicy(NSApplicationActivationPolicy.Prohibited)
         self.viewController = viewController
         
         let height = NSStatusBar.systemStatusBar().thickness
@@ -148,7 +151,7 @@ class SRStatusItemPopupController: NSObject {
                 self.popoverWillShowHandler!()
             }
             
-            NSApplication.sharedApplication().activateIgnoringOtherApps(true)
+            //NSApplication.sharedApplication().activateIgnoringOtherApps(true)
             
             self.popover.animates = animated
             self.popover.contentSize = self.viewController.view.frame.size
