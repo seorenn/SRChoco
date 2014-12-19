@@ -1,16 +1,15 @@
 //
-//  TestUUID.swift
+//  TestSRHTTP.swift
 //  SRChocoDemo-OSX
 //
-//  Created by Heeseung Seo on 2014. 10. 8..
+//  Created by Heeseung Seo on 2014. 12. 3..
 //  Copyright (c) 2014년 Seorenn. All rights reserved.
 //
 
 import Cocoa
 import XCTest
-import SRChocoDemo_OSX
 
-class TestUUID: XCTestCase {
+class TestSRHTTP: XCTestCase {
 
     override func setUp() {
         super.setUp()
@@ -22,29 +21,21 @@ class TestUUID: XCTestCase {
         super.tearDown()
     }
 
+    func testExample() {
+        // This is an example of a functional test case.
+        XCTAssert(true, "Pass")
+    }
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
     }
-
-    func testDefaultUUID() {
-        var uuids = [String]()
-        let testCount = 50
-        
-        for i in 0..<testCount {
-            uuids.append(SRUUID.defaultUUID().uuid())
-        }
-        
-        for currentUUID in uuids {
-            var matchCount = 0
-            for occurUUID in uuids {
-                if occurUUID == currentUUID {
-                    matchCount++
-                }
-            }
-            XCTAssert(matchCount == 1)
-        }
+    
+    func testHeaderMakingUp() {
+        // make request instance, setup header, setup srhttp common header, merge.
+        // is that ok?
     }
+
 }
