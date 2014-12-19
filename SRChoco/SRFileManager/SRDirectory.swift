@@ -8,64 +8,143 @@
 
 import Foundation
 
-class SRDirectory: NSObject, DebugPrintable, Equatable {
-    var path: String
-    var name: String
-    var hidden = false
-    var directories = Dictionary<String, SRDirectory>()
-    var files = Dictionary<String, SRFile>()
-    var loaded = false
+public class SRDirectory: NSObject, DebugPrintable, Equatable {
     
-    class func pathForUserDomain(directory: NSSearchPathDirectory) -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(directory, NSSearchPathDomainMask.UserDomainMask, true)
-        let path: String = paths[0] as String
-        return path
+    // MARK: - Properties
+    
+    public var path: String
+    public var name: String
+    public var hidden = false
+    public var directories = Dictionary<String, SRDirectory>()
+    public var files = Dictionary<String, SRFile>()
+    var loaded = false
+    private let fm = NSFileManager.defaultManager()
+    
+    public var exists: Bool {
+        var isDir = ObjCBool(false)
+        let res = self.fm.fileExistsAtPath(self.path, isDirectory: &isDir)
+        
+        if res && isDir.boolValue { return true }
+        return false
     }
     
-    class func pathURLForUserDomain(directory: NSSearchPathDirectory) -> NSURL {
+    // MARK: - Predefined
+    
+    public class func pathForUserDomain(directory: NSSearchPathDirectory) -> String? {
+        let paths = NSSearchPathForDirectoriesInDomains(directory, NSSearchPathDomainMask.UserDomainMask, true)
+        if paths == nil { return nil }
+        return paths.last as? String
+    }
+    
+    public class func pathURLForUserDomain(directory: NSSearchPathDirectory) -> NSURL? {
         let fm = NSFileManager.defaultManager()
         let paths = fm.URLsForDirectory(directory, inDomains: NSSearchPathDomainMask.UserDomainMask)
-        return paths[0] as NSURL
+        return paths.last as? NSURL
     }
     
-    class func pathForDownload() -> String {
+    public class var pathForDownloads: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         return SRDirectory.pathForUserDomain(.DownloadsDirectory)
     }
     
-    class func pathForMovie() -> String {
+    public class var pathForMovies: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         return SRDirectory.pathForUserDomain(.MoviesDirectory)
     }
     
-    class func pathForHome() -> String {
+    public class var pathForDesktop: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        return SRDirectory.pathForUserDomain(.DesktopDirectory)
+    }
+    
+    public class var pathForHome: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         let home = NSProcessInfo.processInfo().environment
         let homePath: AnyObject? = home["HOME"]
-        return homePath as String
+        return homePath as? String
     }
     
-    init(_ path: String) {
+    public class var pathForApplicationSupports: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        return SRDirectory.pathForUserDomain(.ApplicationSupportDirectory)
+    }
+    
+    public class var pathForCaches: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        return SRDirectory.pathForUserDomain(.CachesDirectory)
+    }
+    
+    public class var pathForDocuments: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        return SRDirectory.pathForUserDomain(.DocumentDirectory)
+    }
+    
+    public class var pathForMainBundle: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        return NSBundle.mainBundle().resourcePath
+    }
+    
+    public class var pathForTemporary: String? {
+        #if os(iOS)
+            assert(false, "iOS(UIKit) does not support this feature")
+        #endif
+        if let path = NSTemporaryDirectory() {
+            return path
+        } else {
+            return nil
+        }
+    }
+    
+    // MARK: - Initializers
+    
+    public init(_ path: String) {
         self.path = path
-        // TODO: self.name
-        self.name = "Unimplemented Property"
+        self.name = self.path.lastPathComponent.stringByDeletingPathExtension
         super.init()
+        
+        if self.path[self.path.length - 1] == Character("/") {
+            let last = self.path.length - 2
+            self.path = self.path[0...last]
+        }
     }
     
-    convenience init?(create path: String) {
+    public convenience init(parentDirectory: SRDirectory, name: String) {
+        let path = parentDirectory.path.stringByAppendingPathComponent(name)
         self.init(path)
-        // TODO
-        return nil
     }
     
-    func load() {
-        let fm = NSFileManager.defaultManager()
+    public init?(creatingPath: String, withIntermediateDirectories: Bool) {
+        self.path = creatingPath
+        self.name = self.path.lastPathComponent.stringByDeletingPathExtension
+        super.init()
+        
+        if self.path[self.path.length - 1] == Character("/") {
+            let last = self.path.length - 2
+            self.path = self.path[0...last]
+        }
+        
+        if self.create(intermediateDirectories: withIntermediateDirectories) == false { return nil }
+    }
+    
+    // MARK: - Methods
+
+    public func load() {
         var error: NSError?
         let contents = fm.contentsOfDirectoryAtPath(self.path, error: &error)
         
@@ -77,23 +156,24 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
             let fullPath = self.path + "/" + name
             
             var isDirectory: ObjCBool = false
-            let exists = fm.fileExistsAtPath(fullPath, isDirectory: &isDirectory)
+            let exists = self.fm.fileExistsAtPath(fullPath, isDirectory: &isDirectory)
             assert(exists)
             
             if isDirectory.boolValue {
                 let dir = SRDirectory(fullPath)
                 self.directories[name] = dir
             } else {
-                let file = SRFile(fullPath)
-                file.parentDirectory = self
-                self.files[name] = file
+                if let file = SRFile(fullPath) {
+                    file.parentDirectory = self
+                    self.files[name] = file
+                }
             }
         }
         
         loaded = true
     }
     
-    func load(block: (() -> ())) {
+    public func load(block: (() -> ())) {
         SRDispatch.backgroundTask() {
             self.load()
             SRDispatch.mainTask() {
@@ -102,13 +182,136 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    func createFile(path: String, data: NSData?) -> SRFile? {
-        // TODO
+    class func mkdir(path: String, withIntermediateDirectories: Bool = false) -> Bool {
+        let fm = NSFileManager.defaultManager()
+        var error: NSError?
+        return fm.createDirectoryAtPath(path, withIntermediateDirectories: withIntermediateDirectories, attributes: nil, error: &error)
+    }
+    
+    class func mv(fromPath: String, toPath: String, withIntermediateDirectories: Bool = false) -> Bool {
+        let fm = NSFileManager.defaultManager()
+        var error: NSError?
         
+        return fm.moveItemAtPath(fromPath, toPath: toPath, error: &error)
+    }
+    
+    public func create(intermediateDirectories: Bool = false) -> Bool {
+        if self.exists { return true }
+
+        var error: NSError?
+        return self.fm.createDirectoryAtPath(self.path, withIntermediateDirectories: intermediateDirectories, attributes: nil, error: &error)
+    }
+
+    private func resetPath(path: String) {
+        self.path = path
+        // NOTE: Implement more codes if needed
+    }
+    
+    public func rename(name: String) -> Bool {
+        if name.containString("/") || self.exists == false { return false }
+        
+        let parentPath = self.path.stringByDeletingLastPathComponent
+        let newPath = parentPath.stringByAppendingPathComponent(name)
+        
+        var error: NSError?
+        let res = self.fm.moveItemAtPath(self.path, toPath: newPath, error: &error)
+        if res == false { return false }
+    
+        self.resetPath(newPath)
+        return true
+    }
+    
+    public func move(parentPath: String) -> Bool {
+        let myName = self.path.lastPathComponent
+        let newPath = parentPath.stringByAppendingPathComponent(myName)
+        
+        var error: NSError?
+        let res = self.fm.moveItemAtPath(self.path, toPath: newPath, error: &error)
+        if res == false { return false }
+        
+        self.resetPath(newPath)
+        return true
+    }
+    
+    public func move(parentDirectory: SRDirectory) -> Bool {
+        return self.move(parentDirectory.path)
+    }
+    
+    public func createFile(name: String, data: NSData?, overwrite: Bool = false) -> SRFile? {
+        if self.exists == false { return nil }
+        if let file = SRFile(directory: self, name: name) {
+            if file.exists == false {
+                file.create(nil)
+                file.data = data
+            } else {
+                if data != nil && overwrite {
+                    file.data = data
+                }
+            }
+            return file
+        }
         return nil
     }
     
-    override var debugDescription: String {
+    public func trash(removingAllSubContents: Bool = false) -> Bool {
+        let url = NSURL(fileURLWithPath: self.path, isDirectory: true)
+        if url == nil { return false }
+        
+        if removingAllSubContents == false {
+            if self.loaded == false { self.load() }
+            if self.files.count > 0 || self.directories.count > 0 { return false }
+        }
+
+        var error: NSError?
+        return self.fm.trashItemAtURL(url!, resultingItemURL: nil, error: &error)
+    }
+    
+    public func trash(removingAllSubContents: Bool, completion: (succeed: Bool) -> (Void)) {
+        SRDispatch.backgroundTask() {
+            let res = self.trash(removingAllSubContents: removingAllSubContents)
+            SRDispatch.mainTask() {
+                completion(succeed: res)
+            }
+        }
+    }
+    
+    public func trashAllSubContents(stopWhenError: Bool, completion: (succeed: Bool) -> Void) {
+        SRDispatch.backgroundTask() {
+            var result = true
+            if self.loaded == false { self.load() }
+        
+            for (name: String, dir: SRDirectory) in self.directories {
+                let res = dir.trash(removingAllSubContents: true)
+                if res == false {
+                    result = false
+                    if stopWhenError {
+                        SRDispatch.mainTask() {
+                            completion(succeed: false)
+                        }
+                        return
+                    }
+                }
+            }
+            for (name: String, file: SRFile) in self.files {
+                let res = file.trash()
+                if res == false {
+                    result = false
+                    if stopWhenError {
+                        SRDispatch.mainTask() {
+                            completion(succeed: false)
+                        }
+                        return
+                    }
+                }
+            }
+            
+            SRDispatch.mainTask() {
+                completion(succeed: result)
+            }
+        }
+    }
+    
+    override public var debugDescription: String {
         if !loaded {
             return "<SRDirectory [\(path)] (not loaded)"
         } else {
@@ -117,10 +320,8 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
     }
 }
 
-func == (left: SRDirectory, right: SRDirectory) -> Bool {
-    if left.path == right.path {
-        return true
-    }
+public func == (left: SRDirectory, right: SRDirectory) -> Bool {
+    if left.path == right.path { return true }
     return false
 }
 

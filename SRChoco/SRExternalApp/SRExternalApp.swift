@@ -9,7 +9,7 @@
 
 #if os(iOS)
 
-// MARK: SROtherApp for iOS
+// MARK: SRExternalApp for iOS
 
 import UIKit
     
@@ -29,11 +29,11 @@ func launchApp(appScheme: String) {
 
 #elseif os(OSX)
 
-// MARK: SROtherApp for OSX
+// MARK: SRExternalApp for OSX
 
 import Cocoa
 
-func getAppPath(bundleIdentifier: String) -> String {
+func getAppPath(bundleIdentifier: String) -> String? {
     return NSWorkspace.sharedWorkspace().absolutePathForAppBundleWithIdentifier(bundleIdentifier)
 }
     
@@ -51,8 +51,9 @@ func launchApp(appPath: String) {
 }
 
 func activateApp(pid: pid_t) {
-    let app = NSRunningApplication(processIdentifier: pid)
-    activateApp(app)
+    if let app = NSRunningApplication(processIdentifier: pid) {
+        activateApp(app)
+    }
 }
     
 func activateApp(bundleIdentifier: String) {

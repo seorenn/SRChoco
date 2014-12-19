@@ -61,7 +61,7 @@ extension ViewType {
             return self.frame.size.height
         }
     }
-    var origin: CGPoint {
+    var origin: PointType {
         set {
             var frame = self.frame
             frame.origin = newValue
@@ -71,7 +71,7 @@ extension ViewType {
             return self.frame.origin
         }
     }
-    var size: CGSize {
+    var size: SizeType {
         set {
             var frame = self.frame
             frame.size = newValue

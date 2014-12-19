@@ -31,7 +31,7 @@ extension String {
     
     // substring with NSRange
     subscript(range: NSRange) -> String {
-        assert(range.location >= 0 && range.length > 0)
+        if range.length <= 0 { return "" }
         let startIndex = range.location
         let endIndex = range.location + range.length - 1
         return self[startIndex...endIndex]

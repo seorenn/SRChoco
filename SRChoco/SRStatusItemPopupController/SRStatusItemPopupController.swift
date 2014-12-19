@@ -6,6 +6,14 @@
 // Copyright (c) 2014 Seorenn. All rights reserved.
 //
 
+/* NOTE: SRStatusItemPopupController cannot working well without these extensions:
+extension NSWindow {
+    func canBecomeKeyWindow() -> Bool {
+        return true
+    }
+}
+*/
+
 #if os(OSX)
 
 import AppKit
@@ -38,14 +46,14 @@ class SRStatusItemPopupView: NSView {
         self.init(frame: NSMakeRect(0, 0, 0, 0))
     }
     
-    override func mouseDown(theEvent: NSEvent!) {
+    override func mouseDown(theEvent: NSEvent) {
         self.needsDisplay = true
         if let handler = self.mouseDownHandler {
             handler()
         }
     }
     
-    override func rightMouseDown(theEvent: NSEvent!) {
+    override func rightMouseDown(theEvent: NSEvent) {
         self.mouseDown(theEvent)
     }
     
@@ -87,6 +95,8 @@ class SRStatusItemPopupController: NSObject {
         }
     }
     
+    var popoverWillShowHandler: (() -> ())?
+
     init(viewController: NSViewController, image: NSImage?, alternateImage: NSImage?) {
         self.viewController = viewController
         
@@ -119,7 +129,12 @@ class SRStatusItemPopupController: NSObject {
         self.statusItemView.needsDisplay = true
         
         if self.popover.shown == false {
+            if self.popoverWillShowHandler != nil {
+                self.popoverWillShowHandler!()
+            }
+            
             self.popover.animates = animated
+            self.popover.contentSize = self.viewController.view.frame.size
             self.statusItem.popUpStatusItemMenu(self.dummyMenu)
             
             let edge = NSRectEdge(CGRectEdge.MinYEdge.rawValue)  // FIXME: MinYEdge is CGRectEdge in currently; Yeah Build Error! :-(
@@ -145,7 +160,7 @@ class SRStatusItemPopupController: NSObject {
             self.popover.close()
             
             if self.popoverTouchHandler != nil {
-                NSEvent.removeMonitor(self.popoverTouchHandler)
+                NSEvent.removeMonitor(self.popoverTouchHandler!)
                 self.popoverTouchHandler = nil
             }
         }
