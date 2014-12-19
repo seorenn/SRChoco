@@ -118,13 +118,15 @@ class SRStatusItemPopupController: NSObject {
         self.statusItemView.image = image
         self.statusItemView.alternateImage = alternateImage
         
-        self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)    // FIXME: -1.0 = NSVariableStatusItemLength (bypassing undefined symbol link error)
+        let thickness = NSStatusBar.systemStatusBar().thickness
+        self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(thickness)    // FIXME: -1.0 = NSVariableStatusItemLength (bypassing undefined symbol link error)
         self.statusItem.view = self.statusItemView
         
         self.dummyMenu = NSMenu()
         
         self.popover = NSPopover()
         self.popover.contentViewController = self.viewController
+        self.popover.behavior = NSPopoverBehavior.ApplicationDefined
         
         super.init()
         
@@ -145,6 +147,8 @@ class SRStatusItemPopupController: NSObject {
             if self.popoverWillShowHandler != nil {
                 self.popoverWillShowHandler!()
             }
+            
+            NSApplication.sharedApplication().activateIgnoringOtherApps(true)
             
             self.popover.animates = animated
             self.popover.contentSize = self.viewController.view.frame.size
