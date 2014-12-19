@@ -28,6 +28,9 @@ class SRStatusItemPopupView: NSView {
     var drawHandler: SRStatusItemPopupControllerDrawHandler?
     var mouseDownHandler: (() -> ())?
     
+    var backgroundColor: NSColor?
+    var selectedBackgroundColor: NSColor?
+
     var currentImage: NSImage? {
         if self.active {
             return self.alternateImage ?? self.image
@@ -64,9 +67,17 @@ class SRStatusItemPopupView: NSView {
         }
         
         if self.active {
-            NSColor.selectedMenuItemColor().setFill()
+            if let color = self.selectedBackgroundColor {
+                color.setFill()
+            } else {
+                NSColor.clearColor().setFill()
+            }
         } else {
-            NSColor.clearColor().setFill()
+            if let color = self.backgroundColor {
+                color.setFill()
+            } else {
+                NSColor.clearColor().setFill()
+            }
         }
         
         NSRectFill(dirtyRect)
