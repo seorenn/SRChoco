@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SRChocoDemo_OSX
 
 class SRChocoDemo_OSXTests: XCTestCase {
     

@@ -8,19 +8,19 @@
 
 import Foundation
 
-class SRDirectory: NSObject, DebugPrintable, Equatable {
+public class SRDirectory: NSObject, DebugPrintable, Equatable {
     
     // MARK: - Properties
     
-    var path: String
-    var name: String
-    var hidden = false
-    var directories = Dictionary<String, SRDirectory>()
-    var files = Dictionary<String, SRFile>()
+    public var path: String
+    public var name: String
+    public var hidden = false
+    public var directories = Dictionary<String, SRDirectory>()
+    public var files = Dictionary<String, SRFile>()
     var loaded = false
     private let fm = NSFileManager.defaultManager()
     
-    var exists: Bool {
+    public var exists: Bool {
         var isDir = ObjCBool(false)
         let res = self.fm.fileExistsAtPath(self.path, isDirectory: &isDir)
         
@@ -30,40 +30,40 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
     
     // MARK: - Predefined
     
-    class func pathForUserDomain(directory: NSSearchPathDirectory) -> String? {
+    public class func pathForUserDomain(directory: NSSearchPathDirectory) -> String? {
         let paths = NSSearchPathForDirectoriesInDomains(directory, NSSearchPathDomainMask.UserDomainMask, true)
         if paths == nil { return nil }
         return paths.last as? String
     }
     
-    class func pathURLForUserDomain(directory: NSSearchPathDirectory) -> NSURL? {
+    public class func pathURLForUserDomain(directory: NSSearchPathDirectory) -> NSURL? {
         let fm = NSFileManager.defaultManager()
         let paths = fm.URLsForDirectory(directory, inDomains: NSSearchPathDomainMask.UserDomainMask)
         return paths.last as? NSURL
     }
     
-    class var pathForDownloads: String? {
+    public class var pathForDownloads: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         return SRDirectory.pathForUserDomain(.DownloadsDirectory)
     }
     
-    class var pathForMovies: String? {
+    public class var pathForMovies: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         return SRDirectory.pathForUserDomain(.MoviesDirectory)
     }
     
-    class var pathForDesktop: String? {
+    public class var pathForDesktop: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         return SRDirectory.pathForUserDomain(.DesktopDirectory)
     }
     
-    class var pathForHome: String? {
+    public class var pathForHome: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
@@ -72,35 +72,35 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return homePath as? String
     }
     
-    class var pathForApplicationSupports: String? {
+    public class var pathForApplicationSupports: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         return SRDirectory.pathForUserDomain(.ApplicationSupportDirectory)
     }
     
-    class var pathForCaches: String? {
+    public class var pathForCaches: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         return SRDirectory.pathForUserDomain(.CachesDirectory)
     }
     
-    class var pathForDocuments: String? {
+    public class var pathForDocuments: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         return SRDirectory.pathForUserDomain(.DocumentDirectory)
     }
     
-    class var pathForMainBundle: String? {
+    public class var pathForMainBundle: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
         return NSBundle.mainBundle().resourcePath
     }
     
-    class var pathForTemporary: String? {
+    public class var pathForTemporary: String? {
         #if os(iOS)
             assert(false, "iOS(UIKit) does not support this feature")
         #endif
@@ -113,7 +113,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
     
     // MARK: - Initializers
     
-    init(_ path: String) {
+    public init(_ path: String) {
         self.path = path
         self.name = self.path.lastPathComponent.stringByDeletingPathExtension
         super.init()
@@ -124,12 +124,12 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    convenience init(parentDirectory: SRDirectory, name: String) {
+    public convenience init(parentDirectory: SRDirectory, name: String) {
         let path = parentDirectory.path.stringByAppendingPathComponent(name)
         self.init(path)
     }
     
-    init?(creatingPath: String, withIntermediateDirectories: Bool) {
+    public init?(creatingPath: String, withIntermediateDirectories: Bool) {
         self.path = creatingPath
         self.name = self.path.lastPathComponent.stringByDeletingPathExtension
         super.init()
@@ -144,7 +144,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
     
     // MARK: - Methods
 
-    func load() {
+    public func load() {
         var error: NSError?
         let contents = fm.contentsOfDirectoryAtPath(self.path, error: &error)
         
@@ -173,7 +173,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         loaded = true
     }
     
-    func load(block: (() -> ())) {
+    public func load(block: (() -> ())) {
         SRDispatch.backgroundTask() {
             self.load()
             SRDispatch.mainTask() {
@@ -195,7 +195,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return fm.moveItemAtPath(fromPath, toPath: toPath, error: &error)
     }
     
-    func create(intermediateDirectories: Bool = false) -> Bool {
+    public func create(intermediateDirectories: Bool = false) -> Bool {
         if self.exists { return true }
 
         var error: NSError?
@@ -207,7 +207,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         // NOTE: Implement more codes if needed
     }
     
-    func rename(name: String) -> Bool {
+    public func rename(name: String) -> Bool {
         if name.containString("/") || self.exists == false { return false }
         
         let parentPath = self.path.stringByDeletingLastPathComponent
@@ -221,7 +221,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return true
     }
     
-    func move(parentPath: String) -> Bool {
+    public func move(parentPath: String) -> Bool {
         let myName = self.path.lastPathComponent
         let newPath = parentPath.stringByAppendingPathComponent(myName)
         
@@ -233,11 +233,11 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return true
     }
     
-    func move(parentDirectory: SRDirectory) -> Bool {
+    public func move(parentDirectory: SRDirectory) -> Bool {
         return self.move(parentDirectory.path)
     }
     
-    func createFile(name: String, data: NSData?, overwrite: Bool = false) -> SRFile? {
+    public func createFile(name: String, data: NSData?, overwrite: Bool = false) -> SRFile? {
         if self.exists == false { return nil }
         if let file = SRFile(directory: self, name: name) {
             if file.exists == false {
@@ -253,7 +253,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return nil
     }
     
-    func trash(removingAllSubContents: Bool = false) -> Bool {
+    public func trash(removingAllSubContents: Bool = false) -> Bool {
         let url = NSURL(fileURLWithPath: self.path, isDirectory: true)
         if url == nil { return false }
         
@@ -266,7 +266,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         return self.fm.trashItemAtURL(url!, resultingItemURL: nil, error: &error)
     }
     
-    func trash(removingAllSubContents: Bool, completion: (succeed: Bool) -> (Void)) {
+    public func trash(removingAllSubContents: Bool, completion: (succeed: Bool) -> (Void)) {
         SRDispatch.backgroundTask() {
             let res = self.trash(removingAllSubContents: removingAllSubContents)
             SRDispatch.mainTask() {
@@ -275,7 +275,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    func trashAllSubContents(stopWhenError: Bool, completion: (succeed: Bool) -> Void) {
+    public func trashAllSubContents(stopWhenError: Bool, completion: (succeed: Bool) -> Void) {
         SRDispatch.backgroundTask() {
             var result = true
             if self.loaded == false { self.load() }
@@ -311,7 +311,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    override var debugDescription: String {
+    override public var debugDescription: String {
         if !loaded {
             return "<SRDirectory [\(path)] (not loaded)"
         } else {
@@ -320,7 +320,7 @@ class SRDirectory: NSObject, DebugPrintable, Equatable {
     }
 }
 
-func == (left: SRDirectory, right: SRDirectory) -> Bool {
+public func == (left: SRDirectory, right: SRDirectory) -> Bool {
     if left.path == right.path { return true }
     return false
 }

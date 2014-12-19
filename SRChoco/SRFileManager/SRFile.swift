@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SRFile: NSObject, DebugPrintable, Equatable {
+public class SRFile: NSObject, DebugPrintable, Equatable {
     
     // MARK: - Configurations
     
@@ -17,11 +17,11 @@ class SRFile: NSObject, DebugPrintable, Equatable {
     
     // MARK: - Properties
     
-    var path: String
-    var name: String
-    var parentDirectory: SRDirectory?
+    public var path: String
+    public var name: String
+    public var parentDirectory: SRDirectory?
     
-    var data: NSData? {
+    public var data: NSData? {
         get {
             if !self.exists { return nil }
             return self.fm.contentsAtPath(self.path)
@@ -33,21 +33,21 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    var exists: Bool {
+    public var exists: Bool {
         return self.fm.fileExistsAtPath(self.path)
     }
     
-    var extensionName: String {
+    public var extensionName: String {
         return self.name.pathExtension
     }
     
-    var nameWithoutExtension: String {
+    public var nameWithoutExtension: String {
         return self.name.stringByDeletingPathExtension
     }
     
     // MARK: - Initializers
     
-    init?(_ path: String) {
+    public init?(_ path: String) {
         self.path = path
         self.name = self.path.lastPathComponent
         self.parentDirectory = SRDirectory(self.path.stringByDeletingLastPathComponent)
@@ -58,7 +58,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    init?(directory: SRDirectory, name: String) {
+    public init?(directory: SRDirectory, name: String) {
         self.path = directory.path.stringByAppendingPathComponent(name)
         self.name = name
         self.parentDirectory = directory
@@ -69,7 +69,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
     
     // MARK: - Methods
     
-    func create(data: NSData?) -> Bool {
+    public func create(data: NSData?) -> Bool {
         if self.exists { return true }
         
         if self.fm.createFileAtPath(self.path, contents: nil, attributes: nil) == false { return false }
@@ -81,7 +81,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         return true
     }
     
-    func trash() -> Bool {
+    public func trash() -> Bool {
         #if os(iOS)
             return false
         #else
@@ -102,7 +102,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         self.parentDirectory = SRDirectory(self.path.stringByDeletingLastPathComponent)
     }
     
-    func rename(name: String) -> Bool {
+    public func rename(name: String) -> Bool {
         if name.containString("/") || self.exists == false { return false }
         
         if let directory = self.parentDirectory {
@@ -119,7 +119,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         return false
     }
     
-    func moveTo(directoryPath: String) -> Bool {
+    public func moveTo(directoryPath: String) -> Bool {
         if let directory = self.parentDirectory {
             let newPath = directoryPath.stringByAppendingPathComponent(self.name)
             
@@ -134,12 +134,12 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         return false
     }
     
-    func moveTo(directory: SRDirectory) -> Bool {
+    public func moveTo(directory: SRDirectory) -> Bool {
         return self.moveTo(directory.path)
     }
 
     // Write to file with completion block (use this if you want to write a large file content)
-    func write(data: NSData, completion: (succeed: Bool) -> Void) {
+    public func write(data: NSData, completion: (succeed: Bool) -> Void) {
         SRDispatch.backgroundTask() {
             let res = data.writeToFile(self.path, atomically: true)
             
@@ -153,7 +153,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    func read(completion: (data: NSData?) -> Void) {
+    public func read(completion: (data: NSData?) -> Void) {
         SRDispatch.backgroundTask() {
             if self.exists {
                 let readed = self.fm.contentsAtPath(self.path)
@@ -168,7 +168,7 @@ class SRFile: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    override var debugDescription: String {
+    override public var debugDescription: String {
         let existance = self.exists ? "" : " (Not Exists)"
         return "<SRFile: [\(path)]\(existance)>"
     }
@@ -176,6 +176,6 @@ class SRFile: NSObject, DebugPrintable, Equatable {
 
 // MARK: - Operator Overloads
 
-func == (left: SRFile, right: SRFile) -> Bool {
+public func == (left: SRFile, right: SRFile) -> Bool {
     return left.path == right.path
 }

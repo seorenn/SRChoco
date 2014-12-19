@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8A0AAFEE19E505B100B7A93D /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFED19E505B100B7A93D /* SRUUID.swift */; };
-		8A0AAFEF19E505B100B7A93D /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFED19E505B100B7A93D /* SRUUID.swift */; };
-		8A1334901A0A346000F44FB9 /* SRHotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A13348F1A0A346000F44FB9 /* SRHotkeyManager.swift */; };
-		8A1334911A0A346000F44FB9 /* SRHotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A13348F1A0A346000F44FB9 /* SRHotkeyManager.swift */; };
 		8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B7A11985F06A004F3168 /* SRRegexp.swift */; };
 		8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464D196A883600E791B5 /* SRDirectory.swift */; };
 		8A6B4658196A883600E791B5 /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464E196A883600E791B5 /* SRFile.swift */; };
@@ -41,7 +38,6 @@
 /* Begin PBXFileReference section */
 		8A00388B195042910079D8D5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		8A0AAFED19E505B100B7A93D /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUUID.swift; sourceTree = "<group>"; };
-		8A13348F1A0A346000F44FB9 /* SRHotkeyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHotkeyManager.swift; sourceTree = "<group>"; };
 		8A26B7A11985F06A004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
 		8A6B464D196A883600E791B5 /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
 		8A6B464E196A883600E791B5 /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
@@ -87,14 +83,6 @@
 				8A0AAFED19E505B100B7A93D /* SRUUID.swift */,
 			);
 			path = SRUUID;
-			sourceTree = "<group>";
-		};
-		8A13348E1A0A346000F44FB9 /* SRHotkeyManager */ = {
-			isa = PBXGroup;
-			children = (
-				8A13348F1A0A346000F44FB9 /* SRHotkeyManager.swift */,
-			);
-			path = SRHotkeyManager;
 			sourceTree = "<group>";
 		};
 		8A26B7A01985F06A004F3168 /* SRRegexp */ = {
@@ -199,7 +187,6 @@
 		8AAC8D2A194ED940007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
-				8A13348E1A0A346000F44FB9 /* SRHotkeyManager */,
 				8A0AAFEC19E505B100B7A93D /* SRUUID */,
 				8AE2EF3219D8FFE50037C005 /* SRExternalApp */,
 				8AD4D14A19C819390035D1EC /* SRStatusItemPopupController */,
@@ -346,7 +333,6 @@
 				8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */,
 				8AD8911E19A1B98C00BD48AC /* StringExtensions.swift in Sources */,
 				8AD4D14419C8189B0035D1EC /* ViewExtensions.swift in Sources */,
-				8A1334901A0A346000F44FB9 /* SRHotkeyManager.swift in Sources */,
 				8AD4D14C19C819390035D1EC /* SRStatusItemPopupController.swift in Sources */,
 				8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */,
 				8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */,
@@ -358,8 +344,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AAC8D1C194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift in Sources */,
-				8A0AAFEF19E505B100B7A93D /* SRUUID.swift in Sources */,
-				8A1334911A0A346000F44FB9 /* SRHotkeyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

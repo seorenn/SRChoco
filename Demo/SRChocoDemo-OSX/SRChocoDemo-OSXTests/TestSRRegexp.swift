@@ -8,6 +8,7 @@
 
 import Cocoa
 import XCTest
+import SRChocoDemo_OSX
 
 class TestSRRegexp: XCTestCase {
 

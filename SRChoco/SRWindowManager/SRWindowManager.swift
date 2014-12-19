@@ -30,21 +30,24 @@ class SRWindowManager {
         nc.removeObserver(self)
     }
     
-    func processes() -> [NSRunningApplication!] {
-        let apps = NSWorkspace.sharedWorkspace().runningApplications
-        return apps as [NSRunningApplication!]
+    class var processes: [NSRunningApplication] {
+        var results = [NSRunningApplication]()
+        let apps = NSWorkspace.sharedWorkspace().runningApplications as [NSRunningApplication]
+        for app in apps {
+            results.append(app)
+        }
+        return results
     }
 
-    func windowProcesses() -> Array<NSRunningApplication?> {
-        var apps = Array<NSRunningApplication?>()
+    class var windowProcesses: [NSRunningApplication] {
+        var apps = [NSRunningApplication]()
         let list = CGWindowListCopyWindowInfo(CGWindowListOption(kCGWindowListExcludeDesktopElements | kCGWindowListOptionOnScreenOnly), CGWindowID(0))
         let windowInfos = list.takeRetainedValue() as Array
         for info in windowInfos as Array<Dictionary<NSString, AnyObject>> {
             let pidPtr: AnyObject? = info[kCGWindowOwnerPID]
             let pidInt = pidPtr as Int
             let pid = CInt(pidInt)
-            let app: NSRunningApplication? = NSRunningApplication(processIdentifier: pid)
-            if app != nil {
+            if let app = NSRunningApplication(processIdentifier: pid) {
                 apps.append(app)
             }
         }
