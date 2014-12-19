@@ -137,8 +137,7 @@ class SRStatusItemPopupController: NSObject {
             self.popover.contentSize = self.viewController.view.frame.size
             self.statusItem.popUpStatusItemMenu(self.dummyMenu)
             
-            let edge = NSRectEdge(CGRectEdge.MinYEdge.rawValue)  // FIXME: MinYEdge is CGRectEdge in currently; Yeah Build Error! :-(
-            self.popover.showRelativeToRect(self.statusItemView.frame, ofView: self.statusItemView, preferredEdge: edge)
+            self.popover.showRelativeToRect(self.statusItemView.frame, ofView: self.statusItemView, preferredEdge: NSMinYEdge)
             
             let mask: NSEventMask = .LeftMouseDownMask | .RightMouseDownMask  // FIXME: Bypassing Link Error
             self.popoverTouchHandler = NSEvent.addGlobalMonitorForEventsMatchingMask(mask, handler: { (event: NSEvent!) -> Void in
