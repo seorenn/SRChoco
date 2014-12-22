@@ -1,5 +1,5 @@
 //
-//  SRWindow.h
+//  SRApplicationWindow.h
 //  SRChocoDemo-OSX
 //
 //  Created by Heeseung Seo on 2014. 12. 22..
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
-@interface SRWindow : NSObject
+@interface SRApplicationWindow : NSObject
 
 - (id)initWithRunningApplication:(NSRunningApplication *)runningApplication;
 - (id)initWithPID:(pid_t)pid;

@@ -1,20 +1,20 @@
 //
-//  SRWindow.m
+//  SRApplicationWindow.m
 //  SRChocoDemo-OSX
 //
 //  Created by Heeseung Seo on 2014. 12. 22..
 //  Copyright (c) 2014년 Seorenn. All rights reserved.
 //
 
-#import "SRWindow.h"
+#import "SRApplicationWindow.h"
 
-@interface SRWindow () {
+@interface SRApplicationWindow () {
     NSRunningApplication *_runningApplication;
 }
 
 @end
 
-@implementation SRWindow
+@implementation SRApplicationWindow
 
 @synthesize runningApplication = _runningApplication;
 
@@ -38,7 +38,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<SRWindow: PID[%ld] Name[%@]>", (long)self.pid, self.localizedName];
+    return [NSString stringWithFormat:@"<SRApplicationWindow: PID[%ld] Name[%@]>", (long)self.pid, self.localizedName];
 }
 
 - (NSString *)localizedName {
