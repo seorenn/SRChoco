@@ -36,8 +36,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         println("Path for MainBundle: \(SRDirectory.pathForMainBundle)")
         println("Path for Temporary: \(SRDirectory.pathForTemporary)")
 
-        println("All Processes: \(SRWindowManager.processes)")
-        println("Window Processes: \(SRWindowManager.windowProcesses)")
+        println("All Processes: \(SRWindowManager.sharedManager().processes)")
+        for window in SRWindowManager.sharedManager().windows {
+            println("# WindowProcess: \(window)")
+        }
 
         let key = SRHotKey(keyCode: 49, command: true, control: true, option: true, shift: false)
         SRGlobalHotKeyManager.sharedManager().registerWithHotKey(key) {
