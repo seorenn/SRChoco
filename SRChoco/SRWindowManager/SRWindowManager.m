@@ -27,7 +27,11 @@
 - (id)init {
     self = [super init];
     if (self) {
-        [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(didActivateWindowNotification:) name:NSWorkspaceDidActivateApplicationNotification object:nil];
+        NSNotificationCenter *nc = [[NSWorkspace sharedWorkspace] notificationCenter];
+        [nc addObserver:self
+               selector:@selector(didActivateWindowNotification:)
+                   name:NSWorkspaceDidActivateApplicationNotification
+                 object:nil];
     }
     return self;
 }
@@ -52,7 +56,7 @@
     NSMutableArray *results = [[NSMutableArray alloc] init];
     NSArray *apps = [[NSWorkspace sharedWorkspace] runningApplications];
     for (NSRunningApplication *app in apps) {
-        SRWindow *window = [[SRWindow alloc] initWithRunningApplication:app];
+        SRApplicationWindow *window = [[SRApplicationWindow alloc] initWithRunningApplication:app];
         if (!window) continue;
         
         [results addObject:window];
@@ -75,8 +79,7 @@
         pid_t pid;
         CFNumberGetValue(pidNumber, kCFNumberIntType, &pid);
         
-        
-        SRWindow *window = [[SRWindow alloc] initWithPID:pid];
+        SRApplicationWindow *window = [[SRApplicationWindow alloc] initWithPID:pid];
         if (!window) continue;
             
         [results addObject:window];

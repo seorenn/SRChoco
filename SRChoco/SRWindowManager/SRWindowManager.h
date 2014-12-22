@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
-#import "SRWindow.h"
+#import "SRApplicationWindow.h"
 
 typedef void (^SRWindowManagerActivateBlock)(NSRunningApplication *runningApplication);
 @interface SRWindowManager : NSObject
 
+// Returns [SRApplicationWindow] that is created with runningApplications method of NSWorkspace
 @property (readonly) NSArray *processes;
+// Returns [SRApplicationWindow] that is windows onscreen without desktop elements.
 @property (readonly) NSArray *windows;
+// TODO: Returns [SRApplicationWindow] that is onscreen only windows.
 @property (readonly) NSArray *applicationWindows;
 
 + (SRWindowManager *)sharedManager;
