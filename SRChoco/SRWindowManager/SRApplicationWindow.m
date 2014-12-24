@@ -41,6 +41,12 @@
     return [NSString stringWithFormat:@"<SRApplicationWindow: PID[%ld] Name[%@]>", (long)self.pid, self.localizedName];
 }
 
+- (NSString *)bundleIdentifier {
+    if (!_runningApplication) return nil;
+    
+    return _runningApplication.bundleIdentifier;
+}
+
 - (NSString *)localizedName {
     if (!_runningApplication) return nil;
     

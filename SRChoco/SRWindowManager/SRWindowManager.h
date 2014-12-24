@@ -17,8 +17,8 @@ typedef void (^SRWindowManagerActivateBlock)(NSRunningApplication *runningApplic
 @property (readonly) NSArray *processes;
 // Returns [SRApplicationWindow] that is windows onscreen without desktop elements.
 @property (readonly) NSArray *windows;
-// TODO: Returns [SRApplicationWindow] that is onscreen only windows.
-@property (readonly) NSArray *applicationWindows;
+// TODO: Returns [String(Bundle Identifier):[SRApplicationWindow]] that is applications has general window.
+@property (readonly) NSDictionary *applicationWindows;
 
 + (SRWindowManager *)sharedManager;
 

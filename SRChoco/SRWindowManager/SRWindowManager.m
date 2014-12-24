@@ -88,9 +88,10 @@
     return results;
 }
 
-- (NSArray *)applicationWindows {
+- (NSDictionary *)applicationWindows {
     /*
      References: http://stackoverflow.com/questions/17010638/osx-objective-c-window-management-manipulate-the-frames-visibility-of-other
+     This will requires User Permission from Preferences
      
      for (NSRunningApplication *runningApplication in [[NSWorkspace sharedWorkspace] runningApplications)] {
      AXUIElementRef applicationRef = AXUIElementCreateApplication([runningApplication processIdentifier]);
@@ -107,8 +108,21 @@
      }
      }
      */
-    // TODO
-    return nil;
+    NSMutableDictionary *results = [[NSMutableDictionary alloc] init];
+
+    NSArray *apps = [[NSWorkspace sharedWorkspace] runningApplications];
+    for (NSRunningApplication *app in apps) {
+        if (app.activationPolicy != NSApplicationActivationPolicyRegular) continue;
+        
+        if ([results objectForKey:app.bundleIdentifier] != nil) {
+            NSLog(@"Skip already bundled application: %@", app);
+            continue;
+        }
+        SRApplicationWindow *window = [[SRApplicationWindow alloc] initWithRunningApplication:app];
+        [results setObject:window forKey:app.bundleIdentifier];
+    }
+
+    return results;
 }
 
 @end
