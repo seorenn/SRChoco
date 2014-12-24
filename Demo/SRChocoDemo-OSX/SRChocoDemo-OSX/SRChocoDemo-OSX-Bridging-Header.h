@@ -3,3 +3,4 @@
 //
 
 #import "SRHotKeyManager.h"
+#import "SRWindowManager.h"
