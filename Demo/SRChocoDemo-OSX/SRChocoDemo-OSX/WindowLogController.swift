@@ -14,13 +14,12 @@ class WindowLogController: NSObject {
     override init() {
         super.init()
         
-        let wm = SRWindowManager()
-        wm.detectWindowChanging({ (app:NSRunningApplication!) -> Void in
+        let wm = SRWindowManager.sharedManager()
+        wm.startDetectWindowActivating { (app) -> Void in
             if (app != nil) {
                 self.updateAppLog(app)
             }
-        })
-
+        }
     }
     
     func log(message: String) {
