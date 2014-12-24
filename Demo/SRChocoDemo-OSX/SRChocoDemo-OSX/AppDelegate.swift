@@ -40,6 +40,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         for window in SRWindowManager.sharedManager().windows {
             println("# WindowProcess: \(window)")
         }
+        
+        println("##### Testing with SRWindowManager.applicationWindows")
+        for window in SRWindowManager.sharedManager().applicationWindows {
+            println("# Application Window: \(window)")
+        }
 
         let key = SRHotKey(keyCode: 49, command: true, control: true, option: true, shift: false)
         SRGlobalHotKeyManager.sharedManager().registerWithHotKey(key) {

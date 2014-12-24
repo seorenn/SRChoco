@@ -15,6 +15,7 @@
 - (id)initWithPID:(pid_t)pid;
 
 @property (readonly) NSRunningApplication *runningApplication;
+@property (readonly) NSString *bundleIdentifier;
 @property (readonly) NSString *localizedName;
 @property (readonly) pid_t pid;
 @property (readonly) NSImage *icon;
