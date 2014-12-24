@@ -140,6 +140,15 @@ class SRInputSourceManager {
         let inputSource = self.inputSources[index]
         self.switchInputSource(inputSource)
     }
+    
+    func inputSource(inputSourceID: String) -> SRInputSource? {
+        for inputSource in self.inputSources {
+            if inputSource.inputSourceID == inputSourceID {
+                return inputSource
+            }
+        }
+        return nil
+    }
 }
 
 #endif
