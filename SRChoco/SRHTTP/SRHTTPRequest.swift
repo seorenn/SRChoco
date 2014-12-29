@@ -17,9 +17,14 @@ enum SRHTTPRequestMethod: String {
 
 class SRHTTPRequest: NSObject {
     var method: SRHTTPRequestMethod
-    var urlString: String
+    var url: NSURL?
+    var urlString: String {
+        didSet {
+            self.url = NSURL(string: self.urlString)
+        }
+    }
     var headers: [String: String] = [:]
-    var formValues: [String: String] = [:]
+    var formValues: [String: AnyObject] = [:]
     var bodyText: String?
     var uploadFileData: NSData?
     
@@ -28,10 +33,6 @@ class SRHTTPRequest: NSObject {
         self.urlString = urlString
         
         super.init()
-    }
-    
-    var url: NSURL? {
-        return NSURL(string: self.urlString)
     }
     
     var urlRequest: NSURLRequest? {
