@@ -9,18 +9,16 @@
 import Foundation
 
 typealias SRHTTPResponseBlock = (SRHTTPResponse) -> Void
+typealias SRHTTPErrorBlock = (NSError) -> Void
 
 class SRHTTP: NSObject, NSURLConnectionDataDelegate {
     
     private var request: SRHTTPRequest? = nil
     private var response: SRHTTPResponse? = nil
     private var responseBlock: SRHTTPResponseBlock? = nil
-    
-    // MARK: - Public Properties
+    private var errorBlock: SRHTTPErrorBlock? = nil
     
     var commonHeaders: [String: String] = [:]
-    
-    // MARK: - Singleton Pattern
     
     struct StaticInstance {
         static var dispatchToken: dispatch_once_t = 0
@@ -36,21 +34,21 @@ class SRHTTP: NSObject, NSURLConnectionDataDelegate {
     
     // MARK: - Simplipied APIs
     
-    class func GET(urlString: String, responseBlock: SRHTTPResponseBlock) {
+    class func GET(urlString: String, responseBlock: SRHTTPResponseBlock, errorBlock: SRHTTPErrorBlock) {
         let request = SRHTTPRequest(method: .GET, urlString: urlString)
         let http = SRHTTP()
         
-        http.startRequest(request, responseBlock: responseBlock)
+        http.startRequest(request, onResponse: responseBlock, onError: errorBlock)
     }
     
-    class func POST(urlString: String, formValues: [String: AnyObject]?, responseBlock: SRHTTPResponseBlock) {
+    class func POST(urlString: String, formValues: [String: AnyObject]?, responseBlock: SRHTTPResponseBlock, errorBlock: SRHTTPErrorBlock) {
         let request = SRHTTPRequest(method: .POST, urlString: urlString)
         if let fv = formValues {
             request.formValues = fv
         }
         let http = SRHTTP()
         
-        http.startRequest(request, responseBlock: responseBlock)
+        http.startRequest(request, onResponse: responseBlock, onError: errorBlock)
     }
     
     // TODO: class func POST with JSON or File
@@ -70,48 +68,57 @@ class SRHTTP: NSObject, NSURLConnectionDataDelegate {
         }
     }
 
-    // TODO: Build method arguments spec.
-    func criticalError() {
-        // TODO: Generate NSError
+    private func buildError(message: String) -> NSError {
+        let userInfo: [String:String] = [ NSLocalizedDescriptionKey: message ]
+        let error = NSError(domain: "SRHTTP", code: 0, userInfo: userInfo)
+        
+        return error
     }
     
-    func finish(error: NSError?) {
-        if self.response == nil {
-            self.response = SRHTTPResponse(request: self.request!)
-        }
-        if error != nil {
-            self.response!.error = error
-        }
-        
-        if self.responseBlock != nil {
-            self.responseBlock!(self.response!)
-        }
-        
+    private func clear() {
         self.responseBlock = nil
+        self.errorBlock = nil
         self.response = nil
         self.request = nil
     }
     
-    func startRequest(request: SRHTTPRequest, responseBlock: SRHTTPResponseBlock) {
+    private func onError(error: NSError) {
+        if self.errorBlock != nil {
+            self.errorBlock!(error)
+        }
+        
+        self.clear()
+    }
+    
+    private func finish() {
+        if self.responseBlock != nil {
+            self.responseBlock!(self.response!)
+        }
+        
+        self.clear()
+    }
+    
+    func startRequest(request: SRHTTPRequest, onResponse: SRHTTPResponseBlock, onError: SRHTTPErrorBlock) {
         self.request = request
         
         let rq = request.urlRequest
         if rq == nil {
-            self.criticalError(); return    // TODO: criticalError paramters
+            let error = self.buildError("Failed to Generate NSURLRequest Object")
+            self.onError(error); return
         }
         
         if let connection = NSURLConnection(request: rq!, delegate: self) {
-            self.responseBlock = responseBlock
+            self.responseBlock = onResponse
+            self.errorBlock = onError
             connection.start()
         }
         else {
-            self.criticalError()    // TODO: criticalError parameters
+            let error = self.buildError("Failed to Generate NSURLConnection Object")
+            self.onError(error)
         }
     }
     
-    // MARK: - Private APIs
-    
-    func mergeCommonHeaders(targetRequest: SRHTTPRequest) {
+    private func mergeCommonHeaders(targetRequest: SRHTTPRequest) {
         if self.commonHeaders.count <= 0 { return }
         
         for (key, value) in self.commonHeaders {
@@ -121,7 +128,7 @@ class SRHTTP: NSObject, NSURLConnectionDataDelegate {
         }
     }
     
-    func buildCommonHeaders() {
+    private func buildCommonHeaders() {
         // TODO
     }
     
@@ -132,14 +139,11 @@ class SRHTTP: NSObject, NSURLConnectionDataDelegate {
     }
     
     func connection(connection: NSURLConnection, didFailWithError error: NSError) {
-        self.finish(error)
+        self.onError(error)
     }
     
     func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) {
-        if self.response == nil {
-            self.response = SRHTTPResponse(request: self.request!)
-        }
-        self.response?.responseObject = response
+        self.response = SRHTTPResponse(request: self.request!, response: response)
     }
     
     func connection(connection: NSURLConnection, didReceiveData data: NSData) {
@@ -148,6 +152,6 @@ class SRHTTP: NSObject, NSURLConnectionDataDelegate {
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection) {
-        self.finish(nil)
+        self.finish()
     }
 }

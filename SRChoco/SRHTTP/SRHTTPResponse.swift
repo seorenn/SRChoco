@@ -10,15 +10,10 @@ import Foundation
 
 class SRHTTPResponse: NSObject {
     let request: SRHTTPRequest
-    var code: Int = 0
-    var responseObject: NSURLResponse? = nil {
-        didSet {
-            let httpResponse: NSHTTPURLResponse = self.responseObject! as NSHTTPURLResponse
-            self.code = httpResponse.statusCode
-        }
-    }
-    var error: NSError? = nil
-    var receivedData: NSMutableData? = nil
+    let code: Int
+    let response: NSURLResponse
+    
+    private var receivedData: NSMutableData? = nil
     
     var responseString: String {
         if let data = self.receivedData {
@@ -32,10 +27,12 @@ class SRHTTPResponse: NSObject {
         return self.receivedData as NSData?
     }
     
-    // MARK: - Public APIs
-    
-    init(request: SRHTTPRequest) {
+    init(request: SRHTTPRequest, response: NSURLResponse) {
         self.request = request
+        self.response = response
+        
+        let httpResponse = response as NSHTTPURLResponse
+        self.code = httpResponse.statusCode
         super.init()
     }
     
@@ -46,6 +43,4 @@ class SRHTTPResponse: NSObject {
         
         self.receivedData?.appendData(data)
     }
-    
-    // MARK: - Private APIs
 }
