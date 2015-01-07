@@ -10,28 +10,37 @@ import Foundation
 
 class SRHTTPResponse: NSObject {
     let request: SRHTTPRequest
+    let code: Int
+    let response: NSURLResponse
     
-    var code: Int {
-        // TODO
-        return 404
-    }
+    private var receivedData: NSMutableData? = nil
     
     var responseString: String {
-        // TODO
-        return ""
+        if let data = self.receivedData {
+            return NSString(data: data, encoding: NSUTF8StringEncoding)!
+        } else {
+            return ""
+        }
     }
     
     var responseData: NSData? {
-        // TODO
-        return nil
+        return self.receivedData as NSData?
     }
     
-    // TODO
-    
-    init(request: SRHTTPRequest) {
+    init(request: SRHTTPRequest, response: NSURLResponse) {
         self.request = request
+        self.response = response
+        
+        let httpResponse = response as NSHTTPURLResponse
+        self.code = httpResponse.statusCode
         super.init()
     }
     
-    // TODO
+    func appendData(data: NSData) {
+        if self.receivedData == nil {
+            self.receivedData = NSMutableData()
+        }
+        
+        self.receivedData?.appendData(data)
+    }
 }
