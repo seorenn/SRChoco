@@ -211,3 +211,11 @@ view.size           // CGSize of NSSize
 view.conterPoint    // CGPoint or NSPoint
 view.moveToBelow(view: anotherView, margin: 5.0)
 </pre>
+
+## SRStartupLauncher
+
+Implementations of 'Launch at Login'.
+
+NOTE: This feature supports is NON-SANDBOX only.
+
+TODO
