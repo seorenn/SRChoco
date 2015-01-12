@@ -27,7 +27,7 @@ class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSourc
     }
     
     override func awakeFromNib() {
-        let currentISIndex = self.ism.currentInputSourceIndex!
+        let currentISIndex = self.ism.currentInputSourceIndex
         self.tableView.selectRowIndexes(NSIndexSet(index: currentISIndex), byExtendingSelection: false)
     }
     
@@ -36,12 +36,14 @@ class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSourc
     }
     
     func tableView(tableView: NSTableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
-        return self.ism.inputSources[row].name
+        let inputSources = self.ism.inputSources as [SRInputSource]
+        return inputSources[row].localizedName
     }
     
     func tableViewSelectionDidChange(notification: NSNotification!) {
         let index = self.tableView.selectedRow
-        let selectedIS = self.ism.inputSources[index]
+        let inputSources = self.ism.inputSources as [SRInputSource]
+        let selectedIS = inputSources[index]
         selectedIS.activate()
     }
 }

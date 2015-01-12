@@ -4,3 +4,5 @@
 
 #import "SRHotKeyManager.h"
 #import "SRWindowManager.h"
+#import "SRStartupLauncher.h"
+#import "SRInputSourceManager.h"
