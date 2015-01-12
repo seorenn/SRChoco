@@ -21,6 +21,7 @@
 		8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8A57A4CC1A47F00600DA3D89 /* SRApplicationWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57A4CB1A47F00600DA3D89 /* SRApplicationWindow.m */; };
 		8A57A4CF1A47F01600DA3D89 /* SRWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57A4CE1A47F01600DA3D89 /* SRWindowManager.m */; };
+		8A59C4231A63AE1000CC3C44 /* SRStartupLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59C4221A63AE1000CC3C44 /* SRStartupLauncher.m */; };
 		8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */; };
 		8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4E1993764800432E13 /* TestSRRegexp.swift */; };
 		8A7AC8D419766575006028F4 /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D319766575006028F4 /* SRDispatch.swift */; };
@@ -75,6 +76,8 @@
 		8A57A4CB1A47F00600DA3D89 /* SRApplicationWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRApplicationWindow.m; sourceTree = "<group>"; };
 		8A57A4CD1A47F01600DA3D89 /* SRWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWindowManager.h; sourceTree = "<group>"; };
 		8A57A4CE1A47F01600DA3D89 /* SRWindowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWindowManager.m; sourceTree = "<group>"; };
+		8A59C4211A63AE1000CC3C44 /* SRStartupLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStartupLauncher.h; sourceTree = "<group>"; };
+		8A59C4221A63AE1000CC3C44 /* SRStartupLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStartupLauncher.m; sourceTree = "<group>"; };
 		8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
 		8A682E4E1993764800432E13 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
 		8A7AC8D319766575006028F4 /* SRDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatch.swift; sourceTree = "<group>"; };
@@ -186,6 +189,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		8A59C4201A63ADFA00CC3C44 /* SRStartupLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				8A59C4211A63AE1000CC3C44 /* SRStartupLauncher.h */,
+				8A59C4221A63AE1000CC3C44 /* SRStartupLauncher.m */,
+			);
+			path = SRStartupLauncher;
+			sourceTree = "<group>";
+		};
 		8A7AC8D219766575006028F4 /* SRGCD */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +287,7 @@
 		8AAC8D25194ED55D007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8A59C4201A63ADFA00CC3C44 /* SRStartupLauncher */,
 				8A419FC41A2C62520090054F /* SRHTTP */,
 				8A13348A1A0A344D00F44FB9 /* SRHotkeyManager */,
 				8A0AAFE819E505A600B7A93D /* SRUUID */,
@@ -447,6 +460,7 @@
 				8A419FC61A2C62520090054F /* SRHTTP.swift in Sources */,
 				8AB156BB19C6ECDC00A2A568 /* StatusPopupViewController.swift in Sources */,
 				8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */,
+				8A59C4231A63AE1000CC3C44 /* SRStartupLauncher.m in Sources */,
 				8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */,
 				8AD8912119A1B99600BD48AC /* ViewExtensions.swift in Sources */,
 				8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */,
