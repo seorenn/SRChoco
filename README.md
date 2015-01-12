@@ -135,6 +135,14 @@ SRGlobalHotKeyManager.sharedManager().registerWithHotKey(hotKey) {
 
 TODO: No Implementations in currently. ;-)
 
+## SRStartupLauncher
+
+Implementations of 'Launch at Login'.
+
+NOTE: This feature supports NON-SANDBOX Environments only.
+
+TODO
+
 # Utilities
 
 Some utility classes and extensions for more conveniences...
@@ -212,10 +220,3 @@ view.conterPoint    // CGPoint or NSPoint
 view.moveToBelow(view: anotherView, margin: 5.0)
 </pre>
 
-## SRStartupLauncher
-
-Implementations of 'Launch at Login'.
-
-NOTE: This feature supports NON-SANDBOX Environments only.
-
-TODO
