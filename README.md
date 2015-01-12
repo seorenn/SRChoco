@@ -216,6 +216,6 @@ view.moveToBelow(view: anotherView, margin: 5.0)
 
 Implementations of 'Launch at Login'.
 
-NOTE: This feature supports is NON-SANDBOX only.
+NOTE: This feature supports NON-SANDBOX Environments only.
 
 TODO
