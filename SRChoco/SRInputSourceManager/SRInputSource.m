@@ -7,6 +7,7 @@
 //
 
 #import "SRInputSource.h"
+#import <Cocoa/Cocoa.h>
 
 @interface SRInputSource() {
     TISInputSourceRef _tis;
@@ -21,6 +22,7 @@
 @synthesize type = _type;
 @synthesize isSelectCapable = _isSelectCapable;
 @synthesize iconImageURL = _iconImageURL;
+@synthesize iconImageTIFFURL = _iconImageTIFFURL;
 
 - (id)initWithTISInputSourceRef:(TISInputSourceRef)tis {
     self = [super init];
@@ -77,6 +79,35 @@
         _iconImageURL = (__bridge NSURL *)TISGetInputSourceProperty(_tis, kTISPropertyIconImageURL);
     }
     return _iconImageURL;
+}
+
+- (NSImage *)iconImage {
+    IconRef iconRef = TISGetInputSourceProperty(_tis, kTISPropertyIconRef);
+    if (iconRef) return [[NSImage alloc] initWithIconRef:iconRef];
+    
+    NSImage *icon1 = [[NSImage alloc] initWithContentsOfURL:self.iconImageURL];
+    if (icon1) return icon1;
+    
+    if (self.iconImageTIFFURL) {
+        NSImage *icon2 = [[NSImage alloc] initWithContentsOfURL:self.iconImageTIFFURL];
+        if (icon2) return icon2;
+    }
+    
+    return nil;
+}
+
+// NOTE: This is alternates of iconImageURL.
+// Some Input Source has invalid icon extension name (aka. png)
+// But existing file's extension name was 'tiff'
+// This getter will returns similar path with another extension name '.tiff'
+- (NSURL *)iconImageTIFFURL {
+    if ([[self.iconImageURL.path pathExtension] isEqualToString:@"png"]) {
+        NSString *originalPath = [self.iconImageURL.path stringByDeletingPathExtension];
+        NSString *newPath = [originalPath stringByAppendingString:@".tiff"];
+        return [NSURL fileURLWithPath:newPath];
+    }
+    
+    return nil;
 }
 
 - (BOOL)isInputable {

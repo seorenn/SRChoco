@@ -16,6 +16,8 @@
 @property (nonatomic, readonly) NSString *type;
 @property (nonatomic, readonly) BOOL isSelectCapable;
 @property (nonatomic, readonly) NSURL *iconImageURL;
+@property (nonatomic, readonly) NSURL *iconImageTIFFURL;
+@property (nonatomic, readonly) NSImage *iconImage;
 
 @property (nonatomic, readonly) BOOL isInputable;
 
