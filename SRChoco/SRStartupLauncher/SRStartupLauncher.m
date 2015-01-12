@@ -61,10 +61,12 @@
     NSArray *loginItems = (__bridge NSArray *)LSSharedFileListCopySnapshot(loginItemsRef, nil);
     
     for (int currentIndex = 0; currentIndex < [loginItems count]; currentIndex++) {
-        CFURLRef urlRef = NULL;
+        //CFURLRef urlRef = NULL;
         
         LSSharedFileListItemRef currentItemRef = (__bridge LSSharedFileListItemRef)[loginItems objectAtIndex:currentIndex];
-        if (LSSharedFileListItemResolve(currentItemRef, 0, &urlRef, NULL) == noErr) {
+        CFURLRef urlRef = LSSharedFileListItemCopyResolvedURL(currentItemRef, 0, NULL);
+        //if (LSSharedFileListItemResolve(currentItemRef, 0, &urlRef, NULL) == noErr) {
+        if (urlRef) {
             NSURL *itemURL = (__bridge NSURL *)urlRef;
             
             if ([itemURL isEqual:appUrl]) {
