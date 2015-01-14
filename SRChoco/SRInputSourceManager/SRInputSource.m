@@ -41,7 +41,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<SRInputSource %@ - %@>", self.localizedName, self.ID];
+    return [NSString stringWithFormat:@"<SRInputSource: %@(%@)>", self.localizedName, self.ID];
 }
 
 #pragma mark - Properties

@@ -38,7 +38,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<SRApplicationWindow: PID[%ld] Name[%@]>", (long)self.pid, self.localizedName];
+    return [NSString stringWithFormat:@"<SRApplicationWindow: %@(%@) PID(%ld)>", self.localizedName, self.bundleIdentifier, (long)self.pid];
 }
 
 - (NSString *)bundleIdentifier {
