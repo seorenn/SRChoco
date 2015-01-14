@@ -173,14 +173,16 @@ public class SRDirectory: NSObject, DebugPrintable, Equatable {
         loaded = true
     }
     
-    public func load(block: (() -> ())) {
+    /* NOTE: I don't know why swift compiler cannot found this method in build time. :-(
+    public func load(completed: (() -> Void)) {
         SRDispatch.backgroundTask() {
             self.load()
             SRDispatch.mainTask() {
-                block()
+                completed()
             }
         }
     }
+    */
     
     class func mkdir(path: String, withIntermediateDirectories: Bool = false) -> Bool {
         let fm = NSFileManager.defaultManager()

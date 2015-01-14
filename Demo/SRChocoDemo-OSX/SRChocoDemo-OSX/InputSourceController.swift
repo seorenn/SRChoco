@@ -19,11 +19,11 @@ class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSourc
         super.init()
         
         // TODO: This is test code
-        println("Input Sources =====")
-        for ism in self.ism.inputSources {
-            println(ism)
+        Log.debug("Input Sources =====")
+        for ism: SRInputSource in self.ism.inputSources as [SRInputSource]{
+            Log.debug(ism.description)
         }
-        println("End of Input Sources =====")
+        Log.debug("End of Input Sources =====")
     }
     
     override func awakeFromNib() {
@@ -37,7 +37,7 @@ class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSourc
     
     func tableView(tableView: NSTableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
         let inputSources = self.ism.inputSources as [SRInputSource]
-        println("InputSource [\(inputSources[row].localizedName)] IconImage[\(inputSources[row].iconImage)]")
+        Log.debug("InputSource [\(inputSources[row].localizedName)] IconImage[\(inputSources[row].iconImage)]")
         return inputSources[row].localizedName
     }
     

@@ -101,7 +101,6 @@ class TestNSDateExtensions: XCTestCase {
         let secs = fut!.timeIntervalSinceDate(now)
         let dif = SRTimeDelta(interval: secs)
 
-        println("diff = \(dif.description)")
         XCTAssert(Int(dif.interval) == 60*60)
         XCTAssert(dif.second == 0)
         XCTAssert(dif.hour == 1)

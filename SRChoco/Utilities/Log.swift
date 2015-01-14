@@ -29,11 +29,12 @@ class Log : DebugPrintable {
     }
     
     func renderMessage(message: String, type: String, file: String, function: String, line: Int, putDatetime: Bool = false) -> String {
+        let filename = file.lastPathComponent
         if putDatetime {
             let dateFormat = dateFormatter.stringFromDate(NSDate())
-            return "\(dateFormat) [[\(type)] \(file):\(line) \(function)] \(message)"
+            return "\(dateFormat) [[\(type)] \(filename):\(line) \(function)] \(message)"
         } else {
-            return "[[\(type)] \(file):\(line) \(function)] \(message)"
+            return "[[\(type)] \(filename):\(line) \(function)] \(message)"
         }
     }
     
@@ -42,7 +43,10 @@ class Log : DebugPrintable {
     }
     
     class func debug(message: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-        Log.sharedObject()?.logToConsole(message, type: "DEBUG", file: file, function: function, line: line)
+        #if DEBUG
+            Log.sharedObject()?.logToConsole(message, type: "DEBUG", file: file, function: function, line: line)
+        #else
+        #endif
     }
 
     class func error(message: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {

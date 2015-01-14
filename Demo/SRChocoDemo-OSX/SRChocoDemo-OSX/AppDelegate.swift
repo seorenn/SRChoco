@@ -21,44 +21,44 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusItemPopupController = SRStatusItemPopupController(viewController: popup!, image: image, alternateImage: alternateImage)
         self.statusItemPopupController!.popoverWillShowHandler = {
             () -> () in
-            println("Popover will show!")
+            Log.debug("Popover will show!")
         }
         
         let demoFM = DemoSRFileManager()
         demoFM.test()
         
-        println("Path for HOME: \(SRDirectory.pathForHome)")
-        println("Path for Movies: \(SRDirectory.pathForMovies)")
-        println("Path for Downloads: \(SRDirectory.pathForDownloads)")
-        println("Path for Application Supports: \(SRDirectory.pathForApplicationSupports)")
-        println("Path for Caches: \(SRDirectory.pathForCaches)")
-        println("Path for Documents: \(SRDirectory.pathForDocuments)")
-        println("Path for MainBundle: \(SRDirectory.pathForMainBundle)")
-        println("Path for Temporary: \(SRDirectory.pathForTemporary)")
+        Log.debug("Path for HOME: \(SRDirectory.pathForHome)")
+        Log.debug("Path for Movies: \(SRDirectory.pathForMovies)")
+        Log.debug("Path for Downloads: \(SRDirectory.pathForDownloads)")
+        Log.debug("Path for Application Supports: \(SRDirectory.pathForApplicationSupports)")
+        Log.debug("Path for Caches: \(SRDirectory.pathForCaches)")
+        Log.debug("Path for Documents: \(SRDirectory.pathForDocuments)")
+        Log.debug("Path for MainBundle: \(SRDirectory.pathForMainBundle)")
+        Log.debug("Path for Temporary: \(SRDirectory.pathForTemporary)")
 
-        println("All Processes: \(SRWindowManager.sharedManager().processes)")
+        Log.debug("All Processes: \(SRWindowManager.sharedManager().processes)")
         for window in SRWindowManager.sharedManager().windows {
-            println("# WindowProcess: \(window)")
+            Log.debug("# WindowProcess: \(window)")
         }
         
-        println("##### Testing with SRWindowManager.applicationWindows")
+        Log.debug("##### Testing with SRWindowManager.applicationWindows")
         for window in SRWindowManager.sharedManager().applicationWindows {
-            println("# Application Window: \(window)")
+            Log.debug("# Application Window: \(window)")
         }
 
         let key = SRHotKey(keyCode: 49, command: true, control: true, option: true, shift: false)
         SRGlobalHotKeyManager.sharedManager().registerWithHotKey(key) {
-            println("Global HotKey Event")
+            Log.debug("Global HotKey Event")
         }
         
         SRDispatch.runAfter(1.0) {
-            println("runAfter 1.0")
+            Log.debug("runAfter 1.0")
         }
         SRDispatch.backgroundRunAfter(2.0) {
-            println("backgroundRunAfter 2.0")
+            Log.debug("backgroundRunAfter 2.0")
         }
         SRDispatch.asyncRunAfter(3.0) {
-            println("asyncRunAfter 3.0")
+            Log.debug("asyncRunAfter 3.0")
         }
     }
 

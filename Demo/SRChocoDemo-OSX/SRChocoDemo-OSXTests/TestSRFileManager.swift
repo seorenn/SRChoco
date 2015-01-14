@@ -167,7 +167,6 @@ class TestSRFileManager: XCTestCase {
         let dateString = NSString(format: "%02d%02d%02dT%02d%02d%02d", d.year, d.month, d.day, d.hour, d.minute, d.second)
         let filename = "SRFileTest-\(dateString).txt"
         let path = SRDirectory.pathForDocuments?.stringByAppendingPathComponent(filename)
-        println("Test uses this file path: \(path)")
         var waitingForClosure = true
         if let f = SRFile(path!) {
             XCTAssert(f.exists == false)
@@ -202,7 +201,6 @@ class TestSRFileManager: XCTestCase {
         let dateString = NSString(format: "%02d%02d%02dT%02d%02d%02d", d.year, d.month, d.day, d.hour, d.minute, d.second)
         let filename = "SRFileTest-Lazy-\(dateString).txt"
         let path = SRDirectory.pathForDocuments?.stringByAppendingPathComponent(filename)
-        println("Test uses this file path: \(path)")
         
         var waitingForClosure = true
 

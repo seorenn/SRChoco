@@ -13,6 +13,7 @@
     TISInputSourceRef _tis;
     CFBooleanRef _isSelectCapableRef;
 }
+@property (nonatomic, readonly) NSURL *iconImageTIFFURL;
 @end
 
 @implementation SRInputSource
@@ -23,6 +24,7 @@
 @synthesize isSelectCapable = _isSelectCapable;
 @synthesize iconImageURL = _iconImageURL;
 @synthesize iconImageTIFFURL = _iconImageTIFFURL;
+@synthesize iconImage = _iconImage;
 
 - (id)initWithTISInputSourceRef:(TISInputSourceRef)tis {
     self = [super init];
@@ -82,18 +84,26 @@
 }
 
 - (NSImage *)iconImage {
-    IconRef iconRef = TISGetInputSourceProperty(_tis, kTISPropertyIconRef);
-    if (iconRef) return [[NSImage alloc] initWithIconRef:iconRef];
-    
-    NSImage *icon1 = [[NSImage alloc] initWithContentsOfURL:self.iconImageURL];
-    if (icon1) return icon1;
-    
-    if (self.iconImageTIFFURL) {
-        NSImage *icon2 = [[NSImage alloc] initWithContentsOfURL:self.iconImageTIFFURL];
-        if (icon2) return icon2;
+    if (_iconImage == nil) {
+        IconRef iconRef = TISGetInputSourceProperty(_tis, kTISPropertyIconRef);
+        if (iconRef) {
+            _iconImage = [[NSImage alloc] initWithIconRef:iconRef];
+        }
+        
+        NSImage *icon1 = [[NSImage alloc] initWithContentsOfURL:self.iconImageURL];
+        if (icon1) {
+            _iconImage = icon1;
+        }
+        
+        if (self.iconImageTIFFURL) {
+            NSImage *icon2 = [[NSImage alloc] initWithContentsOfURL:self.iconImageTIFFURL];
+            if (icon2) {
+                _iconImage = icon2;
+            }
+        }
     }
     
-    return nil;
+    return _iconImage;
 }
 
 // NOTE: This is alternates of iconImageURL.

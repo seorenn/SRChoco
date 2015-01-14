@@ -22,25 +22,27 @@ class DemoSRFileManager {
         let homeDir = home()
         homeDir.load()
         
-        println("Files in Home Directory -------------------")
+        Log.debug("Files in Home Directory -------------------")
         for (name, file) in homeDir.files as [String:SRFile] {
-            println("\(name) \(file)")
+            Log.debug("\(name) \(file)")
         }
         
-        println("Directories in Home Directory ---------------------")
+        Log.debug("Directories in Home Directory ---------------------")
         var desktop: SRDirectory?
         for (name, dir) in homeDir.directories as [String:SRDirectory] {
             if name == "Desktop" {
                 desktop = dir
             }
-            println("\(name) \(dir)")
+            Log.debug("\(name) \(dir)")
         }
         
+        /*
         if desktop != nil {
-            println("Desktop Lazy Loading --------------")
-            desktop?.load() {
-                println(desktop)
+            Log.debug("Desktop Lazy Loading --------------")
+            desktop!.load() {
+                Log.debug(desktop)
             }
         }
+        */
     }
 }
