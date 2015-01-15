@@ -8,19 +8,13 @@
 
 import Foundation
 
+private let _uuidSharedInstance = SRUUID()
+
 public class SRUUID {
     // MARK: - Singleton Factory
     
-    struct StaticInstance {
-        static var dispatchToken: dispatch_once_t = 0
-        static var instance: SRUUID?
-    }
-    
     public class func defaultUUID() -> SRUUID {
-        dispatch_once(&StaticInstance.dispatchToken) {
-            StaticInstance.instance = SRUUID()
-        }
-        return StaticInstance.instance!
+        return _uuidSharedInstance
     }
     
     // MARK: - Properties

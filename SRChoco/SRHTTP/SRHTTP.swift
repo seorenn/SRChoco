@@ -8,6 +8,8 @@
 
 import Foundation
 
+private let _httpSharedInstance = SRHTTP(buildCommonHeaders: true)
+
 typealias SRHTTPResponseBlock = (SRHTTPResponse) -> Void
 typealias SRHTTPErrorBlock = (NSError) -> Void
 
@@ -20,16 +22,8 @@ class SRHTTP: NSObject, NSURLConnectionDataDelegate {
     
     var commonHeaders: [String: String] = [:]
     
-    struct StaticInstance {
-        static var dispatchToken: dispatch_once_t = 0
-        static var instance:SRHTTP?
-    }
-    
     class func defaultHTTP() -> SRHTTP {
-        dispatch_once(&StaticInstance.dispatchToken) {
-            StaticInstance.instance = SRHTTP(buildCommonHeaders: true)
-        }
-        return StaticInstance.instance!
+        return _httpSharedInstance
     }
     
     // MARK: - Simplipied APIs
