@@ -15,6 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItemPopupController: SRStatusItemPopupController?
 
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
+        let autoStart = SRStartupLauncher.sharedLauncher().launchAtStartup
+        Log.debug("[TEST] autoStart = \(autoStart)")
         let popup = StatusPopupViewController(nibName: "StatusPopupViewController", bundle: nil)
         let image = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericFolderIcon)))
         let alternateImage = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericApplicationIcon)))

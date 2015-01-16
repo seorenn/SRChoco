@@ -30,12 +30,16 @@
     if (launchAtStartup) {
         CFURLRef appUrl = (__bridge CFURLRef)[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
         LSSharedFileListItemRef itemRef = LSSharedFileListInsertItemURL(loginItemsRef, kLSSharedFileListItemLast, NULL, NULL, appUrl, NULL, NULL);
-        if (itemRef) CFRelease(itemRef);
+        if (itemRef) {
+            CFRelease(itemRef);
+        }
     }
     else {
         LSSharedFileListItemRef itemRef = [self itemRefInLoginItems];
-        LSSharedFileListItemRemove(loginItemsRef,itemRef);
-        if (itemRef != nil) CFRelease(itemRef);
+        if (itemRef) {
+            LSSharedFileListItemRemove(loginItemsRef, itemRef);
+            CFRelease(itemRef);
+        }
     }
     
     CFRelease(loginItemsRef);
@@ -51,8 +55,6 @@
 
 - (LSSharedFileListItemRef)itemRefInLoginItems
 {
-    LSSharedFileListItemRef itemRef = nil;
-    
     NSURL *appUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
     
     LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
@@ -60,26 +62,23 @@
     
     NSArray *loginItems = (__bridge NSArray *)LSSharedFileListCopySnapshot(loginItemsRef, nil);
     
-    for (int currentIndex = 0; currentIndex < [loginItems count]; currentIndex++) {
-        //CFURLRef urlRef = NULL;
-        
-        LSSharedFileListItemRef currentItemRef = (__bridge LSSharedFileListItemRef)[loginItems objectAtIndex:currentIndex];
+    for (id itemObj in loginItems) {
+        LSSharedFileListItemRef currentItemRef = (__bridge LSSharedFileListItemRef)itemObj;
         CFURLRef urlRef = LSSharedFileListItemCopyResolvedURL(currentItemRef, 0, NULL);
+        
         //if (LSSharedFileListItemResolve(currentItemRef, 0, &urlRef, NULL) == noErr) {
         if (urlRef) {
             NSURL *itemURL = (__bridge NSURL *)urlRef;
             
             if ([itemURL isEqual:appUrl]) {
-                itemRef = currentItemRef;
+                CFRelease(loginItemsRef);
+                return currentItemRef;
             }
         }
     }
     
-    if (itemRef != nil) CFRetain(itemRef);
-    
     CFRelease(loginItemsRef);
-    
-    return itemRef;
+    return nil;
 }
 
 @end
