@@ -70,7 +70,7 @@
         if (urlRef) {
             NSURL *itemURL = (__bridge NSURL *)urlRef;
             
-            if ([itemURL.absoluteString isEqualToString:appURL.absoluteString]) {
+            if ([itemURL isEqualTo:appURL]) {
                 CFRelease(loginItemsRef);
                 return currentItemRef;
             }
