@@ -12,6 +12,7 @@
 @interface SRInputSource() {
     TISInputSourceRef _tis;
     CFBooleanRef _isSelectCapableRef;
+    BOOL _triedIconLoad;
 }
 @property (nonatomic, readonly) NSURL *iconImageTIFFURL;
 @end
@@ -84,6 +85,8 @@
 }
 
 - (NSImage *)iconImage {
+    if (_triedIconLoad) { return _iconImage; }
+    
     if (_iconImage == nil) {
         IconRef iconRef = TISGetInputSourceProperty(_tis, kTISPropertyIconRef);
         if (iconRef) {
@@ -102,6 +105,8 @@
             }
         }
     }
+    
+    _triedIconLoad = YES;
     
     return _iconImage;
 }
