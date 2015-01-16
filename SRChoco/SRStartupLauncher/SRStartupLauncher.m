@@ -28,8 +28,8 @@
     if (loginItemsRef == nil) return;
     
     if (launchAtStartup) {
-        CFURLRef appUrl = (__bridge CFURLRef)[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
-        LSSharedFileListItemRef itemRef = LSSharedFileListInsertItemURL(loginItemsRef, kLSSharedFileListItemLast, NULL, NULL, appUrl, NULL, NULL);
+        CFURLRef appURL = (__bridge CFURLRef)[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+        LSSharedFileListItemRef itemRef = LSSharedFileListInsertItemURL(loginItemsRef, kLSSharedFileListItemLast, NULL, NULL, appURL, NULL, NULL);
         if (itemRef) {
             CFRelease(itemRef);
         }
@@ -55,7 +55,7 @@
 
 - (LSSharedFileListItemRef)itemRefInLoginItems
 {
-    NSURL *appUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+    NSURL *appURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
     
     LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
     if (loginItemsRef == nil) return nil;
@@ -70,7 +70,7 @@
         if (urlRef) {
             NSURL *itemURL = (__bridge NSURL *)urlRef;
             
-            if ([itemURL isEqual:appUrl]) {
+            if ([itemURL.absoluteString isEqualToString:appURL.absoluteString]) {
                 CFRelease(loginItemsRef);
                 return currentItemRef;
             }

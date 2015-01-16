@@ -15,8 +15,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItemPopupController: SRStatusItemPopupController?
 
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
+        Log.debug("[TEST] Start Auto Startup Test =====")
+        let appURL = NSURL(fileURLWithPath: NSBundle.mainBundle().bundlePath)
+        Log.debug("[TEST] App URL: \(appURL?.absoluteString)")
+
         let autoStart = SRStartupLauncher.sharedLauncher().launchAtStartup
-        Log.debug("[TEST] autoStart = \(autoStart)")
+        Log.debug("[TEST] Launch at Login = \(autoStart)")
+        Log.debug("[TEST] Set On to Launch at Login")
+        SRStartupLauncher.sharedLauncher().launchAtStartup = true
+        Log.debug("[TEST] Set Off to Launch at Login")
+        SRStartupLauncher.sharedLauncher().launchAtStartup = false
+        
         let popup = StatusPopupViewController(nibName: "StatusPopupViewController", bundle: nil)
         let image = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericFolderIcon)))
         let alternateImage = NSWorkspace.sharedWorkspace().iconForFileType(NSFileTypeForHFSTypeCode(OSType(kGenericApplicationIcon)))
