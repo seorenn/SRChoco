@@ -8,6 +8,11 @@
 
 #import "SRStartupLauncher.h"
 
+@interface SRStartupLauncher () {
+    NSURL *_appURL;
+}
+@end
+
 @implementation SRStartupLauncher
 
 @synthesize launchAtStartup = _launchAtStartup;
@@ -21,9 +26,23 @@
     return instance;
 }
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        _appURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+    }
+    return self;
+}
 - (void)setLaunchAtStartup:(BOOL)launchAtStartup {
     if (self.launchAtStartup == launchAtStartup) return;
     
+    if (launchAtStartup) {
+        [self addAppToTheLoginItems];
+    } else {
+        [self removeAppFromTheLoginItems];
+    }
+
+    /*
     LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
     if (loginItemsRef == nil) return;
     
@@ -43,42 +62,134 @@
     }
     
     CFRelease(loginItemsRef);
+     */
 }
 
 - (BOOL)launchAtStartup {
+    return [self isAppInTheLoginItems];
+    /*
     LSSharedFileListItemRef itemRef = [self itemRefInLoginItems];
     BOOL isInList = itemRef != nil;
     if (itemRef != nil) CFRelease(itemRef);
     
     return isInList;
+     */
 }
 
+/*
 - (LSSharedFileListItemRef)itemRefInLoginItems
 {
-    NSURL *appURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
-    
     LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
     if (loginItemsRef == nil) return nil;
     
-    NSArray *loginItems = (__bridge NSArray *)LSSharedFileListCopySnapshot(loginItemsRef, nil);
+    CFArrayRef loginItemsSnapshotRef = LSSharedFileListCopySnapshot(loginItemsRef, nil);
+    NSArray *loginItems = (__bridge NSArray *)loginItemsSnapshotRef;
     
     for (id itemObj in loginItems) {
         LSSharedFileListItemRef currentItemRef = (__bridge LSSharedFileListItemRef)itemObj;
         CFURLRef urlRef = LSSharedFileListItemCopyResolvedURL(currentItemRef, 0, NULL);
         
-        //if (LSSharedFileListItemResolve(currentItemRef, 0, &urlRef, NULL) == noErr) {
         if (urlRef) {
             NSURL *itemURL = (__bridge NSURL *)urlRef;
             
-            if ([itemURL isEqualTo:appURL]) {
+            if ([itemURL isEqualTo:_appURL]) {
+                itemURL = nil;
+                CFRelease(urlRef);
+                //CFRelease(loginItemsSnapshotRef);
                 CFRelease(loginItemsRef);
                 return currentItemRef;
             }
+            
+            itemURL = nil;
+            CFRelease(urlRef);
         }
     }
     
+    CFRelease(loginItemsSnapshotRef);
     CFRelease(loginItemsRef);
     return nil;
+}
+ */
+
+// Ugly, but no leaks code :-(
+
+- (BOOL)isAppInTheLoginItems {
+    BOOL res = NO;
+    
+    LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+    if (loginItemsRef == nil) return NO;
+    
+    CFArrayRef loginItemsSnapshotRef = LSSharedFileListCopySnapshot(loginItemsRef, nil);
+    NSArray *loginItems = (__bridge NSArray *)loginItemsSnapshotRef;
+    
+    for (id itemObj in loginItems) {
+        LSSharedFileListItemRef currentItemRef = (__bridge LSSharedFileListItemRef)itemObj;
+        CFURLRef urlRef = LSSharedFileListItemCopyResolvedURL(currentItemRef, 0, NULL);
+        
+        if (urlRef) {
+            NSURL *itemURL = (__bridge NSURL *)urlRef;
+            
+            if ([itemURL isEqualTo:_appURL]) {
+                res = YES;
+                itemURL = nil;
+                CFRelease(urlRef);
+                //CFRelease(currentItemRef);
+                break;
+            }
+            
+            itemURL = nil;
+            CFRelease(urlRef);
+        }
+        
+        //CFRelease(currentItemRef);
+    }
+    
+    CFRelease(loginItemsSnapshotRef);
+    CFRelease(loginItemsRef);
+    
+    return res;
+}
+
+- (void)addAppToTheLoginItems {
+    LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+    if (loginItemsRef == nil) return;
+    
+    LSSharedFileListItemRef itemRef = LSSharedFileListInsertItemURL(loginItemsRef, kLSSharedFileListItemLast, NULL, NULL, (__bridge CFURLRef)_appURL, NULL, NULL);
+    
+    if (itemRef) {
+        CFRelease(itemRef);
+    }
+    
+    CFRelease(loginItemsRef);
+}
+
+- (void)removeAppFromTheLoginItems {
+    LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+    if (loginItemsRef == nil) return;
+    
+    CFArrayRef loginItemsSnapshotRef = LSSharedFileListCopySnapshot(loginItemsRef, nil);
+    NSArray *loginItems = (__bridge NSArray *)loginItemsSnapshotRef;
+    
+    for (id itemObj in loginItems) {
+        LSSharedFileListItemRef currentItemRef = (__bridge LSSharedFileListItemRef)itemObj;
+        CFURLRef urlRef = LSSharedFileListItemCopyResolvedURL(currentItemRef, 0, NULL);
+        
+        if (urlRef) {
+            NSURL *itemURL = (__bridge NSURL *)urlRef;
+            
+            if ([itemURL isEqualTo:_appURL]) {
+                LSSharedFileListItemRemove(loginItemsRef, currentItemRef);
+            }
+            
+            itemURL = nil;
+            CFRelease(urlRef);
+        }
+        
+        //CFRelease(currentItemRef);
+    }
+    
+    CFRelease(loginItemsSnapshotRef);
+    CFRelease(loginItemsRef);
 }
 
 @end

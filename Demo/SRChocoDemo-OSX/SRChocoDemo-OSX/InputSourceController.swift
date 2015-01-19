@@ -18,6 +18,9 @@ class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSourc
         self.ism = SRInputSourceManager.sharedManager()
         super.init()
         
+        self.ism.refresh()  // Leak TEST
+        self.ism.refresh()  // Leak TEST
+        
         // TODO: This is test code
         Log.debug("Input Sources =====")
         for ism: SRInputSource in self.ism.inputSources as [SRInputSource]{

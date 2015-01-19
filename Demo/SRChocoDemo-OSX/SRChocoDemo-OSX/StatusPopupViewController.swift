@@ -10,6 +10,10 @@ import Cocoa
 
 class StatusPopupViewController: NSViewController {
 
+    deinit {
+        Log.debug("DEINIT STATUS POPUP VIEW CONTROLLER")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

@@ -8,6 +8,11 @@
 
 #import "SRInputSourceManager.h"
 
+@interface SRInputSourceManager () {
+    CFArrayRef _iss;
+}
+@end
+
 @implementation SRInputSourceManager
 
 @synthesize inputSources = _inputSources;
@@ -29,18 +34,30 @@
     return self;
 }
 
+- (void)dealloc {
+    if (_iss) {
+        CFRelease(_iss);
+        _iss = nil;
+    }
+}
+
 - (void)refresh {
-    CFArrayRef iss = TISCreateInputSourceList(NULL, NO);
-    if (!iss) {
+    if (_iss) {
+        CFRelease(_iss);
+        _iss = nil;
+    }
+    
+    _iss = TISCreateInputSourceList(NULL, NO);
+    if (!_iss) {
         _inputSources = nil;
         return;
     }
     
     NSMutableArray *sources = [[NSMutableArray alloc] init];
     
-    NSInteger issCount = CFArrayGetCount(iss);
+    NSInteger issCount = CFArrayGetCount(_iss);
     for (int i=0; i < issCount; i++) {
-        TISInputSourceRef tis = (TISInputSourceRef)CFArrayGetValueAtIndex(iss, i);
+        TISInputSourceRef tis = (TISInputSourceRef)CFArrayGetValueAtIndex(_iss, i);
         if (!tis) continue;
         
         SRInputSource *inputSource = [[SRInputSource alloc] initWithTISInputSourceRef:tis];

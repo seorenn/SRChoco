@@ -85,6 +85,8 @@
         [results addObject:window];
     }
     
+    CFRelease(list);
+    
     return results;
 }
 
