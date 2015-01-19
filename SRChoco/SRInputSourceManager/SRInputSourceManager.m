@@ -82,26 +82,33 @@
     return nil;
 }
 
-- (SRInputSource *)currentInputSource {
-    TISInputSourceRef tis = TISCopyCurrentKeyboardInputSource();
-    if (!tis) return nil;
-    
-    return [[SRInputSource alloc] initWithTISInputSourceRef:tis];
-}
-
 - (NSInteger)currentInputSourceIndex {
-    SRInputSource *inputSource = self.currentInputSource;
-    if (!_inputSources) [self refresh];
+    TISInputSourceRef tis = TISCopyCurrentKeyboardInputSource();
+    if (!tis) return -1;
     
-    NSInteger i = 0;
-    for (SRInputSource *source in _inputSources) {
-        if ([source.ID isEqualToString:inputSource.ID]) {
-            return i;
+    NSString *tisID = (__bridge NSString *)TISGetInputSourceProperty(tis, kTISPropertyInputSourceID);
+    NSInteger res = -1;
+    
+    if (tisID) {
+        for (int i=0; i < _inputSources.count; i++) {
+            SRInputSource *source = [_inputSources objectAtIndex:i];
+            if ([source.ID isEqualToString:tisID]) {
+                res = i;
+                break;
+            }
         }
-        i++;
     }
     
-    return -1;
+    CFRelease(tis);
+    
+    return res;
+}
+
+- (SRInputSource *)currentInputSource {
+    NSInteger index = [self currentInputSourceIndex];
+    if (index < 0) return nil;
+    
+    return [_inputSources objectAtIndex:index];
 }
 
 @end

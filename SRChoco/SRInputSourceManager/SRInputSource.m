@@ -97,8 +97,7 @@
         if (icon1) {
             _iconImage = icon1;
         }
-        
-        if (self.iconImageTIFFURL) {
+        else if (self.iconImageTIFFURL) {
             NSImage *icon2 = [[NSImage alloc] initWithContentsOfURL:self.iconImageTIFFURL];
             if (icon2) {
                 _iconImage = icon2;
