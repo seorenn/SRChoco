@@ -8,18 +8,14 @@
 
 import Cocoa
 
-class WindowLogController: NSObject {
+class WindowLogController: NSObject, SRWindowManagerDelegate {
     @IBOutlet var textView: NSTextView!
 
     override init() {
         super.init()
         
         let wm = SRWindowManager.sharedManager()
-        wm.startDetectWindowActivating { (app) -> Void in
-            if (app != nil) {
-                self.updateAppLog(app)
-            }
-        }
+        wm.delegate = self
     }
     
     func log(message: String) {
@@ -30,5 +26,11 @@ class WindowLogController: NSObject {
     func updateAppLog(app: NSRunningApplication!) {
         let message = "-> \(app.localizedName)"
         self.log(message)
+    }
+    
+    func windowManager(windowManager: SRWindowManager!, detectWindowActivation runningApplication: NSRunningApplication!) {
+        if (runningApplication == nil) { return }
+        
+        self.updateAppLog(runningApplication)
     }
 }

@@ -19,7 +19,7 @@ public class SRFile: NSObject, DebugPrintable, Equatable {
     
     public var path: String
     public var name: String
-    public var parentDirectory: SRDirectory?
+    public weak var parentDirectory: SRDirectory?
     
     public var data: NSData? {
         get {

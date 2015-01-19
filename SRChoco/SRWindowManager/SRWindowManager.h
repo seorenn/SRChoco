@@ -10,7 +10,13 @@
 #import <Cocoa/Cocoa.h>
 #import "SRApplicationWindow.h"
 
-typedef void (^SRWindowManagerActivateBlock)(NSRunningApplication *runningApplication);
+@class SRWindowManager;
+
+@protocol SRWindowManagerDelegate <NSObject>
+@optional
+- (void)windowManager:(SRWindowManager *)windowManager detectWindowActivation:(NSRunningApplication *)runningApplication;
+@end
+
 @interface SRWindowManager : NSObject
 
 // Returns [SRApplicationWindow] that is created with runningApplications method of NSWorkspace
@@ -19,9 +25,13 @@ typedef void (^SRWindowManagerActivateBlock)(NSRunningApplication *runningApplic
 @property (readonly) NSArray *windows;
 // TODO: Returns [SRApplicationWindow] that is applications has general window.
 @property (readonly) NSArray *applicationWindows;
+@property (readonly) BOOL detecting;
+
+@property (weak) id<SRWindowManagerDelegate> delegate;
 
 + (SRWindowManager *)sharedManager;
 
-- (void)startDetectWindowActivating:(SRWindowManagerActivateBlock)block;
+- (void)startDetect;
+- (void)stopDetect;
 
 @end

@@ -140,8 +140,6 @@
             itemURL = nil;
             CFRelease(urlRef);
         }
-        
-        //CFRelease(currentItemRef);
     }
     
     CFRelease(loginItemsSnapshotRef);
@@ -184,8 +182,6 @@
             itemURL = nil;
             CFRelease(urlRef);
         }
-        
-        //CFRelease(currentItemRef);
     }
     
     CFRelease(loginItemsSnapshotRef);

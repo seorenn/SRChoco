@@ -157,7 +157,6 @@ public class SRDirectory: NSObject, DebugPrintable, Equatable {
             
             var isDirectory: ObjCBool = false
             let exists = self.fm.fileExistsAtPath(fullPath, isDirectory: &isDirectory)
-            assert(exists)
             
             if isDirectory.boolValue {
                 let dir = SRDirectory(fullPath)

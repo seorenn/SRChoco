@@ -8,12 +8,9 @@
 
 #import "SRWindowManager.h"
 
-@interface SRWindowManager() {
-    SRWindowManagerActivateBlock _activateBlock;
-}
-@end
-
 @implementation SRWindowManager
+
+@synthesize detecting = _detecting;
 
 + (SRWindowManager *)sharedManager {
     static SRWindowManager *instance = nil;
@@ -37,19 +34,24 @@
 }
 
 - (void)dealloc {
-    _activateBlock = nil;
     [[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
 }
 
-- (void)startDetectWindowActivating:(SRWindowManagerActivateBlock)block {
-    _activateBlock = block;
+- (void)startDetect {
+    _detecting = YES;
+}
+
+- (void)stopDetect {
+    _detecting = NO;
 }
 
 - (void)didActivateWindowNotification:(NSNotification *)notification {
-    if (!_activateBlock) return;
+    //if (!_activateBlock) return;
+    if (self.delegate == nil || [self.delegate respondsToSelector:@selector(windowManager:detectWindowActivation:)] == NO) return;
     
     NSRunningApplication *app = [notification.userInfo objectForKey:NSWorkspaceApplicationKey];
-    _activateBlock(app);
+    //_activateBlock(app);
+    [self.delegate windowManager:self detectWindowActivation:app];
 }
 
 - (NSArray *)processes {
