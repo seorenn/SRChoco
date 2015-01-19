@@ -30,9 +30,15 @@
 - (id)initWithTISInputSourceRef:(TISInputSourceRef)tis {
     self = [super init];
     if (self) {
-        _tis = tis;
+        _tis = (TISInputSourceRef)CFRetain(tis);
     }
     return self;
+}
+
+- (void)dealloc {
+    if (_tis) {
+        CFRelease(_tis);
+    }
 }
 
 - (void)activate {

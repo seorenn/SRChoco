@@ -40,7 +40,6 @@ class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSourc
     
     func tableView(tableView: NSTableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
         let inputSources = self.ism.inputSources as [SRInputSource]
-        Log.debug("InputSource [\(inputSources[row].localizedName)] IconImage[\(inputSources[row].iconImage)]")
         return inputSources[row].localizedName
     }
     
