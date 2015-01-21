@@ -46,15 +46,13 @@
 }
 
 - (void)didActivateWindowNotification:(NSNotification *)notification {
-    //if (!_activateBlock) return;
-    if (self.delegate == nil || [self.delegate respondsToSelector:@selector(windowManager:detectWindowActivation:)] == NO) return;
+    if (_detecting == NO || self.delegate == nil || [self.delegate respondsToSelector:@selector(windowManager:detectWindowActivation:)] == NO) return;
     
     NSRunningApplication *app = [notification.userInfo objectForKey:NSWorkspaceApplicationKey];
-    //_activateBlock(app);
     [self.delegate windowManager:self detectWindowActivation:app];
 }
 
-- (NSArray *)processes {
+- (__autoreleasing NSArray *)processes {
     NSMutableArray *results = [[NSMutableArray alloc] init];
     NSArray *apps = [[NSWorkspace sharedWorkspace] runningApplications];
     for (NSRunningApplication *app in apps) {
@@ -67,7 +65,7 @@
     return results;
 }
 
-- (NSArray *)windows {
+- (__autoreleasing NSArray *)windows {
     NSMutableArray *results = [[NSMutableArray alloc] init];
     CFArrayRef list = CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
     if (!list) return nil;
@@ -92,26 +90,7 @@
     return results;
 }
 
-- (NSArray *)applicationWindows {
-    /*
-     References: http://stackoverflow.com/questions/17010638/osx-objective-c-window-management-manipulate-the-frames-visibility-of-other
-     This will requires User Permission from Preferences
-     
-     for (NSRunningApplication *runningApplication in [[NSWorkspace sharedWorkspace] runningApplications)] {
-     AXUIElementRef applicationRef = AXUIElementCreateApplication([runningApplication processIdentifier]);
-     CFArrayRef applicationWindows;
-     AXUIElementCopyAttributeValues(applicationRef, kAXWindowsAttribute, 0, 100, &applicationWindows);
-     
-     if (!applicationWindows) continue;
-     
-     for (CFIndex i = 0; i < CFArrayGetCount(applicationWindows); ++i) {
-     AXUIElementRef windowRef = CFArrayGetValueAtIndex(applicationWindows, i);
-     CGPoint upperLeft = { .x = 0, .y = 0 };
-     AXValueRef positionRef = AXValueCreate(kAXValueCGPointType, &upperLeft);
-     AXUIElementSetAttributeValue(windowRef, kAXPositionAttribute, positionRef);
-     }
-     }
-     */
+- (__autoreleasing NSArray *)applicationWindows {
     NSMutableArray *results = [[NSMutableArray alloc] init];
 
     NSArray *apps = [[NSWorkspace sharedWorkspace] runningApplications];

@@ -16,6 +16,7 @@ class WindowLogController: NSObject, SRWindowManagerDelegate {
         
         let wm = SRWindowManager.sharedManager()
         wm.delegate = self
+        wm.startDetect()
     }
     
     func log(message: String) {

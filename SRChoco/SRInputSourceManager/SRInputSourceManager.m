@@ -47,7 +47,7 @@
             [sources addObject:inputSource];
         }
     }
-    _inputSources = sources;
+    _inputSources = [sources copy];
     
     CFRelease(iss);
 }

@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItemPopupController: SRStatusItemPopupController?
 
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
+        
         Log.debug("[TEST] Start Auto Startup Test =====")
         let appURL = NSURL(fileURLWithPath: NSBundle.mainBundle().bundlePath)
         Log.debug("[TEST] App URL: \(appURL?.absoluteString)")
@@ -47,10 +48,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Log.debug("Path for MainBundle: \(SRDirectory.pathForMainBundle)")
         Log.debug("Path for Temporary: \(SRDirectory.pathForTemporary)")
 
+        /*
         Log.debug("All Processes: \(SRWindowManager.sharedManager().processes)")
         for window in SRWindowManager.sharedManager().windows {
             Log.debug("# WindowProcess: \(window)")
         }
+        */
         
         Log.debug("##### Testing with SRWindowManager.applicationWindows")
         for window in SRWindowManager.sharedManager().applicationWindows {
@@ -62,6 +65,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Log.debug("Global HotKey Event")
         }
         
+        /*
         SRDispatch.runAfter(1.0) {
             Log.debug("runAfter 1.0")
         }
@@ -71,6 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         SRDispatch.asyncRunAfter(3.0) {
             Log.debug("asyncRunAfter 3.0")
         }
+        */
     }
 
     func applicationWillTerminate(aNotification: NSNotification?) {
