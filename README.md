@@ -7,6 +7,8 @@ Seorenn's Cocoa(AppKit) and Cocoa Touch(UIKit) Libraries.
 
 Simple File System(?) Classes
 
+NOTE: This module will move to another repository.
+
 ## SRDirectory
 
 Get Files and Directories on my HOME directory:
@@ -62,6 +64,8 @@ Simple Classes to manage Text Input Source
 
 TODO: Need more documentation
 
+NOTE: This module will move to another repository.
+
 # SRExternalApp
 
 Helper Module for External Application
@@ -78,7 +82,7 @@ TODO: Need more documentation
 
 The Controller for NSStatusItem with NSPopover components.
 
-NOTE: This module supports OSX platform only.
+NOTE: This module will move to another repository.
 
 ## How to use
 
@@ -105,7 +109,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 Simple Classes for Managing The Application Windows.
 
-TODO: Need more documentation
+NOTE: This module will move to another repository.
 
 # SRUUID
 
@@ -116,6 +120,8 @@ TODO: Need more documentation
 # SRHotKeyManager
 
 The Module for Hot Key Management.
+
+NOTE: This module will move to another repository.
 
 ## SRHotKey
 
@@ -139,7 +145,7 @@ TODO: No Implementations in currently. ;-)
 
 Implementations of 'Launch at Login'.
 
-NOTE: This feature supports NON-SANDBOX Environments only.
+NOTE: This module will move to another repository.
 
 TODO
 
