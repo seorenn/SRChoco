@@ -58,9 +58,26 @@ SRDispatch.backgroundTask() {
 
 # SRInputSourceManager
 
-Simple Classes to manage Text Input Source
+The Input Source Manager for OS X
 
-TODO: Need more documentation
+<pre>
+// Getting Input Source Instance List
+let inputSources = SRInputSourceManager().sharedManager().inputSources as [SRInputSource]
+
+// Getting Current Activating Input Source Index
+let currentIndex = SRInputSourceManager().sharedManager().currentInputSourceIndex
+
+// Getting Current Activating Input Source Instance
+let currentInputSource = SRInputSourceManager().sharedManager().currentInputSource
+
+// Getting Input Source Informations
+let inputSource = inputSources[someIndex]
+println("Name = \(inputSource.localizedName)")
+println("ID = \(inputSource.ID)")
+
+// Activating Input Source
+inputSource.activate()
+</pre>
 
 # SRExternalApp
 
