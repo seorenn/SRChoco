@@ -21,6 +21,7 @@
 		8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8A5371361A9AF32E00956700 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5371351A9AF32E00956700 /* ColorExtensions.swift */; };
 		8A5371571A9EE90C00956700 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5371561A9EE90C00956700 /* DictionaryExtensions.swift */; };
+		8A53715E1A9F092300956700 /* SRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A53715D1A9F092300956700 /* SRJSON.swift */; };
 		8A57A4CC1A47F00600DA3D89 /* SRApplicationWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57A4CB1A47F00600DA3D89 /* SRApplicationWindow.m */; };
 		8A57A4CF1A47F01600DA3D89 /* SRWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57A4CE1A47F01600DA3D89 /* SRWindowManager.m */; };
 		8A59C4231A63AE1000CC3C44 /* SRStartupLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59C4221A63AE1000CC3C44 /* SRStartupLauncher.m */; };
@@ -51,6 +52,7 @@
 		8AD045421A2EFA4500C66F65 /* TestSRHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD045411A2EFA4500C66F65 /* TestSRHTTP.swift */; };
 		8AD8912119A1B99600BD48AC /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* ViewExtensions.swift */; };
 		8AE2EF3019D8F8720037C005 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE2EF2F19D8F8720037C005 /* SRExternalApp.swift */; };
+		8AE835801A9F129800C7C165 /* TestSRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8357F1A9F129800C7C165 /* TestSRJSON.swift */; };
 		8AF47824195AC92E00960AE4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,7 @@
 		8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		8A5371351A9AF32E00956700 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		8A5371561A9EE90C00956700 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		8A53715D1A9F092300956700 /* SRJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRJSON.swift; sourceTree = "<group>"; };
 		8A57A4CA1A47F00600DA3D89 /* SRApplicationWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRApplicationWindow.h; sourceTree = "<group>"; };
 		8A57A4CB1A47F00600DA3D89 /* SRApplicationWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRApplicationWindow.m; sourceTree = "<group>"; };
 		8A57A4CD1A47F01600DA3D89 /* SRWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWindowManager.h; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		8AD045411A2EFA4500C66F65 /* TestSRHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRHTTP.swift; sourceTree = "<group>"; };
 		8AD8912019A1B99600BD48AC /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		8AE2EF2F19D8F8720037C005 /* SRExternalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRExternalApp.swift; sourceTree = "<group>"; };
+		8AE8357F1A9F129800C7C165 /* TestSRJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRJSON.swift; sourceTree = "<group>"; };
 		8AF47823195AC92E00960AE4 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +201,14 @@
 				8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8A53715C1A9F092300956700 /* SRJSON */ = {
+			isa = PBXGroup;
+			children = (
+				8A53715D1A9F092300956700 /* SRJSON.swift */,
+			);
+			path = SRJSON;
 			sourceTree = "<group>";
 		};
 		8A59C4201A63ADFA00CC3C44 /* SRStartupLauncher */ = {
@@ -282,6 +294,7 @@
 				8AAD786919F74E7C00B4551F /* TestSRFileManager.swift */,
 				8A41833C1A1349230030231D /* SRChocoDemo-OSXTests-Bridging-Header.h */,
 				8AD045411A2EFA4500C66F65 /* TestSRHTTP.swift */,
+				8AE8357F1A9F129800C7C165 /* TestSRJSON.swift */,
 			);
 			path = "SRChocoDemo-OSXTests";
 			sourceTree = "<group>";
@@ -297,6 +310,7 @@
 		8AAC8D25194ED55D007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8A53715C1A9F092300956700 /* SRJSON */,
 				8A59C4201A63ADFA00CC3C44 /* SRStartupLauncher */,
 				8A419FC41A2C62520090054F /* SRHTTP */,
 				8A13348A1A0A344D00F44FB9 /* SRHotkeyManager */,
@@ -475,6 +489,7 @@
 				8AB156BB19C6ECDC00A2A568 /* StatusPopupViewController.swift in Sources */,
 				8A59C42A1A63BA4000CC3C44 /* SRInputSourceManager.m in Sources */,
 				8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */,
+				8A53715E1A9F092300956700 /* SRJSON.swift in Sources */,
 				8A59C4231A63AE1000CC3C44 /* SRStartupLauncher.m in Sources */,
 				8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */,
 				8AD8912119A1B99600BD48AC /* ViewExtensions.swift in Sources */,
@@ -491,6 +506,7 @@
 				8AAD786A19F74E7C00B4551F /* TestSRFileManager.swift in Sources */,
 				8AD045421A2EFA4500C66F65 /* TestSRHTTP.swift in Sources */,
 				8A0AAFF419E5085E00B7A93D /* TestUUID.swift in Sources */,
+				8AE835801A9F129800C7C165 /* TestSRJSON.swift in Sources */,
 				8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */,
 				8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */,
 				8A35B61E1A31820E001CD048 /* StringExtensions.swift in Sources */,
