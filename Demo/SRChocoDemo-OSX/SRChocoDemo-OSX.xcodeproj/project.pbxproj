@@ -20,6 +20,7 @@
 		8A419FCC1A2C62D30090054F /* SRHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FCB1A2C62D30090054F /* SRHTTPResponse.swift */; };
 		8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
 		8A5371361A9AF32E00956700 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5371351A9AF32E00956700 /* ColorExtensions.swift */; };
+		8A5371571A9EE90C00956700 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5371561A9EE90C00956700 /* DictionaryExtensions.swift */; };
 		8A57A4CC1A47F00600DA3D89 /* SRApplicationWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57A4CB1A47F00600DA3D89 /* SRApplicationWindow.m */; };
 		8A57A4CF1A47F01600DA3D89 /* SRWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57A4CE1A47F01600DA3D89 /* SRWindowManager.m */; };
 		8A59C4231A63AE1000CC3C44 /* SRStartupLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59C4221A63AE1000CC3C44 /* SRStartupLauncher.m */; };
@@ -75,6 +76,7 @@
 		8A419FCB1A2C62D30090054F /* SRHTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHTTPResponse.swift; sourceTree = "<group>"; };
 		8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		8A5371351A9AF32E00956700 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		8A5371561A9EE90C00956700 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		8A57A4CA1A47F00600DA3D89 /* SRApplicationWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRApplicationWindow.h; sourceTree = "<group>"; };
 		8A57A4CB1A47F00600DA3D89 /* SRApplicationWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRApplicationWindow.m; sourceTree = "<group>"; };
 		8A57A4CD1A47F01600DA3D89 /* SRWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWindowManager.h; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		8A4DE92719515A3D00F65AEB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8A5371561A9EE90C00956700 /* DictionaryExtensions.swift */,
 				8A5371351A9AF32E00956700 /* ColorExtensions.swift */,
 				8ABA3A0F19C9812B009B75A5 /* ArrayExtensions.swift */,
 				8AD8912019A1B99600BD48AC /* ViewExtensions.swift */,
@@ -462,6 +465,7 @@
 				8ABA3A0E19C94015009B75A5 /* WindowLogController.swift in Sources */,
 				8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */,
 				8A4183301A1094F60030231D /* SRHotKeyManager.m in Sources */,
+				8A5371571A9EE90C00956700 /* DictionaryExtensions.swift in Sources */,
 				8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */,
 				8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */,
 				8A419FC91A2C62B40090054F /* SRHTTPRequest.swift in Sources */,
