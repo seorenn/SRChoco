@@ -14,6 +14,7 @@
 		8A35B61D1A31820B001CD048 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* ViewExtensions.swift */; };
 		8A35B61E1A31820E001CD048 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
 		8A35B6201A31851C001CD048 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
+		8A3EC51E1AB6A32700ED10DE /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3EC51D1AB6A32700ED10DE /* SRDevice.swift */; };
 		8A4183301A1094F60030231D /* SRHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A41832F1A1094F60030231D /* SRHotKeyManager.m */; };
 		8A419FC61A2C62520090054F /* SRHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FC51A2C62520090054F /* SRHTTP.swift */; };
 		8A419FC91A2C62B40090054F /* SRHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FC81A2C62B40090054F /* SRHTTPRequest.swift */; };
@@ -70,6 +71,7 @@
 		8A0AAFE919E505A600B7A93D /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUUID.swift; sourceTree = "<group>"; };
 		8A0AAFF319E5085E00B7A93D /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUUID.swift; sourceTree = "<group>"; };
 		8A26B79E1985F062004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
+		8A3EC51D1AB6A32700ED10DE /* SRDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDevice.swift; sourceTree = "<group>"; };
 		8A41832E1A1094F60030231D /* SRHotKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHotKeyManager.h; sourceTree = "<group>"; };
 		8A41832F1A1094F60030231D /* SRHotKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHotKeyManager.m; sourceTree = "<group>"; };
 		8A41833C1A1349230030231D /* SRChocoDemo-OSXTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-OSXTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -177,6 +179,14 @@
 				8A26B79E1985F062004F3168 /* SRRegexp.swift */,
 			);
 			path = SRRegexp;
+			sourceTree = "<group>";
+		};
+		8A3EC51C1AB6A32700ED10DE /* SRDevice */ = {
+			isa = PBXGroup;
+			children = (
+				8A3EC51D1AB6A32700ED10DE /* SRDevice.swift */,
+			);
+			path = SRDevice;
 			sourceTree = "<group>";
 		};
 		8A419FC41A2C62520090054F /* SRHTTP */ = {
@@ -310,6 +320,7 @@
 		8AAC8D25194ED55D007BDE4D /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8A3EC51C1AB6A32700ED10DE /* SRDevice */,
 				8A53715C1A9F092300956700 /* SRJSON */,
 				8A59C4201A63ADFA00CC3C44 /* SRStartupLauncher */,
 				8A419FC41A2C62520090054F /* SRHTTP */,
@@ -495,6 +506,7 @@
 				8AD8912119A1B99600BD48AC /* ViewExtensions.swift in Sources */,
 				8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */,
 				8A5371361A9AF32E00956700 /* ColorExtensions.swift in Sources */,
+				8A3EC51E1AB6A32700ED10DE /* SRDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
