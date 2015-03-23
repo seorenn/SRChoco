@@ -12,6 +12,7 @@ private let g_logSharedInstance = Log()
 
 public class Log : DebugPrintable {
     let dateFormatter = NSDateFormatter()
+    let dispatchQueue = SRDispatchQueue(identifier: "com.seorenn.log", serial: true)
     
     // Currently, Swift not support class var or class static var
     // class let Debug = "DEBUG"
@@ -38,7 +39,10 @@ public class Log : DebugPrintable {
     }
     
     func logToConsole(message: String, type: String, file: String, function: String, line: Int) {
-        NSLog(renderMessage(message, type: type, file: file, function: function, line: line, putDatetime: false))
+        self.dispatchQueue.async() {
+            [unowned self] in
+            NSLog(self.renderMessage(message, type: type, file: file, function: function, line: line, putDatetime: false))
+        }
     }
     
     class func debug(message: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {

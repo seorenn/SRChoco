@@ -27,14 +27,12 @@ public class SRDispatchQueue: NSObject {
     }
     
     public init(identifier: String, serial: Bool) {
-        var attr: dispatch_queue_attr_t
         if serial {
-            attr = DISPATCH_QUEUE_SERIAL
+            self.queue = dispatch_queue_create(identifier, DISPATCH_QUEUE_SERIAL)
         } else {
-            attr = DISPATCH_QUEUE_CONCURRENT
+            self.queue = dispatch_queue_create(identifier, DISPATCH_QUEUE_CONCURRENT)
         }
-        
-        self.queue = dispatch_queue_create(identifier, attr)
+        super.init()
     }
     
     public func sync(job: () -> ()) {
