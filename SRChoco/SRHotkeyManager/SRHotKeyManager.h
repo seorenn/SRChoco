@@ -3,7 +3,7 @@
 //  SRChoco
 //
 //  Created by Heeseung Seo on 2014. 11. 10..
-//  Copyright (c) 2014년 Seorenn. All rights reserved.
+//  Copyright (c) 2014 Seorenn. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

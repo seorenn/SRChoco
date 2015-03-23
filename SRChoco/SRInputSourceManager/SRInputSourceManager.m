@@ -3,7 +3,7 @@
 //  SRChocoDemo-OSX
 //
 //  Created by Heeseung Seo on 2015. 1. 12..
-//  Copyright (c) 2015년 Seorenn. All rights reserved.
+//  Copyright (c) 2015 Seorenn. All rights reserved.
 //
 
 #import "SRInputSourceManager.h"

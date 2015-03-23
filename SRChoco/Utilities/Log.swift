@@ -8,8 +8,11 @@
 
 import Foundation
 
-class Log : DebugPrintable {
+private let g_logSharedInstance = Log()
+
+public class Log : DebugPrintable {
     let dateFormatter = NSDateFormatter()
+    let dispatchQueue = SRDispatchQueue(identifier: "com.seorenn.log", serial: true)
     
     // Currently, Swift not support class var or class static var
     // class let Debug = "DEBUG"
@@ -21,11 +24,8 @@ class Log : DebugPrintable {
         static var dispatchToken: dispatch_once_t = 0
     }
     
-    class func sharedObject() -> Log? {
-        dispatch_once(&staticInstance.dispatchToken) {
-            staticInstance.instance = Log()
-        }
-        return staticInstance.instance
+    class func sharedLog() -> Log {
+        return g_logSharedInstance
     }
     
     func renderMessage(message: String, type: String, file: String, function: String, line: Int, putDatetime: Bool = false) -> String {
@@ -39,21 +39,24 @@ class Log : DebugPrintable {
     }
     
     func logToConsole(message: String, type: String, file: String, function: String, line: Int) {
-        NSLog(renderMessage(message, type: type, file: file, function: function, line: line, putDatetime: false))
+        self.dispatchQueue.async() {
+            [unowned self] in
+            NSLog(self.renderMessage(message, type: type, file: file, function: function, line: line, putDatetime: false))
+        }
     }
     
     class func debug(message: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
         #if DEBUG
-            Log.sharedObject()?.logToConsole(message, type: "DEBUG", file: file, function: function, line: line)
+            Log.sharedLog().logToConsole(message, type: "DEBUG", file: file, function: function, line: line)
         #else
         #endif
     }
 
     class func error(message: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-        Log.sharedObject()?.logToConsole(message, type: "ERROR", file: file, function: function, line: line)
+        Log.sharedLog().logToConsole(message, type: "ERROR", file: file, function: function, line: line)
     }
 
-    var debugDescription: String {
+    public var debugDescription: String {
         get {
             return "<Log>"
         }

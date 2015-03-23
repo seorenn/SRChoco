@@ -3,7 +3,7 @@
 //  SRChocoDemo-OSX
 //
 //  Created by Heeseung Seo on 2014. 12. 3..
-//  Copyright (c) 2014년 Seorenn. All rights reserved.
+//  Copyright (c) 2014 Seorenn. All rights reserved.
 //
 
 import Cocoa
