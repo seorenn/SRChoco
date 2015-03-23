@@ -30,6 +30,7 @@
 		8A59C42D1A63BA4C00CC3C44 /* SRInputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59C42C1A63BA4C00CC3C44 /* SRInputSource.m */; };
 		8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */; };
 		8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4E1993764800432E13 /* TestSRRegexp.swift */; };
+		8A73F9911AC00E8C0028C8FD /* SRDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A73F9901AC00E8C0028C8FD /* SRDispatchQueue.swift */; };
 		8A7AC8D419766575006028F4 /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D319766575006028F4 /* SRDispatch.swift */; };
 		8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */; };
 		8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE2194ED4CF007BDE4D /* main.swift */; };
@@ -94,6 +95,7 @@
 		8A59C42C1A63BA4C00CC3C44 /* SRInputSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInputSource.m; sourceTree = "<group>"; };
 		8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
 		8A682E4E1993764800432E13 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
+		8A73F9901AC00E8C0028C8FD /* SRDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatchQueue.swift; sourceTree = "<group>"; };
 		8A7AC8D319766575006028F4 /* SRDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatch.swift; sourceTree = "<group>"; };
 		8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSRFileManager.swift; sourceTree = "<group>"; };
 		8AAC8CDD194ED4CF007BDE4D /* SRChocoDemo-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SRChocoDemo-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				8A7AC8D319766575006028F4 /* SRDispatch.swift */,
+				8A73F9901AC00E8C0028C8FD /* SRDispatchQueue.swift */,
 			);
 			path = SRGCD;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				8A59C42D1A63BA4C00CC3C44 /* SRInputSource.m in Sources */,
 				8AE2EF3019D8F8720037C005 /* SRExternalApp.swift in Sources */,
 				8A57A4CC1A47F00600DA3D89 /* SRApplicationWindow.m in Sources */,
+				8A73F9911AC00E8C0028C8FD /* SRDispatchQueue.swift in Sources */,
 				8A26B79F1985F062004F3168 /* SRRegexp.swift in Sources */,
 				8ABA3A0E19C94015009B75A5 /* WindowLogController.swift in Sources */,
 				8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */,
