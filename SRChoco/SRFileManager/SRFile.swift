@@ -19,7 +19,7 @@ public class SRFile: NSObject, DebugPrintable, Equatable {
     
     public var path: String
     public var name: String
-    public weak var parentDirectory: SRDirectory?
+    public var parentDirectory: SRDirectory?
     
     public var data: NSData? {
         get {
@@ -65,6 +65,10 @@ public class SRFile: NSObject, DebugPrintable, Equatable {
         super.init()
         
         if name.containString("/") { return nil }
+    }
+    
+    deinit {
+        self.parentDirectory = nil
     }
     
     // MARK: - Methods
