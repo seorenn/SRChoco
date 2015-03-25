@@ -12,7 +12,7 @@ private let g_logSharedInstance = Log()
 
 public class Log : DebugPrintable {
     let dateFormatter = NSDateFormatter()
-    let dispatchQueue = SRDispatchQueue(identifier: "com.seorenn.log", serial: true)
+    let dispatchQueue = SRDispatchQueue.serialQueue("com.seorenn.srchoco.srlog")
     
     // Currently, Swift not support class var or class static var
     // class let Debug = "DEBUG"

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015년 Seorenn. All rights reserved.
 //
 
-import Cocoa
+import Dispatch
 
 public class SRDispatchQueue: NSObject {
     let queue: dispatch_queue_t
@@ -21,29 +21,37 @@ public class SRDispatchQueue: NSObject {
         return SRDispatchQueue(queue: q)
     }
     
-    public init(queue: dispatch_queue_t) {
+    public class func serialQueue(label: String) -> SRDispatchQueue {
+        return SRDispatchQueue(label: label, serial: true)
+    }
+    
+    public class func concurrentQueue(label: String) -> SRDispatchQueue {
+        return SRDispatchQueue(label: label, serial: false)
+    }
+    
+    private init(queue: dispatch_queue_t) {
         self.queue = queue
         super.init()
     }
     
-    public init(identifier: String, serial: Bool) {
+    private init(label: String, serial: Bool) {
         if serial {
-            self.queue = dispatch_queue_create(identifier, DISPATCH_QUEUE_SERIAL)
+            self.queue = dispatch_queue_create(label, DISPATCH_QUEUE_SERIAL)
         } else {
-            self.queue = dispatch_queue_create(identifier, DISPATCH_QUEUE_CONCURRENT)
+            self.queue = dispatch_queue_create(label, DISPATCH_QUEUE_CONCURRENT)
         }
         super.init()
     }
     
     public func sync(job: () -> ()) {
-        dispatch_sync(self.queue) {
-            job()
-        }
+        dispatch_sync(self.queue, job)
     }
     
     public func async(job: () -> ()) {
-        dispatch_async(self.queue) {
-            job()
-        }
+        dispatch_async(self.queue, job)
+    }
+    
+    public func delay(interval: Double, job: () -> ()) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(interval * Double(NSEC_PER_SEC))), self.queue, job)
     }
 }
