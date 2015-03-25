@@ -159,7 +159,7 @@ class TestSRFileManager: XCTestCase {
         XCTAssert(f.path == "/not/exists/path/file")
         XCTAssert(f.name == "file")
         XCTAssert(f.parentDirectory != nil)
-        XCTAssert(f.parentDirectory!.path == "/not/exists/path")
+        XCTAssert(f.parentDirectory?.path == "/not/exists/path")
     }
     
     func testSRFileOperations() {

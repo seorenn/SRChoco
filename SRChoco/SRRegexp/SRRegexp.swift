@@ -9,7 +9,7 @@
 
 import Foundation
 
-public class SRRegexpGroups: NSObject {
+public struct SRRegexpGroups {
     public let text: String
     public let results: NSTextCheckingResult
     public var count: Int {
@@ -19,7 +19,6 @@ public class SRRegexpGroups: NSObject {
     public init(results: NSTextCheckingResult, text: String) {
         self.text = text
         self.results = results
-        super.init()
     }
     
     public subscript(index: Int) -> NSRange {
@@ -38,7 +37,7 @@ public class SRRegexpGroups: NSObject {
     }
 }
 
-public class SRRegexp: NSObject {
+public struct SRRegexp {
     private let re: NSRegularExpression?
     
     // MARK: Initializers
@@ -49,7 +48,6 @@ public class SRRegexp: NSObject {
         if ignoreCase { options |= NSRegularExpressionOptions.CaseInsensitive }
         
         self.re = NSRegularExpression(pattern: pattern, options: options, error: &error)
-        super.init()
 
         if self.re == nil { return nil }
     }
