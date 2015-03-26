@@ -10,15 +10,34 @@ import Foundation
 
 public class SRDirectory: NSObject, DebugPrintable, Equatable {
     
+    // MARK: - Private Properties
+    
+    private var dirty = true
+    private var directoriesData = [String:SRDirectory]()
+    private var filesData = [String:SRFile]()
+    private let fm = NSFileManager.defaultManager()
+    
     // MARK: - Properties
     
     public var path: String
     public var name: String
-    public var hidden = false
-    public var directories = Dictionary<String, SRDirectory>()
-    public var files = Dictionary<String, SRFile>()
-    var loaded = false
-    private let fm = NSFileManager.defaultManager()
+    
+    
+    public var directories: [String:SRDirectory] {
+        if self.dirty {
+            self.dirty = true
+            self.load()
+        }
+        return self.directoriesData
+    }
+    
+    public var files: [String:SRFile] {
+        if self.dirty {
+            self.dirty = true
+            self.load()
+        }
+        return self.filesData
+    }
     
     public var exists: Bool {
         var isDir = ObjCBool(false)
@@ -141,15 +160,15 @@ public class SRDirectory: NSObject, DebugPrintable, Equatable {
         
         if self.create(intermediateDirectories: withIntermediateDirectories) == false { return nil }
     }
-    
+
     // MARK: - Methods
 
-    public func load() {
+    private func load() {
         var error: NSError?
         let contents = fm.contentsOfDirectoryAtPath(self.path, error: &error)
         
-        self.files.removeAll(keepCapacity: false)
-        self.directories.removeAll(keepCapacity: false)
+        self.filesData.removeAll(keepCapacity: false)
+        self.directoriesData.removeAll(keepCapacity: false)
         
         for content: AnyObject in contents! {
             let name: String = content as String
@@ -160,41 +179,28 @@ public class SRDirectory: NSObject, DebugPrintable, Equatable {
             
             if isDirectory.boolValue {
                 let dir = SRDirectory(fullPath)
-                self.directories[name] = dir
+                self.directoriesData[name] = dir
             } else {
                 if let file = SRFile(fullPath) {
                     file.parentDirectory = self
-                    self.files[name] = file
+                    self.filesData[name] = file
                 }
             }
         }
-        
-        loaded = true
     }
     
-    /* NOTE: I don't know why swift compiler cannot found this method in build time. :-(
-    public func load(completed: (() -> Void)) {
-        SRDispatch.backgroundTask() {
-            self.load()
-            SRDispatch.mainTask() {
-                completed()
-            }
-        }
-    }
-    */
-    
-    class func mkdir(path: String, withIntermediateDirectories: Bool = false) -> Bool {
-        let fm = NSFileManager.defaultManager()
-        var error: NSError?
-        return fm.createDirectoryAtPath(path, withIntermediateDirectories: withIntermediateDirectories, attributes: nil, error: &error)
-    }
-    
-    class func mv(fromPath: String, toPath: String, withIntermediateDirectories: Bool = false) -> Bool {
-        let fm = NSFileManager.defaultManager()
-        var error: NSError?
-        
-        return fm.moveItemAtPath(fromPath, toPath: toPath, error: &error)
-    }
+//    class func mkdir(path: String, withIntermediateDirectories: Bool = false) -> Bool {
+//        let fm = NSFileManager.defaultManager()
+//        var error: NSError?
+//        return fm.createDirectoryAtPath(path, withIntermediateDirectories: withIntermediateDirectories, attributes: nil, error: &error)
+//    }
+//    
+//    class func mv(fromPath: String, toPath: String, withIntermediateDirectories: Bool = false) -> Bool {
+//        let fm = NSFileManager.defaultManager()
+//        var error: NSError?
+//        
+//        return fm.moveItemAtPath(fromPath, toPath: toPath, error: &error)
+//    }
     
     public func create(intermediateDirectories: Bool = false) -> Bool {
         if self.exists { return true }
@@ -259,7 +265,6 @@ public class SRDirectory: NSObject, DebugPrintable, Equatable {
         if url == nil { return false }
         
         if removingAllSubContents == false {
-            if self.loaded == false { self.load() }
             if self.files.count > 0 || self.directories.count > 0 { return false }
         }
 
@@ -267,57 +272,39 @@ public class SRDirectory: NSObject, DebugPrintable, Equatable {
         return self.fm.trashItemAtURL(url!, resultingItemURL: nil, error: &error)
     }
     
-    public func trash(removingAllSubContents: Bool, completion: (succeed: Bool) -> (Void)) {
-        SRDispatch.backgroundTask() {
-            let res = self.trash(removingAllSubContents: removingAllSubContents)
-            SRDispatch.mainTask() {
-                completion(succeed: res)
-            }
+    public func trash(removingAllSubContents: Bool) -> Bool {
+        let res = self.trash(removingAllSubContents: removingAllSubContents)
+        
+        if res {
+            self.filesData.removeAll(keepCapacity: false)
+            self.directoriesData.removeAll(keepCapacity: false)
         }
+        
+        return res
     }
     
-    public func trashAllSubContents(stopWhenError: Bool, completion: (succeed: Bool) -> Void) {
-        SRDispatch.backgroundTask() {
-            var result = true
-            if self.loaded == false { self.load() }
-        
-            for (name: String, dir: SRDirectory) in self.directories {
-                let res = dir.trash(removingAllSubContents: true)
-                if res == false {
-                    result = false
-                    if stopWhenError {
-                        SRDispatch.mainTask() {
-                            completion(succeed: false)
-                        }
-                        return
-                    }
-                }
-            }
-            for (name: String, file: SRFile) in self.files {
-                let res = file.trash()
-                if res == false {
-                    result = false
-                    if stopWhenError {
-                        SRDispatch.mainTask() {
-                            completion(succeed: false)
-                        }
-                        return
-                    }
-                }
-            }
-            
-            SRDispatch.mainTask() {
-                completion(succeed: result)
+    public func trashAllSubContents(stopWhenError: Bool) -> Bool {
+        var result = true
+        for (name: String, dir: SRDirectory) in self.directories {
+            let res = dir.trash(removingAllSubContents: true)
+            if res == false {
+                result = false
+                if stopWhenError { return false }
             }
         }
+        for (name: String, file: SRFile) in self.files {
+            let res = file.trash()
+            if res == false {
+                result = false
+                if stopWhenError { return false }
+            }
+        }
+        
+        return result
     }
     
     override public var debugDescription: String {
-        if !loaded {
-            return "<SRDirectory [\(path)] (not loaded)"
-        } else {
-            return "<SRDirectory [\(path)] containing \(self.directories.count) directories and \(self.files.count) files>"
-        }
+        return "<SRDirectory [\(path)] containing \(self.directories.count) directories and \(self.files.count) files>"
     }
 }
 

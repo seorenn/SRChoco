@@ -92,23 +92,14 @@ class TestSRFileManager: XCTestCase {
         let content3 = SRFile(directory: content1, name: "content-sub-file")!
         content3.create(nil)
         
-        var waitingForClosure = true
-        path.load()
         XCTAssert(path.files.count == 1)
         XCTAssert(path.directories.count == 1)
         
-        path.trashAllSubContents(true, completion: { (succeed) -> Void in
-            XCTAssert(succeed)
-            XCTAssert(content1.exists == false)
-            XCTAssert(content2.exists == false)
-            XCTAssert(content3.exists == false)
-            XCTAssert(path.exists == true)
-            waitingForClosure = false
-        })
-
-        while waitingForClosure {
-            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode, beforeDate: NSDate(timeIntervalSinceNow: 0.1))
-        }
+        XCTAssert(path.trashAllSubContents(true))
+        XCTAssert(content1.exists == false)
+        XCTAssert(content2.exists == false)
+        XCTAssert(content3.exists == false)
+        XCTAssert(path.exists == true)
         
         path.trash(removingAllSubContents: true)
     }
@@ -137,10 +128,8 @@ class TestSRFileManager: XCTestCase {
         XCTAssert(content.move(newContainer) == true)
         XCTAssert(content.path.stringByDeletingLastPathComponent.lastPathComponent == "SRDirectoryContainer2")
         
-        oldContainer.load()
         XCTAssert(oldContainer.directories.count == 0)
         
-        newContainer.load()
         XCTAssert(newContainer.directories.count == 1)
 
         oldContainer.trash()
