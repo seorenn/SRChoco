@@ -20,7 +20,6 @@ class DemoSRFileManager {
     
     func test() {
         let homeDir = home()
-        homeDir.load()
         
         Log.debug("Files in Home Directory -------------------")
         for (name, file) in homeDir.files as [String:SRFile] {
