@@ -58,7 +58,7 @@ func activateApp(pid: pid_t) {
     
 func activateApp(bundleIdentifier: String) {
     let apps = NSRunningApplication.runningApplicationsWithBundleIdentifier(bundleIdentifier)
-    let app: NSRunningApplication! = apps[0] as NSRunningApplication
+    let app: NSRunningApplication! = apps[0] as! NSRunningApplication
     activateApp(app)
 }
     

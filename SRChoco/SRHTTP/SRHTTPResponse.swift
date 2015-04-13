@@ -17,7 +17,7 @@ class SRHTTPResponse: NSObject {
     
     var responseString: String {
         if let data = self.receivedData {
-            return NSString(data: data, encoding: NSUTF8StringEncoding)!
+            return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
         } else {
             return ""
         }
@@ -31,7 +31,7 @@ class SRHTTPResponse: NSObject {
         self.request = request
         self.response = response
         
-        let httpResponse = response as NSHTTPURLResponse
+        let httpResponse = response as! NSHTTPURLResponse
         self.code = httpResponse.statusCode
         super.init()
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SRJSON: NSObject {
+public class SRJSON {
     private let object: AnyObject?
     
     public var isArray: Bool {
@@ -76,17 +76,14 @@ public class SRJSON: NSObject {
         var error: NSError?
         if let obj: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.allZeros, error: &error) {
             self.object = obj
-            super.init()
         } else {
             self.object = nil
-            super.init()
             return nil
         }
     }
     
     private init(object: AnyObject) {
         self.object = object
-        super.init()
     }
     
     public subscript(index: Int) -> SRJSON? {

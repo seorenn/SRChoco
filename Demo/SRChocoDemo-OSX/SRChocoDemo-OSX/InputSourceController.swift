@@ -22,7 +22,7 @@ class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSourc
         self.ism.refresh()  // Leak TEST
         
         Log.debug("Input Sources =====")
-        for ism: SRInputSource in self.ism.inputSources as [SRInputSource]{
+        for ism: SRInputSource in self.ism.inputSources as! [SRInputSource]{
             Log.debug(ism.description)
         }
         Log.debug("End of Input Sources =====")
@@ -33,18 +33,18 @@ class InputSourceController: NSObject, NSTableViewDelegate, NSTableViewDataSourc
         self.tableView.selectRowIndexes(NSIndexSet(index: currentISIndex), byExtendingSelection: false)
     }
     
-    func numberOfRowsInTableView(tableView: NSTableView!) -> Int {
+    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return self.ism.inputSources.count
     }
     
-    func tableView(tableView: NSTableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
-        let inputSources = self.ism.inputSources as [SRInputSource]
+    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
+        let inputSources = self.ism.inputSources as! [SRInputSource]
         return inputSources[row].localizedName
     }
-    
-    func tableViewSelectionDidChange(notification: NSNotification!) {
+
+    func tableViewSelectionDidChange(notification: NSNotification) {
         let index = self.tableView.selectedRow
-        let inputSources = self.ism.inputSources as [SRInputSource]
+        let inputSources = self.ism.inputSources as! [SRInputSource]
         let selectedIS = inputSources[index]
         selectedIS.activate()
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SRFile: NSObject, DebugPrintable, Equatable {
+public class SRFile: DebugPrintable, Equatable {
     
     // MARK: - Configurations
     
@@ -51,7 +51,6 @@ public class SRFile: NSObject, DebugPrintable, Equatable {
         self.path = path
         self.name = self.path.lastPathComponent
         self.parentDirectory = SRDirectory(self.path.stringByDeletingLastPathComponent)
-        super.init()
         
         if path[path.length-1] == Character("/") {
             return nil
@@ -62,7 +61,6 @@ public class SRFile: NSObject, DebugPrintable, Equatable {
         self.path = directory.path.stringByAppendingPathComponent(name)
         self.name = name
         self.parentDirectory = directory
-        super.init()
         
         if name.containString("/") { return nil }
     }
@@ -172,7 +170,7 @@ public class SRFile: NSObject, DebugPrintable, Equatable {
         }
     }
     
-    override public var debugDescription: String {
+    public var debugDescription: String {
         let existance = self.exists ? "" : " (Not Exists)"
         return "<SRFile: [\(path)]\(existance)>"
     }
