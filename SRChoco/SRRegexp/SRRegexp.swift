@@ -55,10 +55,10 @@ public struct SRRegexp {
     // MARK: Functions
     
     public func find(string: String) -> SRRegexpGroups? {
-        let matches = self.re?.matchesInString(string, options: NSMatchingOptions(0), range: NSMakeRange(0, countElements(string)))
+        let matches = self.re?.matchesInString(string, options: NSMatchingOptions(0), range: NSMakeRange(0, count(string)))
         
         if matches?.count > 0 {
-            let results = matches! as [NSTextCheckingResult]
+            let results = matches! as! [NSTextCheckingResult]
             return SRRegexpGroups(results: results[0], text: string)
         } else {
             return nil
@@ -71,6 +71,6 @@ public struct SRRegexp {
     }
     
     public func replace(string: String, template: String) -> String {
-        return re!.stringByReplacingMatchesInString(string, options: nil, range: NSMakeRange(0, countElements(string)), withTemplate: template)
+        return re!.stringByReplacingMatchesInString(string, options: nil, range: NSMakeRange(0, count(string)), withTemplate: template)
     }
 }

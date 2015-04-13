@@ -32,7 +32,7 @@ public class SRUUID {
     
     public func uuid() -> String {
         let uuid: CFUUIDRef = CFUUIDCreate(nil)
-        let uuidString: String = CFUUIDCreateString(nil, uuid)
+        let uuidString: String = CFUUIDCreateString(nil, uuid) as String
         return self.transform(uuidString)
     }
     

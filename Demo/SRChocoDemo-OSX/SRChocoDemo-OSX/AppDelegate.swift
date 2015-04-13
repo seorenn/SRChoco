@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusItemPopupController: SRStatusItemPopupController?
 
-    func applicationDidFinishLaunching(aNotification: NSNotification?) {
+    func applicationDidFinishLaunching(notification: NSNotification) {
         
         Log.debug("[TEST] Start Auto Startup Test =====")
         let appURL = NSURL(fileURLWithPath: NSBundle.mainBundle().bundlePath)
@@ -78,7 +78,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         */
     }
 
-    func applicationWillTerminate(aNotification: NSNotification?) {
+    func applicationWillTerminate(notification: NSNotification) {
         // Insert code here to tear down your application
     }
 

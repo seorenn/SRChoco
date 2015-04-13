@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SRDirectory: NSObject, DebugPrintable, Equatable {
+public class SRDirectory: DebugPrintable, Equatable {
     
     // MARK: - Private Properties
     
@@ -135,8 +135,7 @@ public class SRDirectory: NSObject, DebugPrintable, Equatable {
     public init(_ path: String) {
         self.path = path
         self.name = self.path.lastPathComponent.stringByDeletingPathExtension
-        super.init()
-        
+
         if self.path[self.path.length - 1] == Character("/") {
             let last = self.path.length - 2
             self.path = self.path[0...last]
@@ -151,7 +150,6 @@ public class SRDirectory: NSObject, DebugPrintable, Equatable {
     public init?(creatingPath: String, withIntermediateDirectories: Bool) {
         self.path = creatingPath
         self.name = self.path.lastPathComponent.stringByDeletingPathExtension
-        super.init()
         
         if self.path[self.path.length - 1] == Character("/") {
             let last = self.path.length - 2
@@ -171,7 +169,7 @@ public class SRDirectory: NSObject, DebugPrintable, Equatable {
         self.directoriesData.removeAll(keepCapacity: false)
         
         for content: AnyObject in contents! {
-            let name: String = content as String
+            let name: String = content as! String
             let fullPath = self.path + "/" + name
             
             var isDirectory: ObjCBool = false
@@ -303,7 +301,7 @@ public class SRDirectory: NSObject, DebugPrintable, Equatable {
         return result
     }
     
-    override public var debugDescription: String {
+    public var debugDescription: String {
         return "<SRDirectory [\(path)] containing \(self.directories.count) directories and \(self.files.count) files>"
     }
 }

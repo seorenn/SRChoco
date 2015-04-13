@@ -24,7 +24,7 @@ extension Array {
         let options = ignoreCase ? NSStringCompareOptions.CaseInsensitiveSearch : NSStringCompareOptions.allZeros
 
         for item in self {
-            let s: String = item as String
+            let s: String = item as! String
             if ignoreCase {
                 if s.lowercaseString == string.lowercaseString { return true }
             } else {

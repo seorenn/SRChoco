@@ -34,7 +34,7 @@ class SRStatusItemPopupController: NSObject {
         
         self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)    // FIXME: -1.0 = NSVariableStatusItemLength (bypassing undefined symbol link error)
         
-        self.statusItemButton = self.statusItem.valueForKey("_button") as NSButton
+        self.statusItemButton = self.statusItem.valueForKey("_button") as! NSButton
         self.statusItemButton.focusRingType = .None
         self.statusItemButton.setButtonType(.PushOnPushOffButton)
         
