@@ -54,7 +54,7 @@ public struct SRTimeDelta: Printable {
 
 extension NSDate: Comparable, Equatable {
     var dateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int)? {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let components = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond | NSCalendarUnit.CalendarUnitNanosecond, fromDate: self)
             return (year: components.year, month: components.month, day: components.day, hour: components.hour, minute: components.minute, second: components.second, nanosecond: components.nanosecond)
         } else {
@@ -63,7 +63,7 @@ extension NSDate: Comparable, Equatable {
     }
     
     var UTCDateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int)? {
-        if let utccal = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+        if let utccal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             if let tz = NSTimeZone(name: "UTC") {
                 utccal.timeZone = tz
             } else {
@@ -77,49 +77,49 @@ extension NSDate: Comparable, Equatable {
     }
     
     var year: Int {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let components = calendar.components(NSCalendarUnit.CalendarUnitYear, fromDate: self)
             return components.year
         }
         return 0
     }
     var month: Int {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let components = calendar.components(NSCalendarUnit.CalendarUnitMonth, fromDate: self)
             return components.month
         }
         return 0
     }
     var day: Int {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let components = calendar.components(NSCalendarUnit.CalendarUnitDay, fromDate: self)
             return components.day
         }
         return 0
     }
     var hour: Int {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let components = calendar.components(NSCalendarUnit.CalendarUnitHour, fromDate: self)
             return components.hour
         }
         return 0
     }
     var minute: Int {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let components = calendar.components(NSCalendarUnit.CalendarUnitMinute, fromDate: self)
             return components.minute
         }
         return 0
     }
     var second: Int {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let components = calendar.components(NSCalendarUnit.CalendarUnitSecond, fromDate: self)
             return components.second
         }
         return 0
     }
     var nanosecond: Int {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let components = calendar.components(NSCalendarUnit.CalendarUnitNanosecond, fromDate: self)
             return components.nanosecond
         }
@@ -128,8 +128,8 @@ extension NSDate: Comparable, Equatable {
     
     // 1 based position index (based self's week)
     var weekday: Int? {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
-            let components = calendar.components(NSCalendarUnit.WeekdayCalendarUnit, fromDate: self)
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
+            let components = calendar.components(NSCalendarUnit.CalendarUnitWeekday, fromDate: self)
             return components.weekday
         } else {
             return nil
@@ -138,8 +138,8 @@ extension NSDate: Comparable, Equatable {
     
     // total count of weeks (based self's month)
     var countOfWeeks: Int? {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
-            let range = calendar.rangeOfUnit(NSCalendarUnit.WeekCalendarUnit, inUnit: NSCalendarUnit.MonthCalendarUnit, forDate: self)
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
+            let range = calendar.rangeOfUnit(NSCalendarUnit.CalendarUnitWeekOfYear, inUnit: NSCalendarUnit.CalendarUnitMonth, forDate: self)
             return range.length
         } else {
             return nil
@@ -148,8 +148,8 @@ extension NSDate: Comparable, Equatable {
     
     // 1 based position index (based self's month)
     var weekOfMonth: Int? {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
-            let components = calendar.components(NSCalendarUnit.WeekOfMonthCalendarUnit, fromDate: self)
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
+            let components = calendar.components(NSCalendarUnit.CalendarUnitWeekOfMonth, fromDate: self)
             return components.weekOfMonth
         } else {
             return nil
@@ -185,7 +185,7 @@ extension NSDate: Comparable, Equatable {
     }
     
     public class func generate(#year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int = 0) -> NSDate? {
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let components = NSDateComponents()
             components.year = year
             components.month = month
