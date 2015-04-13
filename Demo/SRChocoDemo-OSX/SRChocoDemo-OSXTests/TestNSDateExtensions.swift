@@ -27,7 +27,7 @@ class TestNSDateExtensions: XCTestCase {
         let dc = now.dateComponents
         XCTAssert(dc != nil)
         
-        if let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar) {
+        if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let components = calendar.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: now)
             
             XCTAssert(dc!.year == components.year)
