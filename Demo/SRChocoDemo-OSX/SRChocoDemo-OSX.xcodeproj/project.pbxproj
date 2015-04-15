@@ -7,31 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A0AAFEA19E505A600B7A93D /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFE919E505A600B7A93D /* SRUUID.swift */; };
+		8A0831301ADE386B003BDB7C /* SRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831011ADE386B003BDB7C /* SRAuth.swift */; };
+		8A0831311ADE386B003BDB7C /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831031ADE386B003BDB7C /* SRDevice.swift */; };
+		8A0831321ADE386B003BDB7C /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831051ADE386B003BDB7C /* SRExternalApp.swift */; };
+		8A0831331ADE386B003BDB7C /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831071ADE386B003BDB7C /* SRDirectory.swift */; };
+		8A0831341ADE386B003BDB7C /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831081ADE386B003BDB7C /* SRFile.swift */; };
+		8A0831351ADE386B003BDB7C /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08310A1ADE386B003BDB7C /* SRDispatch.swift */; };
+		8A0831361ADE386B003BDB7C /* SRDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08310B1ADE386B003BDB7C /* SRDispatchQueue.swift */; };
+		8A0831371ADE386B003BDB7C /* SRHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A08310E1ADE386B003BDB7C /* SRHotKeyManager.m */; };
+		8A0831381ADE386B003BDB7C /* SRHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831101ADE386B003BDB7C /* SRHTTP.swift */; };
+		8A0831391ADE386B003BDB7C /* SRHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831111ADE386B003BDB7C /* SRHTTPRequest.swift */; };
+		8A08313A1ADE386B003BDB7C /* SRHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831121ADE386B003BDB7C /* SRHTTPResponse.swift */; };
+		8A08313B1ADE386B003BDB7C /* SRInputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831151ADE386B003BDB7C /* SRInputSource.m */; };
+		8A08313C1ADE386B003BDB7C /* SRInputSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831171ADE386B003BDB7C /* SRInputSourceManager.m */; };
+		8A08313D1ADE386B003BDB7C /* SRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831191ADE386B003BDB7C /* SRJSON.swift */; };
+		8A08313E1ADE386B003BDB7C /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08311B1ADE386B003BDB7C /* SRRegexp.swift */; };
+		8A08313F1ADE386B003BDB7C /* SRStartupLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A08311E1ADE386B003BDB7C /* SRStartupLauncher.m */; };
+		8A0831401ADE386B003BDB7C /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831201ADE386B003BDB7C /* SRStatusItemPopupController.swift */; };
+		8A0831411ADE386B003BDB7C /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831221ADE386B003BDB7C /* SRUUID.swift */; };
+		8A0831421ADE386B003BDB7C /* SRApplicationWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831251ADE386B003BDB7C /* SRApplicationWindow.m */; };
+		8A0831431ADE386B003BDB7C /* SRWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831271ADE386B003BDB7C /* SRWindowManager.m */; };
+		8A0831441ADE386B003BDB7C /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0831291ADE386B003BDB7C /* ArrayExtensions.swift */; };
+		8A0831451ADE386B003BDB7C /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08312A1ADE386B003BDB7C /* ColorExtensions.swift */; };
+		8A0831461ADE386B003BDB7C /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08312B1ADE386B003BDB7C /* DictionaryExtensions.swift */; };
+		8A0831471ADE386B003BDB7C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08312C1ADE386B003BDB7C /* Log.swift */; };
+		8A0831481ADE386B003BDB7C /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08312D1ADE386B003BDB7C /* NSDateExtensions.swift */; };
+		8A0831491ADE386B003BDB7C /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08312E1ADE386B003BDB7C /* StringExtensions.swift */; };
+		8A08314A1ADE386B003BDB7C /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08312F1ADE386B003BDB7C /* ViewExtensions.swift */; };
 		8A0AAFF419E5085E00B7A93D /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFF319E5085E00B7A93D /* TestUUID.swift */; };
-		8A26B79F1985F062004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B79E1985F062004F3168 /* SRRegexp.swift */; };
-		8A35B61C1A318208001CD048 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0F19C9812B009B75A5 /* ArrayExtensions.swift */; };
-		8A35B61D1A31820B001CD048 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* ViewExtensions.swift */; };
-		8A35B61E1A31820E001CD048 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
-		8A35B6201A31851C001CD048 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
-		8A3EC51E1AB6A32700ED10DE /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3EC51D1AB6A32700ED10DE /* SRDevice.swift */; };
-		8A4183301A1094F60030231D /* SRHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A41832F1A1094F60030231D /* SRHotKeyManager.m */; };
-		8A419FC61A2C62520090054F /* SRHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FC51A2C62520090054F /* SRHTTP.swift */; };
-		8A419FC91A2C62B40090054F /* SRHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FC81A2C62B40090054F /* SRHTTPRequest.swift */; };
-		8A419FCC1A2C62D30090054F /* SRHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A419FCB1A2C62D30090054F /* SRHTTPResponse.swift */; };
-		8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */; };
-		8A5371361A9AF32E00956700 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5371351A9AF32E00956700 /* ColorExtensions.swift */; };
-		8A5371571A9EE90C00956700 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5371561A9EE90C00956700 /* DictionaryExtensions.swift */; };
-		8A53715E1A9F092300956700 /* SRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A53715D1A9F092300956700 /* SRJSON.swift */; };
-		8A57A4CC1A47F00600DA3D89 /* SRApplicationWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57A4CB1A47F00600DA3D89 /* SRApplicationWindow.m */; };
-		8A57A4CF1A47F01600DA3D89 /* SRWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57A4CE1A47F01600DA3D89 /* SRWindowManager.m */; };
-		8A59C4231A63AE1000CC3C44 /* SRStartupLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59C4221A63AE1000CC3C44 /* SRStartupLauncher.m */; };
-		8A59C42A1A63BA4000CC3C44 /* SRInputSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59C4291A63BA4000CC3C44 /* SRInputSourceManager.m */; };
-		8A59C42D1A63BA4C00CC3C44 /* SRInputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A59C42C1A63BA4C00CC3C44 /* SRInputSource.m */; };
 		8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */; };
 		8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4E1993764800432E13 /* TestSRRegexp.swift */; };
-		8A73F9911AC00E8C0028C8FD /* SRDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A73F9901AC00E8C0028C8FD /* SRDispatchQueue.swift */; };
-		8A7AC8D419766575006028F4 /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D319766575006028F4 /* SRDispatch.swift */; };
 		8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */; };
 		8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE2194ED4CF007BDE4D /* main.swift */; };
 		8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE4194ED4CF007BDE4D /* AppDelegate.swift */; };
@@ -39,23 +44,15 @@
 		8AAC8CEA194ED4CF007BDE4D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE8194ED4CF007BDE4D /* MainMenu.xib */; };
 		8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */; };
 		8AAD786A19F74E7C00B4551F /* TestSRFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD786919F74E7C00B4551F /* TestSRFileManager.swift */; };
-		8AB156B719C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */; };
 		8AB156BB19C6ECDC00A2A568 /* StatusPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B919C6ECDC00A2A568 /* StatusPopupViewController.swift */; };
 		8AB156BD19C6ECDC00A2A568 /* StatusPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */; };
 		8AB156BE19C6ECDC00A2A568 /* StatusPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */; };
 		8ABA3A0C19C93076009B75A5 /* InputSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0B19C93076009B75A5 /* InputSourceController.swift */; };
 		8ABA3A0E19C94015009B75A5 /* WindowLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0D19C94015009B75A5 /* WindowLogController.swift */; };
-		8ABA3A1019C9812B009B75A5 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0F19C9812B009B75A5 /* ArrayExtensions.swift */; };
 		8ABA3A1319CACEC0009B75A5 /* TestArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A1219CACEC0009B75A5 /* TestArrayExtensions.swift */; };
-		8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */; };
-		8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2B6EA195ECA1500459F3D /* SRFile.swift */; };
-		8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */; };
 		8AC4DFEA1997AF650062B51A /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */; };
 		8AD045421A2EFA4500C66F65 /* TestSRHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD045411A2EFA4500C66F65 /* TestSRHTTP.swift */; };
-		8AD8912119A1B99600BD48AC /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8912019A1B99600BD48AC /* ViewExtensions.swift */; };
-		8AE2EF3019D8F8720037C005 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE2EF2F19D8F8720037C005 /* SRExternalApp.swift */; };
 		8AE835801A9F129800C7C165 /* TestSRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8357F1A9F129800C7C165 /* TestSRJSON.swift */; };
-		8AF47824195AC92E00960AE4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF47823195AC92E00960AE4 /* Log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,34 +66,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8A0AAFE919E505A600B7A93D /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUUID.swift; sourceTree = "<group>"; };
+		8A0831011ADE386B003BDB7C /* SRAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAuth.swift; sourceTree = "<group>"; };
+		8A0831031ADE386B003BDB7C /* SRDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDevice.swift; sourceTree = "<group>"; };
+		8A0831051ADE386B003BDB7C /* SRExternalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRExternalApp.swift; sourceTree = "<group>"; };
+		8A0831071ADE386B003BDB7C /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
+		8A0831081ADE386B003BDB7C /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
+		8A08310A1ADE386B003BDB7C /* SRDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatch.swift; sourceTree = "<group>"; };
+		8A08310B1ADE386B003BDB7C /* SRDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatchQueue.swift; sourceTree = "<group>"; };
+		8A08310D1ADE386B003BDB7C /* SRHotKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHotKeyManager.h; sourceTree = "<group>"; };
+		8A08310E1ADE386B003BDB7C /* SRHotKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHotKeyManager.m; sourceTree = "<group>"; };
+		8A0831101ADE386B003BDB7C /* SRHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHTTP.swift; sourceTree = "<group>"; };
+		8A0831111ADE386B003BDB7C /* SRHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHTTPRequest.swift; sourceTree = "<group>"; };
+		8A0831121ADE386B003BDB7C /* SRHTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHTTPResponse.swift; sourceTree = "<group>"; };
+		8A0831141ADE386B003BDB7C /* SRInputSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRInputSource.h; sourceTree = "<group>"; };
+		8A0831151ADE386B003BDB7C /* SRInputSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInputSource.m; sourceTree = "<group>"; };
+		8A0831161ADE386B003BDB7C /* SRInputSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRInputSourceManager.h; sourceTree = "<group>"; };
+		8A0831171ADE386B003BDB7C /* SRInputSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInputSourceManager.m; sourceTree = "<group>"; };
+		8A0831191ADE386B003BDB7C /* SRJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRJSON.swift; sourceTree = "<group>"; };
+		8A08311B1ADE386B003BDB7C /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
+		8A08311D1ADE386B003BDB7C /* SRStartupLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStartupLauncher.h; sourceTree = "<group>"; };
+		8A08311E1ADE386B003BDB7C /* SRStartupLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStartupLauncher.m; sourceTree = "<group>"; };
+		8A0831201ADE386B003BDB7C /* SRStatusItemPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStatusItemPopupController.swift; sourceTree = "<group>"; };
+		8A0831221ADE386B003BDB7C /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUUID.swift; sourceTree = "<group>"; };
+		8A0831241ADE386B003BDB7C /* SRApplicationWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRApplicationWindow.h; sourceTree = "<group>"; };
+		8A0831251ADE386B003BDB7C /* SRApplicationWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRApplicationWindow.m; sourceTree = "<group>"; };
+		8A0831261ADE386B003BDB7C /* SRWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWindowManager.h; sourceTree = "<group>"; };
+		8A0831271ADE386B003BDB7C /* SRWindowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWindowManager.m; sourceTree = "<group>"; };
+		8A0831291ADE386B003BDB7C /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		8A08312A1ADE386B003BDB7C /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		8A08312B1ADE386B003BDB7C /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		8A08312C1ADE386B003BDB7C /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		8A08312D1ADE386B003BDB7C /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
+		8A08312E1ADE386B003BDB7C /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		8A08312F1ADE386B003BDB7C /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		8A0AAFF319E5085E00B7A93D /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUUID.swift; sourceTree = "<group>"; };
-		8A26B79E1985F062004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
-		8A3EC51D1AB6A32700ED10DE /* SRDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDevice.swift; sourceTree = "<group>"; };
-		8A41832E1A1094F60030231D /* SRHotKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHotKeyManager.h; sourceTree = "<group>"; };
-		8A41832F1A1094F60030231D /* SRHotKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHotKeyManager.m; sourceTree = "<group>"; };
 		8A41833C1A1349230030231D /* SRChocoDemo-OSXTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-OSXTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		8A419FC51A2C62520090054F /* SRHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHTTP.swift; sourceTree = "<group>"; };
-		8A419FC81A2C62B40090054F /* SRHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHTTPRequest.swift; sourceTree = "<group>"; };
-		8A419FCB1A2C62D30090054F /* SRHTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHTTPResponse.swift; sourceTree = "<group>"; };
-		8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
-		8A5371351A9AF32E00956700 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
-		8A5371561A9EE90C00956700 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
-		8A53715D1A9F092300956700 /* SRJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRJSON.swift; sourceTree = "<group>"; };
-		8A57A4CA1A47F00600DA3D89 /* SRApplicationWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRApplicationWindow.h; sourceTree = "<group>"; };
-		8A57A4CB1A47F00600DA3D89 /* SRApplicationWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRApplicationWindow.m; sourceTree = "<group>"; };
-		8A57A4CD1A47F01600DA3D89 /* SRWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWindowManager.h; sourceTree = "<group>"; };
-		8A57A4CE1A47F01600DA3D89 /* SRWindowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWindowManager.m; sourceTree = "<group>"; };
-		8A59C4211A63AE1000CC3C44 /* SRStartupLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStartupLauncher.h; sourceTree = "<group>"; };
-		8A59C4221A63AE1000CC3C44 /* SRStartupLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStartupLauncher.m; sourceTree = "<group>"; };
-		8A59C4281A63BA4000CC3C44 /* SRInputSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRInputSourceManager.h; sourceTree = "<group>"; };
-		8A59C4291A63BA4000CC3C44 /* SRInputSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInputSourceManager.m; sourceTree = "<group>"; };
-		8A59C42B1A63BA4C00CC3C44 /* SRInputSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRInputSource.h; sourceTree = "<group>"; };
-		8A59C42C1A63BA4C00CC3C44 /* SRInputSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInputSource.m; sourceTree = "<group>"; };
 		8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
 		8A682E4E1993764800432E13 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
-		8A73F9901AC00E8C0028C8FD /* SRDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatchQueue.swift; sourceTree = "<group>"; };
-		8A7AC8D319766575006028F4 /* SRDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatch.swift; sourceTree = "<group>"; };
 		8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSRFileManager.swift; sourceTree = "<group>"; };
 		8AAC8CDD194ED4CF007BDE4D /* SRChocoDemo-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SRChocoDemo-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8CE1194ED4CF007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,23 +115,15 @@
 		8AAC8CF5194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRChocoDemo_OSXTests.swift; sourceTree = "<group>"; };
 		8AAC8D29194ED902007BDE4D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		8AAD786919F74E7C00B4551F /* TestSRFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRFileManager.swift; sourceTree = "<group>"; };
-		8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStatusItemPopupController.swift; sourceTree = "<group>"; };
 		8AB156B919C6ECDC00A2A568 /* StatusPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPopupViewController.swift; sourceTree = "<group>"; };
 		8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusPopupViewController.xib; sourceTree = "<group>"; };
 		8ABA3A0B19C93076009B75A5 /* InputSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSourceController.swift; sourceTree = "<group>"; };
 		8ABA3A0D19C94015009B75A5 /* WindowLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowLogController.swift; sourceTree = "<group>"; };
-		8ABA3A0F19C9812B009B75A5 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		8ABA3A1219CACEC0009B75A5 /* TestArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArrayExtensions.swift; sourceTree = "<group>"; };
-		8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
-		8AC2B6EA195ECA1500459F3D /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
-		8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		8AC4DFE91997AF650062B51A /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStringExtensions.swift; sourceTree = "<group>"; };
 		8ACF2772197E5FC600B48971 /* SRChocoDemo-OSX-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-OSX-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AD045411A2EFA4500C66F65 /* TestSRHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRHTTP.swift; sourceTree = "<group>"; };
-		8AD8912019A1B99600BD48AC /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		8AE2EF2F19D8F8720037C005 /* SRExternalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRExternalApp.swift; sourceTree = "<group>"; };
 		8AE8357F1A9F129800C7C165 /* TestSRJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRJSON.swift; sourceTree = "<group>"; };
-		8AF47823195AC92E00960AE4 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,21 +144,165 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8A0AAFE819E505A600B7A93D /* SRUUID */ = {
+		8A0830FF1ADE386B003BDB7C /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
-				8A0AAFE919E505A600B7A93D /* SRUUID.swift */,
+				8A0831001ADE386B003BDB7C /* SRAuth */,
+				8A0831021ADE386B003BDB7C /* SRDevice */,
+				8A0831041ADE386B003BDB7C /* SRExternalApp */,
+				8A0831061ADE386B003BDB7C /* SRFileManager */,
+				8A0831091ADE386B003BDB7C /* SRGCD */,
+				8A08310C1ADE386B003BDB7C /* SRHotkeyManager */,
+				8A08310F1ADE386B003BDB7C /* SRHTTP */,
+				8A0831131ADE386B003BDB7C /* SRInputSourceManager */,
+				8A0831181ADE386B003BDB7C /* SRJSON */,
+				8A08311A1ADE386B003BDB7C /* SRRegexp */,
+				8A08311C1ADE386B003BDB7C /* SRStartupLauncher */,
+				8A08311F1ADE386B003BDB7C /* SRStatusItemPopupController */,
+				8A0831211ADE386B003BDB7C /* SRUUID */,
+				8A0831231ADE386B003BDB7C /* SRWindowManager */,
+				8A0831281ADE386B003BDB7C /* Utilities */,
+			);
+			name = SRChoco;
+			path = ../../../SRChoco;
+			sourceTree = "<group>";
+		};
+		8A0831001ADE386B003BDB7C /* SRAuth */ = {
+			isa = PBXGroup;
+			children = (
+				8A0831011ADE386B003BDB7C /* SRAuth.swift */,
+			);
+			path = SRAuth;
+			sourceTree = "<group>";
+		};
+		8A0831021ADE386B003BDB7C /* SRDevice */ = {
+			isa = PBXGroup;
+			children = (
+				8A0831031ADE386B003BDB7C /* SRDevice.swift */,
+			);
+			path = SRDevice;
+			sourceTree = "<group>";
+		};
+		8A0831041ADE386B003BDB7C /* SRExternalApp */ = {
+			isa = PBXGroup;
+			children = (
+				8A0831051ADE386B003BDB7C /* SRExternalApp.swift */,
+			);
+			path = SRExternalApp;
+			sourceTree = "<group>";
+		};
+		8A0831061ADE386B003BDB7C /* SRFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				8A0831071ADE386B003BDB7C /* SRDirectory.swift */,
+				8A0831081ADE386B003BDB7C /* SRFile.swift */,
+			);
+			path = SRFileManager;
+			sourceTree = "<group>";
+		};
+		8A0831091ADE386B003BDB7C /* SRGCD */ = {
+			isa = PBXGroup;
+			children = (
+				8A08310A1ADE386B003BDB7C /* SRDispatch.swift */,
+				8A08310B1ADE386B003BDB7C /* SRDispatchQueue.swift */,
+			);
+			path = SRGCD;
+			sourceTree = "<group>";
+		};
+		8A08310C1ADE386B003BDB7C /* SRHotkeyManager */ = {
+			isa = PBXGroup;
+			children = (
+				8A08310D1ADE386B003BDB7C /* SRHotKeyManager.h */,
+				8A08310E1ADE386B003BDB7C /* SRHotKeyManager.m */,
+			);
+			path = SRHotkeyManager;
+			sourceTree = "<group>";
+		};
+		8A08310F1ADE386B003BDB7C /* SRHTTP */ = {
+			isa = PBXGroup;
+			children = (
+				8A0831101ADE386B003BDB7C /* SRHTTP.swift */,
+				8A0831111ADE386B003BDB7C /* SRHTTPRequest.swift */,
+				8A0831121ADE386B003BDB7C /* SRHTTPResponse.swift */,
+			);
+			path = SRHTTP;
+			sourceTree = "<group>";
+		};
+		8A0831131ADE386B003BDB7C /* SRInputSourceManager */ = {
+			isa = PBXGroup;
+			children = (
+				8A0831141ADE386B003BDB7C /* SRInputSource.h */,
+				8A0831151ADE386B003BDB7C /* SRInputSource.m */,
+				8A0831161ADE386B003BDB7C /* SRInputSourceManager.h */,
+				8A0831171ADE386B003BDB7C /* SRInputSourceManager.m */,
+			);
+			path = SRInputSourceManager;
+			sourceTree = "<group>";
+		};
+		8A0831181ADE386B003BDB7C /* SRJSON */ = {
+			isa = PBXGroup;
+			children = (
+				8A0831191ADE386B003BDB7C /* SRJSON.swift */,
+			);
+			path = SRJSON;
+			sourceTree = "<group>";
+		};
+		8A08311A1ADE386B003BDB7C /* SRRegexp */ = {
+			isa = PBXGroup;
+			children = (
+				8A08311B1ADE386B003BDB7C /* SRRegexp.swift */,
+			);
+			path = SRRegexp;
+			sourceTree = "<group>";
+		};
+		8A08311C1ADE386B003BDB7C /* SRStartupLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				8A08311D1ADE386B003BDB7C /* SRStartupLauncher.h */,
+				8A08311E1ADE386B003BDB7C /* SRStartupLauncher.m */,
+			);
+			path = SRStartupLauncher;
+			sourceTree = "<group>";
+		};
+		8A08311F1ADE386B003BDB7C /* SRStatusItemPopupController */ = {
+			isa = PBXGroup;
+			children = (
+				8A0831201ADE386B003BDB7C /* SRStatusItemPopupController.swift */,
+			);
+			path = SRStatusItemPopupController;
+			sourceTree = "<group>";
+		};
+		8A0831211ADE386B003BDB7C /* SRUUID */ = {
+			isa = PBXGroup;
+			children = (
+				8A0831221ADE386B003BDB7C /* SRUUID.swift */,
 			);
 			path = SRUUID;
 			sourceTree = "<group>";
 		};
-		8A13348A1A0A344D00F44FB9 /* SRHotkeyManager */ = {
+		8A0831231ADE386B003BDB7C /* SRWindowManager */ = {
 			isa = PBXGroup;
 			children = (
-				8A41832E1A1094F60030231D /* SRHotKeyManager.h */,
-				8A41832F1A1094F60030231D /* SRHotKeyManager.m */,
+				8A0831241ADE386B003BDB7C /* SRApplicationWindow.h */,
+				8A0831251ADE386B003BDB7C /* SRApplicationWindow.m */,
+				8A0831261ADE386B003BDB7C /* SRWindowManager.h */,
+				8A0831271ADE386B003BDB7C /* SRWindowManager.m */,
 			);
-			path = SRHotkeyManager;
+			path = SRWindowManager;
+			sourceTree = "<group>";
+		};
+		8A0831281ADE386B003BDB7C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8A0831291ADE386B003BDB7C /* ArrayExtensions.swift */,
+				8A08312A1ADE386B003BDB7C /* ColorExtensions.swift */,
+				8A08312B1ADE386B003BDB7C /* DictionaryExtensions.swift */,
+				8A08312C1ADE386B003BDB7C /* Log.swift */,
+				8A08312D1ADE386B003BDB7C /* NSDateExtensions.swift */,
+				8A08312E1ADE386B003BDB7C /* StringExtensions.swift */,
+				8A08312F1ADE386B003BDB7C /* ViewExtensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		8A23A2DE19515C2F008CB833 /* Demo */ = {
@@ -173,83 +315,6 @@
 				8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */,
 			);
 			name = Demo;
-			sourceTree = "<group>";
-		};
-		8A26B79D1985F062004F3168 /* SRRegexp */ = {
-			isa = PBXGroup;
-			children = (
-				8A26B79E1985F062004F3168 /* SRRegexp.swift */,
-			);
-			path = SRRegexp;
-			sourceTree = "<group>";
-		};
-		8A3EC51C1AB6A32700ED10DE /* SRDevice */ = {
-			isa = PBXGroup;
-			children = (
-				8A3EC51D1AB6A32700ED10DE /* SRDevice.swift */,
-			);
-			path = SRDevice;
-			sourceTree = "<group>";
-		};
-		8A419FC41A2C62520090054F /* SRHTTP */ = {
-			isa = PBXGroup;
-			children = (
-				8A419FC51A2C62520090054F /* SRHTTP.swift */,
-				8A419FC81A2C62B40090054F /* SRHTTPRequest.swift */,
-				8A419FCB1A2C62D30090054F /* SRHTTPResponse.swift */,
-			);
-			path = SRHTTP;
-			sourceTree = "<group>";
-		};
-		8A4DE92719515A3D00F65AEB /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				8A5371561A9EE90C00956700 /* DictionaryExtensions.swift */,
-				8A5371351A9AF32E00956700 /* ColorExtensions.swift */,
-				8ABA3A0F19C9812B009B75A5 /* ArrayExtensions.swift */,
-				8AD8912019A1B99600BD48AC /* ViewExtensions.swift */,
-				8AC4DFE71997AEFC0062B51A /* StringExtensions.swift */,
-				8AF47823195AC92E00960AE4 /* Log.swift */,
-				8A4DE92819515A3D00F65AEB /* NSDateExtensions.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		8A53715C1A9F092300956700 /* SRJSON */ = {
-			isa = PBXGroup;
-			children = (
-				8A53715D1A9F092300956700 /* SRJSON.swift */,
-			);
-			path = SRJSON;
-			sourceTree = "<group>";
-		};
-		8A59C4201A63ADFA00CC3C44 /* SRStartupLauncher */ = {
-			isa = PBXGroup;
-			children = (
-				8A59C4211A63AE1000CC3C44 /* SRStartupLauncher.h */,
-				8A59C4221A63AE1000CC3C44 /* SRStartupLauncher.m */,
-			);
-			path = SRStartupLauncher;
-			sourceTree = "<group>";
-		};
-		8A7AC8D219766575006028F4 /* SRGCD */ = {
-			isa = PBXGroup;
-			children = (
-				8A7AC8D319766575006028F4 /* SRDispatch.swift */,
-				8A73F9901AC00E8C0028C8FD /* SRDispatchQueue.swift */,
-			);
-			path = SRGCD;
-			sourceTree = "<group>";
-		};
-		8A8FEE151961435800C73F8C /* SRWindowManager */ = {
-			isa = PBXGroup;
-			children = (
-				8A57A4CA1A47F00600DA3D89 /* SRApplicationWindow.h */,
-				8A57A4CB1A47F00600DA3D89 /* SRApplicationWindow.m */,
-				8A57A4CD1A47F01600DA3D89 /* SRWindowManager.h */,
-				8A57A4CE1A47F01600DA3D89 /* SRWindowManager.m */,
-			);
-			path = SRWindowManager;
 			sourceTree = "<group>";
 		};
 		8AAC8CD4194ED4CF007BDE4D = {
@@ -273,9 +338,9 @@
 		8AAC8CDF194ED4CF007BDE4D /* SRChocoDemo-OSX */ = {
 			isa = PBXGroup;
 			children = (
+				8A0830FF1ADE386B003BDB7C /* SRChoco */,
 				8ACF2772197E5FC600B48971 /* SRChocoDemo-OSX-Bridging-Header.h */,
 				8A23A2DE19515C2F008CB833 /* Demo */,
-				8AAC8D25194ED55D007BDE4D /* SRChoco */,
 				8AAC8CE4194ED4CF007BDE4D /* AppDelegate.swift */,
 				8AAC8CE6194ED4CF007BDE4D /* Images.xcassets */,
 				8AAC8CE8194ED4CF007BDE4D /* MainMenu.xib */,
@@ -318,64 +383,6 @@
 				8AAC8CF4194ED4CF007BDE4D /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8AAC8D25194ED55D007BDE4D /* SRChoco */ = {
-			isa = PBXGroup;
-			children = (
-				8A3EC51C1AB6A32700ED10DE /* SRDevice */,
-				8A53715C1A9F092300956700 /* SRJSON */,
-				8A59C4201A63ADFA00CC3C44 /* SRStartupLauncher */,
-				8A419FC41A2C62520090054F /* SRHTTP */,
-				8A13348A1A0A344D00F44FB9 /* SRHotkeyManager */,
-				8A0AAFE819E505A600B7A93D /* SRUUID */,
-				8AE2EF2E19D8F8720037C005 /* SRExternalApp */,
-				8AB156B519C6DFD800A2A568 /* SRStatusItemPopupController */,
-				8A26B79D1985F062004F3168 /* SRRegexp */,
-				8A7AC8D219766575006028F4 /* SRGCD */,
-				8AADB7EF1971679700200861 /* SRInputSourceManager */,
-				8A8FEE151961435800C73F8C /* SRWindowManager */,
-				8AC2B6E8195ECA1500459F3D /* SRFileManager */,
-				8A4DE92719515A3D00F65AEB /* Utilities */,
-			);
-			name = SRChoco;
-			path = ../../../SRChoco;
-			sourceTree = "<group>";
-		};
-		8AADB7EF1971679700200861 /* SRInputSourceManager */ = {
-			isa = PBXGroup;
-			children = (
-				8A59C4281A63BA4000CC3C44 /* SRInputSourceManager.h */,
-				8A59C4291A63BA4000CC3C44 /* SRInputSourceManager.m */,
-				8A59C42B1A63BA4C00CC3C44 /* SRInputSource.h */,
-				8A59C42C1A63BA4C00CC3C44 /* SRInputSource.m */,
-			);
-			path = SRInputSourceManager;
-			sourceTree = "<group>";
-		};
-		8AB156B519C6DFD800A2A568 /* SRStatusItemPopupController */ = {
-			isa = PBXGroup;
-			children = (
-				8AB156B619C6DFD800A2A568 /* SRStatusItemPopupController.swift */,
-			);
-			path = SRStatusItemPopupController;
-			sourceTree = "<group>";
-		};
-		8AC2B6E8195ECA1500459F3D /* SRFileManager */ = {
-			isa = PBXGroup;
-			children = (
-				8AC2B6E9195ECA1500459F3D /* SRDirectory.swift */,
-				8AC2B6EA195ECA1500459F3D /* SRFile.swift */,
-			);
-			path = SRFileManager;
-			sourceTree = "<group>";
-		};
-		8AE2EF2E19D8F8720037C005 /* SRExternalApp */ = {
-			isa = PBXGroup;
-			children = (
-				8AE2EF2F19D8F8720037C005 /* SRExternalApp.swift */,
-			);
-			path = SRExternalApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,38 +486,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AB156B719C6DFD800A2A568 /* SRStatusItemPopupController.swift in Sources */,
-				8A4DE92919515A3D00F65AEB /* NSDateExtensions.swift in Sources */,
-				8ABA3A1019C9812B009B75A5 /* ArrayExtensions.swift in Sources */,
-				8A419FCC1A2C62D30090054F /* SRHTTPResponse.swift in Sources */,
-				8A0AAFEA19E505A600B7A93D /* SRUUID.swift in Sources */,
-				8AF47824195AC92E00960AE4 /* Log.swift in Sources */,
 				8ABA3A0C19C93076009B75A5 /* InputSourceController.swift in Sources */,
-				8A59C42D1A63BA4C00CC3C44 /* SRInputSource.m in Sources */,
-				8AE2EF3019D8F8720037C005 /* SRExternalApp.swift in Sources */,
-				8A57A4CC1A47F00600DA3D89 /* SRApplicationWindow.m in Sources */,
-				8A73F9911AC00E8C0028C8FD /* SRDispatchQueue.swift in Sources */,
-				8A26B79F1985F062004F3168 /* SRRegexp.swift in Sources */,
 				8ABA3A0E19C94015009B75A5 /* WindowLogController.swift in Sources */,
+				8A0831471ADE386B003BDB7C /* Log.swift in Sources */,
+				8A08313F1ADE386B003BDB7C /* SRStartupLauncher.m in Sources */,
+				8A0831381ADE386B003BDB7C /* SRHTTP.swift in Sources */,
+				8A0831371ADE386B003BDB7C /* SRHotKeyManager.m in Sources */,
 				8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */,
-				8A4183301A1094F60030231D /* SRHotKeyManager.m in Sources */,
-				8A5371571A9EE90C00956700 /* DictionaryExtensions.swift in Sources */,
-				8AC2B6EC195ECA1500459F3D /* SRFile.swift in Sources */,
-				8AC2B6EB195ECA1500459F3D /* SRDirectory.swift in Sources */,
-				8A419FC91A2C62B40090054F /* SRHTTPRequest.swift in Sources */,
-				8A57A4CF1A47F01600DA3D89 /* SRWindowManager.m in Sources */,
-				8A7AC8D419766575006028F4 /* SRDispatch.swift in Sources */,
-				8A419FC61A2C62520090054F /* SRHTTP.swift in Sources */,
+				8A0831301ADE386B003BDB7C /* SRAuth.swift in Sources */,
+				8A0831351ADE386B003BDB7C /* SRDispatch.swift in Sources */,
 				8AB156BB19C6ECDC00A2A568 /* StatusPopupViewController.swift in Sources */,
-				8A59C42A1A63BA4000CC3C44 /* SRInputSourceManager.m in Sources */,
 				8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */,
-				8A53715E1A9F092300956700 /* SRJSON.swift in Sources */,
-				8A59C4231A63AE1000CC3C44 /* SRStartupLauncher.m in Sources */,
+				8A0831341ADE386B003BDB7C /* SRFile.swift in Sources */,
+				8A0831421ADE386B003BDB7C /* SRApplicationWindow.m in Sources */,
+				8A08313C1ADE386B003BDB7C /* SRInputSourceManager.m in Sources */,
+				8A0831321ADE386B003BDB7C /* SRExternalApp.swift in Sources */,
+				8A0831461ADE386B003BDB7C /* DictionaryExtensions.swift in Sources */,
+				8A08313E1ADE386B003BDB7C /* SRRegexp.swift in Sources */,
+				8A0831311ADE386B003BDB7C /* SRDevice.swift in Sources */,
+				8A0831401ADE386B003BDB7C /* SRStatusItemPopupController.swift in Sources */,
+				8A0831391ADE386B003BDB7C /* SRHTTPRequest.swift in Sources */,
+				8A0831431ADE386B003BDB7C /* SRWindowManager.m in Sources */,
+				8A08313D1ADE386B003BDB7C /* SRJSON.swift in Sources */,
+				8A08314A1ADE386B003BDB7C /* ViewExtensions.swift in Sources */,
+				8A0831331ADE386B003BDB7C /* SRDirectory.swift in Sources */,
+				8A0831411ADE386B003BDB7C /* SRUUID.swift in Sources */,
+				8A0831491ADE386B003BDB7C /* StringExtensions.swift in Sources */,
 				8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */,
-				8AD8912119A1B99600BD48AC /* ViewExtensions.swift in Sources */,
-				8AC4DFE81997AEFC0062B51A /* StringExtensions.swift in Sources */,
-				8A5371361A9AF32E00956700 /* ColorExtensions.swift in Sources */,
-				8A3EC51E1AB6A32700ED10DE /* SRDevice.swift in Sources */,
+				8A0831361ADE386B003BDB7C /* SRDispatchQueue.swift in Sources */,
+				8A08313B1ADE386B003BDB7C /* SRInputSource.m in Sources */,
+				8A0831441ADE386B003BDB7C /* ArrayExtensions.swift in Sources */,
+				8A08313A1ADE386B003BDB7C /* SRHTTPResponse.swift in Sources */,
+				8A0831481ADE386B003BDB7C /* NSDateExtensions.swift in Sources */,
+				8A0831451ADE386B003BDB7C /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,11 +533,7 @@
 				8AE835801A9F129800C7C165 /* TestSRJSON.swift in Sources */,
 				8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */,
 				8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */,
-				8A35B61E1A31820E001CD048 /* StringExtensions.swift in Sources */,
 				8AAC8CF6194ED4CF007BDE4D /* SRChocoDemo_OSXTests.swift in Sources */,
-				8A35B6201A31851C001CD048 /* NSDateExtensions.swift in Sources */,
-				8A35B61C1A318208001CD048 /* ArrayExtensions.swift in Sources */,
-				8A35B61D1A31820B001CD048 /* ViewExtensions.swift in Sources */,
 				8ABA3A1319CACEC0009B75A5 /* TestArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
