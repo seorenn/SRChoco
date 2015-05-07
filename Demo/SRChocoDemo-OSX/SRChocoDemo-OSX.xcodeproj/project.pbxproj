@@ -47,6 +47,7 @@
 		8AB156BB19C6ECDC00A2A568 /* StatusPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB156B919C6ECDC00A2A568 /* StatusPopupViewController.swift */; };
 		8AB156BD19C6ECDC00A2A568 /* StatusPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */; };
 		8AB156BE19C6ECDC00A2A568 /* StatusPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */; };
+		8AB8ED551AFB551C00EB94FF /* SRMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8ED541AFB551C00EB94FF /* SRMutex.swift */; };
 		8ABA3A0C19C93076009B75A5 /* InputSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0B19C93076009B75A5 /* InputSourceController.swift */; };
 		8ABA3A0E19C94015009B75A5 /* WindowLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0D19C94015009B75A5 /* WindowLogController.swift */; };
 		8ABA3A1319CACEC0009B75A5 /* TestArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A1219CACEC0009B75A5 /* TestArrayExtensions.swift */; };
@@ -117,6 +118,7 @@
 		8AAD786919F74E7C00B4551F /* TestSRFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRFileManager.swift; sourceTree = "<group>"; };
 		8AB156B919C6ECDC00A2A568 /* StatusPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPopupViewController.swift; sourceTree = "<group>"; };
 		8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusPopupViewController.xib; sourceTree = "<group>"; };
+		8AB8ED541AFB551C00EB94FF /* SRMutex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRMutex.swift; sourceTree = "<group>"; };
 		8ABA3A0B19C93076009B75A5 /* InputSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSourceController.swift; sourceTree = "<group>"; };
 		8ABA3A0D19C94015009B75A5 /* WindowLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowLogController.swift; sourceTree = "<group>"; };
 		8ABA3A1219CACEC0009B75A5 /* TestArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArrayExtensions.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		8A0831091ADE386B003BDB7C /* SRGCD */ = {
 			isa = PBXGroup;
 			children = (
+				8AB8ED541AFB551C00EB94FF /* SRMutex.swift */,
 				8A08310A1ADE386B003BDB7C /* SRDispatch.swift */,
 				8A08310B1ADE386B003BDB7C /* SRDispatchQueue.swift */,
 			);
@@ -498,6 +501,7 @@
 				8AB156BB19C6ECDC00A2A568 /* StatusPopupViewController.swift in Sources */,
 				8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */,
 				8A0831341ADE386B003BDB7C /* SRFile.swift in Sources */,
+				8AB8ED551AFB551C00EB94FF /* SRMutex.swift in Sources */,
 				8A0831421ADE386B003BDB7C /* SRApplicationWindow.m in Sources */,
 				8A08313C1ADE386B003BDB7C /* SRInputSourceManager.m in Sources */,
 				8A0831321ADE386B003BDB7C /* SRExternalApp.swift in Sources */,
