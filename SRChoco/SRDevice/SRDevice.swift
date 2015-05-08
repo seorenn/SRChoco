@@ -6,7 +6,11 @@
 //  Copyright (c) 2015 Seorenn. All rights reserved.
 //
 
-import Foundation
+#if os(iOS)
+import UIKit
+#else
+import AppKit
+#endif
 
 class SRDevice {
     class var physicalMemory: UInt64 {

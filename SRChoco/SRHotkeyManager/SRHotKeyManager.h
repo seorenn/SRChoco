@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Seorenn. All rights reserved.
 //
 
+#import "TargetConditionals.h"
+
+#if !TARGET_OS_IPHONE
+
 #import <Foundation/Foundation.h>
 
 @class SRHotKey;
@@ -35,3 +39,5 @@ typedef void (^SRGlobalHotKeyHandler)();
 @interface SRHotKeyManager : NSObject
 // TODO
 @end
+
+#endif

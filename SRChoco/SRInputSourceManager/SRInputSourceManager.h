@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 Seorenn. All rights reserved.
 //
 
+#import "TargetConditionals.h"
+
+#if !TARGET_OS_IPHONE
+
 #import <Foundation/Foundation.h>
 #import "SRInputSource.h"
 
@@ -21,3 +25,5 @@
 - (SRInputSource *)inputSourceWithInputSourceID:(NSString *)inputSourceID;
 
 @end
+
+#endif

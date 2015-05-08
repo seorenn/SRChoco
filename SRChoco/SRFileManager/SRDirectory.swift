@@ -259,6 +259,9 @@ public class SRDirectory: DebugPrintable, Equatable {
     }
     
     public func trash(removingAllSubContents: Bool = false) -> Bool {
+#if os(iOS)
+        return false
+#else
         let url = NSURL(fileURLWithPath: self.path, isDirectory: true)
         if url == nil { return false }
         
@@ -268,9 +271,13 @@ public class SRDirectory: DebugPrintable, Equatable {
 
         var error: NSError?
         return self.fm.trashItemAtURL(url!, resultingItemURL: nil, error: &error)
+#endif
     }
     
     public func trash(removingAllSubContents: Bool) -> Bool {
+#if os(iOS)
+        return false
+#else
         let res = self.trash(removingAllSubContents: removingAllSubContents)
         
         if res {
@@ -279,6 +286,7 @@ public class SRDirectory: DebugPrintable, Equatable {
         }
         
         return res
+#endif
     }
     
     public func trashAllSubContents(stopWhenError: Bool) -> Bool {

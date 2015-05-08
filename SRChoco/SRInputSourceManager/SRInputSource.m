@@ -7,6 +7,11 @@
 //
 
 #import "SRInputSource.h"
+
+#if TARGET_OS_IPHONE
+#warning SRInputSource was disabled because target platform is iOS
+#else
+
 #import <Cocoa/Cocoa.h>
 
 @interface SRInputSource() {
@@ -137,3 +142,5 @@
 }
 
 @end
+
+#endif

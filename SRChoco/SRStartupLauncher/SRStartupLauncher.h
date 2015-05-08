@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Seorenn. All rights reserved.
 //
 
+#if !TARGET_OS_IPHONE
+
 #import <Foundation/Foundation.h>
 
 @interface SRStartupLauncher : NSObject
@@ -15,3 +17,5 @@
 + (SRStartupLauncher *)sharedLauncher;
 
 @end
+
+#endif

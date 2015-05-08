@@ -8,6 +8,10 @@
 
 #import "SRInputSourceManager.h"
 
+#if TARGET_OS_IPHONE
+#warning SRInputSourceManager was disabled because target platform is iOS
+#else
+
 @implementation SRInputSourceManager
 
 @synthesize inputSources = _inputSources;
@@ -96,3 +100,5 @@
 }
 
 @end
+
+#endif

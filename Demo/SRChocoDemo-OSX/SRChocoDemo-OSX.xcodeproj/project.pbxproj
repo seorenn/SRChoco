@@ -48,6 +48,7 @@
 		8AB156BD19C6ECDC00A2A568 /* StatusPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */; };
 		8AB156BE19C6ECDC00A2A568 /* StatusPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */; };
 		8AB8ED551AFB551C00EB94FF /* SRMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8ED541AFB551C00EB94FF /* SRMutex.swift */; };
+		8AB8ED5B1AFC9AB100EB94FF /* SRCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB8ED5A1AFC9AB100EB94FF /* SRCache.swift */; };
 		8ABA3A0C19C93076009B75A5 /* InputSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0B19C93076009B75A5 /* InputSourceController.swift */; };
 		8ABA3A0E19C94015009B75A5 /* WindowLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A0D19C94015009B75A5 /* WindowLogController.swift */; };
 		8ABA3A1319CACEC0009B75A5 /* TestArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA3A1219CACEC0009B75A5 /* TestArrayExtensions.swift */; };
@@ -119,6 +120,7 @@
 		8AB156B919C6ECDC00A2A568 /* StatusPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPopupViewController.swift; sourceTree = "<group>"; };
 		8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusPopupViewController.xib; sourceTree = "<group>"; };
 		8AB8ED541AFB551C00EB94FF /* SRMutex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRMutex.swift; sourceTree = "<group>"; };
+		8AB8ED5A1AFC9AB100EB94FF /* SRCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRCache.swift; sourceTree = "<group>"; };
 		8ABA3A0B19C93076009B75A5 /* InputSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSourceController.swift; sourceTree = "<group>"; };
 		8ABA3A0D19C94015009B75A5 /* WindowLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowLogController.swift; sourceTree = "<group>"; };
 		8ABA3A1219CACEC0009B75A5 /* TestArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArrayExtensions.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		8A0830FF1ADE386B003BDB7C /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8AB8ED591AFC9AB100EB94FF /* SRCache */,
 				8A0831001ADE386B003BDB7C /* SRAuth */,
 				8A0831021ADE386B003BDB7C /* SRDevice */,
 				8A0831041ADE386B003BDB7C /* SRExternalApp */,
@@ -388,6 +391,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8AB8ED591AFC9AB100EB94FF /* SRCache */ = {
+			isa = PBXGroup;
+			children = (
+				8AB8ED5A1AFC9AB100EB94FF /* SRCache.swift */,
+			);
+			path = SRCache;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ABA3A0C19C93076009B75A5 /* InputSourceController.swift in Sources */,
+				8AB8ED5B1AFC9AB100EB94FF /* SRCache.swift in Sources */,
 				8ABA3A0E19C94015009B75A5 /* WindowLogController.swift in Sources */,
 				8A0831471ADE386B003BDB7C /* Log.swift in Sources */,
 				8A08313F1ADE386B003BDB7C /* SRStartupLauncher.m in Sources */,

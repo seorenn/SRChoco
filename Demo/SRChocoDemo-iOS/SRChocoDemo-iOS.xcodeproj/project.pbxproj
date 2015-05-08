@@ -7,23 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A0AAFEE19E505B100B7A93D /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFED19E505B100B7A93D /* SRUUID.swift */; };
-		8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A26B7A11985F06A004F3168 /* SRRegexp.swift */; };
-		8A5371611A9F093700956700 /* SRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5371601A9F093700956700 /* SRJSON.swift */; };
-		8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464D196A883600E791B5 /* SRDirectory.swift */; };
-		8A6B4658196A883600E791B5 /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B464E196A883600E791B5 /* SRFile.swift */; };
-		8A6B465A196A883600E791B5 /* SRWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4652196A883600E791B5 /* SRWindowManager.swift */; };
-		8A6B465B196A883600E791B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4654196A883600E791B5 /* Log.swift */; };
-		8A6B465C196A883600E791B5 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B4655196A883600E791B5 /* NSDateExtensions.swift */; };
-		8A7AC8D71976657F006028F4 /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC8D61976657F006028F4 /* SRDispatch.swift */; };
 		8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */; };
 		8AAC8D10194ED4F1007BDE4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0F194ED4F1007BDE4D /* Images.xcassets */; };
 		8AAC8D1C194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D1B194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift */; };
-		8AD4D14419C8189B0035D1EC /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4D14319C8189B0035D1EC /* ViewExtensions.swift */; };
-		8AD4D14919C8192F0035D1EC /* SRInputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4D14719C8192F0035D1EC /* SRInputSourceManager.swift */; };
-		8AD4D14C19C819390035D1EC /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4D14B19C819390035D1EC /* SRStatusItemPopupController.swift */; };
-		8AD8911E19A1B98C00BD48AC /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8911C19A1B98C00BD48AC /* StringExtensions.swift */; };
-		8AE2EF3419D8FFE50037C005 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE2EF3319D8FFE50037C005 /* SRExternalApp.swift */; };
+		8AFEDA351AFCAA8800434E44 /* SRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA031AFCAA8800434E44 /* SRAuth.swift */; };
+		8AFEDA361AFCAA8800434E44 /* SRCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA051AFCAA8800434E44 /* SRCache.swift */; };
+		8AFEDA371AFCAA8800434E44 /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA071AFCAA8800434E44 /* SRDevice.swift */; };
+		8AFEDA381AFCAA8800434E44 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA091AFCAA8800434E44 /* SRExternalApp.swift */; };
+		8AFEDA391AFCAA8800434E44 /* SRDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA0B1AFCAA8800434E44 /* SRDirectory.swift */; };
+		8AFEDA3A1AFCAA8800434E44 /* SRFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA0C1AFCAA8800434E44 /* SRFile.swift */; };
+		8AFEDA3B1AFCAA8800434E44 /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA0E1AFCAA8800434E44 /* SRDispatch.swift */; };
+		8AFEDA3C1AFCAA8800434E44 /* SRDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA0F1AFCAA8800434E44 /* SRDispatchQueue.swift */; };
+		8AFEDA3D1AFCAA8800434E44 /* SRMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA101AFCAA8800434E44 /* SRMutex.swift */; };
+		8AFEDA3E1AFCAA8800434E44 /* SRHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA131AFCAA8800434E44 /* SRHotKeyManager.m */; };
+		8AFEDA3F1AFCAA8800434E44 /* SRHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA151AFCAA8800434E44 /* SRHTTP.swift */; };
+		8AFEDA401AFCAA8800434E44 /* SRHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA161AFCAA8800434E44 /* SRHTTPRequest.swift */; };
+		8AFEDA411AFCAA8800434E44 /* SRHTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA171AFCAA8800434E44 /* SRHTTPResponse.swift */; };
+		8AFEDA421AFCAA8800434E44 /* SRInputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA1A1AFCAA8800434E44 /* SRInputSource.m */; };
+		8AFEDA431AFCAA8800434E44 /* SRInputSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA1C1AFCAA8800434E44 /* SRInputSourceManager.m */; };
+		8AFEDA441AFCAA8800434E44 /* SRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA1E1AFCAA8800434E44 /* SRJSON.swift */; };
+		8AFEDA451AFCAA8800434E44 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA201AFCAA8800434E44 /* SRRegexp.swift */; };
+		8AFEDA461AFCAA8800434E44 /* SRStartupLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA231AFCAA8800434E44 /* SRStartupLauncher.m */; };
+		8AFEDA471AFCAA8800434E44 /* SRStatusItemPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA251AFCAA8800434E44 /* SRStatusItemPopupController.swift */; };
+		8AFEDA481AFCAA8800434E44 /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA271AFCAA8800434E44 /* SRUUID.swift */; };
+		8AFEDA491AFCAA8800434E44 /* SRApplicationWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA2A1AFCAA8800434E44 /* SRApplicationWindow.m */; };
+		8AFEDA4A1AFCAA8800434E44 /* SRWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA2C1AFCAA8800434E44 /* SRWindowManager.m */; };
+		8AFEDA4B1AFCAA8800434E44 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA2E1AFCAA8800434E44 /* ArrayExtensions.swift */; };
+		8AFEDA4C1AFCAA8800434E44 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA2F1AFCAA8800434E44 /* ColorExtensions.swift */; };
+		8AFEDA4D1AFCAA8800434E44 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA301AFCAA8800434E44 /* DictionaryExtensions.swift */; };
+		8AFEDA4E1AFCAA8800434E44 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA311AFCAA8800434E44 /* Log.swift */; };
+		8AFEDA4F1AFCAA8800434E44 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA321AFCAA8800434E44 /* NSDateExtensions.swift */; };
+		8AFEDA501AFCAA8800434E44 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA331AFCAA8800434E44 /* StringExtensions.swift */; };
+		8AFEDA511AFCAA8800434E44 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEDA341AFCAA8800434E44 /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,15 +53,6 @@
 
 /* Begin PBXFileReference section */
 		8A00388B195042910079D8D5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		8A0AAFED19E505B100B7A93D /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUUID.swift; sourceTree = "<group>"; };
-		8A26B7A11985F06A004F3168 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
-		8A5371601A9F093700956700 /* SRJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRJSON.swift; sourceTree = "<group>"; };
-		8A6B464D196A883600E791B5 /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
-		8A6B464E196A883600E791B5 /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
-		8A6B4652196A883600E791B5 /* SRWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWindowManager.swift; sourceTree = "<group>"; };
-		8A6B4654196A883600E791B5 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		8A6B4655196A883600E791B5 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
-		8A7AC8D61976657F006028F4 /* SRDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatch.swift; sourceTree = "<group>"; };
 		8AAC8D08194ED4F1007BDE4D /* SRChocoDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SRChocoDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8D0C194ED4F1007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,11 +60,42 @@
 		8AAC8D15194ED4F1007BDE4D /* SRChocoDemo-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRChocoDemo-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8D1A194ED4F1007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAC8D1B194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRChocoDemo_iOSTests.swift; sourceTree = "<group>"; };
-		8AD4D14319C8189B0035D1EC /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		8AD4D14719C8192F0035D1EC /* SRInputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRInputSourceManager.swift; sourceTree = "<group>"; };
-		8AD4D14B19C819390035D1EC /* SRStatusItemPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStatusItemPopupController.swift; sourceTree = "<group>"; };
-		8AD8911C19A1B98C00BD48AC /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		8AE2EF3319D8FFE50037C005 /* SRExternalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRExternalApp.swift; sourceTree = "<group>"; };
+		8AFEDA031AFCAA8800434E44 /* SRAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAuth.swift; sourceTree = "<group>"; };
+		8AFEDA051AFCAA8800434E44 /* SRCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRCache.swift; sourceTree = "<group>"; };
+		8AFEDA071AFCAA8800434E44 /* SRDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDevice.swift; sourceTree = "<group>"; };
+		8AFEDA091AFCAA8800434E44 /* SRExternalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRExternalApp.swift; sourceTree = "<group>"; };
+		8AFEDA0B1AFCAA8800434E44 /* SRDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDirectory.swift; sourceTree = "<group>"; };
+		8AFEDA0C1AFCAA8800434E44 /* SRFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFile.swift; sourceTree = "<group>"; };
+		8AFEDA0E1AFCAA8800434E44 /* SRDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatch.swift; sourceTree = "<group>"; };
+		8AFEDA0F1AFCAA8800434E44 /* SRDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDispatchQueue.swift; sourceTree = "<group>"; };
+		8AFEDA101AFCAA8800434E44 /* SRMutex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRMutex.swift; sourceTree = "<group>"; };
+		8AFEDA121AFCAA8800434E44 /* SRHotKeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRHotKeyManager.h; sourceTree = "<group>"; };
+		8AFEDA131AFCAA8800434E44 /* SRHotKeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRHotKeyManager.m; sourceTree = "<group>"; };
+		8AFEDA151AFCAA8800434E44 /* SRHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHTTP.swift; sourceTree = "<group>"; };
+		8AFEDA161AFCAA8800434E44 /* SRHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHTTPRequest.swift; sourceTree = "<group>"; };
+		8AFEDA171AFCAA8800434E44 /* SRHTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRHTTPResponse.swift; sourceTree = "<group>"; };
+		8AFEDA191AFCAA8800434E44 /* SRInputSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRInputSource.h; sourceTree = "<group>"; };
+		8AFEDA1A1AFCAA8800434E44 /* SRInputSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInputSource.m; sourceTree = "<group>"; };
+		8AFEDA1B1AFCAA8800434E44 /* SRInputSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRInputSourceManager.h; sourceTree = "<group>"; };
+		8AFEDA1C1AFCAA8800434E44 /* SRInputSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInputSourceManager.m; sourceTree = "<group>"; };
+		8AFEDA1E1AFCAA8800434E44 /* SRJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRJSON.swift; sourceTree = "<group>"; };
+		8AFEDA201AFCAA8800434E44 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRRegexp.swift; sourceTree = "<group>"; };
+		8AFEDA221AFCAA8800434E44 /* SRStartupLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStartupLauncher.h; sourceTree = "<group>"; };
+		8AFEDA231AFCAA8800434E44 /* SRStartupLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStartupLauncher.m; sourceTree = "<group>"; };
+		8AFEDA251AFCAA8800434E44 /* SRStatusItemPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStatusItemPopupController.swift; sourceTree = "<group>"; };
+		8AFEDA271AFCAA8800434E44 /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUUID.swift; sourceTree = "<group>"; };
+		8AFEDA291AFCAA8800434E44 /* SRApplicationWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRApplicationWindow.h; sourceTree = "<group>"; };
+		8AFEDA2A1AFCAA8800434E44 /* SRApplicationWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRApplicationWindow.m; sourceTree = "<group>"; };
+		8AFEDA2B1AFCAA8800434E44 /* SRWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWindowManager.h; sourceTree = "<group>"; };
+		8AFEDA2C1AFCAA8800434E44 /* SRWindowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWindowManager.m; sourceTree = "<group>"; };
+		8AFEDA2E1AFCAA8800434E44 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		8AFEDA2F1AFCAA8800434E44 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		8AFEDA301AFCAA8800434E44 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		8AFEDA311AFCAA8800434E44 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		8AFEDA321AFCAA8800434E44 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
+		8AFEDA331AFCAA8800434E44 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		8AFEDA341AFCAA8800434E44 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		8AFEDA521AFCAB0B00434E44 /* SRChocoDemo-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,66 +116,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8A0AAFEC19E505B100B7A93D /* SRUUID */ = {
-			isa = PBXGroup;
-			children = (
-				8A0AAFED19E505B100B7A93D /* SRUUID.swift */,
-			);
-			path = SRUUID;
-			sourceTree = "<group>";
-		};
-		8A26B7A01985F06A004F3168 /* SRRegexp */ = {
-			isa = PBXGroup;
-			children = (
-				8A26B7A11985F06A004F3168 /* SRRegexp.swift */,
-			);
-			path = SRRegexp;
-			sourceTree = "<group>";
-		};
-		8A53715F1A9F093700956700 /* SRJSON */ = {
-			isa = PBXGroup;
-			children = (
-				8A5371601A9F093700956700 /* SRJSON.swift */,
-			);
-			path = SRJSON;
-			sourceTree = "<group>";
-		};
-		8A6B464C196A883600E791B5 /* SRFileManager */ = {
-			isa = PBXGroup;
-			children = (
-				8A6B464D196A883600E791B5 /* SRDirectory.swift */,
-				8A6B464E196A883600E791B5 /* SRFile.swift */,
-			);
-			path = SRFileManager;
-			sourceTree = "<group>";
-		};
-		8A6B4651196A883600E791B5 /* SRWindowManager */ = {
-			isa = PBXGroup;
-			children = (
-				8A6B4652196A883600E791B5 /* SRWindowManager.swift */,
-			);
-			path = SRWindowManager;
-			sourceTree = "<group>";
-		};
-		8A6B4653196A883600E791B5 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				8AD4D14319C8189B0035D1EC /* ViewExtensions.swift */,
-				8AD8911C19A1B98C00BD48AC /* StringExtensions.swift */,
-				8A6B4654196A883600E791B5 /* Log.swift */,
-				8A6B4655196A883600E791B5 /* NSDateExtensions.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		8A7AC8D51976657F006028F4 /* SRGCD */ = {
-			isa = PBXGroup;
-			children = (
-				8A7AC8D61976657F006028F4 /* SRDispatch.swift */,
-			);
-			path = SRGCD;
-			sourceTree = "<group>";
-		};
 		8AAC8CFF194ED4F1007BDE4D = {
 			isa = PBXGroup;
 			children = (
@@ -160,11 +137,12 @@
 		8AAC8D0A194ED4F1007BDE4D /* SRChocoDemo-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				8AAC8D2A194ED940007BDE4D /* SRChoco */,
+				8AFEDA011AFCAA8800434E44 /* SRChoco */,
 				8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */,
 				8AAC8D0F194ED4F1007BDE4D /* Images.xcassets */,
 				8AAC8D0B194ED4F1007BDE4D /* Supporting Files */,
 				8A00388B195042910079D8D5 /* MyPlayground.playground */,
+				8AFEDA521AFCAB0B00434E44 /* SRChocoDemo-iOS-Bridging-Header.h */,
 			);
 			path = "SRChocoDemo-iOS";
 			sourceTree = "<group>";
@@ -194,46 +172,175 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8AAC8D2A194ED940007BDE4D /* SRChoco */ = {
+		8AFEDA011AFCAA8800434E44 /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
-				8A53715F1A9F093700956700 /* SRJSON */,
-				8A0AAFEC19E505B100B7A93D /* SRUUID */,
-				8AE2EF3219D8FFE50037C005 /* SRExternalApp */,
-				8AD4D14A19C819390035D1EC /* SRStatusItemPopupController */,
-				8AD4D14519C8192F0035D1EC /* SRInputSourceManager */,
-				8A26B7A01985F06A004F3168 /* SRRegexp */,
-				8A7AC8D51976657F006028F4 /* SRGCD */,
-				8A6B464C196A883600E791B5 /* SRFileManager */,
-				8A6B4651196A883600E791B5 /* SRWindowManager */,
-				8A6B4653196A883600E791B5 /* Utilities */,
+				8AFEDA021AFCAA8800434E44 /* SRAuth */,
+				8AFEDA041AFCAA8800434E44 /* SRCache */,
+				8AFEDA061AFCAA8800434E44 /* SRDevice */,
+				8AFEDA081AFCAA8800434E44 /* SRExternalApp */,
+				8AFEDA0A1AFCAA8800434E44 /* SRFileManager */,
+				8AFEDA0D1AFCAA8800434E44 /* SRGCD */,
+				8AFEDA111AFCAA8800434E44 /* SRHotkeyManager */,
+				8AFEDA141AFCAA8800434E44 /* SRHTTP */,
+				8AFEDA181AFCAA8800434E44 /* SRInputSourceManager */,
+				8AFEDA1D1AFCAA8800434E44 /* SRJSON */,
+				8AFEDA1F1AFCAA8800434E44 /* SRRegexp */,
+				8AFEDA211AFCAA8800434E44 /* SRStartupLauncher */,
+				8AFEDA241AFCAA8800434E44 /* SRStatusItemPopupController */,
+				8AFEDA261AFCAA8800434E44 /* SRUUID */,
+				8AFEDA281AFCAA8800434E44 /* SRWindowManager */,
+				8AFEDA2D1AFCAA8800434E44 /* Utilities */,
 			);
 			name = SRChoco;
 			path = ../../../SRChoco;
 			sourceTree = "<group>";
 		};
-		8AD4D14519C8192F0035D1EC /* SRInputSourceManager */ = {
+		8AFEDA021AFCAA8800434E44 /* SRAuth */ = {
 			isa = PBXGroup;
 			children = (
-				8AD4D14719C8192F0035D1EC /* SRInputSourceManager.swift */,
+				8AFEDA031AFCAA8800434E44 /* SRAuth.swift */,
+			);
+			path = SRAuth;
+			sourceTree = "<group>";
+		};
+		8AFEDA041AFCAA8800434E44 /* SRCache */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA051AFCAA8800434E44 /* SRCache.swift */,
+			);
+			path = SRCache;
+			sourceTree = "<group>";
+		};
+		8AFEDA061AFCAA8800434E44 /* SRDevice */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA071AFCAA8800434E44 /* SRDevice.swift */,
+			);
+			path = SRDevice;
+			sourceTree = "<group>";
+		};
+		8AFEDA081AFCAA8800434E44 /* SRExternalApp */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA091AFCAA8800434E44 /* SRExternalApp.swift */,
+			);
+			path = SRExternalApp;
+			sourceTree = "<group>";
+		};
+		8AFEDA0A1AFCAA8800434E44 /* SRFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA0B1AFCAA8800434E44 /* SRDirectory.swift */,
+				8AFEDA0C1AFCAA8800434E44 /* SRFile.swift */,
+			);
+			path = SRFileManager;
+			sourceTree = "<group>";
+		};
+		8AFEDA0D1AFCAA8800434E44 /* SRGCD */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA0E1AFCAA8800434E44 /* SRDispatch.swift */,
+				8AFEDA0F1AFCAA8800434E44 /* SRDispatchQueue.swift */,
+				8AFEDA101AFCAA8800434E44 /* SRMutex.swift */,
+			);
+			path = SRGCD;
+			sourceTree = "<group>";
+		};
+		8AFEDA111AFCAA8800434E44 /* SRHotkeyManager */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA121AFCAA8800434E44 /* SRHotKeyManager.h */,
+				8AFEDA131AFCAA8800434E44 /* SRHotKeyManager.m */,
+			);
+			path = SRHotkeyManager;
+			sourceTree = "<group>";
+		};
+		8AFEDA141AFCAA8800434E44 /* SRHTTP */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA151AFCAA8800434E44 /* SRHTTP.swift */,
+				8AFEDA161AFCAA8800434E44 /* SRHTTPRequest.swift */,
+				8AFEDA171AFCAA8800434E44 /* SRHTTPResponse.swift */,
+			);
+			path = SRHTTP;
+			sourceTree = "<group>";
+		};
+		8AFEDA181AFCAA8800434E44 /* SRInputSourceManager */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA191AFCAA8800434E44 /* SRInputSource.h */,
+				8AFEDA1A1AFCAA8800434E44 /* SRInputSource.m */,
+				8AFEDA1B1AFCAA8800434E44 /* SRInputSourceManager.h */,
+				8AFEDA1C1AFCAA8800434E44 /* SRInputSourceManager.m */,
 			);
 			path = SRInputSourceManager;
 			sourceTree = "<group>";
 		};
-		8AD4D14A19C819390035D1EC /* SRStatusItemPopupController */ = {
+		8AFEDA1D1AFCAA8800434E44 /* SRJSON */ = {
 			isa = PBXGroup;
 			children = (
-				8AD4D14B19C819390035D1EC /* SRStatusItemPopupController.swift */,
+				8AFEDA1E1AFCAA8800434E44 /* SRJSON.swift */,
+			);
+			path = SRJSON;
+			sourceTree = "<group>";
+		};
+		8AFEDA1F1AFCAA8800434E44 /* SRRegexp */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA201AFCAA8800434E44 /* SRRegexp.swift */,
+			);
+			path = SRRegexp;
+			sourceTree = "<group>";
+		};
+		8AFEDA211AFCAA8800434E44 /* SRStartupLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA221AFCAA8800434E44 /* SRStartupLauncher.h */,
+				8AFEDA231AFCAA8800434E44 /* SRStartupLauncher.m */,
+			);
+			path = SRStartupLauncher;
+			sourceTree = "<group>";
+		};
+		8AFEDA241AFCAA8800434E44 /* SRStatusItemPopupController */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA251AFCAA8800434E44 /* SRStatusItemPopupController.swift */,
 			);
 			path = SRStatusItemPopupController;
 			sourceTree = "<group>";
 		};
-		8AE2EF3219D8FFE50037C005 /* SRExternalApp */ = {
+		8AFEDA261AFCAA8800434E44 /* SRUUID */ = {
 			isa = PBXGroup;
 			children = (
-				8AE2EF3319D8FFE50037C005 /* SRExternalApp.swift */,
+				8AFEDA271AFCAA8800434E44 /* SRUUID.swift */,
 			);
-			path = SRExternalApp;
+			path = SRUUID;
+			sourceTree = "<group>";
+		};
+		8AFEDA281AFCAA8800434E44 /* SRWindowManager */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA291AFCAA8800434E44 /* SRApplicationWindow.h */,
+				8AFEDA2A1AFCAA8800434E44 /* SRApplicationWindow.m */,
+				8AFEDA2B1AFCAA8800434E44 /* SRWindowManager.h */,
+				8AFEDA2C1AFCAA8800434E44 /* SRWindowManager.m */,
+			);
+			path = SRWindowManager;
+			sourceTree = "<group>";
+		};
+		8AFEDA2D1AFCAA8800434E44 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8AFEDA2E1AFCAA8800434E44 /* ArrayExtensions.swift */,
+				8AFEDA2F1AFCAA8800434E44 /* ColorExtensions.swift */,
+				8AFEDA301AFCAA8800434E44 /* DictionaryExtensions.swift */,
+				8AFEDA311AFCAA8800434E44 /* Log.swift */,
+				8AFEDA321AFCAA8800434E44 /* NSDateExtensions.swift */,
+				8AFEDA331AFCAA8800434E44 /* StringExtensions.swift */,
+				8AFEDA341AFCAA8800434E44 /* ViewExtensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,21 +440,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A6B465C196A883600E791B5 /* NSDateExtensions.swift in Sources */,
-				8A0AAFEE19E505B100B7A93D /* SRUUID.swift in Sources */,
-				8AE2EF3419D8FFE50037C005 /* SRExternalApp.swift in Sources */,
-				8A6B465A196A883600E791B5 /* SRWindowManager.swift in Sources */,
-				8A6B465B196A883600E791B5 /* Log.swift in Sources */,
-				8A6B4658196A883600E791B5 /* SRFile.swift in Sources */,
-				8AD4D14919C8192F0035D1EC /* SRInputSourceManager.swift in Sources */,
-				8A7AC8D71976657F006028F4 /* SRDispatch.swift in Sources */,
-				8A6B4657196A883600E791B5 /* SRDirectory.swift in Sources */,
-				8A5371611A9F093700956700 /* SRJSON.swift in Sources */,
-				8AD8911E19A1B98C00BD48AC /* StringExtensions.swift in Sources */,
-				8AD4D14419C8189B0035D1EC /* ViewExtensions.swift in Sources */,
-				8AD4D14C19C819390035D1EC /* SRStatusItemPopupController.swift in Sources */,
+				8AFEDA3C1AFCAA8800434E44 /* SRDispatchQueue.swift in Sources */,
+				8AFEDA4C1AFCAA8800434E44 /* ColorExtensions.swift in Sources */,
+				8AFEDA4E1AFCAA8800434E44 /* Log.swift in Sources */,
+				8AFEDA481AFCAA8800434E44 /* SRUUID.swift in Sources */,
+				8AFEDA3E1AFCAA8800434E44 /* SRHotKeyManager.m in Sources */,
+				8AFEDA431AFCAA8800434E44 /* SRInputSourceManager.m in Sources */,
+				8AFEDA3B1AFCAA8800434E44 /* SRDispatch.swift in Sources */,
+				8AFEDA3D1AFCAA8800434E44 /* SRMutex.swift in Sources */,
+				8AFEDA4F1AFCAA8800434E44 /* NSDateExtensions.swift in Sources */,
+				8AFEDA391AFCAA8800434E44 /* SRDirectory.swift in Sources */,
+				8AFEDA4B1AFCAA8800434E44 /* ArrayExtensions.swift in Sources */,
+				8AFEDA3A1AFCAA8800434E44 /* SRFile.swift in Sources */,
+				8AFEDA361AFCAA8800434E44 /* SRCache.swift in Sources */,
+				8AFEDA421AFCAA8800434E44 /* SRInputSource.m in Sources */,
+				8AFEDA501AFCAA8800434E44 /* StringExtensions.swift in Sources */,
+				8AFEDA381AFCAA8800434E44 /* SRExternalApp.swift in Sources */,
+				8AFEDA401AFCAA8800434E44 /* SRHTTPRequest.swift in Sources */,
+				8AFEDA4A1AFCAA8800434E44 /* SRWindowManager.m in Sources */,
+				8AFEDA4D1AFCAA8800434E44 /* DictionaryExtensions.swift in Sources */,
+				8AFEDA3F1AFCAA8800434E44 /* SRHTTP.swift in Sources */,
+				8AFEDA351AFCAA8800434E44 /* SRAuth.swift in Sources */,
+				8AFEDA411AFCAA8800434E44 /* SRHTTPResponse.swift in Sources */,
+				8AFEDA441AFCAA8800434E44 /* SRJSON.swift in Sources */,
+				8AFEDA451AFCAA8800434E44 /* SRRegexp.swift in Sources */,
+				8AFEDA471AFCAA8800434E44 /* SRStatusItemPopupController.swift in Sources */,
+				8AFEDA371AFCAA8800434E44 /* SRDevice.swift in Sources */,
+				8AFEDA491AFCAA8800434E44 /* SRApplicationWindow.m in Sources */,
+				8AFEDA461AFCAA8800434E44 /* SRStartupLauncher.m in Sources */,
+				8AFEDA511AFCAA8800434E44 /* ViewExtensions.swift in Sources */,
 				8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */,
-				8A26B7A21985F06A004F3168 /* SRRegexp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +577,7 @@
 				INFOPLIST_FILE = "SRChocoDemo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SRChocoDemo-iOS/SRChocoDemo-iOS-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -466,6 +589,7 @@
 				INFOPLIST_FILE = "SRChocoDemo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SRChocoDemo-iOS/SRChocoDemo-iOS-Bridging-Header.h";
 			};
 			name = Release;
 		};

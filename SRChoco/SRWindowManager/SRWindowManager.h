@@ -6,9 +6,12 @@
 //  Copyright (c) 2014 Seorenn. All rights reserved.
 //
 
+#import "SRApplicationWindow.h"
+
+#if !TARGET_OS_IPHONE
+
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
-#import "SRApplicationWindow.h"
 
 @class SRWindowManager;
 
@@ -35,3 +38,5 @@
 - (void)stopDetect;
 
 @end
+
+#endif

@@ -8,6 +8,10 @@
 
 #import "SRWindowManager.h"
 
+#if TARGET_OS_IPHONE
+#warning SRWindowManager was disabled because target platform is iOS
+#else
+
 @implementation SRWindowManager
 
 @synthesize detecting = _detecting;
@@ -105,3 +109,5 @@
 }
 
 @end
+
+#endif

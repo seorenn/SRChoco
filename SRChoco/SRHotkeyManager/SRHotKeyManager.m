@@ -7,6 +7,11 @@
 //
 
 #import "SRHotKeyManager.h"
+
+#if TARGET_OS_IPHONE
+#warning SRHotKeyManager was disabled because target platform is iOS.
+#else
+
 #import <Carbon/Carbon.h>
 
 #define BOOLSTR(bv) ((bv) ? @"true":@"false")
@@ -113,3 +118,5 @@ EventHotKeyRef g_hotKeyRef;
 @implementation SRHotKeyManager
 // TODO
 @end
+
+#endif

@@ -8,6 +8,10 @@
 
 #import "SRApplicationWindow.h"
 
+#if TARGET_OS_IPHONE
+#warning SRApplicationWindow was disabled because target platform is iOS
+#else
+
 @interface SRApplicationWindow () {
     NSRunningApplication *_runningApplication;
 }
@@ -66,3 +70,5 @@
 }
 
 @end
+
+#endif

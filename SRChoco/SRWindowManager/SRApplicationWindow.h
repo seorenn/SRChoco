@@ -6,7 +6,10 @@
 //  Copyright (c) 2014 Seorenn. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "TargetConditionals.h"
+
+#if !TARGET_OS_IPHONE
+
 #import <Cocoa/Cocoa.h>
 
 @interface SRApplicationWindow : NSObject
@@ -21,3 +24,5 @@
 @property (readonly) NSImage *icon;
 
 @end
+
+#endif

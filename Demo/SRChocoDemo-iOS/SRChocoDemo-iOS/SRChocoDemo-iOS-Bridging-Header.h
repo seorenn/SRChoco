@@ -9,5 +9,10 @@
 #ifndef SRChocoDemo_iOS_SRChocoDemo_iOS_Bridging_Header_h
 #define SRChocoDemo_iOS_SRChocoDemo_iOS_Bridging_Header_h
 
+#import "SRHotKeyManager.h"
+#import "SRWindowManager.h"
+#import "SRStartupLauncher.h"
+#import "SRInputSource.h"
+#import "SRInputSourceManager.h"
 
 #endif

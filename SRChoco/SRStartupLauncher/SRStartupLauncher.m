@@ -8,6 +8,10 @@
 
 #import "SRStartupLauncher.h"
 
+#if TARGET_OS_IPHONE
+#warning SRStartupLauncher was disabled because target platform is iOS.
+#else
+
 @interface SRStartupLauncher () {
     NSURL *_appURL;
 }
@@ -189,3 +193,5 @@
 }
 
 @end
+
+#endif
