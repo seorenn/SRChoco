@@ -104,7 +104,7 @@ class SRHTTP: NSObject, NSURLConnectionDataDelegate {
         if let connection = NSURLConnection(request: rq!, delegate: self) {
             self.responseBlock = onResponse
             self.errorBlock = onError
-            connection.start()
+            //connection.start()
         }
         else {
             let error = self.buildError("Failed to Generate NSURLConnection Object")
