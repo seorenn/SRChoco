@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A50621B1B00AD8B00FC87F6 /* SRSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50621A1B00AD8B00FC87F6 /* SRSemaphore.swift */; };
 		8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */; };
 		8AAC8D10194ED4F1007BDE4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAC8D0F194ED4F1007BDE4D /* Images.xcassets */; };
 		8AAC8D1C194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8D1B194ED4F1007BDE4D /* SRChocoDemo_iOSTests.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		8A00388B195042910079D8D5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		8A50621A1B00AD8B00FC87F6 /* SRSemaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRSemaphore.swift; sourceTree = "<group>"; };
 		8AAC8D08194ED4F1007BDE4D /* SRChocoDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SRChocoDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8D0C194ED4F1007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAC8D0D194ED4F1007BDE4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				8AFEDA0E1AFCAA8800434E44 /* SRDispatch.swift */,
 				8AFEDA0F1AFCAA8800434E44 /* SRDispatchQueue.swift */,
 				8AFEDA101AFCAA8800434E44 /* SRMutex.swift */,
+				8A50621A1B00AD8B00FC87F6 /* SRSemaphore.swift */,
 			);
 			path = SRGCD;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				8AFEDA471AFCAA8800434E44 /* SRStatusItemPopupController.swift in Sources */,
 				8AFEDA371AFCAA8800434E44 /* SRDevice.swift in Sources */,
 				8AFEDA491AFCAA8800434E44 /* SRApplicationWindow.m in Sources */,
+				8A50621B1B00AD8B00FC87F6 /* SRSemaphore.swift in Sources */,
 				8AFEDA461AFCAA8800434E44 /* SRStartupLauncher.m in Sources */,
 				8AFEDA511AFCAA8800434E44 /* ViewExtensions.swift in Sources */,
 				8AAC8D0E194ED4F1007BDE4D /* AppDelegate.swift in Sources */,
