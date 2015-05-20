@@ -16,8 +16,7 @@
 
 @property (nonatomic, readonly) NSPoint location;
 
-- (NSPoint)locationOnView:(NSView *)view;
-- (NSPoint)locationOnWindow:(NSWindow *)window;
++ (NSPoint)locationWithEvent:(NSEvent *)event onView:(NSView *)view;
 
 @end
 

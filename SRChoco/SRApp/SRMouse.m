@@ -20,12 +20,8 @@
     return point;
 }
 
-- (NSPoint)locationOnView:(NSView *)view {
-    // TODO
-}
-
-- (NSPoint)locationOnWindow:(NSWindow *)window {
-    // TODO
++ (NSPoint)locationWithEvent:(NSEvent *)event onView:(NSView *)view {
+    return [view convertPoint:[event locationInWindow] fromView:nil];
 }
 
 @end
