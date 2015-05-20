@@ -37,6 +37,8 @@
 		8A0AAFF419E5085E00B7A93D /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFF319E5085E00B7A93D /* TestUUID.swift */; };
 		8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */; };
 		8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4E1993764800432E13 /* TestSRRegexp.swift */; };
+		8A6C8EA81B0C74890089031A /* SRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C8EA71B0C74890089031A /* SRApp.swift */; };
+		8A6C8EAB1B0C75560089031A /* SRMouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C8EAA1B0C75560089031A /* SRMouse.m */; };
 		8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */; };
 		8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE2194ED4CF007BDE4D /* main.swift */; };
 		8AAC8CE5194ED4CF007BDE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC8CE4194ED4CF007BDE4D /* AppDelegate.swift */; };
@@ -105,6 +107,9 @@
 		8A41833C1A1349230030231D /* SRChocoDemo-OSXTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-OSXTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
 		8A682E4E1993764800432E13 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
+		8A6C8EA71B0C74890089031A /* SRApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRApp.swift; sourceTree = "<group>"; };
+		8A6C8EA91B0C75560089031A /* SRMouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMouse.h; sourceTree = "<group>"; };
+		8A6C8EAA1B0C75560089031A /* SRMouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRMouse.m; sourceTree = "<group>"; };
 		8A914C8A1971152F002CE4A5 /* DemoSRFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSRFileManager.swift; sourceTree = "<group>"; };
 		8AAC8CDD194ED4CF007BDE4D /* SRChocoDemo-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SRChocoDemo-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAC8CE1194ED4CF007BDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +156,7 @@
 		8A0830FF1ADE386B003BDB7C /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
+				8A6C8EA61B0C74890089031A /* SRApp */,
 				8AB8ED591AFC9AB100EB94FF /* SRCache */,
 				8A0831001ADE386B003BDB7C /* SRAuth */,
 				8A0831021ADE386B003BDB7C /* SRDevice */,
@@ -321,6 +327,16 @@
 				8AB156BA19C6ECDC00A2A568 /* StatusPopupViewController.xib */,
 			);
 			name = Demo;
+			sourceTree = "<group>";
+		};
+		8A6C8EA61B0C74890089031A /* SRApp */ = {
+			isa = PBXGroup;
+			children = (
+				8A6C8EA71B0C74890089031A /* SRApp.swift */,
+				8A6C8EA91B0C75560089031A /* SRMouse.h */,
+				8A6C8EAA1B0C75560089031A /* SRMouse.m */,
+			);
+			path = SRApp;
 			sourceTree = "<group>";
 		};
 		8AAC8CD4194ED4CF007BDE4D = {
@@ -514,6 +530,7 @@
 				8AAC8CE3194ED4CF007BDE4D /* main.swift in Sources */,
 				8A0831341ADE386B003BDB7C /* SRFile.swift in Sources */,
 				8AB8ED551AFB551C00EB94FF /* SRMutex.swift in Sources */,
+				8A6C8EAB1B0C75560089031A /* SRMouse.m in Sources */,
 				8A0831421ADE386B003BDB7C /* SRApplicationWindow.m in Sources */,
 				8A08313C1ADE386B003BDB7C /* SRInputSourceManager.m in Sources */,
 				8A0831321ADE386B003BDB7C /* SRExternalApp.swift in Sources */,
@@ -528,6 +545,7 @@
 				8A0831331ADE386B003BDB7C /* SRDirectory.swift in Sources */,
 				8A0831411ADE386B003BDB7C /* SRUUID.swift in Sources */,
 				8A0831491ADE386B003BDB7C /* StringExtensions.swift in Sources */,
+				8A6C8EA81B0C74890089031A /* SRApp.swift in Sources */,
 				8A914C8B1971152F002CE4A5 /* DemoSRFileManager.swift in Sources */,
 				8A0831361ADE386B003BDB7C /* SRDispatchQueue.swift in Sources */,
 				8A08313B1ADE386B003BDB7C /* SRInputSource.m in Sources */,

@@ -6,3 +6,4 @@
 #import "SRWindowManager.h"
 #import "SRStartupLauncher.h"
 #import "SRInputSourceManager.h"
+#import "SRMouse.h"
