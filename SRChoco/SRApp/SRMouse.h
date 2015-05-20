@@ -13,11 +13,16 @@
 #import <Cocoa/Cocoa.h>
 
 @interface SRMouse : NSObject
+NS_ASSUME_NONNULL_BEGIN
 
-@property (nonatomic, readonly) NSPoint location;
+@property (nonatomic, strong, nullable) NSEvent *event;
+@property (nonatomic, readonly) NSPoint absoluteLocation;
 
-+ (NSPoint)locationWithEvent:(NSEvent *)event onView:(NSView *)view;
+- (id)initWithEvent:(NSEvent *)event;
 
+- (NSPoint)locationOnView:(NSView *)view;
+
+NS_ASSUME_NONNULL_END
 @end
 
 #endif

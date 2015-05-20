@@ -12,7 +12,7 @@
 
 @implementation SRMouse
 
-- (NSPoint)location {
+- (NSPoint)absoluteLocation {
     CGEventRef event = CGEventCreate(NULL);
     NSPoint point = CGEventGetLocation(event);
     CFRelease(event);
@@ -20,8 +20,17 @@
     return point;
 }
 
-+ (NSPoint)locationWithEvent:(NSEvent *)event onView:(NSView *)view {
-    return [view convertPoint:[event locationInWindow] fromView:nil];
+- (id)initWithEvent:(NSEvent *)event {
+    self = [super init];
+    if (self) {
+        self.event = event;
+    }
+    return self;
+}
+
+- (NSPoint)locationOnView:(NSView *)view {
+    NSAssert(self.event != nil, @"You must assign event property before use this method!");
+    return [view convertPoint:[self.event locationInWindow] fromView:nil];
 }
 
 @end
