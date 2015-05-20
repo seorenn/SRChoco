@@ -10,11 +10,14 @@
 
 #if !TARGET_OS_IPHONE
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 @interface SRMouse : NSObject
 
 @property (nonatomic, readonly) NSPoint location;
+
+- (NSPoint)locationOnView:(NSView *)view;
+- (NSPoint)locationOnWindow:(NSWindow *)window;
 
 @end
 

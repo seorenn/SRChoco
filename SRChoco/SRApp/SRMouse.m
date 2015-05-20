@@ -20,6 +20,14 @@
     return point;
 }
 
+- (NSPoint)locationOnView:(NSView *)view {
+    // TODO
+}
+
+- (NSPoint)locationOnWindow:(NSWindow *)window {
+    // TODO
+}
+
 @end
 
 #endif
