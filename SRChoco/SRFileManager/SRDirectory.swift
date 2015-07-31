@@ -258,55 +258,22 @@ public class SRDirectory: DebugPrintable, Equatable {
         return nil
     }
     
-    public func trash(removingAllSubContents: Bool = false) -> Bool {
+    public func trash() -> Bool {
 #if os(iOS)
         return false
 #else
         let url = NSURL(fileURLWithPath: self.path, isDirectory: true)
         if url == nil { return false }
-        
-        if removingAllSubContents == false {
-            if self.files.count > 0 || self.directories.count > 0 { return false }
-        }
 
         var error: NSError?
-        return self.fm.trashItemAtURL(url!, resultingItemURL: nil, error: &error)
-#endif
-    }
-    
-    public func trash(removingAllSubContents: Bool) -> Bool {
-#if os(iOS)
-        return false
-#else
-        let res = self.trash(removingAllSubContents: removingAllSubContents)
-        
+        let res = self.fm.trashItemAtURL(url!, resultingItemURL: nil, error: &error)
         if res {
             self.filesData.removeAll(keepCapacity: false)
             self.directoriesData.removeAll(keepCapacity: false)
         }
-        
+    
         return res
 #endif
-    }
-    
-    public func trashAllSubContents(stopWhenError: Bool) -> Bool {
-        var result = true
-        for (name: String, dir: SRDirectory) in self.directories {
-            let res = dir.trash(removingAllSubContents: true)
-            if res == false {
-                result = false
-                if stopWhenError { return false }
-            }
-        }
-        for (name: String, file: SRFile) in self.files {
-            let res = file.trash()
-            if res == false {
-                result = false
-                if stopWhenError { return false }
-            }
-        }
-        
-        return result
     }
     
     public var debugDescription: String {

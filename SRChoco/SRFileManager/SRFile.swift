@@ -15,6 +15,10 @@ public class SRFile: DebugPrintable, Equatable {
     private let delayForFileWriting: NSTimeInterval = 0.5
     private let fm = NSFileManager.defaultManager()
     
+    // MARK: - Private Properties
+    
+    private var handle: NSFileHandle?
+    
     // MARK: - Properties
     
     public var path: String
@@ -169,6 +173,18 @@ public class SRFile: DebugPrintable, Equatable {
             }
         }
     }
+    
+    // MARK: - Opening and Closing File
+    
+    func openForReading() -> SRFileHandle? {
+        return SRFileHandle(pathForReading: path)
+    }
+    
+    func openForWriting() -> SRFileHandle? {
+        return SRFileHandle(pathForWriting: path)
+    }
+    
+    // MARK: - Etc
     
     public var debugDescription: String {
         let existance = self.exists ? "" : " (Not Exists)"

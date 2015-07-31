@@ -1,5 +1,17 @@
 import Cocoa
 
+let str = "test"
+count(str)
+//countElement(str)
+
+var arr = [ "a", "b", "c" ]
+arr.extend(["d"])
+//arr.indexOf("a")
+
+
+
+
+
 let mstr = NSMutableAttributedString(string: "ABC", attributes: [NSFontAttributeName: NSFont.systemFontOfSize(15),
     NSForegroundColorAttributeName:NSColor.blackColor()])
 

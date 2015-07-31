@@ -35,6 +35,7 @@
 		8A0831491ADE386B003BDB7C /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08312E1ADE386B003BDB7C /* StringExtensions.swift */; };
 		8A08314A1ADE386B003BDB7C /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A08312F1ADE386B003BDB7C /* ViewExtensions.swift */; };
 		8A0AAFF419E5085E00B7A93D /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AAFF319E5085E00B7A93D /* TestUUID.swift */; };
+		8A6301D81B4140C20013B250 /* SRFileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6301D71B4140C20013B250 /* SRFileHandle.swift */; };
 		8A682E4B1992289200432E13 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */; };
 		8A682E4F1993764800432E13 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A682E4E1993764800432E13 /* TestSRRegexp.swift */; };
 		8A6C8EA81B0C74890089031A /* SRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C8EA71B0C74890089031A /* SRApp.swift */; };
@@ -105,6 +106,7 @@
 		8A08312F1ADE386B003BDB7C /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		8A0AAFF319E5085E00B7A93D /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUUID.swift; sourceTree = "<group>"; };
 		8A41833C1A1349230030231D /* SRChocoDemo-OSXTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SRChocoDemo-OSXTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		8A6301D71B4140C20013B250 /* SRFileHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRFileHandle.swift; sourceTree = "<group>"; };
 		8A682E4A1992289200432E13 /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
 		8A682E4E1993764800432E13 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
 		8A6C8EA71B0C74890089031A /* SRApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRApp.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				8A0831071ADE386B003BDB7C /* SRDirectory.swift */,
 				8A0831081ADE386B003BDB7C /* SRFile.swift */,
+				8A6301D71B4140C20013B250 /* SRFileHandle.swift */,
 			);
 			path = SRFileManager;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				8AB8ED5B1AFC9AB100EB94FF /* SRCache.swift in Sources */,
 				8ABA3A0E19C94015009B75A5 /* WindowLogController.swift in Sources */,
 				8A0831471ADE386B003BDB7C /* Log.swift in Sources */,
+				8A6301D81B4140C20013B250 /* SRFileHandle.swift in Sources */,
 				8A08313F1ADE386B003BDB7C /* SRStartupLauncher.m in Sources */,
 				8A0831381ADE386B003BDB7C /* SRHTTP.swift in Sources */,
 				8A0831371ADE386B003BDB7C /* SRHotKeyManager.m in Sources */,
