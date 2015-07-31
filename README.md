@@ -3,39 +3,7 @@ SRChoco
 
 Seorenn's Cocoa(AppKit) and Cocoa Touch(UIKit) Libraries.
 
-# SRFileManager
-
-Simple File System(?) Classes
-
-## SRDirectory
-
-Get Files and Directories on my HOME directory:
-<pre>
-let home = SRDirectory(SRDirectory.pathForHome())
-home.load()
-
-for dir: SRDirectory in home.directories {
-    println(dir)
-}
-
-for file: SRFile in home.files {
-    println(file)
-}
-</pre>
-
-Asynchronous Load for Big File-system:
-<pre>
-let home = SRDirectory(SRDirectory.pathForHome())
-home.load() {
-    for dir: SRDirectory in home.directories {
-        println(dir)
-    }
-
-    for file: SRFile in home.files {
-        println(file)
-    }
-}
-</pre>
+NOTE: I will separate some modules to independent project. SRChoco now refactoring. ;-)
 
 # SRGCD
 
@@ -231,3 +199,7 @@ view.conterPoint    // CGPoint or NSPoint
 view.moveToBelow(view: anotherView, margin: 5.0)
 </pre>
 
+# Branched Projects
+
+* SRFile: https://github.com/seorenn/SRFile
+* SRWindowManager: https://github.com/seorenn/SRWindowManager
