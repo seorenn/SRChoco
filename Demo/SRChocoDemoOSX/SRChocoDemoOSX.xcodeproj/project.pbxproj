@@ -466,6 +466,7 @@
 				8A47D6741B6F3FC2004CA762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A47D6751B6F3FC2004CA762 /* Build configuration list for PBXNativeTarget "SRChocoDemoOSXTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +475,7 @@
 				8A47D6771B6F3FC2004CA762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
