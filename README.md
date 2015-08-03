@@ -211,3 +211,4 @@ view.moveToBelow(view: anotherView, margin: 5.0)
 
 * SRFile: https://github.com/seorenn/SRFile
 * SRWindowManager: https://github.com/seorenn/SRWindowManager (Public version is developing with new interfaces)
+* SRTextInputSourceManager: https://github.com/seorenn/SRTextInputSourceManager
