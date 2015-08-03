@@ -1,41 +1,9 @@
 SRChoco
 =======
 
-Seorenn's Cocoa(AppKit) and Cocoa Touch(UIKit) Libraries.
+Seorenn's Something Special(?) Frameworks for Cocoa(AppKit) and Cocoa Touch(UIKit).
 
-# SRFileManager
-
-Simple File System(?) Classes
-
-## SRDirectory
-
-Get Files and Directories on my HOME directory:
-<pre>
-let home = SRDirectory(SRDirectory.pathForHome())
-home.load()
-
-for dir: SRDirectory in home.directories {
-    println(dir)
-}
-
-for file: SRFile in home.files {
-    println(file)
-}
-</pre>
-
-Asynchronous Load for Big File-system:
-<pre>
-let home = SRDirectory(SRDirectory.pathForHome())
-home.load() {
-    for dir: SRDirectory in home.directories {
-        println(dir)
-    }
-
-    for file: SRFile in home.files {
-        println(file)
-    }
-}
-</pre>
+NOTE: I will separate some modules to independent project. SRChoco now refactoring. ;-)
 
 # SRGCD
 
@@ -57,6 +25,8 @@ SRDispatch.backgroundTask() {
 </pre>
 
 # SRInputSourceManager
+
+TODO: This class will be seperating to independent framework project
 
 The Input Source Manager for OS X
 
@@ -93,6 +63,8 @@ TODO: Need more documentation
 
 # SRStatusItemPopupController
 
+TODO: This class will be seperating to independent framework project
+
 The Controller for NSStatusItem with NSPopover components.
 
 ## How to use
@@ -118,6 +90,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 # SRWindowManager
 
+TODO: This class will be seperating to independent framework project
+
 Simple Classes for Managing The Application Windows.
 
 # SRUUID
@@ -127,6 +101,8 @@ Simple Class to generate the UUID.
 TODO: Need more documentation
 
 # SRHotKeyManager
+
+TODO: This class will be seperating to independent framework project
 
 The Module for Hot Key Management.
 
@@ -231,3 +207,8 @@ view.conterPoint    // CGPoint or NSPoint
 view.moveToBelow(view: anotherView, margin: 5.0)
 </pre>
 
+# Branched Projects
+
+* SRFile: https://github.com/seorenn/SRFile
+* SRWindowManager: https://github.com/seorenn/SRWindowManager (Public version is developing with new interfaces)
+* SRTextInputSourceManager: https://github.com/seorenn/SRTextInputSourceManager

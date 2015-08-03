@@ -1,0 +1,363 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A03F2D31B6B25340061C349 /* SRChoco.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A03F2D21B6B25340061C349 /* SRChoco.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A03F2ED1B6B268F0061C349 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DB1B6B268F0061C349 /* ArrayExtensions.swift */; };
+		8A03F2EE1B6B268F0061C349 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DC1B6B268F0061C349 /* ColorExtensions.swift */; };
+		8A03F2EF1B6B268F0061C349 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DD1B6B268F0061C349 /* DictionaryExtensions.swift */; };
+		8A03F2F01B6B268F0061C349 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DE1B6B268F0061C349 /* Log.swift */; };
+		8A03F2F11B6B268F0061C349 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DF1B6B268F0061C349 /* NSDateExtensions.swift */; };
+		8A03F2F21B6B268F0061C349 /* SRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E01B6B268F0061C349 /* SRAuth.swift */; };
+		8A03F2F31B6B268F0061C349 /* SRCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E11B6B268F0061C349 /* SRCache.swift */; };
+		8A03F2F41B6B268F0061C349 /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E21B6B268F0061C349 /* SRDevice.swift */; };
+		8A03F2F71B6B268F0061C349 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E51B6B268F0061C349 /* SRExternalApp.swift */; };
+		8A03F2F81B6B268F0061C349 /* SRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E61B6B268F0061C349 /* SRJSON.swift */; };
+		8A03F2FA1B6B268F0061C349 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E81B6B268F0061C349 /* SRRegexp.swift */; };
+		8A03F2FC1B6B268F0061C349 /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EA1B6B268F0061C349 /* SRUUID.swift */; };
+		8A03F2FD1B6B268F0061C349 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */; };
+		8A03F2FE1B6B268F0061C349 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */; };
+		8A47D6901B6F495F004CA762 /* SRGCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D68F1B6F495F004CA762 /* SRGCD.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8A03F2CF1B6B25340061C349 /* SRChoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A03F2D21B6B25340061C349 /* SRChoco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRChoco.h; sourceTree = "<group>"; };
+		8A03F2D41B6B25340061C349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A03F2DB1B6B268F0061C349 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = Sources/ArrayExtensions.swift; sourceTree = "<group>"; };
+		8A03F2DC1B6B268F0061C349 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtensions.swift; path = Sources/ColorExtensions.swift; sourceTree = "<group>"; };
+		8A03F2DD1B6B268F0061C349 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryExtensions.swift; path = Sources/DictionaryExtensions.swift; sourceTree = "<group>"; };
+		8A03F2DE1B6B268F0061C349 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Sources/Log.swift; sourceTree = "<group>"; };
+		8A03F2DF1B6B268F0061C349 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDateExtensions.swift; path = Sources/NSDateExtensions.swift; sourceTree = "<group>"; };
+		8A03F2E01B6B268F0061C349 /* SRAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRAuth.swift; path = Sources/SRAuth.swift; sourceTree = "<group>"; };
+		8A03F2E11B6B268F0061C349 /* SRCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRCache.swift; path = Sources/SRCache.swift; sourceTree = "<group>"; };
+		8A03F2E21B6B268F0061C349 /* SRDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRDevice.swift; path = Sources/SRDevice.swift; sourceTree = "<group>"; };
+		8A03F2E51B6B268F0061C349 /* SRExternalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRExternalApp.swift; path = Sources/SRExternalApp.swift; sourceTree = "<group>"; };
+		8A03F2E61B6B268F0061C349 /* SRJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRJSON.swift; path = Sources/SRJSON.swift; sourceTree = "<group>"; };
+		8A03F2E81B6B268F0061C349 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRRegexp.swift; path = Sources/SRRegexp.swift; sourceTree = "<group>"; };
+		8A03F2EA1B6B268F0061C349 /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRUUID.swift; path = Sources/SRUUID.swift; sourceTree = "<group>"; };
+		8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Sources/StringExtensions.swift; sourceTree = "<group>"; };
+		8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Sources/ViewExtensions.swift; sourceTree = "<group>"; };
+		8A47D68F1B6F495F004CA762 /* SRGCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRGCD.swift; path = Sources/SRGCD.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A03F2CB1B6B25340061C349 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A03F2C51B6B25340061C349 = {
+			isa = PBXGroup;
+			children = (
+				8A03F2D11B6B25340061C349 /* SRChoco */,
+				8A03F2D01B6B25340061C349 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A03F2D01B6B25340061C349 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A03F2CF1B6B25340061C349 /* SRChoco.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A03F2D11B6B25340061C349 /* SRChoco */ = {
+			isa = PBXGroup;
+			children = (
+				8A03F2DA1B6B26780061C349 /* Sources */,
+				8A03F2D21B6B25340061C349 /* SRChoco.h */,
+				8A03F2D41B6B25340061C349 /* Info.plist */,
+			);
+			path = SRChoco;
+			sourceTree = "<group>";
+		};
+		8A03F2DA1B6B26780061C349 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8A03F2DB1B6B268F0061C349 /* ArrayExtensions.swift */,
+				8A03F2DC1B6B268F0061C349 /* ColorExtensions.swift */,
+				8A03F2DD1B6B268F0061C349 /* DictionaryExtensions.swift */,
+				8A03F2DE1B6B268F0061C349 /* Log.swift */,
+				8A03F2DF1B6B268F0061C349 /* NSDateExtensions.swift */,
+				8A03F2E01B6B268F0061C349 /* SRAuth.swift */,
+				8A03F2E11B6B268F0061C349 /* SRCache.swift */,
+				8A03F2E21B6B268F0061C349 /* SRDevice.swift */,
+				8A47D68F1B6F495F004CA762 /* SRGCD.swift */,
+				8A03F2E51B6B268F0061C349 /* SRExternalApp.swift */,
+				8A03F2E61B6B268F0061C349 /* SRJSON.swift */,
+				8A03F2E81B6B268F0061C349 /* SRRegexp.swift */,
+				8A03F2EA1B6B268F0061C349 /* SRUUID.swift */,
+				8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */,
+				8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8A03F2CC1B6B25340061C349 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A03F2D31B6B25340061C349 /* SRChoco.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8A03F2CE1B6B25340061C349 /* SRChoco */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A03F2D71B6B25340061C349 /* Build configuration list for PBXNativeTarget "SRChoco" */;
+			buildPhases = (
+				8A03F2CA1B6B25340061C349 /* Sources */,
+				8A03F2CB1B6B25340061C349 /* Frameworks */,
+				8A03F2CC1B6B25340061C349 /* Headers */,
+				8A03F2CD1B6B25340061C349 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SRChoco;
+			productName = SRChoco;
+			productReference = 8A03F2CF1B6B25340061C349 /* SRChoco.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A03F2C61B6B25340061C349 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Seorenn;
+				TargetAttributes = {
+					8A03F2CE1B6B25340061C349 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 8A03F2C91B6B25340061C349 /* Build configuration list for PBXProject "SRChoco" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A03F2C51B6B25340061C349;
+			productRefGroup = 8A03F2D01B6B25340061C349 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A03F2CE1B6B25340061C349 /* SRChoco */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A03F2CD1B6B25340061C349 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A03F2CA1B6B25340061C349 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A03F2ED1B6B268F0061C349 /* ArrayExtensions.swift in Sources */,
+				8A03F2F71B6B268F0061C349 /* SRExternalApp.swift in Sources */,
+				8A03F2FC1B6B268F0061C349 /* SRUUID.swift in Sources */,
+				8A03F2FE1B6B268F0061C349 /* ViewExtensions.swift in Sources */,
+				8A03F2F31B6B268F0061C349 /* SRCache.swift in Sources */,
+				8A03F2FA1B6B268F0061C349 /* SRRegexp.swift in Sources */,
+				8A47D6901B6F495F004CA762 /* SRGCD.swift in Sources */,
+				8A03F2EE1B6B268F0061C349 /* ColorExtensions.swift in Sources */,
+				8A03F2F21B6B268F0061C349 /* SRAuth.swift in Sources */,
+				8A03F2F81B6B268F0061C349 /* SRJSON.swift in Sources */,
+				8A03F2F01B6B268F0061C349 /* Log.swift in Sources */,
+				8A03F2F11B6B268F0061C349 /* NSDateExtensions.swift in Sources */,
+				8A03F2F41B6B268F0061C349 /* SRDevice.swift in Sources */,
+				8A03F2EF1B6B268F0061C349 /* DictionaryExtensions.swift in Sources */,
+				8A03F2FD1B6B268F0061C349 /* StringExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8A03F2D51B6B25340061C349 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "i386 x86_64 armv7s armv7 arm64";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8A03F2D61B6B25340061C349 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				VALID_ARCHS = "i386 x86_64 armv7s armv7 arm64";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8A03F2D81B6B25340061C349 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SRChoco/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChoco;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8A03F2D91B6B25340061C349 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SRChoco/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChoco;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A03F2C91B6B25340061C349 /* Build configuration list for PBXProject "SRChoco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A03F2D51B6B25340061C349 /* Debug */,
+				8A03F2D61B6B25340061C349 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A03F2D71B6B25340061C349 /* Build configuration list for PBXNativeTarget "SRChoco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A03F2D81B6B25340061C349 /* Debug */,
+				8A03F2D91B6B25340061C349 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A03F2C61B6B25340061C349 /* Project object */;
+}

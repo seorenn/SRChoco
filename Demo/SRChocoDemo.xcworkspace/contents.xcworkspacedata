@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SRChocoDemo-iOS/SRChocoDemo-iOS.xcodeproj">
+      location = "group:../SRChoco.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SRChocoDemo-OSX/SRChocoDemo-OSX.xcodeproj">
+      location = "group:SRChocoDemoOSX/SRChocoDemoOSX.xcodeproj">
    </FileRef>
 </Workspace>
