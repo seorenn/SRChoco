@@ -16,16 +16,13 @@
 		8A03F2F21B6B268F0061C349 /* SRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E01B6B268F0061C349 /* SRAuth.swift */; };
 		8A03F2F31B6B268F0061C349 /* SRCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E11B6B268F0061C349 /* SRCache.swift */; };
 		8A03F2F41B6B268F0061C349 /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E21B6B268F0061C349 /* SRDevice.swift */; };
-		8A03F2F51B6B268F0061C349 /* SRDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E31B6B268F0061C349 /* SRDispatch.swift */; };
-		8A03F2F61B6B268F0061C349 /* SRDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E41B6B268F0061C349 /* SRDispatchQueue.swift */; };
 		8A03F2F71B6B268F0061C349 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E51B6B268F0061C349 /* SRExternalApp.swift */; };
 		8A03F2F81B6B268F0061C349 /* SRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E61B6B268F0061C349 /* SRJSON.swift */; };
-		8A03F2F91B6B268F0061C349 /* SRMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E71B6B268F0061C349 /* SRMutex.swift */; };
 		8A03F2FA1B6B268F0061C349 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E81B6B268F0061C349 /* SRRegexp.swift */; };
-		8A03F2FB1B6B268F0061C349 /* SRSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E91B6B268F0061C349 /* SRSemaphore.swift */; };
 		8A03F2FC1B6B268F0061C349 /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EA1B6B268F0061C349 /* SRUUID.swift */; };
 		8A03F2FD1B6B268F0061C349 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */; };
 		8A03F2FE1B6B268F0061C349 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */; };
+		8A47D6901B6F495F004CA762 /* SRGCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D68F1B6F495F004CA762 /* SRGCD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,16 +37,13 @@
 		8A03F2E01B6B268F0061C349 /* SRAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRAuth.swift; path = Sources/SRAuth.swift; sourceTree = "<group>"; };
 		8A03F2E11B6B268F0061C349 /* SRCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRCache.swift; path = Sources/SRCache.swift; sourceTree = "<group>"; };
 		8A03F2E21B6B268F0061C349 /* SRDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRDevice.swift; path = Sources/SRDevice.swift; sourceTree = "<group>"; };
-		8A03F2E31B6B268F0061C349 /* SRDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRDispatch.swift; path = Sources/SRDispatch.swift; sourceTree = "<group>"; };
-		8A03F2E41B6B268F0061C349 /* SRDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRDispatchQueue.swift; path = Sources/SRDispatchQueue.swift; sourceTree = "<group>"; };
 		8A03F2E51B6B268F0061C349 /* SRExternalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRExternalApp.swift; path = Sources/SRExternalApp.swift; sourceTree = "<group>"; };
 		8A03F2E61B6B268F0061C349 /* SRJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRJSON.swift; path = Sources/SRJSON.swift; sourceTree = "<group>"; };
-		8A03F2E71B6B268F0061C349 /* SRMutex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRMutex.swift; path = Sources/SRMutex.swift; sourceTree = "<group>"; };
 		8A03F2E81B6B268F0061C349 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRRegexp.swift; path = Sources/SRRegexp.swift; sourceTree = "<group>"; };
-		8A03F2E91B6B268F0061C349 /* SRSemaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRSemaphore.swift; path = Sources/SRSemaphore.swift; sourceTree = "<group>"; };
 		8A03F2EA1B6B268F0061C349 /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRUUID.swift; path = Sources/SRUUID.swift; sourceTree = "<group>"; };
 		8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Sources/StringExtensions.swift; sourceTree = "<group>"; };
 		8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Sources/ViewExtensions.swift; sourceTree = "<group>"; };
+		8A47D68F1B6F495F004CA762 /* SRGCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRGCD.swift; path = Sources/SRGCD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +94,10 @@
 				8A03F2E01B6B268F0061C349 /* SRAuth.swift */,
 				8A03F2E11B6B268F0061C349 /* SRCache.swift */,
 				8A03F2E21B6B268F0061C349 /* SRDevice.swift */,
-				8A03F2E31B6B268F0061C349 /* SRDispatch.swift */,
-				8A03F2E41B6B268F0061C349 /* SRDispatchQueue.swift */,
+				8A47D68F1B6F495F004CA762 /* SRGCD.swift */,
 				8A03F2E51B6B268F0061C349 /* SRExternalApp.swift */,
 				8A03F2E61B6B268F0061C349 /* SRJSON.swift */,
-				8A03F2E71B6B268F0061C349 /* SRMutex.swift */,
 				8A03F2E81B6B268F0061C349 /* SRRegexp.swift */,
-				8A03F2E91B6B268F0061C349 /* SRSemaphore.swift */,
 				8A03F2EA1B6B268F0061C349 /* SRUUID.swift */,
 				8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */,
 				8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */,
@@ -195,18 +186,15 @@
 			files = (
 				8A03F2ED1B6B268F0061C349 /* ArrayExtensions.swift in Sources */,
 				8A03F2F71B6B268F0061C349 /* SRExternalApp.swift in Sources */,
-				8A03F2F91B6B268F0061C349 /* SRMutex.swift in Sources */,
 				8A03F2FC1B6B268F0061C349 /* SRUUID.swift in Sources */,
 				8A03F2FE1B6B268F0061C349 /* ViewExtensions.swift in Sources */,
 				8A03F2F31B6B268F0061C349 /* SRCache.swift in Sources */,
-				8A03F2F61B6B268F0061C349 /* SRDispatchQueue.swift in Sources */,
 				8A03F2FA1B6B268F0061C349 /* SRRegexp.swift in Sources */,
+				8A47D6901B6F495F004CA762 /* SRGCD.swift in Sources */,
 				8A03F2EE1B6B268F0061C349 /* ColorExtensions.swift in Sources */,
 				8A03F2F21B6B268F0061C349 /* SRAuth.swift in Sources */,
 				8A03F2F81B6B268F0061C349 /* SRJSON.swift in Sources */,
-				8A03F2F51B6B268F0061C349 /* SRDispatch.swift in Sources */,
 				8A03F2F01B6B268F0061C349 /* Log.swift in Sources */,
-				8A03F2FB1B6B268F0061C349 /* SRSemaphore.swift in Sources */,
 				8A03F2F11B6B268F0061C349 /* NSDateExtensions.swift in Sources */,
 				8A03F2F41B6B268F0061C349 /* SRDevice.swift in Sources */,
 				8A03F2EF1B6B268F0061C349 /* DictionaryExtensions.swift in Sources */,
