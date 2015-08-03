@@ -24,31 +24,6 @@ SRDispatch.backgroundTask() {
 }
 </pre>
 
-# SRInputSourceManager
-
-TODO: This class will be seperating to independent framework project
-
-The Input Source Manager for OS X
-
-<pre>
-// Getting Input Source Instance List
-let inputSources = SRInputSourceManager().sharedManager().inputSources as [SRInputSource]
-
-// Getting Current Activating Input Source Index
-let currentIndex = SRInputSourceManager().sharedManager().currentInputSourceIndex
-
-// Getting Current Activating Input Source Instance
-let currentInputSource = SRInputSourceManager().sharedManager().currentInputSource
-
-// Getting Input Source Informations
-let inputSource = inputSources[someIndex]
-println("Name = \(inputSource.localizedName)")
-println("ID = \(inputSource.ID)")
-
-// Activating Input Source
-inputSource.activate()
-</pre>
-
 # SRExternalApp
 
 Helper Module for External Application
@@ -99,30 +74,6 @@ Simple Classes for Managing The Application Windows.
 Simple Class to generate the UUID.
 
 TODO: Need more documentation
-
-# SRHotKeyManager
-
-TODO: This class will be seperating to independent framework project
-
-The Module for Hot Key Management.
-
-## SRHotKey
-
-<pre>
-let hotKey = SRHotKey(keyCode: UInt32(kVK_Space), command: true, control: true, option: true, shift: false)
-</pre>
-
-## SRGlobalHotKeyManager
-
-<pre>
-SRGlobalHotKeyManager.sharedManager().registerWithHotKey(hotKey) {
-    println("Global Hot Key Pressed")
-}
-</pre>
-
-## SRHotKeyManager
-
-TODO: No Implementations in currently. ;-)
 
 ## SRStartupLauncher
 
@@ -212,3 +163,4 @@ view.moveToBelow(view: anotherView, margin: 5.0)
 * SRFile: https://github.com/seorenn/SRFile
 * SRWindowManager: https://github.com/seorenn/SRWindowManager (Public version is developing with new interfaces)
 * SRTextInputSourceManager: https://github.com/seorenn/SRTextInputSourceManager
+* SRHotKeyManager: https://github.com/seorenn/SRHotKeyManager
