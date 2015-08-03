@@ -210,4 +210,4 @@ view.moveToBelow(view: anotherView, margin: 5.0)
 # Branched Projects
 
 * SRFile: https://github.com/seorenn/SRFile
-* SRWindowManager: https://github.com/seorenn/SRWindowManager
+* SRWindowManager: https://github.com/seorenn/SRWindowManager (Public version is developing with new interfaces)
