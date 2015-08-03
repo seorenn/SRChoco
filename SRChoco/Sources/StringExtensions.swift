@@ -14,11 +14,13 @@ public extension String {
     }
 
     public subscript(index: Int) -> Character {
-        let elements = Array(self.characters)
-        if index >= 0 { return elements[index] }
+        if index >= 0 {
+            return self[advance(startIndex, index)]
+        }
         else {
             let revIndex = self.length + index
-            return elements[revIndex]
+            //return elements[revIndex]
+            return self[advance(startIndex, revIndex)]
         }
     }
 
