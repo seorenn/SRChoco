@@ -11,11 +11,11 @@ import Foundation
 /**
     Simple pthread mutex wrapper class
 */
-class SRMutex {
+public class SRMutex {
     private var mutex = pthread_mutex_t()
     private var locking: Bool = false
     
-    init() {
+    public init() {
         pthread_mutex_init(&mutex, nil)
     }
     
@@ -26,21 +26,21 @@ class SRMutex {
     /**
         Lock mutex
     */
-    func lock() {
+    public func lock() {
         pthread_mutex_lock(&mutex)
     }
     
     /**
         Unlock mutex
     */
-    func unlock() {
+    public func unlock() {
         pthread_mutex_unlock(&mutex)
     }
     
     /**
         Run the closure via locking mutex
     */
-    func sync(closure: () -> ()) {
+    public func sync(closure: () -> ()) {
         self.lock()
         closure()
         self.unlock()

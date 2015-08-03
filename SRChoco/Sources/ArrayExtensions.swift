@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension Array {
-    func stringByJoining(separator: String) -> String {
+public extension Array {
+    public func stringByJoining(separator: String) -> String {
         var result = ""
         for (idx, item) in self.enumerate() {
             result += "\(item)"
@@ -20,7 +20,7 @@ extension Array {
         return result
     }
     
-    func containString(string: String, ignoreCase: Bool = false) -> Bool {
+    public func containString(string: String, ignoreCase: Bool = false) -> Bool {
         //let options = ignoreCase ? NSStringCompareOptions.CaseInsensitiveSearch : NSStringCompareOptions()
 
         for item in self {

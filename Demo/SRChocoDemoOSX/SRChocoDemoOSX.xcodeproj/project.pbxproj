@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A47D65C1B6F3FC2004CA762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D65B1B6F3FC2004CA762 /* AppDelegate.swift */; };
+		8A47D65E1B6F3FC2004CA762 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D65D1B6F3FC2004CA762 /* ViewController.swift */; };
+		8A47D6601B6F3FC2004CA762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A47D65F1B6F3FC2004CA762 /* Assets.xcassets */; };
+		8A47D6631B6F3FC2004CA762 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A47D6611B6F3FC2004CA762 /* Main.storyboard */; };
+		8A47D66E1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D66D1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift */; };
+		8A47D67E1B6F4006004CA762 /* SRChoco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A47D67D1B6F3FF0004CA762 /* SRChoco.framework */; };
+		8A47D67F1B6F4006004CA762 /* SRChoco.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A47D67D1B6F3FF0004CA762 /* SRChoco.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A47D6891B6F4096004CA762 /* TestArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */; };
+		8A47D68A1B6F4096004CA762 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6841B6F4096004CA762 /* TestNSDateExtensions.swift */; };
+		8A47D68B1B6F4096004CA762 /* TestSRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6851B6F4096004CA762 /* TestSRJSON.swift */; };
+		8A47D68C1B6F4096004CA762 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */; };
+		8A47D68D1B6F4096004CA762 /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */; };
+		8A47D68E1B6F4096004CA762 /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6881B6F4096004CA762 /* TestUUID.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A47D66A1B6F3FC2004CA762 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A47D6501B6F3FC1004CA762 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A47D6571B6F3FC2004CA762;
+			remoteInfo = SRChocoDemoOSX;
+		};
+		8A47D67C1B6F3FF0004CA762 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A03F2CF1B6B25340061C349;
+			remoteInfo = SRChoco;
+		};
+		8A47D6801B6F4006004CA762 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A03F2CE1B6B25340061C349;
+			remoteInfo = SRChoco;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A47D6821B6F4007004CA762 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8A47D67F1B6F4006004CA762 /* SRChoco.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8A47D6581B6F3FC2004CA762 /* SRChocoDemoOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRChocoDemoOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A47D65B1B6F3FC2004CA762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8A47D65D1B6F3FC2004CA762 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8A47D65F1B6F3FC2004CA762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A47D6621B6F3FC2004CA762 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8A47D6641B6F3FC2004CA762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A47D6691B6F3FC2004CA762 /* SRChocoDemoOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRChocoDemoOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A47D66D1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRChocoDemoOSXTests.swift; sourceTree = "<group>"; };
+		8A47D66F1B6F3FC2004CA762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SRChoco.xcodeproj; path = ../../../SRChoco.xcodeproj; sourceTree = "<group>"; };
+		8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArrayExtensions.swift; sourceTree = "<group>"; };
+		8A47D6841B6F4096004CA762 /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
+		8A47D6851B6F4096004CA762 /* TestSRJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRJSON.swift; sourceTree = "<group>"; };
+		8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
+		8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStringExtensions.swift; sourceTree = "<group>"; };
+		8A47D6881B6F4096004CA762 /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUUID.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A47D6551B6F3FC2004CA762 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A47D67E1B6F4006004CA762 /* SRChoco.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A47D6661B6F3FC2004CA762 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A47D64F1B6F3FC1004CA762 = {
+			isa = PBXGroup;
+			children = (
+				8A47D65A1B6F3FC2004CA762 /* SRChocoDemoOSX */,
+				8A47D66C1B6F3FC2004CA762 /* SRChocoDemoOSXTests */,
+				8A47D6591B6F3FC2004CA762 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A47D6591B6F3FC2004CA762 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A47D6581B6F3FC2004CA762 /* SRChocoDemoOSX.app */,
+				8A47D6691B6F3FC2004CA762 /* SRChocoDemoOSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A47D65A1B6F3FC2004CA762 /* SRChocoDemoOSX */ = {
+			isa = PBXGroup;
+			children = (
+				8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */,
+				8A47D65B1B6F3FC2004CA762 /* AppDelegate.swift */,
+				8A47D65D1B6F3FC2004CA762 /* ViewController.swift */,
+				8A47D65F1B6F3FC2004CA762 /* Assets.xcassets */,
+				8A47D6611B6F3FC2004CA762 /* Main.storyboard */,
+				8A47D6641B6F3FC2004CA762 /* Info.plist */,
+			);
+			path = SRChocoDemoOSX;
+			sourceTree = "<group>";
+		};
+		8A47D66C1B6F3FC2004CA762 /* SRChocoDemoOSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */,
+				8A47D6841B6F4096004CA762 /* TestNSDateExtensions.swift */,
+				8A47D6851B6F4096004CA762 /* TestSRJSON.swift */,
+				8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */,
+				8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */,
+				8A47D6881B6F4096004CA762 /* TestUUID.swift */,
+				8A47D66D1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift */,
+				8A47D66F1B6F3FC2004CA762 /* Info.plist */,
+			);
+			path = SRChocoDemoOSXTests;
+			sourceTree = "<group>";
+		};
+		8A47D6791B6F3FF0004CA762 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A47D67D1B6F3FF0004CA762 /* SRChoco.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A47D6571B6F3FC2004CA762 /* SRChocoDemoOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A47D6721B6F3FC2004CA762 /* Build configuration list for PBXNativeTarget "SRChocoDemoOSX" */;
+			buildPhases = (
+				8A47D6541B6F3FC2004CA762 /* Sources */,
+				8A47D6551B6F3FC2004CA762 /* Frameworks */,
+				8A47D6561B6F3FC2004CA762 /* Resources */,
+				8A47D6821B6F4007004CA762 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A47D6811B6F4006004CA762 /* PBXTargetDependency */,
+			);
+			name = SRChocoDemoOSX;
+			productName = SRChocoDemoOSX;
+			productReference = 8A47D6581B6F3FC2004CA762 /* SRChocoDemoOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A47D6681B6F3FC2004CA762 /* SRChocoDemoOSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A47D6751B6F3FC2004CA762 /* Build configuration list for PBXNativeTarget "SRChocoDemoOSXTests" */;
+			buildPhases = (
+				8A47D6651B6F3FC2004CA762 /* Sources */,
+				8A47D6661B6F3FC2004CA762 /* Frameworks */,
+				8A47D6671B6F3FC2004CA762 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A47D66B1B6F3FC2004CA762 /* PBXTargetDependency */,
+			);
+			name = SRChocoDemoOSXTests;
+			productName = SRChocoDemoOSXTests;
+			productReference = 8A47D6691B6F3FC2004CA762 /* SRChocoDemoOSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A47D6501B6F3FC1004CA762 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Seorenn;
+				TargetAttributes = {
+					8A47D6571B6F3FC2004CA762 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					8A47D6681B6F3FC2004CA762 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 8A47D6571B6F3FC2004CA762;
+					};
+				};
+			};
+			buildConfigurationList = 8A47D6531B6F3FC1004CA762 /* Build configuration list for PBXProject "SRChocoDemoOSX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A47D64F1B6F3FC1004CA762;
+			productRefGroup = 8A47D6591B6F3FC2004CA762 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8A47D6791B6F3FF0004CA762 /* Products */;
+					ProjectRef = 8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8A47D6571B6F3FC2004CA762 /* SRChocoDemoOSX */,
+				8A47D6681B6F3FC2004CA762 /* SRChocoDemoOSXTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8A47D67D1B6F3FF0004CA762 /* SRChoco.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SRChoco.framework;
+			remoteRef = 8A47D67C1B6F3FF0004CA762 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A47D6561B6F3FC2004CA762 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A47D6601B6F3FC2004CA762 /* Assets.xcassets in Resources */,
+				8A47D6631B6F3FC2004CA762 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A47D6671B6F3FC2004CA762 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A47D6541B6F3FC2004CA762 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A47D65E1B6F3FC2004CA762 /* ViewController.swift in Sources */,
+				8A47D65C1B6F3FC2004CA762 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A47D6651B6F3FC2004CA762 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A47D66E1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift in Sources */,
+				8A47D6891B6F4096004CA762 /* TestArrayExtensions.swift in Sources */,
+				8A47D68E1B6F4096004CA762 /* TestUUID.swift in Sources */,
+				8A47D68B1B6F4096004CA762 /* TestSRJSON.swift in Sources */,
+				8A47D68C1B6F4096004CA762 /* TestSRRegexp.swift in Sources */,
+				8A47D68D1B6F4096004CA762 /* TestStringExtensions.swift in Sources */,
+				8A47D68A1B6F4096004CA762 /* TestNSDateExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A47D66B1B6F3FC2004CA762 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A47D6571B6F3FC2004CA762 /* SRChocoDemoOSX */;
+			targetProxy = 8A47D66A1B6F3FC2004CA762 /* PBXContainerItemProxy */;
+		};
+		8A47D6811B6F4006004CA762 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SRChoco;
+			targetProxy = 8A47D6801B6F4006004CA762 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A47D6611B6F3FC2004CA762 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A47D6621B6F3FC2004CA762 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A47D6701B6F3FC2004CA762 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8A47D6711B6F3FC2004CA762 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8A47D6731B6F3FC2004CA762 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = SRChocoDemoOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8A47D6741B6F3FC2004CA762 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = SRChocoDemoOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8A47D6761B6F3FC2004CA762 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SRChocoDemoOSXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SRChocoDemoOSX.app/Contents/MacOS/SRChocoDemoOSX";
+			};
+			name = Debug;
+		};
+		8A47D6771B6F3FC2004CA762 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SRChocoDemoOSXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SRChocoDemoOSX.app/Contents/MacOS/SRChocoDemoOSX";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A47D6531B6F3FC1004CA762 /* Build configuration list for PBXProject "SRChocoDemoOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A47D6701B6F3FC2004CA762 /* Debug */,
+				8A47D6711B6F3FC2004CA762 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A47D6721B6F3FC2004CA762 /* Build configuration list for PBXNativeTarget "SRChocoDemoOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A47D6731B6F3FC2004CA762 /* Debug */,
+				8A47D6741B6F3FC2004CA762 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8A47D6751B6F3FC2004CA762 /* Build configuration list for PBXNativeTarget "SRChocoDemoOSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A47D6761B6F3FC2004CA762 /* Debug */,
+				8A47D6771B6F3FC2004CA762 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A47D6501B6F3FC1004CA762 /* Project object */;
+}

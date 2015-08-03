@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension NSDictionary {
-    class func dictionaryWithJSON(json: NSData) -> NSDictionary? {
+public extension NSDictionary {
+    public class func dictionaryWithJSON(json: NSData) -> NSDictionary? {
         do {
             let jsonObject = try NSJSONSerialization.JSONObjectWithData(json, options: NSJSONReadingOptions())
             return jsonObject as? NSDictionary
@@ -18,14 +18,14 @@ extension NSDictionary {
         }
     }
     
-    class func dictionaryWithJSONString(json: NSString) -> NSDictionary? {
+    public class func dictionaryWithJSONString(json: NSString) -> NSDictionary? {
         if let data = json.dataUsingEncoding(NSUTF8StringEncoding) {
             return NSDictionary.dictionaryWithJSON(data)
         }
         return nil
     }
     
-    var JSON: NSData? {
+    public var JSON: NSData? {
         do {
             return try NSJSONSerialization.dataWithJSONObject(self, options: .PrettyPrinted)
         } catch {
@@ -33,7 +33,7 @@ extension NSDictionary {
         }
     }
     
-    var JSONString: NSString? {
+    public var JSONString: NSString? {
         if let data = self.JSON {
             return NSString(data: data, encoding: NSUTF8StringEncoding)
         } else {

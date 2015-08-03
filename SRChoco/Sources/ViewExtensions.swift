@@ -8,20 +8,20 @@
 
 #if os(OSX)
     import Cocoa
-    typealias ViewType = NSView
-    typealias RectType = NSRect
-    typealias PointType = NSPoint
-    typealias SizeType = NSSize
+    public typealias ViewType = NSView
+    public typealias RectType = NSRect
+    public typealias PointType = NSPoint
+    public typealias SizeType = NSSize
 #else
     import UIKit
-    typealias ViewType = UIView
-    typealias RectType = CGRect
-    typealias PointType = CGPoint
-    typealias SizeType = CGSize
+    public typealias ViewType = UIView
+    public typealias RectType = CGRect
+    public typealias PointType = CGPoint
+    public typealias SizeType = CGSize
 #endif
 
-extension ViewType {
-    var x: CGFloat {
+public extension ViewType {
+    public var x: CGFloat {
         set {
             var frame = self.frame
             frame.origin.x = newValue
@@ -31,7 +31,7 @@ extension ViewType {
             return self.frame.origin.x
         }
     }
-    var y: CGFloat {
+    public var y: CGFloat {
         set {
             var frame = self.frame
             frame.origin.y = newValue
@@ -41,7 +41,7 @@ extension ViewType {
             return self.frame.origin.y
         }
     }
-    var width: CGFloat {
+    public var width: CGFloat {
         set {
             var frame = self.frame
             frame.size.width = newValue
@@ -51,7 +51,7 @@ extension ViewType {
             return self.frame.size.width
         }
     }
-    var height: CGFloat {
+    public var height: CGFloat {
         set {
             var frame = self.frame
             frame.size.height = newValue
@@ -61,7 +61,7 @@ extension ViewType {
             return self.frame.size.height
         }
     }
-    var origin: PointType {
+    public var origin: PointType {
         set {
             var frame = self.frame
             frame.origin = newValue
@@ -71,7 +71,7 @@ extension ViewType {
             return self.frame.origin
         }
     }
-    var size: SizeType {
+    public var size: SizeType {
         set {
             var frame = self.frame
             frame.size = newValue
@@ -82,7 +82,7 @@ extension ViewType {
         }
     }
     
-    var centerPoint: PointType {
+    public var centerPoint: PointType {
         #if os(OSX)
             return NSMakePoint(self.frame.size.width / 2, self.frame.size.height / 2)
         #else
@@ -90,7 +90,7 @@ extension ViewType {
         #endif
     }
     
-    func moveToBelow(view: ViewType, margin: CGFloat = 0) {
+    public func moveToBelow(view: ViewType, margin: CGFloat = 0) {
         let viewFrame = view.frame
         var myFrame = self.frame
         

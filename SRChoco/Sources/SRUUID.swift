@@ -8,43 +8,25 @@
 
 import Foundation
 
-private let _uuidSharedInstance = SRUUID()
-
-public class SRUUID {
-    // MARK: - Singleton Factory
-    
-    public class func defaultUUID() -> SRUUID {
-        return _uuidSharedInstance
-    }
-    
-    // MARK: - Properties
-    
-    var convertToLowercase: Bool = true
-    var removeHyphen: Bool = true
-    
-    // MARK: - Initializers
+public class SRUUID: CustomStringConvertible {
+    private let UUIDString: String
     
     public init() {
-        
-    }
-    
-    // MARK: - Methods
-    
-    public func uuid() -> String {
         let uuid: CFUUIDRef = CFUUIDCreate(nil)
-        let uuidString: String = CFUUIDCreateString(nil, uuid) as String
-        return self.transform(uuidString)
+        self.UUIDString = CFUUIDCreateString(nil, uuid) as String
     }
     
-    // MARK: - Private Methods
+    public var normalizedString: String {
+        let lowercased = self.UUIDString.lowercaseString
+        let hypenRemoved = lowercased.stringByReplacingOccurrencesOfString("-", withString: "")
+        return hypenRemoved
+    }
     
-    private func transform(var input: String) -> String {
-        if self.convertToLowercase {
-            input = input.lowercaseString
-        }
-        if self.removeHyphen {
-            input = input.stringByReplacingOccurrencesOfString("-", withString: "")
-        }
-        return input
+    public var rawString: String {
+        return self.UUIDString
+    }
+    
+    public var description: String {
+        return self.UUIDString
     }
 }

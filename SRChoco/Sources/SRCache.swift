@@ -8,10 +8,10 @@
 
 #if os(OSX)
     import Cocoa
-    typealias ImageType = NSImage
+    public typealias ImageType = NSImage
 #else
     import UIKit
-    typealias ImageType = UIImage
+    public typealias ImageType = UIImage
 #endif
 
 /**
@@ -19,18 +19,18 @@
 
     SRCache requires SRGCD(SRDispatchQueue) Module
 */
-class SRCache {
-    let cache: NSCache
-    let name: String
-    let queue: SRDispatchQueue
-    let useDiskCache: Bool
+public class SRCache {
+    private let cache: NSCache
+    public let name: String
+    private let queue: SRDispatchQueue
+    private let useDiskCache: Bool
     
     /**
         Initialize with generic memory+disk cache style.
     
         :param: name Name of cache
     */
-    convenience init(name: String) {
+    public convenience init(name: String) {
         self.init(name: name, memoryCountLimit: 0, useDiskCache: true, cleanDiskCacheWhenInit: false)
     }
     
@@ -40,7 +40,7 @@ class SRCache {
         :param: name Name of cache
         :param: memoryCountLimit Count of limit memory cache (Refer to NSCache's countLimit Property)
     */
-    convenience init(name: String, memoryCountLimit: Int) {
+    public convenience init(name: String, memoryCountLimit: Int) {
         self.init(name: name, memoryCountLimit: memoryCountLimit, useDiskCache: false, cleanDiskCacheWhenInit: false)
     }
     
@@ -52,7 +52,7 @@ class SRCache {
         :param: useDiskCache Set true if you want to use disk cache
         :paran: cleanDiskCacheWhenInit Initializer will clean disk cache if this parameter is true
     */
-    init(name: String, memoryCountLimit: Int, useDiskCache: Bool, cleanDiskCacheWhenInit: Bool) {
+    public init(name: String, memoryCountLimit: Int, useDiskCache: Bool, cleanDiskCacheWhenInit: Bool) {
         self.name = name
         self.cache = NSCache()
         self.cache.name = name
@@ -65,16 +65,16 @@ class SRCache {
         }
     }
     
-    func writeDataToDiskCache(key: String, data: NSData) {
+    private func writeDataToDiskCache(key: String, data: NSData) {
         // TODO
     }
     
-    func readDataFromDiskCache(key: String) -> NSData? {
+    private func readDataFromDiskCache(key: String) -> NSData? {
         // TODO
         return nil
     }
     
-    func setImage(key: String, image: ImageType) {
+    public func setImage(key: String, image: ImageType) {
         self.cache.setObject(key, forKey: image)
         
         if self.useDiskCache == false { return }
@@ -90,7 +90,7 @@ class SRCache {
         }
     }
     
-    func getImage(key: String) -> ImageType? {
+    public func getImage(key: String) -> ImageType? {
         var image: ImageType? = self.cache.objectForKey(key) as! ImageType?
         
         if image == nil {
@@ -138,27 +138,15 @@ class SRCache {
 //        }
 //    }
     
-    func remove(key: String) {
-        self.remove(key, completionHandler: nil)
+    public func remove(key: String) {
+        // TODO
     }
     
-    func remove(key: String, completionHandler: (() -> ())?) {
-        // TODO: Implement
-    }
-    
-    func clean() {
-        self.clean(nil)
-    }
-    
-    func clean(completionHandler: (() -> ())?) {
-        // TODO: Implement
+    public func clean() {
+        // TODO
     }
     
     func cleanDiskCache() {
-        self.cleanDiskCache(nil)
-    }
-    
-    func cleanDiskCache(completionHandler: (() -> ())?) {
-        // TODO: Implement
+        // TOOD
     }
 }
