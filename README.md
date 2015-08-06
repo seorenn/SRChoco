@@ -36,33 +36,6 @@ Regular Expression Modules (likely Python's RE module)
 
 TODO: Need more documentation
 
-# SRStatusItemPopupController
-
-TODO: This class will be seperating to independent framework project
-
-The Controller for NSStatusItem with NSPopover components.
-
-## How to use
-
-In your AppDelegate:
-
-<pre>
-class AppDelegate: NSObject, NSApplicationDelegate {
-    // ...
-    var statusItemPopupController: SRStatusItemPopupController?
-
-    func applicationdidfinishlaunching(aNotification: NSNotification?) {
-        // ...
-        let viewController = MyViewController(nibName: "MyViewController", bundle: nil)
-        let image = NSImage(name: "Icon")
-        let alternateImage = NSImage(name: "Icon-Open")
-        self.statusItemPopupController = SRStatusItemPopupController(viewController: viewController,
-                                                                     image: image,
-                                                                     alternateImage: alternateImage)
-        // ...
-    }
-</pre>
-
 # SRWindowManager
 
 TODO: This class will be seperating to independent framework project
@@ -164,3 +137,4 @@ view.moveToBelow(view: anotherView, margin: 5.0)
 * SRWindowManager: https://github.com/seorenn/SRWindowManager (Public version is developing with new interfaces)
 * SRTextInputSourceManager: https://github.com/seorenn/SRTextInputSourceManager
 * SRHotKeyManager: https://github.com/seorenn/SRHotKeyManager
+* SRStatusItemPopupController: https://github.com/seorenn/SRStatusItemPopupController
