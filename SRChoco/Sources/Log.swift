@@ -10,6 +10,14 @@ import Foundation
 
 private let g_logSharedInstance = Log()
 
+// Xcode 7 Beta 5 Bug Fix
+// NOTE: Please Remove this if not required in future xcode releases.
+private extension String {
+    var lastPathComponent: String {
+        return (self as NSString).lastPathComponent
+    }
+}
+
 public class Log : CustomDebugStringConvertible {
     private let dateFormatter = NSDateFormatter()
     private let dispatchQueue = SRDispatchQueue.serialQueue("com.seorenn.srchoco.srlog")
