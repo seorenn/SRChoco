@@ -107,6 +107,8 @@ public class SRDispatchQueue {
 public class SRDispatchGroup {
     private let group = dispatch_group_create()
     
+    public init() {}
+    
     public func async(queue: SRDispatchQueue, job: () -> ()) {
         dispatch_group_async(self.group, queue.queue, job)
     }
