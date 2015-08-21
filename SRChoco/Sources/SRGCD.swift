@@ -122,6 +122,10 @@ public class SRDispatchGroup {
     public func notify(queue: SRDispatchQueue, job: () -> ()) {
         dispatch_group_notify(self.group, queue.queue, job)
     }
+    
+    public func wait(timeout: dispatch_time_t = DISPATCH_TIME_FOREVER) {
+        dispatch_group_wait(self.group, timeout)
+    }
 }
 
 // MARK: - A Simple Class of Wrapping Pthreads Mutex
