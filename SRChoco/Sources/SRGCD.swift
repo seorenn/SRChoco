@@ -56,8 +56,8 @@ public class SRDispatch {
 
 // MARK: - A Simple Class for GCD Dispatch Queue
 
-public class SRDispatchQueue: NSObject {
-    let queue: dispatch_queue_t
+public class SRDispatchQueue {
+    private let queue: dispatch_queue_t
     
     public class func mainQueue() -> SRDispatchQueue {
         let q = dispatch_get_main_queue()
@@ -79,7 +79,6 @@ public class SRDispatchQueue: NSObject {
     
     private init(queue: dispatch_queue_t) {
         self.queue = queue
-        super.init()
     }
     
     private init(label: String, serial: Bool) {
@@ -88,7 +87,6 @@ public class SRDispatchQueue: NSObject {
         } else {
             self.queue = dispatch_queue_create(label, DISPATCH_QUEUE_CONCURRENT)
         }
-        super.init()
     }
     
     public func sync(job: () -> ()) {
@@ -101,6 +99,20 @@ public class SRDispatchQueue: NSObject {
     
     public func delay(interval: Double, job: () -> ()) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(interval * Double(NSEC_PER_SEC))), self.queue, job)
+    }
+}
+
+// MARK: - A Simple Class for GCD Dispatch Group
+
+public class SRDispatchGroup {
+    private let group = dispatch_group_create()
+    
+    public func async(queue: SRDispatchQueue, job: () -> ()) {
+        dispatch_group_async(self.group, queue.queue, job)
+    }
+    
+    public func notify(queue: SRDispatchQueue, job: () -> ()) {
+        dispatch_group_notify(self.group, queue.queue, job)
     }
 }
 
