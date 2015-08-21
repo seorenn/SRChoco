@@ -64,6 +64,12 @@ public class SRDispatchQueue {
         return SRDispatchQueue(queue: q)
     }
     
+    public class func globalQueue(priority: Int = DISPATCH_QUEUE_PRIORITY_DEFAULT) -> SRDispatchQueue {
+        let q = dispatch_get_global_queue(priority, 0)
+        return SRDispatchQueue(queue: q)
+    }
+    
+    // NOTE: DEPRECATED
     public class func backgroundQueue() -> SRDispatchQueue {
         let q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
         return SRDispatchQueue(queue: q)
