@@ -1,5 +1,6 @@
 //
 //  SRGCD.swift
+//  Classes wrapping features of Apple GCD(Grand Central Dispatch)
 //  SRChoco
 //
 //  Created by Seorenn on 2015. 8. 3..
@@ -142,16 +143,10 @@ public class SRMutex {
         pthread_mutex_destroy(&mutex)
     }
     
-    /**
-    Lock mutex
-    */
     public func lock() {
         pthread_mutex_lock(&mutex)
     }
     
-    /**
-    Unlock mutex
-    */
     public func unlock() {
         pthread_mutex_unlock(&mutex)
     }

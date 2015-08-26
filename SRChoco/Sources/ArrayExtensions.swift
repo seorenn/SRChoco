@@ -20,18 +20,5 @@ public extension Array {
         return result
     }
     
-    public func containString(string: String, ignoreCase: Bool = false) -> Bool {
-        //let options = ignoreCase ? NSStringCompareOptions.CaseInsensitiveSearch : NSStringCompareOptions()
-
-        for item in self {
-            let s: String = item as! String
-            if ignoreCase {
-                if s.lowercaseString == string.lowercaseString { return true }
-            } else {
-                if s == string { return true }
-            }
-        }
-        
-        return false
-    }
+    // NOTE: func containString() has been deprecated. Use Array.contains() on Swift 2
 }
