@@ -14,21 +14,24 @@ public extension String {
     }
 
     public subscript(index: Int) -> Character {
+        let chrIndex: String.CharacterView.Index
+        
         if index >= 0 {
-            return self[advance(startIndex, index)]
+            chrIndex = self.characters.startIndex.advancedBy(index)
+        } else {
+            chrIndex = self.characters.startIndex.advancedBy(self.characters.count + index)
         }
-        else {
-            let revIndex = self.length + index
-            //return elements[revIndex]
-            return self[advance(startIndex, revIndex)]
-        }
+        return self[chrIndex]
     }
 
     // substring with range
     public subscript(range: Range<Int>) -> String {
-        let start = advance(startIndex, range.startIndex, endIndex)
-        let end = advance(startIndex, range.endIndex, endIndex)
-        return self[start..<end]
+//        let start = advance(startIndex, range.startIndex, endIndex)
+//        let end = advance(startIndex, range.endIndex, endIndex)
+//        return self[start..<end]
+        let start = self.startIndex.advancedBy(range.startIndex)
+        let end = self.startIndex.advancedBy(range.endIndex)
+        return self.substringWithRange(Range<Index>(start: start, end: end))
     }
     
     // substring with NSRange
@@ -37,6 +40,19 @@ public extension String {
         let startIndex = range.location
         let endIndex = range.location + range.length - 1
         return self[startIndex...endIndex]
+    }
+    
+    public func substring(startIndex: Int, length: Int) -> String {
+        return self[startIndex ..< (startIndex + length)]
+    }
+    
+    public func prefix(length: Int) -> String {
+        return self.substring(0, length: length)
+    }
+    
+    public func postfix(length: Int) -> String {
+        let si: Int = self.characters.count - length
+        return self.substring(si, length: length)
     }
     
     public func trimmedString() -> String {

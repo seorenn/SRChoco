@@ -29,6 +29,7 @@ class TestStringExtensions: XCTestCase {
         XCTAssert(str[-1] == Character("-"))
         XCTAssert(str[-2] == Character("c"))
     }
+    
     func testSubstring() {
         let strA = "This is test string..."
         let strB = strA[1...3]
@@ -36,6 +37,11 @@ class TestStringExtensions: XCTestCase {
         XCTAssert(strA[2...5] == "is i")
         let strC = strA[1..<3]
         XCTAssert(strC == "hi")
+        
+        XCTAssert(strA.substring(4, length: 4) == " is ")
+        XCTAssert(strA.prefix(4) == "This")
+        XCTAssert(strA.postfix(3) == "...")
+        
         let strD = strA[NSMakeRange(0, 3)]
         XCTAssert(strD == "Thi")
         let strE = strA[NSMakeRange(5, 4)]

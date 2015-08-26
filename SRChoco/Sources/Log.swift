@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Xcode 7 Beta 5 Bug Fix
+// Xcode 7 Beta 5 (and 6) Bug Fix
 // NOTE: Please Remove this if not required in future xcode releases.
 private extension String {
     var lastPathComponent: String {
