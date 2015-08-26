@@ -55,7 +55,6 @@ public struct SRTimeDelta: CustomStringConvertible {
 public extension NSDate {
     public var dateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int)? {
         if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
-            //let components = calendar.components(NSCalendarUnit.Year | NSCalendarUnit.Month | NSCalendarUnit.Day | NSCalendarUnit.Hour | NSCalendarUnit.Minute | NSCalendarUnit.Second | NSCalendarUnit.Nanosecond, fromDate: self)
             let components = calendar.components([ .Year, .Month, .Day, .Hour, .Minute, .Second, .Nanosecond], fromDate: self)
             return (year: components.year, month: components.month, day: components.day, hour: components.hour, minute: components.minute, second: components.second, nanosecond: components.nanosecond)
         } else {
