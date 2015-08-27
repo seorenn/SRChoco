@@ -10,48 +10,38 @@
 import Foundation
 import Dispatch
 
-// MARK: - A Simple Class for GCD Multi Tasking
+private func dispatchTime(delay: Double) -> dispatch_time_t {
+    let d = delay * Double(NSEC_PER_SEC)
+    return dispatch_time(DISPATCH_TIME_NOW, Int64(d))
+}
 
-public class SRDispatch {
-    public class func mainTask(job: () -> ()) {
-        dispatch_async(dispatch_get_main_queue()) {
-            job()
-        }
+private func backgroundQueue() -> dispatch_queue_t {
+    return dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+}
+
+// MARK: - Simple Dispatch Functions
+
+public func backgroundTask(task: () -> ()) {
+    dispatch_async(backgroundQueue()) {
+        task()
     }
-    
-    public class func backgroundTask(job: () -> ()) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-            job()
-        }
+}
+
+public func mainTask(task: () -> ()) {
+    dispatch_async(dispatch_get_main_queue()) {
+        task()
     }
-    
-    public class func asyncTask(job: () -> ()) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            job()
-        }
+}
+
+public func runAfter(delay: Double, task: () -> ()) {
+    dispatch_after(dispatchTime(delay), dispatch_get_main_queue()) {
+        task()
     }
-    
-    private class func timeForDispatch(delay: Double) -> dispatch_time_t {
-        let d = delay * Double(NSEC_PER_SEC)
-        return dispatch_time(DISPATCH_TIME_NOW, Int64(d))
-    }
-    
-    public class func runAfter(delay: Double, job: () -> ()) {
-        dispatch_after(SRDispatch.timeForDispatch(delay), dispatch_get_main_queue()) {
-            job()
-        }
-    }
-    
-    public class func backgroundRunAfter(delay: Double, job: () -> ()) {
-        dispatch_after(SRDispatch.timeForDispatch(delay), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-            job()
-        }
-    }
-    
-    public class func asyncRunAfter(delay: Double, job: () -> ()) {
-        dispatch_after(SRDispatch.timeForDispatch(delay), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            job()
-        }
+}
+
+public func backgroundRunAfter(delay: Double, task: () -> ()) {
+    dispatch_after(dispatchTime(delay), backgroundQueue()) {
+        task()
     }
 }
 
@@ -67,12 +57,6 @@ public class SRDispatchQueue {
     
     public class func globalQueue(priority: Int = DISPATCH_QUEUE_PRIORITY_DEFAULT) -> SRDispatchQueue {
         let q = dispatch_get_global_queue(priority, 0)
-        return SRDispatchQueue(queue: q)
-    }
-    
-    // NOTE: DEPRECATED
-    public class func backgroundQueue() -> SRDispatchQueue {
-        let q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
         return SRDispatchQueue(queue: q)
     }
     
@@ -116,16 +100,34 @@ public class SRDispatchGroup {
     
     public init() {}
     
-    public func async(queue: SRDispatchQueue, job: () -> ()) {
-        dispatch_group_async(self.group, queue.queue, job)
+    public func async(queue: SRDispatchQueue, task: () -> ()) {
+        dispatch_group_async(self.group, queue.queue, task)
     }
     
-    public func notify(queue: SRDispatchQueue, job: () -> ()) {
-        dispatch_group_notify(self.group, queue.queue, job)
+    public func async(task: () -> ()) {
+        dispatch_group_async(self.group, backgroundQueue(), task)
+    }
+    
+    public func notify(queue: SRDispatchQueue, task: () -> ()) {
+        dispatch_group_notify(self.group, queue.queue, task)
+    }
+    
+    public func notify(task: () -> ()) {
+        dispatch_group_notify(self.group, backgroundQueue(), task)
     }
     
     public func wait(timeout: dispatch_time_t = DISPATCH_TIME_FOREVER) {
         dispatch_group_wait(self.group, timeout)
+    }
+    
+    public func wait(timeout: Double = 0) {
+        let time: dispatch_time_t
+        if timeout <= 0 {
+            time = DISPATCH_TIME_FOREVER
+        } else {
+            time = dispatchTime(timeout)
+        }
+        dispatch_group_wait(self.group, time)
     }
 }
 
