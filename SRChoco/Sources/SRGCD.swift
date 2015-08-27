@@ -116,10 +116,6 @@ public class SRDispatchGroup {
         dispatch_group_notify(self.group, backgroundQueue(), task)
     }
     
-    public func wait(timeout: dispatch_time_t = DISPATCH_TIME_FOREVER) {
-        dispatch_group_wait(self.group, timeout)
-    }
-    
     public func wait(timeout: Double = 0) {
         let time: dispatch_time_t
         if timeout <= 0 {
