@@ -20,6 +20,7 @@
 		8A47D68C1B6F4096004CA762 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */; };
 		8A47D68D1B6F4096004CA762 /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */; };
 		8A47D68E1B6F4096004CA762 /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6881B6F4096004CA762 /* TestUUID.swift */; };
+		8A66F54B1B8FFEB000714FBF /* AnotherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66F5491B8FFEB000714FBF /* AnotherViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
 		8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStringExtensions.swift; sourceTree = "<group>"; };
 		8A47D6881B6F4096004CA762 /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUUID.swift; sourceTree = "<group>"; };
+		8A66F5491B8FFEB000714FBF /* AnotherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				8A47D65F1B6F3FC2004CA762 /* Assets.xcassets */,
 				8A47D6611B6F3FC2004CA762 /* Main.storyboard */,
 				8A47D6641B6F3FC2004CA762 /* Info.plist */,
+				8A66F5491B8FFEB000714FBF /* AnotherViewController.swift */,
 			);
 			path = SRChocoDemoOSX;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			files = (
 				8A47D65E1B6F3FC2004CA762 /* ViewController.swift in Sources */,
 				8A47D65C1B6F3FC2004CA762 /* AppDelegate.swift in Sources */,
+				8A66F54B1B8FFEB000714FBF /* AnotherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
