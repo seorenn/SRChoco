@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8187.4"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,12 +641,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SRChocoDemoOSX" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -664,10 +664,79 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
+        <!--Another View Controller-->
+        <scene sceneID="NKc-5O-WxH">
+            <objects>
+                <viewController storyboardIdentifier="AnotherViewController" id="xmv-w6-sru" customClass="AnotherViewController" customModule="SRChocoDemoOSX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="3IM-oD-6Ci">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oZw-aO-ErJ">
+                                <rect key="frame" x="0.0" y="280" width="13" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="13" id="yi3-ut-YGx"/>
+                                    <constraint firstAttribute="height" constant="19" id="ywy-Re-exi"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GEg-X8-70b">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Fe-cR-YRh">
+                                <rect key="frame" x="437" y="280" width="13" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="K9a-p0-nVm"/>
+                                    <constraint firstAttribute="width" constant="13" id="LGA-XB-Pod"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5vf-2B-KXZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tSb-go-5T7">
+                                <rect key="frame" x="0.0" y="-1" width="13" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="13" id="071-UR-RTL"/>
+                                    <constraint firstAttribute="height" constant="19" id="fx7-XK-Wnr"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YsE-w1-GLu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lKR-Un-EQp">
+                                <rect key="frame" x="437" y="-1" width="13" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="7V4-cE-NJF"/>
+                                    <constraint firstAttribute="width" constant="13" id="gP7-Ny-p38"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SJv-ox-fk4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="oZw-aO-ErJ" firstAttribute="top" secondItem="3IM-oD-6Ci" secondAttribute="top" id="8mG-QC-P6m"/>
+                            <constraint firstAttribute="bottom" secondItem="lKR-Un-EQp" secondAttribute="bottom" id="Gnp-qN-crk"/>
+                            <constraint firstAttribute="bottom" secondItem="tSb-go-5T7" secondAttribute="bottom" id="HYM-mo-PTf"/>
+                            <constraint firstAttribute="trailing" secondItem="3Fe-cR-YRh" secondAttribute="trailing" id="NMM-pZ-CdT"/>
+                            <constraint firstItem="tSb-go-5T7" firstAttribute="leading" secondItem="3IM-oD-6Ci" secondAttribute="leading" id="P2g-zm-94o"/>
+                            <constraint firstAttribute="trailing" secondItem="lKR-Un-EQp" secondAttribute="trailing" id="S3m-hE-c3a"/>
+                            <constraint firstItem="3Fe-cR-YRh" firstAttribute="top" secondItem="3IM-oD-6Ci" secondAttribute="top" id="WF6-Wq-vj1"/>
+                            <constraint firstItem="oZw-aO-ErJ" firstAttribute="leading" secondItem="3IM-oD-6Ci" secondAttribute="leading" id="x0J-3m-0Qe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="29r-7m-0bu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="351"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="SRChocoDemoOSX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -678,4 +747,7 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+    </resources>
 </document>

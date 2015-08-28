@@ -97,4 +97,21 @@ public extension ViewType {
         myFrame.origin.y = viewFrame.origin.y + viewFrame.size.height + margin
         self.frame = myFrame
     }
+    
+    /**
+    Add Subview with Autolayout Constraints that cover superview.
+    */
+    public func addSubview(view: ViewType, coverSuperview: Bool) {
+        self.addSubview(view)
+        if coverSuperview == false { return }
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        let width = NSLayoutConstraint(item: view, attribute: .Width, relatedBy: .Equal, toItem: self, attribute: .Width, multiplier: 1.0, constant: 0)
+        let height = NSLayoutConstraint(item: view, attribute: .Height, relatedBy: .Equal, toItem: self, attribute: .Height, multiplier: 1.0, constant: 0)
+        let top = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1.0, constant: 0)
+        let leading = NSLayoutConstraint(item: view, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .Leading, multiplier: 1.0, constant: 0)
+        
+        self.addConstraints([width, height, top, leading])
+    }
 }
