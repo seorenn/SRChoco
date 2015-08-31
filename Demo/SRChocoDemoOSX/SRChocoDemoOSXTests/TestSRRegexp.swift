@@ -26,41 +26,41 @@ class TestSRRegexp: XCTestCase {
         if let regexp = SRRegexp("^.*(test).*$") {
             XCTAssert(regexp.find("This is test string")?.count > 0)
             XCTAssert(regexp.find("this is TEST STRING")?.count > 0)
-            XCTAssert(regexp.find("this is test string")?.string(1) == "test")
+            XCTAssertEqual(regexp.find("this is test string")?.string(1), "test")
         } else {
-            XCTAssert(false)
+            XCTFail()
         }
         
         if let regexp2 = SRRegexp("^[a-zA-Z]+$") {
             XCTAssert(regexp2.find("ABCDEFGaaa")?.count > 0)
-            XCTAssert(regexp2.find("1Abccd") == nil)
+            XCTAssertNil(regexp2.find("1Abccd"))
         } else {
-            XCTAssert(false)
+            XCTFail()
         }
     }
     
     func testTest() {
         if let regexp = SRRegexp(".*test.*") {
-            XCTAssert(regexp.test("This is test string"))
-            XCTAssert(regexp.test("this is TEST STRING"))
+            XCTAssertTrue(regexp.test("This is test string"))
+            XCTAssertTrue(regexp.test("this is TEST STRING"))
         } else {
-            XCTAssert(false)
+            XCTFail()
         }
         
         if let regexp2 = SRRegexp("^[a-zA-Z]+$") {
-            XCTAssert(regexp2.test("ABCDEFGaaa"))
-            XCTAssert(regexp2.test("1Abccd") == false)
+            XCTAssertTrue(regexp2.test("ABCDEFGaaa"))
+            XCTAssertFalse(regexp2.test("1Abccd"))
         } else {
-            XCTAssert(false)
+            XCTFail()
         }
     }
 
     func testReplace() {
         if let regexp = SRRegexp(".*(TEST).*") {
             let res = regexp.replace("this is TEST string", template: "EXTRACTED: $1")
-            XCTAssert(res == "EXTRACTED: TEST")
+            XCTAssertEqual(res, "EXTRACTED: TEST")
         } else {
-            XCTAssert(false)
+            XCTFail()
         }
     }
 }

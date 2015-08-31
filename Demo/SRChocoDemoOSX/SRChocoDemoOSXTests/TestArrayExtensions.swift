@@ -37,6 +37,6 @@ class TestArrayExtensions: XCTestCase {
     func testJoin() {
         let array = [ "This", "is", "test" ]
         let result = array.stringByJoining(" ")
-        XCTAssert(result == "This is test")
+        XCTAssertEqual(result, "This is test")
     }
 }

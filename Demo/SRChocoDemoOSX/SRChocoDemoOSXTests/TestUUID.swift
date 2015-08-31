@@ -45,7 +45,7 @@ class TestUUID: XCTestCase {
                     matchCount++
                 }
             }
-            XCTAssert(matchCount == 1)
+            XCTAssertEqual(matchCount, 1)
         }
     }
 }
