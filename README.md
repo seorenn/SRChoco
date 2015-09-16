@@ -11,18 +11,14 @@ Grand Central Dispatch Helper Module
 
 ## Tasks
 
-<pre>
-SRDispatch.asyncTask() {
+```Swift
+backgroundTask {
     ...
-    SRDispatch.mainTask() {
+    mainTask {
         ...
     }
 }
-
-SRDispatch.backgroundTask() {
-    ...
-}
-</pre>
+```
 
 # SRExternalApp
 
