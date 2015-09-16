@@ -24,28 +24,29 @@ class TestStringExtensions: XCTestCase {
     
     func testSubscript() {
         let str = "123 ABC abc-"
-        XCTAssert(str[0] == Character("1"))
-        XCTAssert(str[4] == Character("A"))
-        XCTAssert(str[-1] == Character("-"))
-        XCTAssert(str[-2] == Character("c"))
+        XCTAssertEqual(str[0], Character("1"))
+        XCTAssertEqual(str[4], Character("A"))
+        XCTAssertEqual(str[-1], Character("-"))
+        XCTAssertEqual(str[-2], Character("c"))
     }
     
     func testSubstring() {
         let strA = "This is test string..."
         let strB = strA[1...3]
-        XCTAssert(strB == "his")
-        XCTAssert(strA[2...5] == "is i")
-        let strC = strA[1..<3]
-        XCTAssert(strC == "hi")
+        XCTAssertEqual(strB, "his")
+        XCTAssertEqual(strA[2...5], "is i")
         
-        XCTAssert(strA.substring(4, length: 4) == " is ")
-        XCTAssert(strA.prefix(4) == "This")
-        XCTAssert(strA.postfix(3) == "...")
+        let strC = strA[1..<3]
+        XCTAssertEqual(strC, "hi")
+        
+        XCTAssertEqual(strA.substring(4, length: 4), " is ")
+        XCTAssertEqual(strA.prefix(4), "This")
+        XCTAssertEqual(strA.postfix(3), "...")
         
         let strD = strA[NSMakeRange(0, 3)]
-        XCTAssert(strD == "Thi")
+        XCTAssertEqual(strD, "Thi")
         let strE = strA[NSMakeRange(5, 4)]
-        XCTAssert(strE == "is t")
+        XCTAssertEqual(strE, "is t")
     }
 
     func testTrim() {
@@ -72,10 +73,10 @@ class TestStringExtensions: XCTestCase {
     func testSplit() {
         let str = "This is test"
         let array = str.arrayBySpliting()
-        XCTAssertTrue(array.count == 3)
-        XCTAssertTrue(array[0] == "This")
-        XCTAssertTrue(array[1] == "is")
-        XCTAssertTrue(array[2] == "test")
+        XCTAssertEqual(array.count, 3)
+        XCTAssertEqual(array[0], "This")
+        XCTAssertEqual(array[1], "is")
+        XCTAssertEqual(array[2], "test")
     }
 }
 
