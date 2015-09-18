@@ -25,12 +25,12 @@ public class SRAuth {
     public func authWithTouchID(reason: String, callback: ((auth: Bool) -> Void)?) {
 #if os(iOS)
         let context = LAContext()
-        context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-            (result: Bool, error: NSError!) in
+        context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: {
+            (result, error) -> Void in
             dispatch_async(dispatch_get_main_queue()) {
                 return result
             }
-        }
+        })
 #endif
     }
 }
