@@ -11,6 +11,16 @@ import Foundation
 public class SRJSON {
     private let object: AnyObject?
     
+    public var JSONData: NSData? {
+        guard let object = self.object else { return nil }
+        return try! NSJSONSerialization.dataWithJSONObject(object, options: .PrettyPrinted)
+    }
+    
+    public var JSONString: String? {
+        guard let data = self.JSONData else { return nil }
+        return String(data: data, encoding: NSUTF8StringEncoding)
+    }
+    
     public var isArray: Bool {
         return self.object is NSArray
     }
@@ -60,12 +70,15 @@ public class SRJSON {
             let array = self.object as? [AnyObject]
             return array!.count
         }
+        else if self.isDictionary {
+            let dict = self.object as? [String : AnyObject]
+            return dict!.count
+        }
         return 0
     }
     
     public class func jsonWithString(string: String) -> SRJSON? {
-        let str = string as NSString
-        if let data = str.dataUsingEncoding(NSUTF8StringEncoding) {
+        if let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
             return SRJSON(data: data)
         } else {
             return nil
@@ -81,22 +94,23 @@ public class SRJSON {
         }
     }
     
+    public convenience init?(JSONString: String) {
+        guard let data = JSONString.dataUsingEncoding(NSUTF8StringEncoding) else { return nil }
+        self.init(data: data)
+    }
+    
     private init(object: AnyObject) {
         self.object = object
     }
     
     public subscript(index: Int) -> SRJSON? {
-        if self.isArray == false { return nil }
-        let array = self.object as? [AnyObject]
-        return SRJSON(object: array![index])
+        guard let array = self.object as? [AnyObject] else { return nil }
+        return SRJSON(object: array[index])
     }
     
     public subscript(key: String) -> SRJSON? {
-        if self.isDictionary == false { return nil }
-        let dict = self.object as? [String:AnyObject]
-        if let object: AnyObject = dict![key] {
-            return SRJSON(object: object)
-        }
-        return nil
+        guard let dict = self.object as? [String : AnyObject] else { return nil }
+        guard let obj = dict[key] else { return nil }
+        return SRJSON(object: obj)
     }
 }
