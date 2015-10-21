@@ -10,7 +10,6 @@
 		8A03F2D31B6B25340061C349 /* SRChoco.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A03F2D21B6B25340061C349 /* SRChoco.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A03F2ED1B6B268F0061C349 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DB1B6B268F0061C349 /* ArrayExtensions.swift */; };
 		8A03F2EE1B6B268F0061C349 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DC1B6B268F0061C349 /* ColorExtensions.swift */; };
-		8A03F2F01B6B268F0061C349 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DE1B6B268F0061C349 /* Log.swift */; };
 		8A03F2F11B6B268F0061C349 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DF1B6B268F0061C349 /* NSDateExtensions.swift */; };
 		8A03F2F21B6B268F0061C349 /* SRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E01B6B268F0061C349 /* SRAuth.swift */; };
 		8A03F2F31B6B268F0061C349 /* SRCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E11B6B268F0061C349 /* SRCache.swift */; };
@@ -32,7 +31,6 @@
 		8A84F7C41BAC006B00C81D09 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DC1B6B268F0061C349 /* ColorExtensions.swift */; };
 		8A84F7C51BAC006B00C81D09 /* SRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E01B6B268F0061C349 /* SRAuth.swift */; };
 		8A84F7C61BAC006B00C81D09 /* SRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E61B6B268F0061C349 /* SRJSON.swift */; };
-		8A84F7C71BAC006B00C81D09 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DE1B6B268F0061C349 /* Log.swift */; };
 		8A84F7C81BAC006B00C81D09 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DF1B6B268F0061C349 /* NSDateExtensions.swift */; };
 		8A84F7C91BAC006B00C81D09 /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E21B6B268F0061C349 /* SRDevice.swift */; };
 		8A84F7CB1BAC006B00C81D09 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */; };
@@ -45,7 +43,6 @@
 		8A03F2D41B6B25340061C349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A03F2DB1B6B268F0061C349 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = Sources/ArrayExtensions.swift; sourceTree = "<group>"; };
 		8A03F2DC1B6B268F0061C349 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtensions.swift; path = Sources/ColorExtensions.swift; sourceTree = "<group>"; };
-		8A03F2DE1B6B268F0061C349 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Sources/Log.swift; sourceTree = "<group>"; };
 		8A03F2DF1B6B268F0061C349 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDateExtensions.swift; path = Sources/NSDateExtensions.swift; sourceTree = "<group>"; };
 		8A03F2E01B6B268F0061C349 /* SRAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRAuth.swift; path = Sources/SRAuth.swift; sourceTree = "<group>"; };
 		8A03F2E11B6B268F0061C349 /* SRCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRCache.swift; path = Sources/SRCache.swift; sourceTree = "<group>"; };
@@ -110,7 +107,6 @@
 			children = (
 				8A03F2DB1B6B268F0061C349 /* ArrayExtensions.swift */,
 				8A03F2DC1B6B268F0061C349 /* ColorExtensions.swift */,
-				8A03F2DE1B6B268F0061C349 /* Log.swift */,
 				8A03F2DF1B6B268F0061C349 /* NSDateExtensions.swift */,
 				8A03F2E01B6B268F0061C349 /* SRAuth.swift */,
 				8A03F2E11B6B268F0061C349 /* SRCache.swift */,
@@ -249,7 +245,6 @@
 				8A03F2EE1B6B268F0061C349 /* ColorExtensions.swift in Sources */,
 				8A03F2F21B6B268F0061C349 /* SRAuth.swift in Sources */,
 				8A03F2F81B6B268F0061C349 /* SRJSON.swift in Sources */,
-				8A03F2F01B6B268F0061C349 /* Log.swift in Sources */,
 				8A03F2F11B6B268F0061C349 /* NSDateExtensions.swift in Sources */,
 				8A03F2F41B6B268F0061C349 /* SRDevice.swift in Sources */,
 				8A03F2FD1B6B268F0061C349 /* StringExtensions.swift in Sources */,
@@ -270,7 +265,6 @@
 				8A84F7C41BAC006B00C81D09 /* ColorExtensions.swift in Sources */,
 				8A84F7C51BAC006B00C81D09 /* SRAuth.swift in Sources */,
 				8A84F7C61BAC006B00C81D09 /* SRJSON.swift in Sources */,
-				8A84F7C71BAC006B00C81D09 /* Log.swift in Sources */,
 				8A84F7C81BAC006B00C81D09 /* NSDateExtensions.swift in Sources */,
 				8A84F7C91BAC006B00C81D09 /* SRDevice.swift in Sources */,
 				8A84F7CB1BAC006B00C81D09 /* StringExtensions.swift in Sources */,
