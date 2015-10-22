@@ -54,7 +54,7 @@
 		8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Sources/StringExtensions.swift; sourceTree = "<group>"; };
 		8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Sources/ViewExtensions.swift; sourceTree = "<group>"; };
 		8A47D68F1B6F495F004CA762 /* SRGCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRGCD.swift; path = Sources/SRGCD.swift; sourceTree = "<group>"; };
-		8A84F7D31BAC006B00C81D09 /* SRChocoOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChocoOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A84F7D31BAC006B00C81D09 /* SRChoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				8A03F2CF1B6B25340061C349 /* SRChoco.framework */,
-				8A84F7D31BAC006B00C81D09 /* SRChocoOSX.framework */,
+				8A84F7D31BAC006B00C81D09 /* SRChoco.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 			);
 			name = SRChocoOSX;
 			productName = SRChoco;
-			productReference = 8A84F7D31BAC006B00C81D09 /* SRChocoOSX.framework */;
+			productReference = 8A84F7D31BAC006B00C81D09 /* SRChoco.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -427,7 +427,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChoco;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SRChoco;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -449,7 +449,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChoco;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SRChoco;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				VALID_ARCHS = "i386 x86_64";
