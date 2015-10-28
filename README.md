@@ -54,13 +54,6 @@ TODO
 
 Some utility classes and extensions for more conveniences...
 
-## Log
-
-<pre>
-Log.debug("blah blah")
-Log.error("Wow! super foo bar!")
-</pre>
-
 ## NSDateExtensions
 
 <pre>
