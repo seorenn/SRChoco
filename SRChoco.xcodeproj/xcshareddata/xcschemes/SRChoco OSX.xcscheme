@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8A84F7BB1BAC006B00C81D09"
                BuildableName = "SRChoco.framework"
-               BlueprintName = "SRChocoOSX"
+               BlueprintName = "SRChoco OSX"
                ReferencedContainer = "container:SRChoco.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,7 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8A84F7BB1BAC006B00C81D09"
             BuildableName = "SRChoco.framework"
-            BlueprintName = "SRChocoOSX"
+            BlueprintName = "SRChoco OSX"
             ReferencedContainer = "container:SRChoco.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,7 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8A84F7BB1BAC006B00C81D09"
             BuildableName = "SRChoco.framework"
-            BlueprintName = "SRChocoOSX"
+            BlueprintName = "SRChoco OSX"
             ReferencedContainer = "container:SRChoco.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

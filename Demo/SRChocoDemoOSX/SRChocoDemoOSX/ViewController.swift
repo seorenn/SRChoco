@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import SRChocoOSX
+import SRChoco
 
 class ViewController: NSViewController {
 

@@ -144,9 +144,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8A03F2CE1B6B25340061C349 /* SRChoco */ = {
+		8A03F2CE1B6B25340061C349 /* SRChoco iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A03F2D71B6B25340061C349 /* Build configuration list for PBXNativeTarget "SRChoco" */;
+			buildConfigurationList = 8A03F2D71B6B25340061C349 /* Build configuration list for PBXNativeTarget "SRChoco iOS" */;
 			buildPhases = (
 				8A03F2CA1B6B25340061C349 /* Sources */,
 				8A03F2CB1B6B25340061C349 /* Frameworks */,
@@ -157,14 +157,14 @@
 			);
 			dependencies = (
 			);
-			name = SRChoco;
+			name = "SRChoco iOS";
 			productName = SRChoco;
 			productReference = 8A03F2CF1B6B25340061C349 /* SRChoco.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8A84F7BB1BAC006B00C81D09 /* SRChocoOSX */ = {
+		8A84F7BB1BAC006B00C81D09 /* SRChoco OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A84F7D01BAC006B00C81D09 /* Build configuration list for PBXNativeTarget "SRChocoOSX" */;
+			buildConfigurationList = 8A84F7D01BAC006B00C81D09 /* Build configuration list for PBXNativeTarget "SRChoco OSX" */;
 			buildPhases = (
 				8A84F7BC1BAC006B00C81D09 /* Sources */,
 				8A84F7CC1BAC006B00C81D09 /* Frameworks */,
@@ -175,7 +175,7 @@
 			);
 			dependencies = (
 			);
-			name = SRChocoOSX;
+			name = "SRChoco OSX";
 			productName = SRChoco;
 			productReference = 8A84F7D31BAC006B00C81D09 /* SRChoco.framework */;
 			productType = "com.apple.product-type.framework";
@@ -207,8 +207,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8A03F2CE1B6B25340061C349 /* SRChoco */,
-				8A84F7BB1BAC006B00C81D09 /* SRChocoOSX */,
+				8A03F2CE1B6B25340061C349 /* SRChoco iOS */,
+				8A84F7BB1BAC006B00C81D09 /* SRChoco OSX */,
 			);
 		};
 /* End PBXProject section */
@@ -468,7 +468,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A03F2D71B6B25340061C349 /* Build configuration list for PBXNativeTarget "SRChoco" */ = {
+		8A03F2D71B6B25340061C349 /* Build configuration list for PBXNativeTarget "SRChoco iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A03F2D81B6B25340061C349 /* Debug */,
@@ -477,7 +477,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A84F7D01BAC006B00C81D09 /* Build configuration list for PBXNativeTarget "SRChocoOSX" */ = {
+		8A84F7D01BAC006B00C81D09 /* Build configuration list for PBXNativeTarget "SRChoco OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A84F7D11BAC006B00C81D09 /* Debug */,

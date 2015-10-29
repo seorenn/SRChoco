@@ -8,7 +8,7 @@
 
 import Cocoa
 import XCTest
-import SRChocoOSX
+import SRChoco
 
 class TestStringExtensions: XCTestCase {
 
