@@ -127,3 +127,4 @@ view.moveToBelow(view: anotherView, margin: 5.0)
 * SRTextInputSourceManager: https://github.com/seorenn/SRTextInputSourceManager
 * SRHotKeyManager: https://github.com/seorenn/SRHotKeyManager
 * SRStatusItemPopupController: https://github.com/seorenn/SRStatusItemPopupController
+* SRJSON: https://github.com/seorenn/SRJSON
