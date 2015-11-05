@@ -14,13 +14,12 @@
 		8A47D66E1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D66D1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift */; };
 		8A47D6891B6F4096004CA762 /* TestArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */; };
 		8A47D68A1B6F4096004CA762 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6841B6F4096004CA762 /* TestNSDateExtensions.swift */; };
-		8A47D68B1B6F4096004CA762 /* TestSRJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6851B6F4096004CA762 /* TestSRJSON.swift */; };
 		8A47D68C1B6F4096004CA762 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */; };
 		8A47D68D1B6F4096004CA762 /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */; };
 		8A47D68E1B6F4096004CA762 /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6881B6F4096004CA762 /* TestUUID.swift */; };
-		8A66F54B1B8FFEB000714FBF /* AnotherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66F5491B8FFEB000714FBF /* AnotherViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8A84F7D81BAC018500C81D09 /* SRChocoOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A84F7D71BAC018000C81D09 /* SRChocoOSX.framework */; };
-		8A84F7D91BAC018500C81D09 /* SRChocoOSX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A84F7D71BAC018000C81D09 /* SRChocoOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A66F54B1B8FFEB000714FBF /* AnotherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66F5491B8FFEB000714FBF /* AnotherViewController.swift */; };
+		8A84F7D81BAC018500C81D09 /* SRChoco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A84F7D71BAC018000C81D09 /* SRChoco.framework */; };
+		8A84F7D91BAC018500C81D09 /* SRChoco.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A84F7D71BAC018000C81D09 /* SRChoco.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8A84F7D91BAC018500C81D09 /* SRChocoOSX.framework in Embed Frameworks */,
+				8A84F7D91BAC018500C81D09 /* SRChoco.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,7 +80,6 @@
 		8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SRChoco.xcodeproj; path = ../../../SRChoco.xcodeproj; sourceTree = "<group>"; };
 		8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArrayExtensions.swift; sourceTree = "<group>"; };
 		8A47D6841B6F4096004CA762 /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
-		8A47D6851B6F4096004CA762 /* TestSRJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRJSON.swift; sourceTree = "<group>"; };
 		8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
 		8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStringExtensions.swift; sourceTree = "<group>"; };
 		8A47D6881B6F4096004CA762 /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUUID.swift; sourceTree = "<group>"; };
@@ -93,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A84F7D81BAC018500C81D09 /* SRChocoOSX.framework in Frameworks */,
+				8A84F7D81BAC018500C81D09 /* SRChoco.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +142,6 @@
 			children = (
 				8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */,
 				8A47D6841B6F4096004CA762 /* TestNSDateExtensions.swift */,
-				8A47D6851B6F4096004CA762 /* TestSRJSON.swift */,
 				8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */,
 				8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */,
 				8A47D6881B6F4096004CA762 /* TestUUID.swift */,
@@ -158,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				8A47D67D1B6F3FF0004CA762 /* SRChoco.framework */,
-				8A84F7D71BAC018000C81D09 /* SRChocoOSX.framework */,
+				8A84F7D71BAC018000C81D09 /* SRChoco.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,10 +251,10 @@
 			remoteRef = 8A47D67C1B6F3FF0004CA762 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8A84F7D71BAC018000C81D09 /* SRChocoOSX.framework */ = {
+		8A84F7D71BAC018000C81D09 /* SRChoco.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = SRChocoOSX.framework;
+			path = SRChoco.framework;
 			remoteRef = 8A84F7D61BAC018000C81D09 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -300,7 +297,6 @@
 				8A47D66E1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift in Sources */,
 				8A47D6891B6F4096004CA762 /* TestArrayExtensions.swift in Sources */,
 				8A47D68E1B6F4096004CA762 /* TestUUID.swift in Sources */,
-				8A47D68B1B6F4096004CA762 /* TestSRJSON.swift in Sources */,
 				8A47D68C1B6F4096004CA762 /* TestSRRegexp.swift in Sources */,
 				8A47D68D1B6F4096004CA762 /* TestStringExtensions.swift in Sources */,
 				8A47D68A1B6F4096004CA762 /* TestNSDateExtensions.swift in Sources */,
