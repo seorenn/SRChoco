@@ -53,6 +53,19 @@ public struct SRTimeDelta: CustomStringConvertible {
 // MARK: - NSDate Extensions
 
 public extension NSDate {
+    
+    // Formats
+    
+    public func string(format: String) -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = format
+        
+        return formatter.stringFromDate(self)
+    }
+    
+    
+    // Components
+    
     public var dateComponents: (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int, nanosecond: Int)? {
         if let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
             let components = calendar.components([ .Year, .Month, .Day, .Hour, .Minute, .Second, .Nanosecond], fromDate: self)
