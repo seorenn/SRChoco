@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A3F04E71C8FC688009ACDD3 /* HorizontalSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F04E61C8FC688009ACDD3 /* HorizontalSplitViewController.swift */; };
+		8A3F04E91C8FC69F009ACDD3 /* VerticalSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F04E81C8FC69F009ACDD3 /* VerticalSplitViewController.swift */; };
 		8A47D65C1B6F3FC2004CA762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D65B1B6F3FC2004CA762 /* AppDelegate.swift */; };
 		8A47D65E1B6F3FC2004CA762 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D65D1B6F3FC2004CA762 /* ViewController.swift */; };
 		8A47D6601B6F3FC2004CA762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A47D65F1B6F3FC2004CA762 /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A3F04E61C8FC688009ACDD3 /* HorizontalSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSplitViewController.swift; sourceTree = "<group>"; };
+		8A3F04E81C8FC69F009ACDD3 /* VerticalSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalSplitViewController.swift; sourceTree = "<group>"; };
 		8A47D6581B6F3FC2004CA762 /* SRChocoDemoOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRChocoDemoOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A47D65B1B6F3FC2004CA762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A47D65D1B6F3FC2004CA762 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A3F04E41C8FC676009ACDD3 /* NSSplitViewControllerExtensions Sample */ = {
+			isa = PBXGroup;
+			children = (
+				8A3F04E61C8FC688009ACDD3 /* HorizontalSplitViewController.swift */,
+				8A3F04E81C8FC69F009ACDD3 /* VerticalSplitViewController.swift */,
+			);
+			name = "NSSplitViewControllerExtensions Sample";
+			sourceTree = "<group>";
+		};
 		8A47D64F1B6F3FC1004CA762 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +139,7 @@
 		8A47D65A1B6F3FC2004CA762 /* SRChocoDemoOSX */ = {
 			isa = PBXGroup;
 			children = (
+				8A3F04E41C8FC676009ACDD3 /* NSSplitViewControllerExtensions Sample */,
 				8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */,
 				8A47D65B1B6F3FC2004CA762 /* AppDelegate.swift */,
 				8A47D65D1B6F3FC2004CA762 /* ViewController.swift */,
@@ -287,6 +301,8 @@
 				8A47D65E1B6F3FC2004CA762 /* ViewController.swift in Sources */,
 				8A47D65C1B6F3FC2004CA762 /* AppDelegate.swift in Sources */,
 				8A66F54B1B8FFEB000714FBF /* AnotherViewController.swift in Sources */,
+				8A3F04E91C8FC69F009ACDD3 /* VerticalSplitViewController.swift in Sources */,
+				8A3F04E71C8FC688009ACDD3 /* HorizontalSplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

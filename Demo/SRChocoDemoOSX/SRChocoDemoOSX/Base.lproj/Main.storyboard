@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -583,6 +583,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">
                                     <items>
+                                        <menuItem title="Show NSSplitViewControllerExtensions Sample" id="eTm-dn-39c">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <segue destination="oKm-Mj-BJ0" kind="modal" id="B2Y-MM-WHq"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
@@ -732,6 +738,211 @@
                 <customObject id="29r-7m-0bu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="596" y="351"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="t4A-BN-crP">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="oKm-Mj-BJ0" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="CF9-ZM-iVa">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="461" width="640" height="480"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <value key="minSize" type="size" width="640" height="480"/>
+                    </window>
+                    <connections>
+                        <segue destination="fnP-lP-f51" kind="relationship" relationship="window.shadowedContentViewController" id="GFQ-fI-acd"/>
+                    </connections>
+                </windowController>
+                <customObject id="6GC-cq-Mcu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647" y="-440"/>
+        </scene>
+        <!--Horizontal Split View Controller-->
+        <scene sceneID="YYG-DT-jm8">
+            <objects>
+                <splitViewController id="fnP-lP-f51" customClass="HorizontalSplitViewController" customModule="SRChocoDemoOSX" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="dWb-1b-2X2"/>
+                        <splitViewItem id="JtP-az-FZu"/>
+                        <splitViewItem id="2ay-en-VHY"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="zQA-kS-23b">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="3bk-lh-Bep" kind="relationship" relationship="splitItems" id="HUX-he-KS5"/>
+                        <segue destination="QJA-WS-mRM" kind="relationship" relationship="splitItems" id="U20-yZ-tTF"/>
+                        <segue destination="ddI-Uc-OlE" kind="relationship" relationship="splitItems" id="obg-LS-RiG"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="SNX-DU-2Yj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328" y="-440"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="olE-ZL-QSV">
+            <objects>
+                <viewController id="3bk-lh-Bep" sceneMemberID="viewController">
+                    <view key="view" id="vGV-2r-lNp">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="80"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ybd-Cd-JkB">
+                                <rect key="frame" x="20" y="19" width="410" height="42"/>
+                                <buttonCell key="cell" type="smallSquare" title="Left" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Up8-Jw-nCr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="30"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ybd-Cd-JkB" secondAttribute="trailing" constant="20" id="2Rw-zd-F8F"/>
+                            <constraint firstItem="Ybd-Cd-JkB" firstAttribute="leading" secondItem="vGV-2r-lNp" secondAttribute="leading" constant="20" id="csP-BR-aAy"/>
+                            <constraint firstAttribute="bottom" secondItem="Ybd-Cd-JkB" secondAttribute="bottom" constant="20" id="gYL-aA-Gl8"/>
+                            <constraint firstItem="Ybd-Cd-JkB" firstAttribute="top" secondItem="vGV-2r-lNp" secondAttribute="top" constant="20" id="sIX-On-AXr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="d2G-U0-CCM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="-446"/>
+        </scene>
+        <!--Vertical Split View Controller-->
+        <scene sceneID="Htz-ds-k2j">
+            <objects>
+                <splitViewController id="QJA-WS-mRM" customClass="VerticalSplitViewController" customModule="SRChocoDemoOSX" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="Gvd-vG-FuT"/>
+                        <splitViewItem id="H9l-Vc-1w5"/>
+                        <splitViewItem id="XLM-qc-ZpP"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" id="Wog-Fk-3ov">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="BXe-dd-7he" kind="relationship" relationship="splitItems" id="XC1-RF-pOr"/>
+                        <segue destination="voX-h3-Rg2" kind="relationship" relationship="splitItems" id="JNh-9h-EyR"/>
+                        <segue destination="x5x-sp-I3G" kind="relationship" relationship="splitItems" id="EvF-AN-bQ9"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="o6u-yk-Zyq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="-67"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7XM-r2-ZHv">
+            <objects>
+                <viewController id="BXe-dd-7he" sceneMemberID="viewController">
+                    <view key="view" id="89s-11-O4D">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="68"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OQ9-ig-ozV">
+                                <rect key="frame" x="20" y="19" width="410" height="30"/>
+                                <buttonCell key="cell" type="smallSquare" title="Content 1" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="THT-Eb-aG1">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="20"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="OQ9-ig-ozV" firstAttribute="top" secondItem="89s-11-O4D" secondAttribute="top" constant="20" id="4wx-13-ote"/>
+                            <constraint firstAttribute="bottom" secondItem="OQ9-ig-ozV" secondAttribute="bottom" constant="20" id="F0v-G0-bDk"/>
+                            <constraint firstAttribute="trailing" secondItem="OQ9-ig-ozV" secondAttribute="trailing" constant="20" id="XAS-4p-Gij"/>
+                            <constraint firstItem="OQ9-ig-ozV" firstAttribute="leading" secondItem="89s-11-O4D" secondAttribute="leading" constant="20" id="YWV-ti-h4b"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="CDS-WO-FI9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2542" y="-355"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ily-6Z-7sa">
+            <objects>
+                <viewController id="voX-h3-Rg2" sceneMemberID="viewController">
+                    <view key="view" id="W50-0s-04w">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="68"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aQf-dE-fTC">
+                                <rect key="frame" x="20" y="19" width="410" height="30"/>
+                                <buttonCell key="cell" type="smallSquare" title="Content 2" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A5r-gf-dps">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="20"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aQf-dE-fTC" secondAttribute="trailing" constant="20" id="3eD-Xj-MbB"/>
+                            <constraint firstItem="aQf-dE-fTC" firstAttribute="leading" secondItem="W50-0s-04w" secondAttribute="leading" constant="20" id="eic-tS-6o9"/>
+                            <constraint firstAttribute="bottom" secondItem="aQf-dE-fTC" secondAttribute="bottom" constant="20" id="fm6-Pp-3KR"/>
+                            <constraint firstItem="aQf-dE-fTC" firstAttribute="top" secondItem="W50-0s-04w" secondAttribute="top" constant="20" id="sXJ-yC-yaT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="lP1-PM-mbk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2542" y="6"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7Ex-y7-QIK">
+            <objects>
+                <viewController id="x5x-sp-I3G" sceneMemberID="viewController">
+                    <view key="view" id="E9b-6P-qy8">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="68"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N00-7f-ASj">
+                                <rect key="frame" x="20" y="19" width="410" height="30"/>
+                                <buttonCell key="cell" type="smallSquare" title="Content 3" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="C2M-lk-Y5J">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="20"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="N00-7f-ASj" firstAttribute="top" secondItem="E9b-6P-qy8" secondAttribute="top" constant="20" id="KgP-Bs-bNh"/>
+                            <constraint firstItem="N00-7f-ASj" firstAttribute="leading" secondItem="E9b-6P-qy8" secondAttribute="leading" constant="20" id="L9z-qb-3ch"/>
+                            <constraint firstAttribute="bottom" secondItem="N00-7f-ASj" secondAttribute="bottom" constant="20" id="bhH-5f-gAT"/>
+                            <constraint firstAttribute="trailing" secondItem="N00-7f-ASj" secondAttribute="trailing" constant="20" id="ccW-6Z-PeX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="zcj-st-IAq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2539" y="365"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eS0-Zd-fdC">
+            <objects>
+                <viewController id="ddI-Uc-OlE" sceneMemberID="viewController">
+                    <view key="view" id="AWf-oj-fpH">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="80"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ENt-oE-l3n">
+                                <rect key="frame" x="20" y="19" width="410" height="42"/>
+                                <buttonCell key="cell" type="smallSquare" title="Right" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NgJ-I5-eFK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="30"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ENt-oE-l3n" firstAttribute="top" secondItem="AWf-oj-fpH" secondAttribute="top" constant="20" id="5Uf-4Q-kRi"/>
+                            <constraint firstAttribute="bottom" secondItem="ENt-oE-l3n" secondAttribute="bottom" constant="20" id="iPM-Ia-FM0"/>
+                            <constraint firstItem="ENt-oE-l3n" firstAttribute="leading" secondItem="AWf-oj-fpH" secondAttribute="leading" constant="20" id="jpH-NW-Nnc"/>
+                            <constraint firstAttribute="trailing" secondItem="ENt-oE-l3n" secondAttribute="trailing" constant="20" id="psq-Vx-Zll"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="Ief-8G-PXC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="344"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">

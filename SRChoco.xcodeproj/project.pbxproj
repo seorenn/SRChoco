@@ -20,6 +20,7 @@
 		8A03F2FD1B6B268F0061C349 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */; };
 		8A03F2FE1B6B268F0061C349 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */; };
 		8A47D6901B6F495F004CA762 /* SRGCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D68F1B6F495F004CA762 /* SRGCD.swift */; };
+		8A84C7F01C8FB67E00B0AB4D /* NSSplitViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A84C7EF1C8FB67E00B0AB4D /* NSSplitViewControllerExtensions.swift */; };
 		8A84F7BD1BAC006B00C81D09 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DB1B6B268F0061C349 /* ArrayExtensions.swift */; };
 		8A84F7BE1BAC006B00C81D09 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E51B6B268F0061C349 /* SRExternalApp.swift */; };
 		8A84F7BF1BAC006B00C81D09 /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EA1B6B268F0061C349 /* SRUUID.swift */; };
@@ -51,6 +52,7 @@
 		8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Sources/StringExtensions.swift; sourceTree = "<group>"; };
 		8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Sources/ViewExtensions.swift; sourceTree = "<group>"; };
 		8A47D68F1B6F495F004CA762 /* SRGCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRGCD.swift; path = Sources/SRGCD.swift; sourceTree = "<group>"; };
+		8A84C7EF1C8FB67E00B0AB4D /* NSSplitViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSSplitViewControllerExtensions.swift; path = Sources/NSSplitViewControllerExtensions.swift; sourceTree = "<group>"; };
 		8A84F7D31BAC006B00C81D09 /* SRChoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 				8A03F2EA1B6B268F0061C349 /* SRUUID.swift */,
 				8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */,
 				8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */,
+				8A84C7EF1C8FB67E00B0AB4D /* NSSplitViewControllerExtensions.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				8A84F7BE1BAC006B00C81D09 /* SRExternalApp.swift in Sources */,
 				8A84F7BF1BAC006B00C81D09 /* SRUUID.swift in Sources */,
 				8A84F7C01BAC006B00C81D09 /* ViewExtensions.swift in Sources */,
+				8A84C7F01C8FB67E00B0AB4D /* NSSplitViewControllerExtensions.swift in Sources */,
 				8A84F7C11BAC006B00C81D09 /* SRCache.swift in Sources */,
 				8A84F7C21BAC006B00C81D09 /* SRRegexp.swift in Sources */,
 				8A84F7C31BAC006B00C81D09 /* SRGCD.swift in Sources */,
