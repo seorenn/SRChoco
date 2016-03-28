@@ -48,7 +48,7 @@ public func backgroundRunAfter(delay: Double, task: () -> ()) {
 // MARK: - A Simple Class for GCD Dispatch Queue
 
 public class SRDispatchQueue {
-    private let queue: dispatch_queue_t
+    public let queue: dispatch_queue_t
     
     public class func mainQueue() -> SRDispatchQueue {
         let q = dispatch_get_main_queue()
@@ -70,6 +70,14 @@ public class SRDispatchQueue {
     
     private init(queue: dispatch_queue_t) {
         self.queue = queue
+    }
+    
+    public convenience init(_ label: String) {
+        self.init(label: label, serial: true)
+    }
+    
+    public convenience init(_ label: String, serial: Bool) {
+        self.init(label: label, serial: serial)
     }
     
     private init(label: String, serial: Bool) {
@@ -96,7 +104,7 @@ public class SRDispatchQueue {
 // MARK: - A Simple Class for GCD Dispatch Group
 
 public class SRDispatchGroup {
-    private let group = dispatch_group_create()
+    public let group = dispatch_group_create()
     
     public init() {}
     
@@ -130,8 +138,7 @@ public class SRDispatchGroup {
 // MARK: - A Simple Class of Wrapping Pthreads Mutex
 
 public class SRMutex {
-    private var mutex = pthread_mutex_t()
-    private var locking: Bool = false
+    public var mutex = pthread_mutex_t()
     
     public init() {
         pthread_mutex_init(&mutex, nil)
@@ -162,7 +169,7 @@ public class SRMutex {
 // MARK: - A Simple Class of Wrapping Semaphore
 
 public class SRSemaphore {
-    private let semaphore: dispatch_semaphore_t
+    public let semaphore: dispatch_semaphore_t
     
     public init(value: Int = 0) {
         self.semaphore = dispatch_semaphore_create(value)

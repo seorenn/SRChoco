@@ -31,7 +31,9 @@ public extension String {
 //        return self[start..<end]
         let start = self.startIndex.advancedBy(range.startIndex)
         let end = self.startIndex.advancedBy(range.endIndex)
-        return self.substringWithRange(Range<Index>(start: start, end: end))
+        let range: Range<Index> = start..<end
+        //return self.substringWithRange(Range<Index>(start: start, end: end))
+        return self.substringWithRange(range)
     }
     
     // substring with NSRange

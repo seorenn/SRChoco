@@ -38,7 +38,7 @@ public struct SRRegexpGroups {
 }
 
 public struct SRRegexp {
-    private let re: NSRegularExpression?
+    private let re: NSRegularExpression
     
     // MARK: Initializers
     
@@ -46,31 +46,32 @@ public struct SRRegexp {
         var options: NSRegularExpressionOptions = .UseUnicodeWordBoundaries
         if ignoreCase { options = [ .UseUnicodeWordBoundaries, .CaseInsensitive ] }
         
-        do {
-            self.re = try NSRegularExpression(pattern: pattern, options: options)
-        } catch {
-            return nil
-        }
+        guard let re = try? NSRegularExpression(pattern: pattern, options: options)
+            else { return nil }
+        self.re = re
     }
     
     // MARK: Functions
     
     public func find(string: String) -> SRRegexpGroups? {
-        let matches = self.re?.matchesInString(string, options: NSMatchingOptions(), range: NSMakeRange(0, string.characters.count))
-        
-        if let result = matches?.first {
-            return SRRegexpGroups(results: result, text: string)
-        } else {
-            return nil
-        }
+        let matches = self.re.matchesInString(
+            string,
+            options: NSMatchingOptions(),
+            range: NSMakeRange(0, string.characters.count))
+        guard let result = matches.first else { return nil }
+        return SRRegexpGroups(results: result, text: string)
     }
     
     public func test(string: String) -> Bool {
         let matches = self.find(string)
-        return (matches != nil && matches?.count > 0)
+        return matches != nil && matches?.count > 0
     }
     
     public func replace(string: String, template: String) -> String {
-        return self.re!.stringByReplacingMatchesInString(string, options: NSMatchingOptions(), range: NSMakeRange(0, string.characters.count), withTemplate: template)
+        return self.re.stringByReplacingMatchesInString(
+            string,
+            options: NSMatchingOptions(),
+            range: NSMakeRange(0, string.characters.count),
+            withTemplate: template)
     }
 }

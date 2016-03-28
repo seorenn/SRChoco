@@ -42,7 +42,7 @@ class TestUUID: XCTestCase {
             var matchCount = 0
             for occurUUID in uuids {
                 if occurUUID == currentUUID {
-                    matchCount++
+                    matchCount += 1
                 }
             }
             XCTAssertEqual(matchCount, 1)
