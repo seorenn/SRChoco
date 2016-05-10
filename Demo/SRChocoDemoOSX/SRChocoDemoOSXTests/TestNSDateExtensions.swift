@@ -82,7 +82,7 @@ class TestNSDateExtensions: XCTestCase {
         XCTAssertEqual(res.minute, dt!.minute + 1)
         XCTAssertEqual(res.second, 0)
 
-        let delta2 = SRTimeDelta(second: 0, minute: 50)
+        let delta2 = SRTimeDelta(minute: 50)
         let res2 = dt! + delta2
         XCTAssertEqual(dt!.year, res2.year)
         XCTAssertEqual(dt!.month, res2.month)
@@ -102,7 +102,7 @@ class TestNSDateExtensions: XCTestCase {
         let dif = SRTimeDelta(interval: secs)
 
         XCTAssertEqual(Int(dif.interval), 60*60)
-        XCTAssertEqual(dif.second, 0)
+        XCTAssertEqual(dif.second, 60*60)
         XCTAssertEqual(dif.hour, 1)
     }
 }
