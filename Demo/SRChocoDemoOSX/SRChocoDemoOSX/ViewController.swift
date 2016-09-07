@@ -15,17 +15,12 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if let vc = self.storyboard?.instantiateControllerWithIdentifier("AnotherViewController") as? AnotherViewController {
+        if let vc = self.storyboard?.instantiateController(withIdentifier: "AnotherViewController") as? AnotherViewController {
             self.addChildViewController(vc)
             self.view.addSubview(vc.view, coverSuperview: true)
         }
     }
 
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
 
 
 }

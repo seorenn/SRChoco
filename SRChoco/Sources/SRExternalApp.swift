@@ -8,63 +8,63 @@
 
 
 #if os(iOS)
-
-// MARK: SRExternalApp for iOS
-
-import UIKit
-    
-public func canLaunchApp(appScheme: String) -> Bool {
+  
+  // MARK: SRExternalApp for iOS
+  
+  import UIKit
+  
+  public func canLaunchApp(appScheme: String) -> Bool {
     if let appURL = NSURL(string: appScheme) {
-        return UIApplication.sharedApplication().canOpenURL(appURL)
+      return UIApplication.sharedApplication().canOpenURL(appURL)
     } else {
-        return false
+      return false
     }
-}
-
-public func launchApp(appScheme: String) {
+  }
+  
+  public func launchApp(appScheme: String) {
     if let appURL = NSURL(string: appScheme) {
-        UIApplication.sharedApplication().openURL(appURL)
+      UIApplication.sharedApplication().openURL(appURL)
     }
-}
-
+  }
+  
 #elseif os(OSX)
-
-// MARK: SRExternalApp for OSX
-
-import Cocoa
-
-public func getAppPath(bundleIdentifier: String) -> String? {
-    return NSWorkspace.sharedWorkspace().absolutePathForAppBundleWithIdentifier(bundleIdentifier)
-}
-    
-public func launchApp(appPath: String, arguments: [String]) -> NSTask! {
-    let task = NSTask()
+  
+  // MARK: SRExternalApp for OSX
+  
+  import Cocoa
+  
+  public func getAppPath(bundleIdentifier: String) -> String? {
+    return NSWorkspace.shared().absolutePathForApplication(withBundleIdentifier: bundleIdentifier)
+  }
+  
+  public func launchApp(appPath: String, arguments: [String]) -> Process! {
+    let task = Process()
     task.launchPath = appPath
     task.arguments = arguments
-
+    
     task.launch()
     return task
-}
-    
-public func launchApp(appPath: String) {
-    NSWorkspace.sharedWorkspace().launchApplication(appPath)
-}
-
-public func activateApp(pid: pid_t) {
+  }
+  
+  public func launchApp(appPath: String) {
+    NSWorkspace.shared().launchApplication(appPath)
+  }
+  
+  public func activateApp(pid: pid_t) {
     if let app = NSRunningApplication(processIdentifier: pid) {
-        activateApp(app)
+      activateApp(app: app)
     }
-}
-    
-public func activateApp(bundleIdentifier: String) {
-    let apps = NSRunningApplication.runningApplicationsWithBundleIdentifier(bundleIdentifier)
+  }
+  
+  public func activateApp(bundleIdentifier: String) {
+    let apps = NSRunningApplication.runningApplications(withBundleIdentifier: bundleIdentifier)
     if let app = apps.first {
-        activateApp(app)
+      activateApp(app: app)
     }
-}
-    
-public func activateApp(app: NSRunningApplication) {
-    app.activateWithOptions(.ActivateAllWindows)
-}
-    
+  }
+  
+  public func activateApp(app: NSRunningApplication) {
+    app.activate(options: .activateAllWindows)
+  }
+  
 #endif
