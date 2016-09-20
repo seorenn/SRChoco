@@ -9,16 +9,16 @@
 import Foundation
 
 public extension Array {
-    public func stringByJoining(separator: String) -> String {
-        var result = ""
-        for (idx, item) in self.enumerate() {
-            result += "\(item)"
-            if idx < self.count - 1 {
-                result += separator
-            }
-        }
-        return result
+  public func stringByJoining(separator: String) -> String {
+    var result = ""
+    for (idx, item) in self.enumerated() {
+      result += "\(item)"
+      if idx < self.count - 1 {
+        result += separator
+      }
     }
-    
-    // NOTE: func containString() has been deprecated. Use Array.contains() on Swift 2
+    return result
+  }
+  
+  // NOTE: func containString() has been deprecated. Use Array.contains() on Swift 2
 }

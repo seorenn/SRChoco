@@ -15,7 +15,7 @@
 		8A47D6631B6F3FC2004CA762 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A47D6611B6F3FC2004CA762 /* Main.storyboard */; };
 		8A47D66E1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D66D1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift */; };
 		8A47D6891B6F4096004CA762 /* TestArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */; };
-		8A47D68A1B6F4096004CA762 /* TestNSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6841B6F4096004CA762 /* TestNSDateExtensions.swift */; };
+		8A47D68A1B6F4096004CA762 /* TestDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6841B6F4096004CA762 /* TestDateExtensions.swift */; };
 		8A47D68C1B6F4096004CA762 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */; };
 		8A47D68D1B6F4096004CA762 /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */; };
 		8A47D68E1B6F4096004CA762 /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6881B6F4096004CA762 /* TestUUID.swift */; };
@@ -83,7 +83,7 @@
 		8A47D66F1B6F3FC2004CA762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SRChoco.xcodeproj; path = ../../../SRChoco.xcodeproj; sourceTree = "<group>"; };
 		8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArrayExtensions.swift; sourceTree = "<group>"; };
-		8A47D6841B6F4096004CA762 /* TestNSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNSDateExtensions.swift; sourceTree = "<group>"; };
+		8A47D6841B6F4096004CA762 /* TestDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDateExtensions.swift; sourceTree = "<group>"; };
 		8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
 		8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStringExtensions.swift; sourceTree = "<group>"; };
 		8A47D6881B6F4096004CA762 /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUUID.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */,
-				8A47D6841B6F4096004CA762 /* TestNSDateExtensions.swift */,
+				8A47D6841B6F4096004CA762 /* TestDateExtensions.swift */,
 				8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */,
 				8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */,
 				8A47D6881B6F4096004CA762 /* TestUUID.swift */,
@@ -220,14 +220,16 @@
 		8A47D6501B6F3FC1004CA762 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Seorenn;
 				TargetAttributes = {
 					8A47D6571B6F3FC2004CA762 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					8A47D6681B6F3FC2004CA762 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 						TestTargetID = 8A47D6571B6F3FC2004CA762;
 					};
 				};
@@ -315,7 +317,7 @@
 				8A47D68E1B6F4096004CA762 /* TestUUID.swift in Sources */,
 				8A47D68C1B6F4096004CA762 /* TestSRRegexp.swift in Sources */,
 				8A47D68D1B6F4096004CA762 /* TestStringExtensions.swift in Sources */,
-				8A47D68A1B6F4096004CA762 /* TestNSDateExtensions.swift in Sources */,
+				8A47D68A1B6F4096004CA762 /* TestDateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,8 +361,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -403,8 +407,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -423,34 +429,37 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
 		8A47D6731B6F3FC2004CA762 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SRChocoDemoOSX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		8A47D6741B6F3FC2004CA762 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SRChocoDemoOSX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -463,6 +472,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SRChocoDemoOSX.app/Contents/MacOS/SRChocoDemoOSX";
 			};
 			name = Debug;
@@ -476,6 +486,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SRChocoDemoOSX.app/Contents/MacOS/SRChocoDemoOSX";
 			};
 			name = Release;

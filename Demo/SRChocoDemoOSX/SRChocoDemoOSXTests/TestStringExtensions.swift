@@ -32,16 +32,16 @@ class TestStringExtensions: XCTestCase {
     
     func testSubstring() {
         let strA = "This is test string..."
-        let strB = strA[1...3]
+        let strB = strA[1..<4]
         XCTAssertEqual(strB, "his")
-        XCTAssertEqual(strA[2...5], "is i")
+        XCTAssertEqual(strA[2..<6], "is i")
         
         let strC = strA[1..<3]
         XCTAssertEqual(strC, "hi")
         
-        XCTAssertEqual(strA.substring(4, length: 4), " is ")
-        XCTAssertEqual(strA.prefix(4), "This")
-        XCTAssertEqual(strA.postfix(3), "...")
+        XCTAssertEqual(strA.substring(startIndex: 4, length: 4), " is ")
+        XCTAssertEqual(strA.prefix(length: 4), "This")
+      XCTAssertEqual(strA.postfix(length: 3), "...")
         
         let strD = strA[NSMakeRange(0, 3)]
         XCTAssertEqual(strD, "Thi")
@@ -56,23 +56,23 @@ class TestStringExtensions: XCTestCase {
     
     func testContain() {
         let str = "This is test string by test contain"
-        XCTAssertTrue(str.containString("test"))
-        XCTAssertFalse(str.containString("TEST"))
-        XCTAssertTrue(str.containString("TEST", ignoreCase: true))
+      XCTAssertTrue(str.contain(string: "test"))
+      XCTAssertFalse(str.contain(string: "TEST"))
+      XCTAssertTrue(str.contain(string: "TEST", ignoreCase: true))
         
-        XCTAssertTrue(str.containStrings(["is", "test", "string"]))
-        XCTAssertTrue(str.containStrings(["is", "test", "string"], ORMode: false, ignoreCase: false))
-        XCTAssertTrue(str.containStrings(["IS", "TEST", "String"], ORMode: false, ignoreCase: true))
+      XCTAssertTrue(str.contain(strings: ["is", "test", "string"]))
+      XCTAssertTrue(str.contain(strings: ["is", "test", "string"], ORMode: false, ignoreCase: false))
+      XCTAssertTrue(str.contain(strings: ["IS", "TEST", "String"], ORMode: false, ignoreCase: true))
         
-        XCTAssertTrue(str.containStrings(["is", "testxx", "nonstring", "aaa"], ORMode: true))
-        XCTAssertTrue(str.containStrings(["IS", "XX", "non", "aaa"], ORMode: true, ignoreCase: true))
+      XCTAssertTrue(str.contain(strings: ["is", "testxx", "nonstring", "aaa"], ORMode: true))
+      XCTAssertTrue(str.contain(strings: ["IS", "XX", "non", "aaa"], ORMode: true, ignoreCase: true))
         
-        XCTAssertFalse(str.containStrings(["aaa", "bbb"]))
+      XCTAssertFalse(str.contain(strings: ["aaa", "bbb"]))
     }
     
     func testSplit() {
         let str = "This is test"
-        let array = str.arrayBySpliting()
+      let array = str.array(bySplitter: nil)
         XCTAssertEqual(array.count, 3)
         XCTAssertEqual(array[0], "This")
         XCTAssertEqual(array[1], "is")

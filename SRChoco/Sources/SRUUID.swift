@@ -8,25 +8,25 @@
 
 import Foundation
 
-public class SRUUID: CustomStringConvertible {
-    private let UUIDString: String
-    
-    public init() {
-        let uuid: CFUUIDRef = CFUUIDCreate(nil)
-        self.UUIDString = CFUUIDCreateString(nil, uuid) as String
-    }
-    
-    public var normalizedString: String {
-        let lowercased = self.UUIDString.lowercaseString
-        let hypenRemoved = lowercased.stringByReplacingOccurrencesOfString("-", withString: "")
-        return hypenRemoved
-    }
-    
-    public var rawString: String {
-        return self.UUIDString
-    }
-    
-    public var description: String {
-        return self.UUIDString
-    }
+open class SRUUID: CustomStringConvertible {
+  fileprivate let UUIDString: String
+  
+  public init() {
+    let uuid: CFUUID = CFUUIDCreate(nil)
+    self.UUIDString = CFUUIDCreateString(nil, uuid) as String
+  }
+  
+  open var normalizedString: String {
+    let lowercased = self.UUIDString.lowercased()
+    let hypenRemoved = lowercased.replacingOccurrences(of: "-", with: "")
+    return hypenRemoved
+  }
+  
+  open var rawString: String {
+    return self.UUIDString
+  }
+  
+  open var description: String {
+    return self.UUIDString
+  }
 }

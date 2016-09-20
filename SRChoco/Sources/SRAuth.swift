@@ -8,29 +8,32 @@
 
 import LocalAuthentication
 
-public class SRAuth {
-    public var canAuthWithTouchID: Bool {
-#if os(iOS)
-        let context = LAContext()
-        var error: NSError?
-        let result = context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error)
-        
-        if error == nil { return result }
-        else { return false }
-#else
-        return false
-#endif
-    }
-    
-    public func authWithTouchID(reason: String, callback: ((auth: Bool) -> Void)?) {
-#if os(iOS)
-        let context = LAContext()
-        context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: {
-            (result, error) -> Void in
-            dispatch_async(dispatch_get_main_queue()) {
-                return result
-            }
-        })
-#endif
-    }
+open class SRAuth {
+  
+  public static let shared = SRAuth()
+  
+  open var canAuthWithTouchID: Bool {
+    #if os(iOS)
+      let context = LAContext()
+      var error: NSError?
+      let result = context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error)
+      
+      if error == nil { return result }
+      else { return false }
+    #else
+      return false
+    #endif
+  }
+  
+  open func authWithTouchID(reason: String, callback: ((_ auth: Bool) -> Void)?) {
+    #if os(iOS)
+      let context = LAContext()
+      context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: {
+        (result, error) -> Void in
+        dispatch_async(dispatch_get_main_queue()) {
+          return result
+        }
+      })
+    #endif
+  }
 }
