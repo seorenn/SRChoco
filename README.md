@@ -5,21 +5,6 @@ Seorenn's Something Special(?) Frameworks for Cocoa(AppKit) and Cocoa Touch(UIKi
 
 NOTE: I will separate some modules to independent project. SRChoco now refactoring. ;-)
 
-# SRGCD
-
-Grand Central Dispatch Helper Module
-
-## Tasks
-
-```Swift
-backgroundTask {
-    ...
-    mainTask {
-        ...
-    }
-}
-```
-
 # SRExternalApp
 
 Helper Module for External Application
@@ -31,12 +16,6 @@ TODO: Need more documentation
 Regular Expression Modules (likely Python's RE module)
 
 TODO: Need more documentation
-
-# SRWindowManager
-
-TODO: This class will be seperating to independent framework project
-
-Simple Classes for Managing The Application Windows.
 
 # SRUUID
 
@@ -54,10 +33,10 @@ TODO
 
 Some utility classes and extensions for more conveniences...
 
-## NSDateExtensions
+## DateExtensions
 
 <pre>
-let now = NSDate()
+let now = Date()
 let date = now.dateComponents!
 println("\(date.year) - \(date.month) - \(date.day), \(date.hour):\(date.minute):\(date.second)")
 
