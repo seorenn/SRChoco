@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Seorenn. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 import XCTest
 import SRChoco
 

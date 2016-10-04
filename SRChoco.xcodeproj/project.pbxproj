@@ -32,7 +32,28 @@
 		8A66B4C91DA372AD0006F1B1 /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B49F1DA372860006F1B1 /* SRUUID.swift */; };
 		8A66B4CA1DA372AD0006F1B1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4A01DA372860006F1B1 /* StringExtensions.swift */; };
 		8A66B4CB1DA372AD0006F1B1 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4A11DA372860006F1B1 /* ViewExtensions.swift */; };
+		8A66B4FD1DA376A60006F1B1 /* SRChoco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A84F7D31BAC006B00C81D09 /* SRChoco.framework */; };
+		8A66B50A1DA377280006F1B1 /* TestArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4D81DA376680006F1B1 /* TestArrayExtensions.swift */; };
+		8A66B50B1DA377280006F1B1 /* TestDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4D91DA376680006F1B1 /* TestDateExtensions.swift */; };
+		8A66B50C1DA377280006F1B1 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4DA1DA376680006F1B1 /* TestSRRegexp.swift */; };
+		8A66B50D1DA377280006F1B1 /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4DB1DA376680006F1B1 /* TestStringExtensions.swift */; };
+		8A66B50E1DA377280006F1B1 /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4DC1DA376680006F1B1 /* TestUUID.swift */; };
+		8A66B5101DA377280006F1B1 /* TestArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4D81DA376680006F1B1 /* TestArrayExtensions.swift */; };
+		8A66B5111DA377280006F1B1 /* TestDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4D91DA376680006F1B1 /* TestDateExtensions.swift */; };
+		8A66B5121DA377280006F1B1 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4DA1DA376680006F1B1 /* TestSRRegexp.swift */; };
+		8A66B5131DA377280006F1B1 /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4DB1DA376680006F1B1 /* TestStringExtensions.swift */; };
+		8A66B5141DA377280006F1B1 /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4DC1DA376680006F1B1 /* TestUUID.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A66B4FE1DA376A60006F1B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A03F2C61B6B25340061C349 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A84F7BB1BAC006B00C81D09;
+			remoteInfo = "SRChoco OSX";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8A03F2CF1B6B25340061C349 /* SRChoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +71,14 @@
 		8A66B49F1DA372860006F1B1 /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRUUID.swift; path = Source/SRUUID.swift; sourceTree = SOURCE_ROOT; };
 		8A66B4A01DA372860006F1B1 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Source/StringExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8A66B4A11DA372860006F1B1 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Source/ViewExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4D01DA375D50006F1B1 /* SRChoco iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRChoco iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A66B4D41DA375D50006F1B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Tests/Info.plist; sourceTree = "<group>"; };
+		8A66B4D81DA376680006F1B1 /* TestArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestArrayExtensions.swift; path = Tests/TestArrayExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4D91DA376680006F1B1 /* TestDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestDateExtensions.swift; path = Tests/TestDateExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4DA1DA376680006F1B1 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestSRRegexp.swift; path = Tests/TestSRRegexp.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4DB1DA376680006F1B1 /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestStringExtensions.swift; path = Tests/TestStringExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4DC1DA376680006F1B1 /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestUUID.swift; path = Tests/TestUUID.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4F81DA376A60006F1B1 /* SRChoco OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRChoco OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A84F7D31BAC006B00C81D09 /* SRChoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,6 +87,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A66B4CD1DA375D50006F1B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A66B4F51DA376A60006F1B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A66B4FD1DA376A60006F1B1 /* SRChoco.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +118,8 @@
 		8A03F2C51B6B25340061C349 = {
 			isa = PBXGroup;
 			children = (
-				8A03F2D11B6B25340061C349 /* SRChoco */,
+				8A66B4931DA372710006F1B1 /* Source */,
+				8A66B4D11DA375D50006F1B1 /* Tests */,
 				8A03F2D01B6B25340061C349 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,16 +129,10 @@
 			children = (
 				8A03F2CF1B6B25340061C349 /* SRChoco.framework */,
 				8A84F7D31BAC006B00C81D09 /* SRChoco.framework */,
+				8A66B4D01DA375D50006F1B1 /* SRChoco iOS Tests.xctest */,
+				8A66B4F81DA376A60006F1B1 /* SRChoco OSX Tests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		8A03F2D11B6B25340061C349 /* SRChoco */ = {
-			isa = PBXGroup;
-			children = (
-				8A66B4931DA372710006F1B1 /* Source */,
-			);
-			path = SRChoco;
 			sourceTree = "<group>";
 		};
 		8A66B4931DA372710006F1B1 /* Source */ = {
@@ -115,7 +154,22 @@
 				8A66B4A11DA372860006F1B1 /* ViewExtensions.swift */,
 			);
 			name = Source;
+			path = SRChoco;
 			sourceTree = "<group>";
+		};
+		8A66B4D11DA375D50006F1B1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8A66B4D81DA376680006F1B1 /* TestArrayExtensions.swift */,
+				8A66B4D91DA376680006F1B1 /* TestDateExtensions.swift */,
+				8A66B4DA1DA376680006F1B1 /* TestSRRegexp.swift */,
+				8A66B4DB1DA376680006F1B1 /* TestStringExtensions.swift */,
+				8A66B4DC1DA376680006F1B1 /* TestUUID.swift */,
+				8A66B4D41DA375D50006F1B1 /* Info.plist */,
+			);
+			name = Tests;
+			path = "SRChoco iOS Tests";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -157,6 +211,41 @@
 			productReference = 8A03F2CF1B6B25340061C349 /* SRChoco.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		8A66B4CF1DA375D50006F1B1 /* SRChoco iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A66B4D51DA375D50006F1B1 /* Build configuration list for PBXNativeTarget "SRChoco iOS Tests" */;
+			buildPhases = (
+				8A66B4CC1DA375D50006F1B1 /* Sources */,
+				8A66B4CD1DA375D50006F1B1 /* Frameworks */,
+				8A66B4CE1DA375D50006F1B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SRChoco iOS Tests";
+			productName = "SRChoco iOS Tests";
+			productReference = 8A66B4D01DA375D50006F1B1 /* SRChoco iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		8A66B4F71DA376A60006F1B1 /* SRChoco OSX Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A66B5001DA376A60006F1B1 /* Build configuration list for PBXNativeTarget "SRChoco OSX Tests" */;
+			buildPhases = (
+				8A66B4F41DA376A60006F1B1 /* Sources */,
+				8A66B4F51DA376A60006F1B1 /* Frameworks */,
+				8A66B4F61DA376A60006F1B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A66B4FF1DA376A60006F1B1 /* PBXTargetDependency */,
+			);
+			name = "SRChoco OSX Tests";
+			productName = "SRChoco OSX Tests";
+			productReference = 8A66B4F81DA376A60006F1B1 /* SRChoco OSX Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8A84F7BB1BAC006B00C81D09 /* SRChoco OSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A84F7D01BAC006B00C81D09 /* Build configuration list for PBXNativeTarget "SRChoco OSX" */;
@@ -181,13 +270,21 @@
 		8A03F2C61B6B25340061C349 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Seorenn;
 				TargetAttributes = {
 					8A03F2CE1B6B25340061C349 = {
 						CreatedOnToolsVersion = 7.0;
 						LastSwiftMigration = 0800;
+					};
+					8A66B4CF1DA375D50006F1B1 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					8A66B4F71DA376A60006F1B1 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
 					};
 					8A84F7BB1BAC006B00C81D09 = {
 						LastSwiftMigration = 0800;
@@ -208,12 +305,28 @@
 			targets = (
 				8A03F2CE1B6B25340061C349 /* SRChoco iOS */,
 				8A84F7BB1BAC006B00C81D09 /* SRChoco OSX */,
+				8A66B4CF1DA375D50006F1B1 /* SRChoco iOS Tests */,
+				8A66B4F71DA376A60006F1B1 /* SRChoco OSX Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8A03F2CD1B6B25340061C349 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A66B4CE1DA375D50006F1B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A66B4F61DA376A60006F1B1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,6 +361,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A66B4CC1DA375D50006F1B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A66B50D1DA377280006F1B1 /* TestStringExtensions.swift in Sources */,
+				8A66B50C1DA377280006F1B1 /* TestSRRegexp.swift in Sources */,
+				8A66B50A1DA377280006F1B1 /* TestArrayExtensions.swift in Sources */,
+				8A66B50B1DA377280006F1B1 /* TestDateExtensions.swift in Sources */,
+				8A66B50E1DA377280006F1B1 /* TestUUID.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A66B4F41DA376A60006F1B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A66B5131DA377280006F1B1 /* TestStringExtensions.swift in Sources */,
+				8A66B5121DA377280006F1B1 /* TestSRRegexp.swift in Sources */,
+				8A66B5101DA377280006F1B1 /* TestArrayExtensions.swift in Sources */,
+				8A66B5111DA377280006F1B1 /* TestDateExtensions.swift in Sources */,
+				8A66B5141DA377280006F1B1 /* TestUUID.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A84F7BC1BAC006B00C81D09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +405,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A66B4FF1DA376A60006F1B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A84F7BB1BAC006B00C81D09 /* SRChoco OSX */;
+			targetProxy = 8A66B4FE1DA376A60006F1B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8A03F2D51B6B25340061C349 /* Debug */ = {
@@ -416,6 +561,77 @@
 			};
 			name = Release;
 		};
+		8A66B4D61DA375D50006F1B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seorenn.SRChoco-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8A66B4D71DA375D50006F1B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seorenn.SRChoco-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A66B5011DA376A60006F1B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seorenn.SRChoco-OSX-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8A66B5021DA376A60006F1B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seorenn.SRChoco-OSX-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		8A84F7D11BAC006B00C81D09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -481,6 +697,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8A66B4D51DA375D50006F1B1 /* Build configuration list for PBXNativeTarget "SRChoco iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A66B4D61DA375D50006F1B1 /* Debug */,
+				8A66B4D71DA375D50006F1B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8A66B5001DA376A60006F1B1 /* Build configuration list for PBXNativeTarget "SRChoco OSX Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A66B5011DA376A60006F1B1 /* Debug */,
+				8A66B5021DA376A60006F1B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		8A84F7D01BAC006B00C81D09 /* Build configuration list for PBXNativeTarget "SRChoco OSX" */ = {
 			isa = XCConfigurationList;
