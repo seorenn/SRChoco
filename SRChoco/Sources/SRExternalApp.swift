@@ -14,16 +14,18 @@
   import UIKit
   
   public func canLaunchApp(appScheme: String) -> Bool {
-    if let appURL = NSURL(string: appScheme) {
-      return UIApplication.sharedApplication().canOpenURL(appURL)
+    if let appURL = URL(string: appScheme) {
+      return UIApplication.shared.canOpenURL(appURL)
     } else {
       return false
     }
   }
   
   public func launchApp(appScheme: String) {
-    if let appURL = NSURL(string: appScheme) {
-      UIApplication.sharedApplication().openURL(appURL)
+    if let appURL = URL(string: appScheme) {
+      UIApplication.shared.open(appURL, options: [:]) { (succeed) in
+        // TDOO
+      }
     }
   }
   

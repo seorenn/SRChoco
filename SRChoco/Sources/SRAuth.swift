@@ -16,7 +16,7 @@ open class SRAuth {
     #if os(iOS)
       let context = LAContext()
       var error: NSError?
-      let result = context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error)
+      let result = context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error)
       
       if error == nil { return result }
       else { return false }
@@ -28,10 +28,11 @@ open class SRAuth {
   open func authWithTouchID(reason: String, callback: ((_ auth: Bool) -> Void)?) {
     #if os(iOS)
       let context = LAContext()
-      context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: {
+      context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: {
         (result, error) -> Void in
-        dispatch_async(dispatch_get_main_queue()) {
-          return result
+        
+        DispatchQueue.main.async {
+          callback?(result)
         }
       })
     #endif

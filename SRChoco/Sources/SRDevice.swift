@@ -36,12 +36,12 @@ open class SRDevice {
   
   #if os(iOS)
   public class var iOSVersion: Float {
-  let verStr = UIDevice.currentDevice().systemVersion as NSString
+  let verStr = UIDevice.current.systemVersion as NSString
   return verStr.floatValue
   }
   
   public class var iOSVersionString: String {
-  return UIDevice.currentDevice().systemVersion
+  return UIDevice.current.systemVersion
   }
   #endif
 }

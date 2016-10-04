@@ -84,9 +84,9 @@ public extension ViewType {
   
   public var centerPoint: PointType {
     #if os(OSX)
-      return NSMakePoint(self.frame.size.width / 2, self.frame.size.height / 2)
+      return NSPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 2)
     #else
-      return CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2)
+      return CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 2)
     #endif
   }
   
@@ -98,9 +98,6 @@ public extension ViewType {
     self.frame = myFrame
   }
   
-  /**
-   Add Subview with Autolayout Constraints that cover superview.
-   */
   public func addSubview(_ view: ViewType, coverSuperview: Bool) {
     self.addSubview(view)
     if coverSuperview == false { return }
@@ -113,5 +110,15 @@ public extension ViewType {
     let leading = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0)
     
     self.addConstraints([width, height, top, leading])
+  }
+  
+  public func coverSuperview() {
+    self.translatesAutoresizingMaskIntoConstraints = false
+    let width = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: self.superview, attribute: .width, multiplier: 1.0, constant: 0)
+    let height = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: self.superview, attribute: .height, multiplier: 1.0, constant: 0)
+    let top = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: self.superview, attribute: .top, multiplier: 1.0, constant: 0)
+    let leading = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: self.superview, attribute: .leading, multiplier: 1.0, constant: 0)
+    
+    self.superview?.addConstraints([width, height, top, leading])
   }
 }
