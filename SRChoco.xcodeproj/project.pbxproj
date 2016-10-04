@@ -7,49 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A03F2D31B6B25340061C349 /* SRChoco.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A03F2D21B6B25340061C349 /* SRChoco.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8A03F2ED1B6B268F0061C349 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DB1B6B268F0061C349 /* ArrayExtensions.swift */; };
-		8A03F2EE1B6B268F0061C349 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DC1B6B268F0061C349 /* ColorExtensions.swift */; };
-		8A03F2F11B6B268F0061C349 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DF1B6B268F0061C349 /* DateExtensions.swift */; };
-		8A03F2F21B6B268F0061C349 /* SRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E01B6B268F0061C349 /* SRAuth.swift */; };
-		8A03F2F31B6B268F0061C349 /* SRCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E11B6B268F0061C349 /* SRCache.swift */; };
-		8A03F2F41B6B268F0061C349 /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E21B6B268F0061C349 /* SRDevice.swift */; };
-		8A03F2F71B6B268F0061C349 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E51B6B268F0061C349 /* SRExternalApp.swift */; };
-		8A03F2FA1B6B268F0061C349 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E81B6B268F0061C349 /* SRRegexp.swift */; };
-		8A03F2FC1B6B268F0061C349 /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EA1B6B268F0061C349 /* SRUUID.swift */; };
-		8A03F2FD1B6B268F0061C349 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */; };
-		8A03F2FE1B6B268F0061C349 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */; };
-		8A84C7F01C8FB67E00B0AB4D /* NSSplitViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A84C7EF1C8FB67E00B0AB4D /* NSSplitViewControllerExtensions.swift */; };
-		8A84F7BD1BAC006B00C81D09 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DB1B6B268F0061C349 /* ArrayExtensions.swift */; };
-		8A84F7BE1BAC006B00C81D09 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E51B6B268F0061C349 /* SRExternalApp.swift */; };
-		8A84F7BF1BAC006B00C81D09 /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EA1B6B268F0061C349 /* SRUUID.swift */; };
-		8A84F7C01BAC006B00C81D09 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */; };
-		8A84F7C11BAC006B00C81D09 /* SRCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E11B6B268F0061C349 /* SRCache.swift */; };
-		8A84F7C21BAC006B00C81D09 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E81B6B268F0061C349 /* SRRegexp.swift */; };
-		8A84F7C41BAC006B00C81D09 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DC1B6B268F0061C349 /* ColorExtensions.swift */; };
-		8A84F7C51BAC006B00C81D09 /* SRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E01B6B268F0061C349 /* SRAuth.swift */; };
-		8A84F7C81BAC006B00C81D09 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2DF1B6B268F0061C349 /* DateExtensions.swift */; };
-		8A84F7C91BAC006B00C81D09 /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2E21B6B268F0061C349 /* SRDevice.swift */; };
-		8A84F7CB1BAC006B00C81D09 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */; };
-		8A84F7CE1BAC006B00C81D09 /* SRChoco.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A03F2D21B6B25340061C349 /* SRChoco.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A66B4A21DA372860006F1B1 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4941DA372860006F1B1 /* ArrayExtensions.swift */; };
+		8A66B4A31DA372860006F1B1 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4951DA372860006F1B1 /* ColorExtensions.swift */; };
+		8A66B4A41DA372860006F1B1 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4961DA372860006F1B1 /* DateExtensions.swift */; };
+		8A66B4A71DA372860006F1B1 /* SRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4991DA372860006F1B1 /* SRAuth.swift */; };
+		8A66B4A81DA372860006F1B1 /* SRCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B49A1DA372860006F1B1 /* SRCache.swift */; };
+		8A66B4A91DA372860006F1B1 /* SRChoco.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A66B49B1DA372860006F1B1 /* SRChoco.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A66B4AA1DA372860006F1B1 /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B49C1DA372860006F1B1 /* SRDevice.swift */; };
+		8A66B4AB1DA372860006F1B1 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B49D1DA372860006F1B1 /* SRExternalApp.swift */; };
+		8A66B4AC1DA372860006F1B1 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B49E1DA372860006F1B1 /* SRRegexp.swift */; };
+		8A66B4AD1DA372860006F1B1 /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B49F1DA372860006F1B1 /* SRUUID.swift */; };
+		8A66B4AE1DA372860006F1B1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4A01DA372860006F1B1 /* StringExtensions.swift */; };
+		8A66B4AF1DA372860006F1B1 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4A11DA372860006F1B1 /* ViewExtensions.swift */; };
+		8A66B4BE1DA372AD0006F1B1 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4941DA372860006F1B1 /* ArrayExtensions.swift */; };
+		8A66B4BF1DA372AD0006F1B1 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4951DA372860006F1B1 /* ColorExtensions.swift */; };
+		8A66B4C01DA372AD0006F1B1 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4961DA372860006F1B1 /* DateExtensions.swift */; };
+		8A66B4C21DA372AD0006F1B1 /* NSSplitViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4981DA372860006F1B1 /* NSSplitViewControllerExtensions.swift */; };
+		8A66B4C31DA372AD0006F1B1 /* SRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4991DA372860006F1B1 /* SRAuth.swift */; };
+		8A66B4C41DA372AD0006F1B1 /* SRCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B49A1DA372860006F1B1 /* SRCache.swift */; };
+		8A66B4C51DA372AD0006F1B1 /* SRChoco.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A66B49B1DA372860006F1B1 /* SRChoco.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A66B4C61DA372AD0006F1B1 /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B49C1DA372860006F1B1 /* SRDevice.swift */; };
+		8A66B4C71DA372AD0006F1B1 /* SRExternalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B49D1DA372860006F1B1 /* SRExternalApp.swift */; };
+		8A66B4C81DA372AD0006F1B1 /* SRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B49E1DA372860006F1B1 /* SRRegexp.swift */; };
+		8A66B4C91DA372AD0006F1B1 /* SRUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B49F1DA372860006F1B1 /* SRUUID.swift */; };
+		8A66B4CA1DA372AD0006F1B1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4A01DA372860006F1B1 /* StringExtensions.swift */; };
+		8A66B4CB1DA372AD0006F1B1 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4A11DA372860006F1B1 /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8A03F2CF1B6B25340061C349 /* SRChoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A03F2D21B6B25340061C349 /* SRChoco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRChoco.h; sourceTree = "<group>"; };
-		8A03F2D41B6B25340061C349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A03F2DB1B6B268F0061C349 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = Sources/ArrayExtensions.swift; sourceTree = "<group>"; };
-		8A03F2DC1B6B268F0061C349 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtensions.swift; path = Sources/ColorExtensions.swift; sourceTree = "<group>"; };
-		8A03F2DF1B6B268F0061C349 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = Sources/DateExtensions.swift; sourceTree = "<group>"; };
-		8A03F2E01B6B268F0061C349 /* SRAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRAuth.swift; path = Sources/SRAuth.swift; sourceTree = "<group>"; };
-		8A03F2E11B6B268F0061C349 /* SRCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRCache.swift; path = Sources/SRCache.swift; sourceTree = "<group>"; };
-		8A03F2E21B6B268F0061C349 /* SRDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRDevice.swift; path = Sources/SRDevice.swift; sourceTree = "<group>"; };
-		8A03F2E51B6B268F0061C349 /* SRExternalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRExternalApp.swift; path = Sources/SRExternalApp.swift; sourceTree = "<group>"; };
-		8A03F2E81B6B268F0061C349 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRRegexp.swift; path = Sources/SRRegexp.swift; sourceTree = "<group>"; };
-		8A03F2EA1B6B268F0061C349 /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRUUID.swift; path = Sources/SRUUID.swift; sourceTree = "<group>"; };
-		8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Sources/StringExtensions.swift; sourceTree = "<group>"; };
-		8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Sources/ViewExtensions.swift; sourceTree = "<group>"; };
-		8A84C7EF1C8FB67E00B0AB4D /* NSSplitViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSSplitViewControllerExtensions.swift; path = Sources/NSSplitViewControllerExtensions.swift; sourceTree = "<group>"; };
+		8A66B4941DA372860006F1B1 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = Source/ArrayExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4951DA372860006F1B1 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtensions.swift; path = Source/ColorExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4961DA372860006F1B1 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = Source/DateExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4971DA372860006F1B1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = SOURCE_ROOT; };
+		8A66B4981DA372860006F1B1 /* NSSplitViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSSplitViewControllerExtensions.swift; path = Source/NSSplitViewControllerExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4991DA372860006F1B1 /* SRAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRAuth.swift; path = Source/SRAuth.swift; sourceTree = SOURCE_ROOT; };
+		8A66B49A1DA372860006F1B1 /* SRCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRCache.swift; path = Source/SRCache.swift; sourceTree = SOURCE_ROOT; };
+		8A66B49B1DA372860006F1B1 /* SRChoco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRChoco.h; path = Source/SRChoco.h; sourceTree = SOURCE_ROOT; };
+		8A66B49C1DA372860006F1B1 /* SRDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRDevice.swift; path = Source/SRDevice.swift; sourceTree = SOURCE_ROOT; };
+		8A66B49D1DA372860006F1B1 /* SRExternalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRExternalApp.swift; path = Source/SRExternalApp.swift; sourceTree = SOURCE_ROOT; };
+		8A66B49E1DA372860006F1B1 /* SRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRRegexp.swift; path = Source/SRRegexp.swift; sourceTree = SOURCE_ROOT; };
+		8A66B49F1DA372860006F1B1 /* SRUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRUUID.swift; path = Source/SRUUID.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4A01DA372860006F1B1 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Source/StringExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8A66B4A11DA372860006F1B1 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Source/ViewExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8A84F7D31BAC006B00C81D09 /* SRChoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,30 +91,30 @@
 		8A03F2D11B6B25340061C349 /* SRChoco */ = {
 			isa = PBXGroup;
 			children = (
-				8A03F2DA1B6B26780061C349 /* Sources */,
-				8A03F2D21B6B25340061C349 /* SRChoco.h */,
-				8A03F2D41B6B25340061C349 /* Info.plist */,
+				8A66B4931DA372710006F1B1 /* Source */,
 			);
 			path = SRChoco;
 			sourceTree = "<group>";
 		};
-		8A03F2DA1B6B26780061C349 /* Sources */ = {
+		8A66B4931DA372710006F1B1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				8A03F2DB1B6B268F0061C349 /* ArrayExtensions.swift */,
-				8A03F2DC1B6B268F0061C349 /* ColorExtensions.swift */,
-				8A03F2DF1B6B268F0061C349 /* DateExtensions.swift */,
-				8A03F2E01B6B268F0061C349 /* SRAuth.swift */,
-				8A03F2E11B6B268F0061C349 /* SRCache.swift */,
-				8A03F2E21B6B268F0061C349 /* SRDevice.swift */,
-				8A03F2E51B6B268F0061C349 /* SRExternalApp.swift */,
-				8A03F2E81B6B268F0061C349 /* SRRegexp.swift */,
-				8A03F2EA1B6B268F0061C349 /* SRUUID.swift */,
-				8A03F2EB1B6B268F0061C349 /* StringExtensions.swift */,
-				8A03F2EC1B6B268F0061C349 /* ViewExtensions.swift */,
-				8A84C7EF1C8FB67E00B0AB4D /* NSSplitViewControllerExtensions.swift */,
+				8A66B4941DA372860006F1B1 /* ArrayExtensions.swift */,
+				8A66B4951DA372860006F1B1 /* ColorExtensions.swift */,
+				8A66B4961DA372860006F1B1 /* DateExtensions.swift */,
+				8A66B4971DA372860006F1B1 /* Info.plist */,
+				8A66B4981DA372860006F1B1 /* NSSplitViewControllerExtensions.swift */,
+				8A66B4991DA372860006F1B1 /* SRAuth.swift */,
+				8A66B49A1DA372860006F1B1 /* SRCache.swift */,
+				8A66B49B1DA372860006F1B1 /* SRChoco.h */,
+				8A66B49C1DA372860006F1B1 /* SRDevice.swift */,
+				8A66B49D1DA372860006F1B1 /* SRExternalApp.swift */,
+				8A66B49E1DA372860006F1B1 /* SRRegexp.swift */,
+				8A66B49F1DA372860006F1B1 /* SRUUID.swift */,
+				8A66B4A01DA372860006F1B1 /* StringExtensions.swift */,
+				8A66B4A11DA372860006F1B1 /* ViewExtensions.swift */,
 			);
-			name = Sources;
+			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +124,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A03F2D31B6B25340061C349 /* SRChoco.h in Headers */,
+				8A66B4A91DA372860006F1B1 /* SRChoco.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +132,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A84F7CE1BAC006B00C81D09 /* SRChoco.h in Headers */,
+				8A66B4C51DA372AD0006F1B1 /* SRChoco.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,17 +234,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A03F2ED1B6B268F0061C349 /* ArrayExtensions.swift in Sources */,
-				8A03F2F71B6B268F0061C349 /* SRExternalApp.swift in Sources */,
-				8A03F2FC1B6B268F0061C349 /* SRUUID.swift in Sources */,
-				8A03F2FE1B6B268F0061C349 /* ViewExtensions.swift in Sources */,
-				8A03F2F31B6B268F0061C349 /* SRCache.swift in Sources */,
-				8A03F2FA1B6B268F0061C349 /* SRRegexp.swift in Sources */,
-				8A03F2EE1B6B268F0061C349 /* ColorExtensions.swift in Sources */,
-				8A03F2F21B6B268F0061C349 /* SRAuth.swift in Sources */,
-				8A03F2F11B6B268F0061C349 /* DateExtensions.swift in Sources */,
-				8A03F2F41B6B268F0061C349 /* SRDevice.swift in Sources */,
-				8A03F2FD1B6B268F0061C349 /* StringExtensions.swift in Sources */,
+				8A66B4A71DA372860006F1B1 /* SRAuth.swift in Sources */,
+				8A66B4A21DA372860006F1B1 /* ArrayExtensions.swift in Sources */,
+				8A66B4AD1DA372860006F1B1 /* SRUUID.swift in Sources */,
+				8A66B4A81DA372860006F1B1 /* SRCache.swift in Sources */,
+				8A66B4AA1DA372860006F1B1 /* SRDevice.swift in Sources */,
+				8A66B4AE1DA372860006F1B1 /* StringExtensions.swift in Sources */,
+				8A66B4A31DA372860006F1B1 /* ColorExtensions.swift in Sources */,
+				8A66B4AC1DA372860006F1B1 /* SRRegexp.swift in Sources */,
+				8A66B4A41DA372860006F1B1 /* DateExtensions.swift in Sources */,
+				8A66B4AF1DA372860006F1B1 /* ViewExtensions.swift in Sources */,
+				8A66B4AB1DA372860006F1B1 /* SRExternalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,18 +252,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A84F7BD1BAC006B00C81D09 /* ArrayExtensions.swift in Sources */,
-				8A84F7BE1BAC006B00C81D09 /* SRExternalApp.swift in Sources */,
-				8A84F7BF1BAC006B00C81D09 /* SRUUID.swift in Sources */,
-				8A84F7C01BAC006B00C81D09 /* ViewExtensions.swift in Sources */,
-				8A84C7F01C8FB67E00B0AB4D /* NSSplitViewControllerExtensions.swift in Sources */,
-				8A84F7C11BAC006B00C81D09 /* SRCache.swift in Sources */,
-				8A84F7C21BAC006B00C81D09 /* SRRegexp.swift in Sources */,
-				8A84F7C41BAC006B00C81D09 /* ColorExtensions.swift in Sources */,
-				8A84F7C51BAC006B00C81D09 /* SRAuth.swift in Sources */,
-				8A84F7C81BAC006B00C81D09 /* DateExtensions.swift in Sources */,
-				8A84F7C91BAC006B00C81D09 /* SRDevice.swift in Sources */,
-				8A84F7CB1BAC006B00C81D09 /* StringExtensions.swift in Sources */,
+				8A66B4C21DA372AD0006F1B1 /* NSSplitViewControllerExtensions.swift in Sources */,
+				8A66B4C31DA372AD0006F1B1 /* SRAuth.swift in Sources */,
+				8A66B4BE1DA372AD0006F1B1 /* ArrayExtensions.swift in Sources */,
+				8A66B4C91DA372AD0006F1B1 /* SRUUID.swift in Sources */,
+				8A66B4C41DA372AD0006F1B1 /* SRCache.swift in Sources */,
+				8A66B4C61DA372AD0006F1B1 /* SRDevice.swift in Sources */,
+				8A66B4CA1DA372AD0006F1B1 /* StringExtensions.swift in Sources */,
+				8A66B4BF1DA372AD0006F1B1 /* ColorExtensions.swift in Sources */,
+				8A66B4C81DA372AD0006F1B1 /* SRRegexp.swift in Sources */,
+				8A66B4C01DA372AD0006F1B1 /* DateExtensions.swift in Sources */,
+				8A66B4CB1DA372AD0006F1B1 /* ViewExtensions.swift in Sources */,
+				8A66B4C71DA372AD0006F1B1 /* SRExternalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +378,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SRChoco/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChoco;
@@ -403,7 +403,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SRChoco/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChoco;
@@ -426,7 +426,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/SRChoco/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChoco;
@@ -449,7 +449,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/SRChoco/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChoco;
