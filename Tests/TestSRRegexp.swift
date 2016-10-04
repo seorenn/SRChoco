@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 Seorenn. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 import XCTest
 import SRChoco
+
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):

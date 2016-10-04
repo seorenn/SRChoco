@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8A66B4F71DA376A60006F1B1"
+               BuildableName = "SRChoco OSX Tests.xctest"
+               BlueprintName = "SRChoco OSX Tests"
+               ReferencedContainer = "container:SRChoco.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8A84F7BB1BAC006B00C81D09"
+            BuildableName = "SRChoco.framework"
+            BlueprintName = "SRChoco OSX"
+            ReferencedContainer = "container:SRChoco.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

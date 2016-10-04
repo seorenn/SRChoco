@@ -13,31 +13,32 @@
 		8A47D65E1B6F3FC2004CA762 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D65D1B6F3FC2004CA762 /* ViewController.swift */; };
 		8A47D6601B6F3FC2004CA762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A47D65F1B6F3FC2004CA762 /* Assets.xcassets */; };
 		8A47D6631B6F3FC2004CA762 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A47D6611B6F3FC2004CA762 /* Main.storyboard */; };
-		8A47D66E1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D66D1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift */; };
-		8A47D6891B6F4096004CA762 /* TestArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */; };
-		8A47D68A1B6F4096004CA762 /* TestDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6841B6F4096004CA762 /* TestDateExtensions.swift */; };
-		8A47D68C1B6F4096004CA762 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */; };
-		8A47D68D1B6F4096004CA762 /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */; };
-		8A47D68E1B6F4096004CA762 /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D6881B6F4096004CA762 /* TestUUID.swift */; };
 		8A66F54B1B8FFEB000714FBF /* AnotherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66F5491B8FFEB000714FBF /* AnotherViewController.swift */; };
 		8A84F7D81BAC018500C81D09 /* SRChoco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A84F7D71BAC018000C81D09 /* SRChoco.framework */; };
 		8A84F7D91BAC018500C81D09 /* SRChoco.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A84F7D71BAC018000C81D09 /* SRChoco.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8A47D66A1B6F3FC2004CA762 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8A47D6501B6F3FC1004CA762 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8A47D6571B6F3FC2004CA762;
-			remoteInfo = SRChocoDemoOSX;
-		};
 		8A47D67C1B6F3FF0004CA762 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8A03F2CF1B6B25340061C349;
 			remoteInfo = SRChoco;
+		};
+		8A66B4F11DA376810006F1B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A66B4D01DA375D50006F1B1;
+			remoteInfo = "SRChoco iOS Tests";
+		};
+		8A66B5191DA37A830006F1B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A66B4F81DA376A60006F1B1;
+			remoteInfo = "SRChoco OSX Tests";
 		};
 		8A84F7D61BAC018000C81D09 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -78,15 +79,7 @@
 		8A47D65F1B6F3FC2004CA762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A47D6621B6F3FC2004CA762 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A47D6641B6F3FC2004CA762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A47D6691B6F3FC2004CA762 /* SRChocoDemoOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRChocoDemoOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A47D66D1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRChocoDemoOSXTests.swift; sourceTree = "<group>"; };
-		8A47D66F1B6F3FC2004CA762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A47D6781B6F3FF0004CA762 /* SRChoco.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SRChoco.xcodeproj; path = ../../../SRChoco.xcodeproj; sourceTree = "<group>"; };
-		8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArrayExtensions.swift; sourceTree = "<group>"; };
-		8A47D6841B6F4096004CA762 /* TestDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDateExtensions.swift; sourceTree = "<group>"; };
-		8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSRRegexp.swift; sourceTree = "<group>"; };
-		8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStringExtensions.swift; sourceTree = "<group>"; };
-		8A47D6881B6F4096004CA762 /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUUID.swift; sourceTree = "<group>"; };
 		8A66F5491B8FFEB000714FBF /* AnotherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,13 +89,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A84F7D81BAC018500C81D09 /* SRChoco.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A47D6661B6F3FC2004CA762 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				8A47D65A1B6F3FC2004CA762 /* SRChocoDemoOSX */,
-				8A47D66C1B6F3FC2004CA762 /* SRChocoDemoOSXTests */,
 				8A47D6591B6F3FC2004CA762 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				8A47D6581B6F3FC2004CA762 /* SRChocoDemoOSX.app */,
-				8A47D6691B6F3FC2004CA762 /* SRChocoDemoOSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,25 +135,13 @@
 			path = SRChocoDemoOSX;
 			sourceTree = "<group>";
 		};
-		8A47D66C1B6F3FC2004CA762 /* SRChocoDemoOSXTests */ = {
-			isa = PBXGroup;
-			children = (
-				8A47D6831B6F4096004CA762 /* TestArrayExtensions.swift */,
-				8A47D6841B6F4096004CA762 /* TestDateExtensions.swift */,
-				8A47D6861B6F4096004CA762 /* TestSRRegexp.swift */,
-				8A47D6871B6F4096004CA762 /* TestStringExtensions.swift */,
-				8A47D6881B6F4096004CA762 /* TestUUID.swift */,
-				8A47D66D1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift */,
-				8A47D66F1B6F3FC2004CA762 /* Info.plist */,
-			);
-			path = SRChocoDemoOSXTests;
-			sourceTree = "<group>";
-		};
 		8A47D6791B6F3FF0004CA762 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				8A47D67D1B6F3FF0004CA762 /* SRChoco.framework */,
 				8A84F7D71BAC018000C81D09 /* SRChoco.framework */,
+				8A66B4F21DA376810006F1B1 /* SRChoco iOS Tests.xctest */,
+				8A66B51A1DA37A830006F1B1 /* SRChoco OSX Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,41 +168,19 @@
 			productReference = 8A47D6581B6F3FC2004CA762 /* SRChocoDemoOSX.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8A47D6681B6F3FC2004CA762 /* SRChocoDemoOSXTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8A47D6751B6F3FC2004CA762 /* Build configuration list for PBXNativeTarget "SRChocoDemoOSXTests" */;
-			buildPhases = (
-				8A47D6651B6F3FC2004CA762 /* Sources */,
-				8A47D6661B6F3FC2004CA762 /* Frameworks */,
-				8A47D6671B6F3FC2004CA762 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8A47D66B1B6F3FC2004CA762 /* PBXTargetDependency */,
-			);
-			name = SRChocoDemoOSXTests;
-			productName = SRChocoDemoOSXTests;
-			productReference = 8A47D6691B6F3FC2004CA762 /* SRChocoDemoOSXTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		8A47D6501B6F3FC1004CA762 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Seorenn;
 				TargetAttributes = {
 					8A47D6571B6F3FC2004CA762 = {
 						CreatedOnToolsVersion = 7.0;
 						LastSwiftMigration = 0800;
-					};
-					8A47D6681B6F3FC2004CA762 = {
-						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 0800;
-						TestTargetID = 8A47D6571B6F3FC2004CA762;
 					};
 				};
 			};
@@ -254,7 +204,6 @@
 			projectRoot = "";
 			targets = (
 				8A47D6571B6F3FC2004CA762 /* SRChocoDemoOSX */,
-				8A47D6681B6F3FC2004CA762 /* SRChocoDemoOSXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,6 +214,20 @@
 			fileType = wrapper.framework;
 			path = SRChoco.framework;
 			remoteRef = 8A47D67C1B6F3FF0004CA762 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A66B4F21DA376810006F1B1 /* SRChoco iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SRChoco iOS Tests.xctest";
+			remoteRef = 8A66B4F11DA376810006F1B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A66B51A1DA37A830006F1B1 /* SRChoco OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SRChoco OSX Tests.xctest";
+			remoteRef = 8A66B5191DA37A830006F1B1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		8A84F7D71BAC018000C81D09 /* SRChoco.framework */ = {
@@ -286,13 +249,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8A47D6671B6F3FC2004CA762 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -308,27 +264,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8A47D6651B6F3FC2004CA762 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8A47D66E1B6F3FC2004CA762 /* SRChocoDemoOSXTests.swift in Sources */,
-				8A47D6891B6F4096004CA762 /* TestArrayExtensions.swift in Sources */,
-				8A47D68E1B6F4096004CA762 /* TestUUID.swift in Sources */,
-				8A47D68C1B6F4096004CA762 /* TestSRRegexp.swift in Sources */,
-				8A47D68D1B6F4096004CA762 /* TestStringExtensions.swift in Sources */,
-				8A47D68A1B6F4096004CA762 /* TestDateExtensions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8A47D66B1B6F3FC2004CA762 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8A47D6571B6F3FC2004CA762 /* SRChocoDemoOSX */;
-			targetProxy = 8A47D66A1B6F3FC2004CA762 /* PBXContainerItemProxy */;
-		};
 		8A84F7DB1BAC018500C81D09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SRChocoOSX;
@@ -463,34 +401,6 @@
 			};
 			name = Release;
 		};
-		8A47D6761B6F3FC2004CA762 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SRChocoDemoOSXTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSXTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SRChocoDemoOSX.app/Contents/MacOS/SRChocoDemoOSX";
-			};
-			name = Debug;
-		};
-		8A47D6771B6F3FC2004CA762 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SRChocoDemoOSXTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSXTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SRChocoDemoOSX.app/Contents/MacOS/SRChocoDemoOSX";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -508,15 +418,6 @@
 			buildConfigurations = (
 				8A47D6731B6F3FC2004CA762 /* Debug */,
 				8A47D6741B6F3FC2004CA762 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8A47D6751B6F3FC2004CA762 /* Build configuration list for PBXNativeTarget "SRChocoDemoOSXTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8A47D6761B6F3FC2004CA762 /* Debug */,
-				8A47D6771B6F3FC2004CA762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
