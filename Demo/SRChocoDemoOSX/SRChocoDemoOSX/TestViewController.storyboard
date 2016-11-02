@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Iu2-92-b0q">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Test View Controller-->
+        <scene sceneID="emy-Ca-jRc">
+            <objects>
+                <viewController storyboardIdentifier="TestViewController" id="Iu2-92-b0q" customClass="TestViewController" customModule="SRChocoDemoOSX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="w55-bx-37S">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NlH-Az-BTk">
+                                <rect key="frame" x="207" y="141" width="37" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="TEST" id="Zsq-ov-RAR">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="NlH-Az-BTk" firstAttribute="centerX" secondItem="w55-bx-37S" secondAttribute="centerX" id="JXg-gL-74p"/>
+                            <constraint firstItem="NlH-Az-BTk" firstAttribute="centerY" secondItem="w55-bx-37S" secondAttribute="centerY" id="s7T-Ku-E43"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="PXH-kc-hZM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="67" y="134"/>
+        </scene>
+    </scenes>
+</document>

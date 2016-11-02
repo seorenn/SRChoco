@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A06D9D81DC9B28B00B49392 /* TestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A06D9D71DC9B28B00B49392 /* TestViewController.storyboard */; };
+		8A06D9E01DC9B75D00B49392 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D9DF1DC9B75D00B49392 /* TestViewController.swift */; };
 		8A3F04E71C8FC688009ACDD3 /* HorizontalSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F04E61C8FC688009ACDD3 /* HorizontalSplitViewController.swift */; };
 		8A3F04E91C8FC69F009ACDD3 /* VerticalSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F04E81C8FC69F009ACDD3 /* VerticalSplitViewController.swift */; };
 		8A47D65C1B6F3FC2004CA762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A47D65B1B6F3FC2004CA762 /* AppDelegate.swift */; };
@@ -71,6 +73,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A06D9D71DC9B28B00B49392 /* TestViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TestViewController.storyboard; sourceTree = "<group>"; };
+		8A06D9DF1DC9B75D00B49392 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		8A3F04E61C8FC688009ACDD3 /* HorizontalSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSplitViewController.swift; sourceTree = "<group>"; };
 		8A3F04E81C8FC69F009ACDD3 /* VerticalSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalSplitViewController.swift; sourceTree = "<group>"; };
 		8A47D6581B6F3FC2004CA762 /* SRChocoDemoOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRChocoDemoOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +133,8 @@
 				8A47D65D1B6F3FC2004CA762 /* ViewController.swift */,
 				8A47D65F1B6F3FC2004CA762 /* Assets.xcassets */,
 				8A47D6611B6F3FC2004CA762 /* Main.storyboard */,
+				8A06D9D71DC9B28B00B49392 /* TestViewController.storyboard */,
+				8A06D9DF1DC9B75D00B49392 /* TestViewController.swift */,
 				8A47D6641B6F3FC2004CA762 /* Info.plist */,
 				8A66F5491B8FFEB000714FBF /* AnotherViewController.swift */,
 			);
@@ -246,6 +252,7 @@
 			files = (
 				8A47D6601B6F3FC2004CA762 /* Assets.xcassets in Resources */,
 				8A47D6631B6F3FC2004CA762 /* Main.storyboard in Resources */,
+				8A06D9D81DC9B28B00B49392 /* TestViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +267,7 @@
 				8A47D65C1B6F3FC2004CA762 /* AppDelegate.swift in Sources */,
 				8A66F54B1B8FFEB000714FBF /* AnotherViewController.swift in Sources */,
 				8A3F04E91C8FC69F009ACDD3 /* VerticalSplitViewController.swift in Sources */,
+				8A06D9E01DC9B75D00B49392 /* TestViewController.swift in Sources */,
 				8A3F04E71C8FC688009ACDD3 /* HorizontalSplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

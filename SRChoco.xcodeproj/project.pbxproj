@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A06D9D51DC9B21C00B49392 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D9D41DC9B21C00B49392 /* ViewControllerExtensions.swift */; };
+		8A06D9D61DC9B21C00B49392 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D9D41DC9B21C00B49392 /* ViewControllerExtensions.swift */; };
 		8A66B4A21DA372860006F1B1 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4941DA372860006F1B1 /* ArrayExtensions.swift */; };
 		8A66B4A31DA372860006F1B1 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4951DA372860006F1B1 /* ColorExtensions.swift */; };
 		8A66B4A41DA372860006F1B1 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4961DA372860006F1B1 /* DateExtensions.swift */; };
@@ -57,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		8A03F2CF1B6B25340061C349 /* SRChoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A06D9D41DC9B21C00B49392 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerExtensions.swift; path = Source/ViewControllerExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8A66B4941DA372860006F1B1 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = Source/ArrayExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8A66B4951DA372860006F1B1 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtensions.swift; path = Source/ColorExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8A66B4961DA372860006F1B1 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = Source/DateExtensions.swift; sourceTree = SOURCE_ROOT; };
@@ -152,6 +155,7 @@
 				8A66B49F1DA372860006F1B1 /* SRUUID.swift */,
 				8A66B4A01DA372860006F1B1 /* StringExtensions.swift */,
 				8A66B4A11DA372860006F1B1 /* ViewExtensions.swift */,
+				8A06D9D41DC9B21C00B49392 /* ViewControllerExtensions.swift */,
 			);
 			name = Source;
 			path = SRChoco;
@@ -351,6 +355,7 @@
 				8A66B4A21DA372860006F1B1 /* ArrayExtensions.swift in Sources */,
 				8A66B4AD1DA372860006F1B1 /* SRUUID.swift in Sources */,
 				8A66B4A81DA372860006F1B1 /* SRCache.swift in Sources */,
+				8A06D9D51DC9B21C00B49392 /* ViewControllerExtensions.swift in Sources */,
 				8A66B4AA1DA372860006F1B1 /* SRDevice.swift in Sources */,
 				8A66B4AE1DA372860006F1B1 /* StringExtensions.swift in Sources */,
 				8A66B4A31DA372860006F1B1 /* ColorExtensions.swift in Sources */,
@@ -392,6 +397,7 @@
 				8A66B4C21DA372AD0006F1B1 /* NSSplitViewControllerExtensions.swift in Sources */,
 				8A66B4C31DA372AD0006F1B1 /* SRAuth.swift in Sources */,
 				8A66B4BE1DA372AD0006F1B1 /* ArrayExtensions.swift in Sources */,
+				8A06D9D61DC9B21C00B49392 /* ViewControllerExtensions.swift in Sources */,
 				8A66B4C91DA372AD0006F1B1 /* SRUUID.swift in Sources */,
 				8A66B4C41DA372AD0006F1B1 /* SRCache.swift in Sources */,
 				8A66B4C61DA372AD0006F1B1 /* SRDevice.swift in Sources */,
@@ -705,6 +711,7 @@
 				8A66B4D71DA375D50006F1B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A66B5001DA376A60006F1B1 /* Build configuration list for PBXNativeTarget "SRChoco OSX Tests" */ = {
 			isa = XCConfigurationList;
@@ -713,6 +720,7 @@
 				8A66B5021DA376A60006F1B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A84F7D01BAC006B00C81D09 /* Build configuration list for PBXNativeTarget "SRChoco OSX" */ = {
 			isa = XCConfigurationList;
