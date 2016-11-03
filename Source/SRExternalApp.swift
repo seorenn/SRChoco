@@ -23,8 +23,13 @@
   
   public func launchApp(appScheme: String) {
     if let appURL = URL(string: appScheme) {
-      UIApplication.shared.open(appURL, options: [:]) { (succeed) in
-        // TDOO
+      if #available(iOS 10.0, *) {
+        UIApplication.shared.open(appURL, options: [:]) { (succeed) in
+          // TDOO
+        }
+      } else {
+        // Fallback on earlier versions
+        UIApplication.shared.openURL(appURL)
       }
     }
   }
