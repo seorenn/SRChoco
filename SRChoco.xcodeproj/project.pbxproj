@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8A06D9D51DC9B21C00B49392 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D9D41DC9B21C00B49392 /* ViewControllerExtensions.swift */; };
 		8A06D9D61DC9B21C00B49392 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06D9D41DC9B21C00B49392 /* ViewControllerExtensions.swift */; };
+		8A4910201DDC128900B9D27D /* DispatchTimeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49101F1DDC128900B9D27D /* DispatchTimeExtensions.swift */; };
+		8A4910211DDC128900B9D27D /* DispatchTimeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A49101F1DDC128900B9D27D /* DispatchTimeExtensions.swift */; };
 		8A66B4A21DA372860006F1B1 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4941DA372860006F1B1 /* ArrayExtensions.swift */; };
 		8A66B4A31DA372860006F1B1 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4951DA372860006F1B1 /* ColorExtensions.swift */; };
 		8A66B4A41DA372860006F1B1 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4961DA372860006F1B1 /* DateExtensions.swift */; };
@@ -60,6 +62,7 @@
 /* Begin PBXFileReference section */
 		8A03F2CF1B6B25340061C349 /* SRChoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A06D9D41DC9B21C00B49392 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerExtensions.swift; path = Source/ViewControllerExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8A49101F1DDC128900B9D27D /* DispatchTimeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DispatchTimeExtensions.swift; path = Source/DispatchTimeExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8A66B4941DA372860006F1B1 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = Source/ArrayExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8A66B4951DA372860006F1B1 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtensions.swift; path = Source/ColorExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8A66B4961DA372860006F1B1 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = Source/DateExtensions.swift; sourceTree = SOURCE_ROOT; };
@@ -156,6 +159,7 @@
 				8A66B4A01DA372860006F1B1 /* StringExtensions.swift */,
 				8A66B4A11DA372860006F1B1 /* ViewExtensions.swift */,
 				8A06D9D41DC9B21C00B49392 /* ViewControllerExtensions.swift */,
+				8A49101F1DDC128900B9D27D /* DispatchTimeExtensions.swift */,
 			);
 			name = Source;
 			path = SRChoco;
@@ -362,6 +366,7 @@
 				8A66B4AC1DA372860006F1B1 /* SRRegexp.swift in Sources */,
 				8A66B4A41DA372860006F1B1 /* DateExtensions.swift in Sources */,
 				8A66B4AF1DA372860006F1B1 /* ViewExtensions.swift in Sources */,
+				8A4910201DDC128900B9D27D /* DispatchTimeExtensions.swift in Sources */,
 				8A66B4AB1DA372860006F1B1 /* SRExternalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +411,7 @@
 				8A66B4C81DA372AD0006F1B1 /* SRRegexp.swift in Sources */,
 				8A66B4C01DA372AD0006F1B1 /* DateExtensions.swift in Sources */,
 				8A66B4CB1DA372AD0006F1B1 /* ViewExtensions.swift in Sources */,
+				8A4910211DDC128900B9D27D /* DispatchTimeExtensions.swift in Sources */,
 				8A66B4C71DA372AD0006F1B1 /* SRExternalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
