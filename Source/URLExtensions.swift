@@ -38,6 +38,10 @@ public extension URL {
     return appSupportURL.appendingPathComponent(executableName, isDirectory: true)
   }
   
+  public static var urlForCurrent: URL {
+    return URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+  }
+  
   #endif
 
   // MARK: - URL for macOS and iOS system predefined
@@ -52,10 +56,6 @@ public extension URL {
   
   public static var urlForTemporary: URL {
     return URL(fileURLWithPath: NSTemporaryDirectory())
-  }
-  
-  public static var urlForCurrent: URL {
-    return URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
   }
   
   public static var urlForMainBundle: URL? {

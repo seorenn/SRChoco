@@ -388,7 +388,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SRChocoDemoOSX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.srchoco.SRChocoDemoOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -403,7 +403,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SRChocoDemoOSX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.SRChocoDemoOSX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.srchoco.SRChocoDemoOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

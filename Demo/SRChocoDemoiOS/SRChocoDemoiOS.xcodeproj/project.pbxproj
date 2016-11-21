@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A8189851DE2EE9600EAF360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8189841DE2EE9600EAF360 /* AppDelegate.swift */; };
+		8A8189871DE2EE9600EAF360 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8189861DE2EE9600EAF360 /* ViewController.swift */; };
+		8A81898A1DE2EE9600EAF360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8189881DE2EE9600EAF360 /* Main.storyboard */; };
+		8A81898C1DE2EE9600EAF360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A81898B1DE2EE9600EAF360 /* Assets.xcassets */; };
+		8A81898F1DE2EE9600EAF360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A81898D1DE2EE9600EAF360 /* LaunchScreen.storyboard */; };
+		8A8189A81DE2EF5000EAF360 /* SRChoco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8189A11DE2EF4200EAF360 /* SRChoco.framework */; };
+		8A8189A91DE2EF5000EAF360 /* SRChoco.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8189A11DE2EF4200EAF360 /* SRChoco.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A8189A01DE2EF4200EAF360 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A8189991DE2EF4200EAF360 /* SRChoco.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A03F2CF1B6B25340061C349;
+			remoteInfo = "SRChoco iOS";
+		};
+		8A8189A21DE2EF4200EAF360 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A8189991DE2EF4200EAF360 /* SRChoco.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A84F7D31BAC006B00C81D09;
+			remoteInfo = "SRChoco OSX";
+		};
+		8A8189A41DE2EF4200EAF360 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A8189991DE2EF4200EAF360 /* SRChoco.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A66B4D01DA375D50006F1B1;
+			remoteInfo = "SRChoco iOS Tests";
+		};
+		8A8189A61DE2EF4200EAF360 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A8189991DE2EF4200EAF360 /* SRChoco.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A66B4F81DA376A60006F1B1;
+			remoteInfo = "SRChoco OSX Tests";
+		};
+		8A8189AA1DE2EF5000EAF360 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A8189991DE2EF4200EAF360 /* SRChoco.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A03F2CE1B6B25340061C349;
+			remoteInfo = "SRChoco iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A8189AC1DE2EF5000EAF360 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8A8189A91DE2EF5000EAF360 /* SRChoco.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8A8189811DE2EE9600EAF360 /* SRChocoDemoiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRChocoDemoiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A8189841DE2EE9600EAF360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8A8189861DE2EE9600EAF360 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8A8189891DE2EE9600EAF360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8A81898B1DE2EE9600EAF360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A81898E1DE2EE9600EAF360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8A8189901DE2EE9600EAF360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A8189991DE2EF4200EAF360 /* SRChoco.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SRChoco.xcodeproj; path = ../../SRChoco.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A81897E1DE2EE9600EAF360 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8189A81DE2EF5000EAF360 /* SRChoco.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A8189781DE2EE9600EAF360 = {
+			isa = PBXGroup;
+			children = (
+				8A8189991DE2EF4200EAF360 /* SRChoco.xcodeproj */,
+				8A8189831DE2EE9600EAF360 /* SRChocoDemoiOS */,
+				8A8189821DE2EE9600EAF360 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A8189821DE2EE9600EAF360 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A8189811DE2EE9600EAF360 /* SRChocoDemoiOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A8189831DE2EE9600EAF360 /* SRChocoDemoiOS */ = {
+			isa = PBXGroup;
+			children = (
+				8A8189841DE2EE9600EAF360 /* AppDelegate.swift */,
+				8A8189861DE2EE9600EAF360 /* ViewController.swift */,
+				8A8189881DE2EE9600EAF360 /* Main.storyboard */,
+				8A81898B1DE2EE9600EAF360 /* Assets.xcassets */,
+				8A81898D1DE2EE9600EAF360 /* LaunchScreen.storyboard */,
+				8A8189901DE2EE9600EAF360 /* Info.plist */,
+			);
+			path = SRChocoDemoiOS;
+			sourceTree = "<group>";
+		};
+		8A81899A1DE2EF4200EAF360 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A8189A11DE2EF4200EAF360 /* SRChoco.framework */,
+				8A8189A31DE2EF4200EAF360 /* SRChoco.framework */,
+				8A8189A51DE2EF4200EAF360 /* SRChoco iOS Tests.xctest */,
+				8A8189A71DE2EF4200EAF360 /* SRChoco OSX Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A8189801DE2EE9600EAF360 /* SRChocoDemoiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A8189931DE2EE9600EAF360 /* Build configuration list for PBXNativeTarget "SRChocoDemoiOS" */;
+			buildPhases = (
+				8A81897D1DE2EE9600EAF360 /* Sources */,
+				8A81897E1DE2EE9600EAF360 /* Frameworks */,
+				8A81897F1DE2EE9600EAF360 /* Resources */,
+				8A8189AC1DE2EF5000EAF360 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A8189AB1DE2EF5000EAF360 /* PBXTargetDependency */,
+			);
+			name = SRChocoDemoiOS;
+			productName = SRChocoDemoiOS;
+			productReference = 8A8189811DE2EE9600EAF360 /* SRChocoDemoiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A8189791DE2EE9600EAF360 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Seorenn;
+				TargetAttributes = {
+					8A8189801DE2EE9600EAF360 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 8A81897C1DE2EE9600EAF360 /* Build configuration list for PBXProject "SRChocoDemoiOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A8189781DE2EE9600EAF360;
+			productRefGroup = 8A8189821DE2EE9600EAF360 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8A81899A1DE2EF4200EAF360 /* Products */;
+					ProjectRef = 8A8189991DE2EF4200EAF360 /* SRChoco.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8A8189801DE2EE9600EAF360 /* SRChocoDemoiOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8A8189A11DE2EF4200EAF360 /* SRChoco.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SRChoco.framework;
+			remoteRef = 8A8189A01DE2EF4200EAF360 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A8189A31DE2EF4200EAF360 /* SRChoco.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SRChoco.framework;
+			remoteRef = 8A8189A21DE2EF4200EAF360 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A8189A51DE2EF4200EAF360 /* SRChoco iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SRChoco iOS Tests.xctest";
+			remoteRef = 8A8189A41DE2EF4200EAF360 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A8189A71DE2EF4200EAF360 /* SRChoco OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SRChoco OSX Tests.xctest";
+			remoteRef = 8A8189A61DE2EF4200EAF360 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A81897F1DE2EE9600EAF360 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A81898F1DE2EE9600EAF360 /* LaunchScreen.storyboard in Resources */,
+				8A81898C1DE2EE9600EAF360 /* Assets.xcassets in Resources */,
+				8A81898A1DE2EE9600EAF360 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A81897D1DE2EE9600EAF360 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8189871DE2EE9600EAF360 /* ViewController.swift in Sources */,
+				8A8189851DE2EE9600EAF360 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A8189AB1DE2EF5000EAF360 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SRChoco iOS";
+			targetProxy = 8A8189AA1DE2EF5000EAF360 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A8189881DE2EE9600EAF360 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A8189891DE2EE9600EAF360 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8A81898D1DE2EE9600EAF360 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A81898E1DE2EE9600EAF360 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A8189911DE2EE9600EAF360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8A8189921DE2EE9600EAF360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A8189941DE2EE9600EAF360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SRChocoDemoiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.srchoco.SRChocoDemoiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8A8189951DE2EE9600EAF360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SRChocoDemoiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seorenn.srchoco.SRChocoDemoiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A81897C1DE2EE9600EAF360 /* Build configuration list for PBXProject "SRChocoDemoiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A8189911DE2EE9600EAF360 /* Debug */,
+				8A8189921DE2EE9600EAF360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A8189931DE2EE9600EAF360 /* Build configuration list for PBXNativeTarget "SRChocoDemoiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A8189941DE2EE9600EAF360 /* Debug */,
+				8A8189951DE2EE9600EAF360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A8189791DE2EE9600EAF360 /* Project object */;
+}
