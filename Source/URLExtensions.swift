@@ -61,7 +61,7 @@ public extension URL {
   
   // MARK: - Common File/Directory Operations
   
-  public var exists: Bool {
+  public var isExists: Bool {
     guard isFileURL else { return false }
     return FileManager.default.fileExists(atPath: path)
   }
