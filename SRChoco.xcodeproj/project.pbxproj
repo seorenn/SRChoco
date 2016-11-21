@@ -47,6 +47,8 @@
 		8A66B5121DA377280006F1B1 /* TestSRRegexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4DA1DA376680006F1B1 /* TestSRRegexp.swift */; };
 		8A66B5131DA377280006F1B1 /* TestStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4DB1DA376680006F1B1 /* TestStringExtensions.swift */; };
 		8A66B5141DA377280006F1B1 /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4DC1DA376680006F1B1 /* TestUUID.swift */; };
+		8A8189741DE2C6BA00EAF360 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8189731DE2C6BA00EAF360 /* URLExtensions.swift */; };
+		8A8189751DE2C6BA00EAF360 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8189731DE2C6BA00EAF360 /* URLExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,7 @@
 		8A66B4DB1DA376680006F1B1 /* TestStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestStringExtensions.swift; path = Tests/TestStringExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8A66B4DC1DA376680006F1B1 /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestUUID.swift; path = Tests/TestUUID.swift; sourceTree = SOURCE_ROOT; };
 		8A66B4F81DA376A60006F1B1 /* SRChoco OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRChoco OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A8189731DE2C6BA00EAF360 /* URLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLExtensions.swift; path = Source/URLExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8A84F7D31BAC006B00C81D09 /* SRChoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -160,6 +163,7 @@
 				8A66B4A11DA372860006F1B1 /* ViewExtensions.swift */,
 				8A06D9D41DC9B21C00B49392 /* ViewControllerExtensions.swift */,
 				8A49101F1DDC128900B9D27D /* DispatchTimeExtensions.swift */,
+				8A8189731DE2C6BA00EAF360 /* URLExtensions.swift */,
 			);
 			name = Source;
 			path = SRChoco;
@@ -362,6 +366,7 @@
 				8A06D9D51DC9B21C00B49392 /* ViewControllerExtensions.swift in Sources */,
 				8A66B4AA1DA372860006F1B1 /* SRDevice.swift in Sources */,
 				8A66B4AE1DA372860006F1B1 /* StringExtensions.swift in Sources */,
+				8A8189741DE2C6BA00EAF360 /* URLExtensions.swift in Sources */,
 				8A66B4A31DA372860006F1B1 /* ColorExtensions.swift in Sources */,
 				8A66B4AC1DA372860006F1B1 /* SRRegexp.swift in Sources */,
 				8A66B4A41DA372860006F1B1 /* DateExtensions.swift in Sources */,
@@ -406,6 +411,7 @@
 				8A66B4C91DA372AD0006F1B1 /* SRUUID.swift in Sources */,
 				8A66B4C41DA372AD0006F1B1 /* SRCache.swift in Sources */,
 				8A66B4C61DA372AD0006F1B1 /* SRDevice.swift in Sources */,
+				8A8189751DE2C6BA00EAF360 /* URLExtensions.swift in Sources */,
 				8A66B4CA1DA372AD0006F1B1 /* StringExtensions.swift in Sources */,
 				8A66B4BF1DA372AD0006F1B1 /* ColorExtensions.swift in Sources */,
 				8A66B4C81DA372AD0006F1B1 /* SRRegexp.swift in Sources */,
