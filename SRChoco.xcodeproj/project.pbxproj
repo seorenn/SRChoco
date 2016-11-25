@@ -49,6 +49,8 @@
 		8A66B5141DA377280006F1B1 /* TestUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A66B4DC1DA376680006F1B1 /* TestUUID.swift */; };
 		8A8189741DE2C6BA00EAF360 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8189731DE2C6BA00EAF360 /* URLExtensions.swift */; };
 		8A8189751DE2C6BA00EAF360 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8189731DE2C6BA00EAF360 /* URLExtensions.swift */; };
+		8A8189B61DE7F04500EAF360 /* TestURLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8189B51DE7F04500EAF360 /* TestURLExtensions.swift */; };
+		8A8189B71DE7F04500EAF360 /* TestURLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8189B51DE7F04500EAF360 /* TestURLExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,7 @@
 		8A66B4DC1DA376680006F1B1 /* TestUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestUUID.swift; path = Tests/TestUUID.swift; sourceTree = SOURCE_ROOT; };
 		8A66B4F81DA376A60006F1B1 /* SRChoco OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SRChoco OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8189731DE2C6BA00EAF360 /* URLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLExtensions.swift; path = Source/URLExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8A8189B51DE7F04500EAF360 /* TestURLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestURLExtensions.swift; path = Tests/TestURLExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8A84F7D31BAC006B00C81D09 /* SRChoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SRChoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -177,6 +180,7 @@
 				8A66B4DA1DA376680006F1B1 /* TestSRRegexp.swift */,
 				8A66B4DB1DA376680006F1B1 /* TestStringExtensions.swift */,
 				8A66B4DC1DA376680006F1B1 /* TestUUID.swift */,
+				8A8189B51DE7F04500EAF360 /* TestURLExtensions.swift */,
 				8A66B4D41DA375D50006F1B1 /* Info.plist */,
 			);
 			name = Tests;
@@ -381,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A66B50D1DA377280006F1B1 /* TestStringExtensions.swift in Sources */,
+				8A8189B61DE7F04500EAF360 /* TestURLExtensions.swift in Sources */,
 				8A66B50C1DA377280006F1B1 /* TestSRRegexp.swift in Sources */,
 				8A66B50A1DA377280006F1B1 /* TestArrayExtensions.swift in Sources */,
 				8A66B50B1DA377280006F1B1 /* TestDateExtensions.swift in Sources */,
@@ -393,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A66B5131DA377280006F1B1 /* TestStringExtensions.swift in Sources */,
+				8A8189B71DE7F04500EAF360 /* TestURLExtensions.swift in Sources */,
 				8A66B5121DA377280006F1B1 /* TestSRRegexp.swift in Sources */,
 				8A66B5101DA377280006F1B1 /* TestArrayExtensions.swift in Sources */,
 				8A66B5111DA377280006F1B1 /* TestDateExtensions.swift in Sources */,

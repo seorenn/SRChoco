@@ -100,6 +100,14 @@ public extension URL {
     return path == "/"
   }
   
+  // MARK: - Informations
+  
+  public var lastPathComponentWithoutExtension: String {
+    let value = lastPathComponent.stringBackwardRemovedBefore(character: ".")
+    if value.isEmpty { return lastPathComponent }
+    return value
+  }
+  
 }
 
 // MARK: - Utilities
@@ -116,4 +124,56 @@ public func mkdir(url: URL, intermediateDirectories: Bool = false) -> Bool {
 
 public func + (left: URL, right: String) -> URL {
   return left.appendingPathComponent(right)
+}
+
+// MARK: -
+
+fileprivate extension String {
+  // TODO: is this need?
+  fileprivate var firstCharacter: Character {
+    return self[startIndex]
+  }
+  // TODO: is this need?
+  fileprivate var lastCharacter: Character {
+    return self[index(before: endIndex)]
+  }
+  // TODO: is this need?
+  fileprivate var safePathString: String {
+    if characters.count <= 0 { return self }
+    if lastCharacter == "/" {
+      let toIndex = index(before: index(before: endIndex))
+      return self[startIndex...toIndex]
+    } else {
+      return self
+    }
+  }
+  
+  // TODO: is this need?
+  fileprivate func stringBackwardBefore(character: Character) -> String {
+    if characters.count <= 0 { return self }
+    
+    var i = index(before: endIndex)
+    while i >= startIndex {
+      print("index: \(i)")
+      if self[i] == character {
+        let toIndex = index(after: i)
+        return self[toIndex..<endIndex]
+      }
+      if i > startIndex { i = index(before: i) }
+      else { break }
+    }
+    return ""
+  }
+  fileprivate func stringBackwardRemovedBefore(character: Character) -> String {
+    if characters.count <= 0 { return self }
+    var i = index(before: endIndex)
+    while i >= startIndex {
+      if self[i] == character {
+        return self[startIndex..<i]
+      }
+      if i > startIndex { i = index(before: i) }
+      else { break }
+    }
+    return self
+  }
 }
