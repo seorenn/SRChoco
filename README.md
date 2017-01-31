@@ -1,6 +1,8 @@
 SRChoco
 =======
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 Seorenn's Something Special(?) Frameworks for Cocoa(AppKit) and Cocoa Touch(UIKit).
 
 NOTE: I will separate some modules to independent project. SRChoco now refactoring. ;-)
