@@ -8,11 +8,11 @@
 
 import LocalAuthentication
 
-open class SRAuth {
+public class SRAuth {
   
   public static let shared = SRAuth()
   
-  open var canAuthWithTouchID: Bool {
+  public var canAuthWithTouchID: Bool {
     #if os(iOS)
       let context = LAContext()
       var error: NSError?
@@ -25,7 +25,7 @@ open class SRAuth {
     #endif
   }
   
-  open func authWithTouchID(reason: String, callback: ((_ auth: Bool) -> Void)?) {
+  public func authWithTouchID(reason: String, callback: ((_ auth: Bool) -> Void)?) {
     #if os(iOS)
       let context = LAContext()
       context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: {

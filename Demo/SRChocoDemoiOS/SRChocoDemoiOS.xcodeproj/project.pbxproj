@@ -416,6 +416,7 @@
 				8A8189951DE2EE9600EAF360 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

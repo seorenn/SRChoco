@@ -223,6 +223,13 @@ public extension Date {
   public static func generate(year: Int, month: Int, day: Int) -> Date? {
     return Date.generate(year: year, month: month, day: day, hour: 0, minute: 0, second: 0, nanosecond: 0)
   }
+  
+  public var isoString: String {
+    let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+    return formatter.string(from: self)
+  }
 }
 
 // MARK: - NSDate Comparison Operators
