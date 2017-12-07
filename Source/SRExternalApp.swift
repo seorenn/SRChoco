@@ -41,7 +41,7 @@
   import Cocoa
   
   public func getAppPath(bundleIdentifier: String) -> String? {
-    return NSWorkspace.shared().absolutePathForApplication(withBundleIdentifier: bundleIdentifier)
+    return NSWorkspace.shared.absolutePathForApplication(withBundleIdentifier: bundleIdentifier)
   }
   
   public func launchApp(appPath: String, arguments: [String]) -> Process! {
@@ -54,7 +54,7 @@
   }
   
   public func launchApp(appPath: String) {
-    NSWorkspace.shared().launchApplication(appPath)
+    NSWorkspace.shared.launchApplication(appPath)
   }
   
   public func activateApp(pid: pid_t) {
@@ -71,7 +71,7 @@
   }
   
   public func activateApp(app: NSRunningApplication) {
-    app.activate(options: .activateAllWindows)
+    app.activate(options: NSApplication.ActivationOptions.activateAllWindows)
   }
   
 #endif

@@ -28,10 +28,10 @@
   public extension NSViewController {
     public static func instance(storyboardName: String? = nil, identifier: String? = nil) -> NSViewController {
       if let name = identifier {
-        return NSStoryboard(name: storyboardName ?? String(describing: self), bundle: nil).instantiateController(withIdentifier: name) as! NSViewController
+        return NSStoryboard(name: NSStoryboard.Name(rawValue: storyboardName ?? String(describing: self)), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: name)) as! NSViewController
       }
       else {
-        return NSStoryboard(name: storyboardName ?? String(describing: self), bundle: nil).instantiateInitialController() as! NSViewController
+        return NSStoryboard(name: NSStoryboard.Name(rawValue: storyboardName ?? String(describing: self)), bundle: nil).instantiateInitialController() as! NSViewController
       }
     }
   }
