@@ -52,7 +52,7 @@ public struct SRRegexpGroups {
   }
   
   public func range(index: Int) -> NSRange {
-    let result = self.results.rangeAt(index)
+    let result = self.results.range(at: index)
     return result
   }
 }
@@ -77,7 +77,7 @@ public struct SRRegexp {
     let matches = self.re.matches(
       in: fromString,
       options: NSRegularExpression.MatchingOptions(),
-      range: NSMakeRange(0, fromString.characters.count))
+      range: NSMakeRange(0, fromString.count))
     guard let result = matches.first else { return nil }
     return SRRegexpGroups(results: result, text: fromString)
   }
@@ -91,7 +91,7 @@ public struct SRRegexp {
     return self.re.stringByReplacingMatches(
       in: fromString,
       options: NSRegularExpression.MatchingOptions(),
-      range: NSMakeRange(0, fromString.characters.count),
+      range: NSMakeRange(0, fromString.count),
       withTemplate: template)
   }
 }

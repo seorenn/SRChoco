@@ -78,6 +78,16 @@ class TestStringExtensions: XCTestCase {
         XCTAssertEqual(array[1], "is")
         XCTAssertEqual(array[2], "test")
     }
+    
+    func testOptionalString() {
+        let a: String? = nil
+        let b: String? = ""
+        let c: String? = "good"
+        
+        XCTAssertTrue(a.isNilOrEmpty)
+        XCTAssertTrue(b.isNilOrEmpty)
+        XCTAssertFalse(c.isNilOrEmpty)
+    }
 }
 
 
