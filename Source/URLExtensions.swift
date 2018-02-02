@@ -93,6 +93,7 @@ public extension URL {
     
     public var isFolder: Bool { return isDirectory }
     
+    // determine this is file, not directory. (NOTE: It's different for isFileURL)
     public var isFile: Bool { return !isDirectory }
     
     public var isRootDirectory: Bool {
