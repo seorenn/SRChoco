@@ -130,6 +130,15 @@ public func mkdir(url: URL, intermediateDirectories: Bool = false) -> Bool {
     }
 }
 
+public func trash(url: URL) -> Bool {
+    do {
+        try FileManager.default.trashItem(at: url, resultingItemURL: nil)
+    } catch {
+        return false
+    }
+    return true
+}
+
 public func + (left: URL, right: String) -> URL {
     return left.appendingPathComponent(right)
 }
