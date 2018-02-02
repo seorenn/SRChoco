@@ -100,6 +100,14 @@ public extension URL {
         return path == "/"
     }
     
+    public var parentFileURL: URL {
+        guard isFileURL else {
+            assertionFailure("Cannot generate parent file URL: This is not file URL!")
+            return self
+        }
+        return URL(fileURLWithPath: self.path.stringBackwardRemovedBefore(character: "/"))
+    }
+    
     // MARK: - Informations
     
     public var lastPathComponentWithoutExtension: String {
@@ -129,41 +137,6 @@ public func + (left: URL, right: String) -> URL {
 // MARK: -
 
 fileprivate extension String {
-    // TODO: is this need?
-    fileprivate var firstCharacter: Character {
-        return self[startIndex]
-    }
-    // TODO: is this need?
-    fileprivate var lastCharacter: Character {
-        return self[index(before: endIndex)]
-    }
-    // TODO: is this need?
-    fileprivate var safePathString: String {
-        if count <= 0 { return self }
-        if lastCharacter == "/" {
-            let toIndex = index(before: index(before: endIndex))
-            return String(self[startIndex...toIndex])
-        } else {
-            return self
-        }
-    }
-    
-    // TODO: is this need?
-    fileprivate func stringBackwardBefore(character: Character) -> String {
-        if count <= 0 { return self }
-        
-        var i = index(before: endIndex)
-        while i >= startIndex {
-            print("index: \(i)")
-            if self[i] == character {
-                let toIndex = index(after: i)
-                return String(self[toIndex..<endIndex])
-            }
-            if i > startIndex { i = index(before: i) }
-            else { break }
-        }
-        return ""
-    }
     fileprivate func stringBackwardRemovedBefore(character: Character) -> String {
         if count <= 0 { return self }
         var i = index(before: endIndex)
