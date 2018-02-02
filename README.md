@@ -101,6 +101,18 @@ view.conterPoint    // CGPoint or NSPoint
 view.moveToBelow(view: anotherView, margin: 5.0)
 </pre>
 
+## URLExtensions
+
+Something useful features for file URL.
+
+<pre>
+let myDownloadedFile = URL.urlForDownloads + "filename.txt"
+myDownloadedFile.isExists
+myDownloadedFile.isFile
+myDownloadedFile.isDirectory
+_ = trash(url: myDownloadedFile)
+</pre>
+
 # Branched Projects
 
 * SRFile: https://github.com/seorenn/SRFile
