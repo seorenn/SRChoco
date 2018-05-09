@@ -39,4 +39,15 @@ class TestArrayExtensions: XCTestCase {
         let result = array.stringByJoining(separator: " ")
         XCTAssertEqual(result, "This is test")
     }
+    
+    func testSafeArray() {
+        let array = [ 1, 2, 3, 4, 5 ]
+        
+        XCTAssertEqual(array[0], 1)
+        XCTAssertEqual(array[4], 5)
+        XCTAssertEqual(array[5, default: 0], 0)
+        XCTAssertNil(array[safeIndex: 5])
+        XCTAssertNotNil(array[safeIndex: 0])
+        XCTAssertNotNil(array[safeIndex: 4])
+    }
 }
