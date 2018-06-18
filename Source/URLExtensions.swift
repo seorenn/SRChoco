@@ -133,7 +133,12 @@ public func mkdir(url: URL, intermediateDirectories: Bool = false) -> Bool {
 
 public func trash(url: URL) -> Bool {
     do {
-        try FileManager.default.trashItem(at: url, resultingItemURL: nil)
+        if #available(iOS 11.0, *) {
+            try FileManager.default.trashItem(at: url, resultingItemURL: nil)
+        } else {
+            print("trash api not supported. skip...")
+            return false
+        }
     } catch {
         return false
     }
