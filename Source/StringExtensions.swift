@@ -9,7 +9,11 @@
 import Foundation
 
 public extension String {
-    
+
+    init(cString: UnsafePointer<Int8>) {
+        self.init(cString: UnsafeRawPointer(cString).assumingMemoryBound(to: UInt8.self))
+    }
+
     public subscript(index: Int) -> Character {
         let chrIndex: String.Index
         
