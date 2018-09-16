@@ -21,7 +21,7 @@
  */
 open class SRCache {
   fileprivate let cache: NSCache<AnyObject, AnyObject>
-  open let name: String
+  public let name: String
   fileprivate let queue: DispatchQueue
   fileprivate let useDiskCache: Bool
   
