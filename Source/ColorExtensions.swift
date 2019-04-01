@@ -7,29 +7,29 @@
 //
 
 #if os(iOS)
-  
-  import UIKit
-  
-  public extension UIColor {
-    public convenience init(hex: Int, alpha: CGFloat = 1.0) {
-      let r = CGFloat((hex & 0xff0000) >> 16) / 255.0
-      let g = CGFloat((hex & 0x00ff00) >> 8) / 255.0
-      let b = CGFloat(hex & 0x0000ff) / 255.0
-      self.init(red: r, green: g, blue: b, alpha: alpha)
+
+import UIKit
+
+public extension UIColor {
+    convenience init(hex: Int, alpha: CGFloat = 1.0) {
+        let r = CGFloat((hex & 0xff0000) >> 16) / 255.0
+        let g = CGFloat((hex & 0x00ff00) >> 8) / 255.0
+        let b = CGFloat(hex & 0x0000ff) / 255.0
+        self.init(red: r, green: g, blue: b, alpha: alpha)
     }
-  }
-  
+}
+
 #elseif os(OSX)
-  
-  import AppKit
-  
-  public extension NSColor {
-    public convenience init(hex: Int, alpha: CGFloat = 1.0) {
-      let r = CGFloat((hex & 0xff0000) >> 16) / 255.0
-      let g = CGFloat((hex & 0x00ff00) >> 8) / 255.0
-      let b = CGFloat(hex & 0x0000ff) / 255.0
-      self.init(red: r, green: g, blue: b, alpha: alpha)
+
+import AppKit
+
+public extension NSColor {
+    convenience init(hex: Int, alpha: CGFloat = 1.0) {
+        let r = CGFloat((hex & 0xff0000) >> 16) / 255.0
+        let g = CGFloat((hex & 0x00ff00) >> 8) / 255.0
+        let b = CGFloat(hex & 0x0000ff) / 255.0
+        self.init(red: r, green: g, blue: b, alpha: alpha)
     }
-  }
-  
+}
+
 #endif

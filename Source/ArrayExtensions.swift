@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Array {
-    public func stringByJoining(separator: String) -> String {
+    func stringByJoining(separator: String) -> String {
         var result = ""
         for (idx, item) in self.enumerated() {
             result += "\(item)"
@@ -23,7 +23,7 @@ public extension Array {
     // NOTE: func containString() has been deprecated. Use Array.contains() on Swift 2
     
     // Very good tweaks from: https://www.hackingwithswift.com/example-code/language/how-to-make-array-access-safer-using-a-custom-subscript
-    public subscript(index: Int, default defaultValue: @autoclosure () -> Element) -> Element {
+    subscript(index: Int, default defaultValue: @autoclosure () -> Element) -> Element {
         guard index >= 0, index < endIndex else {
             return defaultValue()
         }
@@ -31,7 +31,7 @@ public extension Array {
     }
     
     // Also good tweaks from: https://www.hackingwithswift.com/example-code/language/how-to-make-array-access-safer-using-a-custom-subscript
-    public subscript(safeIndex index: Int) -> Element? {
+    subscript(safeIndex index: Int) -> Element? {
         guard index >= 0, index < endIndex else {
             return nil
         }

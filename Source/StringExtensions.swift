@@ -14,7 +14,7 @@ public extension String {
         self.init(cString: UnsafeRawPointer(cString).assumingMemoryBound(to: UInt8.self))
     }
 
-    public subscript(index: Int) -> Character {
+    subscript(index: Int) -> Character {
         let chrIndex: String.Index
         
         if index >= 0 {
@@ -26,7 +26,7 @@ public extension String {
     }
     
     // substring with range
-    public subscript(range: Range<Int>) -> String {
+    subscript(range: Range<Int>) -> String {
         let start = self.index(self.startIndex, offsetBy: range.lowerBound)
         let end = self.index(self.startIndex, offsetBy: range.upperBound)
         let range: Range<Index> = start..<end
@@ -34,31 +34,31 @@ public extension String {
     }
     
     // substring with NSRange
-    public subscript(range: NSRange) -> String {
+    subscript(range: NSRange) -> String {
         if range.length <= 0 { return "" }
         let startIndex = range.location
         let endIndex = range.location + range.length
         return self[startIndex..<endIndex]
     }
     
-    public func substring(startIndex: Int, length: Int) -> String {
+    func substring(startIndex: Int, length: Int) -> String {
         return self[startIndex ..< (startIndex + length)]
     }
     
-    public func prefix(length: Int) -> String {
+    func prefix(length: Int) -> String {
         return self.substring(startIndex: 0, length: length)
     }
     
-    public func postfix(length: Int) -> String {
+    func postfix(length: Int) -> String {
         let si: Int = self.count - length
         return self.substring(startIndex: si, length: length)
     }
     
-    public func trimmedString() -> String {
+    func trimmedString() -> String {
         return self.trimmingCharacters(in: CharacterSet.whitespaces)
     }
     
-    public func contain(string: String, ignoreCase: Bool = false) -> Bool {
+    func contain(string: String, ignoreCase: Bool = false) -> Bool {
         let options = ignoreCase ? NSString.CompareOptions.caseInsensitive : NSString.CompareOptions()
         if let _ = self.range(of: string, options: options) {
             return true
@@ -66,7 +66,7 @@ public extension String {
         return false
     }
     
-    public func contain(strings: Array<String>, ORMode: Bool = false, ignoreCase: Bool = false) -> Bool {
+    func contain(strings: Array<String>, ORMode: Bool = false, ignoreCase: Bool = false) -> Bool {
         for string: String in strings {
             if ORMode && self.contain(string: string, ignoreCase: ignoreCase) {
                 return true
@@ -82,7 +82,7 @@ public extension String {
         }
     }
     
-    public func array(bySplitter: String? = nil) -> [String] {
+    func array(bySplitter: String? = nil) -> [String] {
         if let s = bySplitter {
             return self.components(separatedBy: s)
         } else {
@@ -98,7 +98,7 @@ public extension String {
 }
 
 public extension Optional where Wrapped == String {
-    public var isNilOrEmpty: Bool {
+    var isNilOrEmpty: Bool {
         if self == nil { return true }
         return self!.isEmpty
     }

@@ -14,31 +14,31 @@ public extension URL {
     
     #if os(macOS)
     
-    public static var urlForDownloads: URL {
+    static var urlForDownloads: URL {
         return FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
     }
     
-    public static var urlForMovies: URL {
+    static var urlForMovies: URL {
         return FileManager.default.urls(for: .moviesDirectory, in: .userDomainMask).first!
     }
     
-    public static var urlForDesktop: URL {
+    static var urlForDesktop: URL {
         return FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
     }
     
-    public static var urlForHome: URL {
+    static var urlForHome: URL {
         let env = ProcessInfo.processInfo.environment
         return URL(fileURLWithPath: env["HOME"]!)
     }
     
-    public static var urlForApplicationSupport: URL {
+    static var urlForApplicationSupport: URL {
         let appSupportURL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
         
         guard let executableName = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else { return appSupportURL }
         return appSupportURL.appendingPathComponent(executableName, isDirectory: true)
     }
     
-    public static var urlForCurrent: URL {
+    static var urlForCurrent: URL {
         return URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
     }
     
@@ -46,23 +46,23 @@ public extension URL {
     
     // MARK: - URL for macOS and iOS system predefined
     
-    public static var urlForCaches: URL {
+    static var urlForCaches: URL {
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
     }
     
-    public static var urlForDocuments: URL {
+    static var urlForDocuments: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     
-    public static var urlForTemporary: URL {
+    static var urlForTemporary: URL {
         return URL(fileURLWithPath: NSTemporaryDirectory())
     }
     
-    public static var urlForMainBundle: URL? {
+    static var urlForMainBundle: URL? {
         return Bundle.main.resourceURL
     }
     
-    public static func applicationContent(_ name: String) -> URL {
+    static func applicationContent(_ name: String) -> URL {
         #if os(macOS)
             return URL.urlForApplicationSupport.appendingPathComponent(name)
         #elseif os(iOS)
@@ -75,12 +75,12 @@ public extension URL {
     
     // MARK: - Common File/Directory Operations
     
-    public var isExists: Bool {
+    var isExists: Bool {
         guard isFileURL else { return false }
         return FileManager.default.fileExists(atPath: path)
     }
     
-    public var isDirectory: Bool {
+    var isDirectory: Bool {
         guard isFileURL else { return false }
         
         var isDir: ObjCBool = false
@@ -91,17 +91,17 @@ public extension URL {
         }
     }
     
-    public var isFolder: Bool { return isDirectory }
+    var isFolder: Bool { return isDirectory }
     
     // determine this is file, not directory. (NOTE: It's different for isFileURL)
-    public var isFile: Bool { return !isDirectory }
+    var isFile: Bool { return !isDirectory }
     
-    public var isRootDirectory: Bool {
+    var isRootDirectory: Bool {
         guard isFileURL else { return false }
         return path == "/"
     }
     
-    public var parentFileURL: URL {
+    var parentFileURL: URL {
         guard isFileURL else {
             assertionFailure("Cannot generate parent file URL: This is not file URL!")
             return self
@@ -111,7 +111,7 @@ public extension URL {
     
     // MARK: - Informations
     
-    public var lastPathComponentWithoutExtension: String {
+    var lastPathComponentWithoutExtension: String {
         let value = lastPathComponent.stringBackwardRemovedBefore(character: ".")
         if value.isEmpty { return lastPathComponent }
         return value
@@ -152,7 +152,7 @@ public func + (left: URL, right: String) -> URL {
 // MARK: -
 
 fileprivate extension String {
-    fileprivate func stringBackwardRemovedBefore(character: Character) -> String {
+    func stringBackwardRemovedBefore(character: Character) -> String {
         if count <= 0 { return self }
         var i = index(before: endIndex)
         while i >= startIndex {

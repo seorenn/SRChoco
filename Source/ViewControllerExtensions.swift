@@ -7,33 +7,33 @@
 //
 
 #if os(iOS)
-  
-  import UIKit
 
-  public extension UIViewController {
-    public static func instance(storyboardName: String? = nil, identifier: String? = nil) -> UIViewController {
-      if let name = identifier {
-        return UIStoryboard(name: storyboardName ?? String(describing: self), bundle: nil).instantiateViewController(withIdentifier: name)
-      }
-      else {
-        return UIStoryboard(name: storyboardName ?? String(describing: self), bundle: nil).instantiateInitialViewController()!
-      }
+import UIKit
+
+public extension UIViewController {
+    static func instance(storyboardName: String? = nil, identifier: String? = nil) -> UIViewController {
+        if let name = identifier {
+            return UIStoryboard(name: storyboardName ?? String(describing: self), bundle: nil).instantiateViewController(withIdentifier: name)
+        }
+        else {
+            return UIStoryboard(name: storyboardName ?? String(describing: self), bundle: nil).instantiateInitialViewController()!
+        }
     }
-  }
-  
+}
+
 #elseif os(macOS) || os(OSX)
-  
-  import Cocoa
-  
-  public extension NSViewController {
-    public static func instance(storyboardName: String? = nil, identifier: String? = nil) -> NSViewController {
-      if let name = identifier {
-        return NSStoryboard(name: NSStoryboard.Name(rawValue: storyboardName ?? String(describing: self)), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: name)) as! NSViewController
-      }
-      else {
-        return NSStoryboard(name: NSStoryboard.Name(rawValue: storyboardName ?? String(describing: self)), bundle: nil).instantiateInitialController() as! NSViewController
-      }
+
+import Cocoa
+
+public extension NSViewController {
+    static func instance(storyboardName: String? = nil, identifier: String? = nil) -> NSViewController {
+        if let name = identifier {
+            return NSStoryboard(name: storyboardName ?? String(describing: self), bundle: nil).instantiateController(withIdentifier: name) as! NSViewController
+        }
+        else {
+            return NSStoryboard(name: storyboardName ?? String(describing: self), bundle: nil).instantiateInitialController() as! NSViewController
+        }
     }
-  }
-  
+}
+
 #endif
