@@ -21,10 +21,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
   @IBAction func selectedShowTestViewController(_ sender: Any) {
-    let window = NSApplication.shared().mainWindow!
+    let window = NSApplication.shared.mainWindow!
     let vc = TestViewController.instance() as! TestViewController
-    window.contentViewController!.presentViewControllerAsModalWindow(vc)
-  
+    window.contentViewController!.presentAsModalWindow(vc)
   }
 
 }

@@ -16,7 +16,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         if let vc = self.storyboard?.instantiateController(withIdentifier: "AnotherViewController") as? AnotherViewController {
-            self.addChildViewController(vc)
+            self.addChild(vc)
             self.view.addSubview(vc.view, coverSuperview: true)
         }
     }
